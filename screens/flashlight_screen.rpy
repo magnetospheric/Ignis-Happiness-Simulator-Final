@@ -1,11 +1,25 @@
-#screen which displays flashlight over current background and Character
-#calls a class named Flashlight, a custom renpy Displayable
+
+# ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#
+#       flashlight_screen.rpy [Flashlight]
+#       screen which displays flashlight over current background and Character
+#       calls a class named Flashlight, a custom renpy Displayable
+#
+#       Flashlight contains flashlight overlay,
+#                           guard awareness counter and bar
+#
+# ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 init python:
 
     class Flashlight(renpy.Displayable):
-        def __init__(self):
-            super(Flashlight, self).__init__()
+
+        lightcount = 0
+        lightcounttext = "0"
+
+        def __init__(self,**kwargs):
+
+            super(Flashlight, self).__init__(**kwargs)
 
             # This image should be twice the width and twice the height
             # of the screen.
@@ -15,7 +29,21 @@ init python:
             # "outside the game window".
             self.pos = (-1, -1)
 
+            # Bar to show guards' awareness when flashlight is used
+            self.awareness = renpy.displayable(Solid("#F00"))
+            self.awareness_size = (1280,7)
+            self.awareness_alpha = 0
+
+            # Numerical value of times flashlight has been turned on
+            self.awareness_counter = renpy.displayable(Text(Flashlight.lightcounttext))
+            self.awareness_counter_size = (30,30)
+            self.awareness_counter_alpha = 0
+
+            # Will also need variable to store seconds passed while flashlight on
+
+
         def render(self, width, height, st, at):
+
             render = renpy.Render(config.screen_width, config.screen_height)
 
             if self.pos == (-1, -1):
@@ -32,34 +60,76 @@ init python:
             x -= flashlight_width / 2
             y -= flashlight_height / 2
             render.blit(child_render, (x, y))
+
+            # Render Guard Awareness (renders on top of flashlight)
+            awareness = Transform(child=self.awareness, alpha=self.awareness_alpha)
+            awareness_render = renpy.render(awareness, 1280, 7, st, at)
+            render.blit(awareness_render, (0, 10))
+
+            # Render Awareness counter (renders on top of flashlight)
+            awarenesscount = Transform(child=self.awareness_counter, alpha=self.awareness_counter_alpha)
+            awareness_counter_render = renpy.render(awarenesscount, 30, 30, st, at)
+            render.blit(awareness_counter_render, ((flashlight_width / 4), 30))
+
             return render
 
-        def event(self, ev, x, y, st):
 
+        def event(self, ev, x, y, st):
             #redraw the instant event is triggered
             #this allows flashlight to appear without req. drag + pos change
             renpy.redraw(self, 0)
 
+            # has to be defined inside event
+            def setlightcount(count):
+                Flashlight.lightcount = count
+                Flashlight.lightcounttext = "%d" % Flashlight.lightcount
+
             # would be real nice to have a small fade-in when torch turns on
 
-            #if renpy.map_event(ev,"drag_activate"):
+            # if mouse clicked
             if renpy.map_event(ev,"mousedown_1"):
+
                 if self.child == Image("images/flashlight.png"):
+
+                    # swap out for flashlight OFF
                     self.child = Image("images/flashlight-off.png")
+
+                    # turn off awareness alphas to hide awareness bar
+                    self.awareness_alpha = 0
+                    self.awareness_counter_alpha = 0
+
                 elif self.child == Image("images/flashlight-off.png"):
+
+                    # swap out for flashlight ON
                     self.child = Image("images/flashlight.png")
 
+                    # increment counter for amount of times light turned on
+                    setlightcount(Flashlight.lightcount + 1)
+
+                    # turn on awareness alphas to show awareness bar
+                    self.awareness_alpha = 1
+                    self.awareness_counter_alpha = 1
+
+                    # update awareness counter's value
+                    self.awareness_counter = renpy.displayable(Text(Flashlight.lightcounttext))
+
+                renpy.redraw(self,0)
+
             # Re-render if the position changed.
+            #PROBABLY DONT NEED THIS IN FUTURE.
+            #BUT GOOD TO KEEP IF I WANT TO GENERATE AN EVENT ON MOUSE MOVEMENT
+            #LIKE IN UNTIL DAWN
             if self.pos != (x, y):
                 renpy.redraw(self, 0)
 
             # Update stored position
             self.pos = (x, y)
 
+        #return our objects
         def visit(self):
-            return [ self.child ]
+            return [ self.awareness, self.awareness_counter, self.child ]
 
 
 screen flashlight:
-    textbutton "continue" xpos 300 ypos 300 action Return()
+    # everything happens in Flashlight class
     add Flashlight()
