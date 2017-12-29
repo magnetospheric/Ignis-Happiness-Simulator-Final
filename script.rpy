@@ -25,9 +25,6 @@ image ignis neutral  = "images/ignis-neutral.png"
 #### Background Images ####
 image bg altissia_alleyway = 'images/altissia-alleyway-night.jpg'
 
-
-image countdown = DynamicDisplayable(countdown, length=10.0)
-
 #plan - first we need a simple scene where your mouse cursor hovering creates a flashlight effect
 #DONE
 
@@ -39,9 +36,20 @@ image countdown = DynamicDisplayable(countdown, length=10.0)
 
 #Now need to combine with a timer so that, instead of registering each turn on, it registers instead
 #the seconds that pass
+#DONE
+
+#Now we need to animate the awareness bar
+
+#Now we need to log and display the amount of battery left in the torch
+
+#Need to have a failsafe for what happens when the flashlight runs out. don't frustrate the player toooo much,
+#and can't kill them.
+
+#Next we will need to work out what Ignis expressions we need
+
+#Next we will need to set up a starting-choices menu for the player
 
 # The game starts here.
-
 label start:
 
     #shows the first background
@@ -57,26 +65,18 @@ label start:
 
     ignis "I've run into a bit of trouble. Would you care to help me?"
 
+    # $ renpy.ui.timer(5.0, renpy.ui.jumps("boom"))
+
     ignis "Look around this room and see if there's anything useful."
 
-    $ mouse_visible = False
+    # $ mouse_visible = False
 
     call screen flashlight
 
-    # if $ show_countdown:
-    #     # start awareness timer here
-    #     show countdown
-    #     ui.timer(9.0, ui.jumps("boom"))
-
-    $ mouse_visible = True
+    # $ mouse_visible = True
 
     hide ignis neutral
     with dissolve
 
     #return to title screen
-    return
-
-# this will go in its own file eventually
-label boom:
-
     return

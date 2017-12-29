@@ -40,9 +40,26 @@ init python:
             self.awareness_counter_alpha = 0
 
             # Will also need variable to store seconds passed while flashlight on
+            self.flashlight_start_time = 0
+            self.some_time_val = 0;
 
+        # method that gets called every x seconds
+        def update(self, timeSelfShownFor):
+            if self.flashlight_start_time > 0:
+                self.some_time_val = timeSelfShownFor - self.flashlight_start_time
+                #reduce countdown by timeval
+
+            # skip to timeout if time exceeds x seconds
+            if self.some_time_val >= 5:
+                renpy.ui.jumps("boom")()
+
+            # redraw after x seconds
+            renpy.display.render.redraw(self, 0.3)
 
         def render(self, width, height, st, at):
+
+            # run the update method
+            self.update(st)
 
             render = renpy.Render(config.screen_width, config.screen_height)
 
@@ -67,6 +84,7 @@ init python:
             render.blit(awareness_render, (0, 10))
 
             # Render Awareness counter (renders on top of flashlight)
+            #^^THIS WILL CHANGE TO BATTERY LIFE (based on total time on?)
             awarenesscount = Transform(child=self.awareness_counter, alpha=self.awareness_counter_alpha)
             awareness_counter_render = renpy.render(awarenesscount, 30, 30, st, at)
             render.blit(awareness_counter_render, ((flashlight_width / 4), 30))
@@ -94,14 +112,21 @@ init python:
                     # swap out for flashlight OFF
                     self.child = Image("images/flashlight-off.png")
 
+                    # turns off the countdown
+                    self.flashlight_start_time = 0
+
                     # turn off awareness alphas to hide awareness bar
                     self.awareness_alpha = 0
                     self.awareness_counter_alpha = 0
 
                 elif self.child == Image("images/flashlight-off.png"):
 
-                    # swap out for flashlight ON
+                    # swap out for flashlight ON (if countdown > 0)
                     self.child = Image("images/flashlight.png")
+                    #if countdown < 0,
+
+                    #turns on countdown
+                    self.flashlight_start_time = st
 
                     # increment counter for amount of times light turned on
                     setlightcount(Flashlight.lightcount + 1)
@@ -133,3 +158,12 @@ init python:
 screen flashlight:
     # everything happens in Flashlight class
     add Flashlight()
+
+# this will go in its own file eventually
+label boom:
+    # will have conditions here according to where in the game you are on discovery
+    "Oh no..."
+
+    "YOU'VE BEEN DISCOVERED!"
+
+    return
