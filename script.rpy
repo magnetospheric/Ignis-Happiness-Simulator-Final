@@ -16,14 +16,48 @@
 #
 # ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
-### Character definitions ###
-define ignis = Character("Ignis")
 
-#### Character Images ####
-image ignis neutral  = "images/ignis-neutral.png"
+#### FILES USED ####
+# -- settings.rpy
+# -- scene_01_start.rpy
+# -- credits.rpy
 
-#### Background Images ####
-image bg altissia_alleyway = 'images/altissia-alleyway-night.jpg'
+
+#### SPLASHSCREEN ####
+
+# image producer = "images/logos/producer.png"
+# image author = "images/logos/author.png"
+# image title = "images/logos/title.png"
+
+label splashscreen:
+
+    # python:
+    #
+    #     if not persistent.set_volumes:
+    #         persistent.set_volumes = True
+    #
+    #         _preferences.volumes['music'] = .70
+    #         _preferences.volumes['sounds'] = .80
+    #
+    # play music "sound/Voglio_La_Pace-Snippet.wav" fadein 1.0
+
+    scene black
+    with Pause(5)
+    #
+    # show producer with dissolve
+    # with Pause(2)
+    #
+    #
+    # scene author with dissolve
+    # with Pause(2)
+
+
+    # scene title with dissolve
+    # with Pause(1)
+    # stop music fadeout 0.5
+    # pause 0.5
+    #
+    return
 
 #plan - first we need a simple scene where your mouse cursor hovering creates a flashlight effect
 #DONE
@@ -48,35 +82,3 @@ image bg altissia_alleyway = 'images/altissia-alleyway-night.jpg'
 #Next we will need to work out what Ignis expressions we need
 
 #Next we will need to set up a starting-choices menu for the player
-
-# The game starts here.
-label start:
-
-    #shows the first background
-    scene bg altissia_alleyway
-
-    #shows the first character
-    show ignis neutral
-    with dissolve
-
-    # These display lines of dialogue.
-
-    "Altissia, on the day of the Covenant. Everything is going to hell."
-
-    ignis "I've run into a bit of trouble. Would you care to help me?"
-
-    # $ renpy.ui.timer(5.0, renpy.ui.jumps("boom"))
-
-    ignis "Look around this room and see if there's anything useful."
-
-    # $ mouse_visible = False
-
-    call screen flashlight
-
-    # $ mouse_visible = True
-
-    hide ignis neutral
-    with dissolve
-
-    #return to title screen
-    return
