@@ -16,6 +16,7 @@
 define ignis = DynamicCharacter('ignis_name', color="#fff2b5", ctc="ctc_blink", ctc_position="fixed")
 define you = DynamicCharacter('your_name', color="#b2b1c4", ctc="ctc_blink", ctc_position="fixed")
 define narrator = Character(ctc="ctc_blink", ctc_position="fixed")
+define altissianguard = Character(ctc="ctc_blink", ctc_position="fixed")
 
 image ctc_blink = LiveComposite(
     (65, 65),
