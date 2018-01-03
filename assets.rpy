@@ -16,7 +16,10 @@
 define ignis = DynamicCharacter('ignis_name', color="#fff2b5", ctc="ctc_blink", ctc_position="fixed")
 define you = DynamicCharacter('your_name', color="#b2b1c4", ctc="ctc_blink", ctc_position="fixed")
 define narrator = Character(ctc="ctc_blink", ctc_position="fixed")
-define altissianguard = Character(ctc="ctc_blink", ctc_position="fixed")
+define altissianguard = Character("Guard on Duty", ctc="ctc_blink", ctc_position="fixed")
+define captain = Character("Captain", ctc="ctc_blink", ctc_position="fixed")
+define magitektrooper = Character("Trooper", ctc="ctc_blink", ctc_position="fixed")
+define caligo = Character("Caligo", ctc="ctc_blink", ctc_position="fixed")
 
 image ctc_blink = LiveComposite(
     (65, 65),
@@ -39,6 +42,26 @@ image glow:
 
 #### Character Images ####
 image ignis neutral  = "images/characters/ignis-neutral.png"
+
+#ignis raised eyes
+#ignis skeptical
+#ignis calm
+#ignis angry
+#ignis smiling
+#ignis smiling widely
+#ignis laughing
+#ignis eyes closed (pain)
+#ignis eyes closed (calm)
+#ignis distraught / pained (eyes open)
+#ignis looking off to the side
+#ignis looking upward
+#ignis propping his glasses up
+#ignis shocked (open-mouthed)
+#ignis scared
+#ignis sad (mouth closed)
+#ignis determined
+
+#(and all of these with blind iggy AND with ringhand Iggy too)
 
 #### Background Images ####
 image bg altissia_alleyway = 'images/backgrounds/altissia-alleyway-night.jpg'
