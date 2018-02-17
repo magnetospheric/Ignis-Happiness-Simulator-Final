@@ -80,6 +80,10 @@ label splashscreen:
 #and can't kill them.
 
 #Next we will need to work out what Ignis expressions we need
+# list made and ref images compiled
+
+#Next, work out background images required
+# list made of all b images necessary for starting scene
 
 #Next we will need to set up a starting-choices menu for the player
-#in progress
+# DONE
