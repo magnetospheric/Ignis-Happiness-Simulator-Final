@@ -13,8 +13,8 @@
 
 
 ### Character definitions ###
-define ignis = DynamicCharacter('ignis_name', color="#fff2b5", ctc="ctc_blink", ctc_position="fixed")
-define you = DynamicCharacter('your_name', color="#b2b1c4", ctc="ctc_blink", ctc_position="fixed")
+define ignis = DynamicCharacter('ignis_name', color="#444176", ctc="ctc_blink", ctc_position="fixed")
+define you = DynamicCharacter('your_name', color="#aa748d", ctc="ctc_blink", ctc_position="fixed")
 define narrator = Character(ctc="ctc_blink", ctc_position="fixed")
 define altissianguard = Character("Guard on Duty", ctc="ctc_blink", ctc_position="fixed")
 define captain = Character("Captain", ctc="ctc_blink", ctc_position="fixed")
