@@ -277,10 +277,53 @@ label first_conversation:
 
     ignis "Glad to hear it."
 
+    ignis "Tune in to frequency 4400 - "
     return
 
-# captain gets you to search the room for an item of some kind before you head out.
-# this will teach you the 'flashlight' mechanic
+# ignis shows you where to go on the map, then leaves after this
+
+# if you go to help the citizens instead of rushing to his aid, he'll be happier with you
+label en_route_to_altar:
+
+    # captain gets you to search the room for the fuse switch before you head out.
+    # this will teach you the 'flashlight' mechanic
+
+    "The lights flicker off, casting the room into darkness."
+    # have a sort of flash effect as the room goes dark, if possible.
+    # Could be achieved by a sort of inverted colouring of the current room bg
+
+    you "A power cut?"
+
+    captain "There's a torch on the table next to you. See if you can't find the fuse switch."
+
+    # info box: TORCH has been equipped
+
+    # enter flashlight section
+
+    captain "Take the torch with you, [your_name]. You might need it."
+
+
+    "Ignis has forgotten to turn his mic off, and you can hear everything that's happening."
+
+    "It's mostly muffled shouts and cries, accompanied by Ignis's breathing. He's clearly frantic, but doing an admirable job of stilling his own nerves."
+
+    "Then, an angry voice."
+
+    unidentified_voice "The King's lapdog, eh?"
+
+    "And a sharp cry of pain. Ignis is hurt."
+
+    "You check your map. You're only a street away from the citizens you've been tasked with helping."
+
+    menu:
+        "Continue onward to help the citizens":
+            "You can't abandon your duty. You know this as clear as day."
+            # highlight current route on map
+            "The citizens aren't far away. You'll help them first, then come to Ignis's aid."
+        "Divert your route to help Ignis":
+            "You simply can't leave him in pain like that. What if the Niffs kill him, after all?"
+            #highlight new route on the map
+            "If you take this route, you can come to his aid and still be close enough to double back for the citizens afterward."
 
 label searchtheroom:
 

@@ -20,6 +20,7 @@ define altissianguard = Character("Guard on Duty", ctc="ctc_blink", ctc_position
 define captain = Character("Captain", ctc="ctc_blink", ctc_position="fixed")
 define magitektrooper = Character("Trooper", ctc="ctc_blink", ctc_position="fixed")
 define caligo = Character("Caligo", ctc="ctc_blink", ctc_position="fixed")
+define unidentified_voice = Characer("Unidentified Voice", ctc="ctc_blink", ctc_position="fixed")
 
 image ctc_blink = LiveComposite(
     (65, 65),
