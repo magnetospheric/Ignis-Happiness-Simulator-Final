@@ -20,7 +20,7 @@ define altissianguard = Character("Guard on Duty", ctc="ctc_blink", ctc_position
 define captain = Character("Captain", ctc="ctc_blink", ctc_position="fixed")
 define magitektrooper = Character("Trooper", ctc="ctc_blink", ctc_position="fixed")
 define caligo = Character("Caligo", ctc="ctc_blink", ctc_position="fixed")
-define unidentified_voice = Characer("Unidentified Voice", ctc="ctc_blink", ctc_position="fixed")
+define unidentified_voice = Character("Unidentified Voice", ctc="ctc_blink", ctc_position="fixed")
 
 image ctc_blink = LiveComposite(
     (65, 65),
@@ -42,7 +42,7 @@ image glow:
 
 
 #### Character Images ####
-image ignis neutral  = "images/characters/ignis-neutral.png"
+image ignis neutral  = "images/characters/ignis/ignis-neutral.png"
 
 #ignis raised eyes
 #ignis skeptical
@@ -66,6 +66,7 @@ image ignis neutral  = "images/characters/ignis-neutral.png"
 
 #### Background Images ####
 image bg altissia_alleyway = 'images/backgrounds/altissia-alleyway-night.jpg'
+image bg mc_home = 'images/backgrounds/mc_home.png'
 image black = "images/backgrounds/black_bg.png"
 
 

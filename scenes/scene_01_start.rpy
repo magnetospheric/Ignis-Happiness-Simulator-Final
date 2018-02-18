@@ -65,7 +65,7 @@ label start:
 
 label mc_room:
 
-    # scene bg mc_room
+    scene bg mc_room
 
     you "Ah, where did I put my keys?"
 
@@ -88,7 +88,7 @@ label mc_room:
 
 label to_work:
     #shows the first background
-    scene bg altissia_alleyway
+    scene bg mc_home
 
     "You race through the streets, shrugging on your jacket."
     "You've been working as a Municipal Guard for nigh on two months now. A good job with decent pay, and as far as jobs go, you enjoy it. So far."
