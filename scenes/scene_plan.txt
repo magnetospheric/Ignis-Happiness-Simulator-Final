@@ -1,0 +1,51 @@
+##########
+Scene plan
+##########
+
+MC wakes up, and is late for work.
+MC has to find their keys (practice of the location fn).
+
+MC runs to the plaza.
+Guard asks for MC's ID card (set name and gender here)
+
+MC reports in to captain, meets Ignis for the first time.
+MC and Ignis are put in evac detail together.
+
+Luna's speech happens, MC and Ignis hang by the back, then direct folk to safety once it's over.
+Then Luna heads to the altar, and things kick off.
+The wall of water rises, and Niff dropships fill the sky.
+MC heads back to report to captain, and has to find the fuse box. Is given torch.
+Ignis confers with other voices on his intercom (Prompto and Gladio) who are in a spot of trouble.
+He then rushes off to meet Prompto and Gladio, leaving you to take care of the citizens in the (Padore?) area.
+
+MC passes a stockpile and has the choice to pick up rations or not.
+Halfway to the citizens, MC hears Ignis over the comms - he is injured and being attacked by the Niffs
+MC has the choice either to go help the citizens, or go straight to Ignis.
+
+'I've been blocked off from the bridge,' Ignis says. He asks you to help him get to the boat.
+MC needs to get the attention of Caligo's mech. (practice of the alert fn, location fn, and flashlight fn).
+
+When MC eventually reaches Ignis, it's all up by the altar and Ardyn is there.
+Something has clearly happened with Ignis.
+MC has to use the location fn + alert fn to hide from Ardyn (if fail, then game over, try again).
+Ardyn tells the soldiers to take Ignis into the Dreadnought.
+
+Now safe, MC approaches the altar.
+The white haired guy (Ravus) in the background is floored, and when Ardyn, Ignis and the others are gone, MC helps him up.
+Ravus tells MC where Ignis has been taken, and MC makes their way to the Dreadnought.
+
+Inside the Dreadnought, MC finds Ignis, who has lost his sight.
+Ignis will talk a bit about the visions of the future and how it's messing him up.
+MC helps Ignis escape.
+MC has to use the flashlight fn, location fn & alert fn to avoid MTs and open doors.
+
+-mc somehow gets ignis back to the altar. perhaps ignis asks them to take him to noct-
+-gladio and prompto will take over from there on in-
+
+The next day, MC reports back to work. Is told to help distribute rations and meds to those citizens who evacuated on time.
+MC has the option to either go and see Ignis first, or go help the citizens first.
+When MC goes to the Leville and talks to Ignis, tries to make him feel better.
+If the right choices are made, Ignis will go out to the ministerial square with MC.
+If that goes well, Ignis will take a gondola ride with MC.
+
+MC will get a citizen rescue score at the end that will factor into an Ignis conversation.

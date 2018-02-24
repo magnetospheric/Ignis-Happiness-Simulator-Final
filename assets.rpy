@@ -15,6 +15,8 @@
 ### Character definitions ###
 define ignis = DynamicCharacter('ignis_name', color="#444176", ctc="ctc_blink", ctc_position="fixed")
 define you = DynamicCharacter('your_name', color="#aa748d", ctc="ctc_blink", ctc_position="fixed")
+define ravus = DynamicCharacter('ravus_name', color="#aa748d", ctc="ctc_blink", ctc_position="fixed")
+define ardyn = DynamicCharacter('ardyn_name', color="#aa748d", ctc="ctc_blink", ctc_position="fixed")
 define narrator = Character(ctc="ctc_blink", ctc_position="fixed")
 define altissianguard = Character("Guard on Duty", ctc="ctc_blink", ctc_position="fixed")
 define captain = Character("Captain", ctc="ctc_blink", ctc_position="fixed")
@@ -66,6 +68,7 @@ image ignis neutral  = "images/characters/ignis/ignis-neutral.png"
 
 #### Background Images ####
 image bg altissia_alleyway = 'images/backgrounds/altissia-alleyway-night.jpg'
+image bg altissian_skyline = 'images/backgrounds/altissian_skyline.png'
 image bg mc_home = 'images/backgrounds/mc_home.png'
 image black = "images/backgrounds/black_bg.png"
 
