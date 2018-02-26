@@ -70,6 +70,7 @@ image ignis neutral  = "images/characters/ignis/ignis-neutral.png"
 image bg altissia_alleyway = 'images/backgrounds/altissia-alleyway-night.jpg'
 image bg altissian_skyline = 'images/backgrounds/altissian_skyline.png'
 image bg mc_home = 'images/backgrounds/mc_home.png'
+image bg mc_room = 'images/backgrounds/mc_room.png'
 image black = "images/backgrounds/black_bg.png"
 
 

@@ -12,6 +12,16 @@
 # covers reaching work, and mc options setup
 
 
+label found:
+
+    hide screen keys
+
+    you "Ah!"
+    
+    you "Found 'em!"
+
+    jump to_work
+
 label to_work:
     #shows the first background
     scene bg mc_home

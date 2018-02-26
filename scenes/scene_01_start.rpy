@@ -62,22 +62,26 @@ label start:
 label mc_room:
 
     scene bg mc_room
+    show screen keys_inactive
+    #set up button here but don't make it clickable
+
+    # show screen infobubble(title="Locate the keys")
 
     you "Ah, where did I put my keys?"
 
-    # look up to left
-    # look to right
     # main room view
+    # would be cool to have a shaking effect here
 
     you "Y'know, it would be {i}really{/i} useful if I could just ... find them ..."
 
+    jump find_keys
+
+label find_keys:
+
     # this will teach you the 'find things' mechanic
-    show screen infobubble(who="meeee", what="yoouuuuu")
+    call screen infobubble(title="Locate the keys", content="Move your mouse around the room to find the keys, and click to pick them up.")
 
-    # call screen focus
-    # call screen flashlight
-    # imagebutton "continue" xpos 300 ypos 300 action Return()
+    hide screen infobubble
+    hide screen keys_inactive
 
-    you "Found 'em!"
-
-    jump to_work
+    call screen keys
