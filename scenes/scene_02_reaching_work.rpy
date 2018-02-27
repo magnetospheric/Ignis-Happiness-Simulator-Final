@@ -17,7 +17,7 @@ label found:
     hide screen keys
 
     you "Ah!"
-    
+
     you "Found 'em!"
 
     jump to_work
@@ -29,7 +29,7 @@ label to_work:
     "You race through the streets, shrugging on your jacket."
     "You've been working as a Municipal Guard for nigh on two months now. A good job with decent pay, and as far as jobs go, you enjoy it. So far."
 
-    #scene bg yureilplazagates
+    scene bg yureilplaza
 
     "Today, you've been stationed near Yureil Plaza. When you arrive at the gates, the guard on duty greets you with a salute."
 
@@ -39,6 +39,8 @@ label to_work:
     altissianguard "Morning. Please present your identification."
 
     "You show her your ID card."
+
+    scene bg yureilplazadark
 
     jump setname
 

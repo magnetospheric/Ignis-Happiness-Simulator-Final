@@ -71,6 +71,8 @@ image bg altissia_alleyway = 'images/backgrounds/altissia-alleyway-night.jpg'
 image bg altissian_skyline = 'images/backgrounds/altissian_skyline.png'
 image bg mc_home = 'images/backgrounds/mc_home.png'
 image bg mc_room = 'images/backgrounds/mc_room.png'
+image bg yureilplaza = 'images/backgrounds/yureil_plaza.png'
+image bg yureilplazadark = 'images/backgrounds/yureil_plaza_dark.png'
 image black = "images/backgrounds/black_bg.png"
 
 
