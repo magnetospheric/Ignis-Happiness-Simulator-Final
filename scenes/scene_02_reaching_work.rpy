@@ -40,7 +40,7 @@ label to_work:
 
     "You show her your ID card."
 
-    scene bg yureilplazadark
+    # scene bg yureilplazadark
 
     jump setname
 

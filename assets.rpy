@@ -73,6 +73,8 @@ image bg mc_home = 'images/backgrounds/mc_home.png'
 image bg mc_room = 'images/backgrounds/mc_room.png'
 image bg yureilplaza = 'images/backgrounds/yureil_plaza.png'
 image bg yureilplazadark = 'images/backgrounds/yureil_plaza_dark.png'
+image bg yureilcorridor = 'images/backgrounds/yureil_corridor-2.png'
+image bg yureilcorridordark = 'images/backgrounds/yureil_corridor_dark.png'
 image black = "images/backgrounds/black_bg.png"
 
 

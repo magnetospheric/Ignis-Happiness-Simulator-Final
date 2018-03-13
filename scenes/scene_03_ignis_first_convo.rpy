@@ -16,7 +16,8 @@ label first_conversation:
     "Usually, you think it looks overbearing, but today, it seems solemn, more like a tomb. It's not an inviting omen."
 
     #show commander left in conversation
-    #scene yureilplazainteriorcorridor
+    scene bg yureilcorridor
+
     show captain neutral at left
     with dissolve
 
@@ -37,6 +38,9 @@ label first_conversation:
     captain "Ah, [your_name]."
 
     you "Sorry I'm late, Ma'am."
+
+
+    scene bg yureilcorridordark
 
     "The Captain waves your apology away."
 
@@ -110,6 +114,15 @@ label first_conversation:
     ignis "Glad to hear it."
 
     ignis "Tune in to frequency 4400 - "
+
+    altissianguard "Sir, it's begun"
+
+    scene bg yureilcorridordark
+
+    ignis "All right. To your stations, everyone."
+
+    captain "Good luck out there, [your_name]"
+
     return
 
 # ignis shows you where to go on the map, then leaves after this
