@@ -46,6 +46,9 @@ image glow:
 #### Character Images ####
 image ignis neutral  = "images/characters/ignis/ignis-neutral.png"
 
+image altissianguard neutral  = "images/characters/altissianguard-neutral.png"
+image altissianguard smile  = "images/characters/altissianguard-smile.png"
+
 #ignis raised eyes
 #ignis skeptical
 #ignis calm

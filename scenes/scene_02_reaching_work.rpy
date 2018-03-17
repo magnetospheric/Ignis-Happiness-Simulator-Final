@@ -33,14 +33,12 @@ label to_work:
 
     "Today, you've been stationed near Yureil Plaza. When you arrive at the gates, the guard on duty greets you with a salute."
 
-    show altissianguard at left
+    show altissianguard neutral at left
     with dissolve
 
     altissianguard "Morning. Please present your identification."
 
-    "You show her your ID card."
-
-    # scene bg yureilplazadark
+    "You show him your ID card."
 
     jump setname
 
@@ -104,6 +102,10 @@ label confirmgender:
             jump setgender
 
 label after_user_name_set:
+
+    "The guard checks over your ID."
+
+    show altissianguard smile
 
     altissianguard "All checks out fine, Guard [your_name]. Please proceed."
 

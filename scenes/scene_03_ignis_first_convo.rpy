@@ -39,9 +39,6 @@ label first_conversation:
 
     you "Sorry I'm late, Ma'am."
 
-
-    scene bg yureilcorridordark
-
     "The Captain waves your apology away."
 
     captain "Understandable. I hear the streets outside are swamped with people waiting to hear the Oracle's speech."
