@@ -13,11 +13,11 @@
 
 
 ### Character definitions ###
-define ignis = DynamicCharacter('ignis_name', color="#444176", ctc="ctc_blink", ctc_position="fixed")
-define you = DynamicCharacter('your_name', color="#aa748d", ctc="ctc_blink", ctc_position="fixed")
-define ravus = DynamicCharacter('ravus_name', color="#aa748d", ctc="ctc_blink", ctc_position="fixed")
-define ardyn = DynamicCharacter('ardyn_name', color="#aa748d", ctc="ctc_blink", ctc_position="fixed")
-define narrator = Character(ctc="ctc_blink", ctc_position="fixed")
+define narrator = Character(ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg_narrator.png")
+define ignis = DynamicCharacter('ignis_name', who_color="#444176", ctc="ctc_blink", ctc_position="fixed")
+define you = DynamicCharacter('your_name', who_color="#aa748d", ctc="ctc_blink", ctc_position="fixed")
+define ravus = DynamicCharacter('ravus_name', who_color="#aa748d", ctc="ctc_blink", ctc_position="fixed")
+define ardyn = DynamicCharacter('ardyn_name', who_color="#aa748d", ctc="ctc_blink", ctc_position="fixed")
 define altissianguard = Character("Guard on Duty", ctc="ctc_blink", ctc_position="fixed")
 define captain = Character("Captain", ctc="ctc_blink", ctc_position="fixed")
 define magitektrooper = Character("Trooper", ctc="ctc_blink", ctc_position="fixed")
