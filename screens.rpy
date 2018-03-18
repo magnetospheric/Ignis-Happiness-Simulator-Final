@@ -24,7 +24,6 @@ style hyperlink_text:
 style gui_text:
     properties gui.text_properties("interface")
 
-
 style button:
     properties gui.button_properties("button")
 
@@ -38,7 +37,6 @@ style label_text is gui_text:
 
 style prompt_text is gui_text:
     properties gui.text_properties("prompt")
-
 
 style bar:
     ysize gui.bar_size
@@ -69,7 +67,6 @@ style vslider:
     xsize gui.slider_size
     base_bar Frame("gui/slider/vertical_[prefix_]bar.png", gui.vslider_borders, tile=gui.slider_tile)
     thumb "gui/slider/vertical_[prefix_]thumb.png"
-
 
 style frame:
     padding gui.frame_borders.padding
@@ -131,7 +128,8 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    #background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("ui/dialog_bg.png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
