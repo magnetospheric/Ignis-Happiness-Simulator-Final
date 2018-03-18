@@ -81,7 +81,7 @@ image bg yureilplazadark = 'images/backgrounds/yureil_plaza_dark.png'
 image bg yureilcorridor = 'images/backgrounds/yureil_corridor-2.png'
 image bg yureilcorridordark = 'images/backgrounds/yureil_corridor_dark.png'
 
-image bg magisterialsquare = 'images/background/magisterial_square.png'
+image bg magisterialsquare = 'images/backgrounds/magisterial_square.png'
 
 image black = "images/backgrounds/black_bg.png"
 

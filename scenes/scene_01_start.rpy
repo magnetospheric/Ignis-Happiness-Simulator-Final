@@ -42,6 +42,8 @@ label start:
     $ ravus_name = "White-haired man"
     $ ardyn_name = "Sinister man"
 
+    jump waitingforignis
+    
     #scene dawns on an overview of altissia
     scene bg altissian_skyline
 
@@ -58,6 +60,7 @@ label start:
     "So it really doesn't help that today, of all days, you are late to work."
 
     jump mc_room
+
 
 label mc_room:
 
