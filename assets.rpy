@@ -81,6 +81,11 @@ image bg yureilplazadark = 'images/backgrounds/yureil_plaza_dark.png'
 image bg yureilcorridor = 'images/backgrounds/yureil_corridor-2.png'
 image bg yureilcorridordark = 'images/backgrounds/yureil_corridor_dark.png'
 
+image bg refugeehideout = 'images/backgrounds/refugee_hideout.png'
+image bg refugeehideoutdark = 'images/backgrounds/refugee_hideout_dark.png'
+
+image bg fountaincourtyard = 'images/backgrounds/fountain_courtyard.png'
+
 image bg magisterialsquare = 'images/backgrounds/magisterial_square.png'
 
 image black = "images/backgrounds/black_bg.png"
