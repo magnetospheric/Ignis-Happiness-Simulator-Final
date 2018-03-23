@@ -118,7 +118,12 @@ label first_conversation:
 
     ignis "All right. To your stations, everyone."
 
-    captain "Good luck out there, [your_name]"
+    captain "Good luck out there, [your_name]."
+
+    hide captain
+    with dissolve
+
+    jump lunas_speech
 
     return
 
