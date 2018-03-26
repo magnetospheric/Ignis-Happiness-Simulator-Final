@@ -188,7 +188,7 @@ screen main_menu():
     if is_load_screen == False:
         use navigation
 
-    if gui.show_name:
+    if gui.show_name == False:
 
         vbox:
             text "[config.name!t]":
