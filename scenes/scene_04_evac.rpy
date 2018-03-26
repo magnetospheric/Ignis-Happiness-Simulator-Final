@@ -11,7 +11,7 @@
 
 label lunas_speech:
 
-    # show bg yureil plaza busy
+    show bg yureilplaza crowd
 
     "You and Ignis both make your way to the back of the plaza."
 

@@ -56,9 +56,12 @@ define gui.interface_text_color = '#404040'
 
 ## The font used for in-game text.
 define gui.text_font = "fonts/AvantGarde-Book.ttf"
+define gui.text_bold_font = "fonts/AvantGarde-Demi.ttf"
 
 ## The font used for character names.
 define gui.name_text_font = "fonts/Birch.ttf"
+define gui.name_text_color = "#ffffff"
+define gui.name_text_outlines = [ (3, "#ffffff7f", 0, 0), (2, "#321226", 0, 0)  ]
 
 ## The font used for out-of-game text.
 define gui.interface_text_font = "DejaVuSans.ttf"
@@ -69,7 +72,7 @@ define gui.text_size = 20
 define gui.text_line_spacing = 12
 
 ## The size of character names.
-define gui.name_text_size = 38
+define gui.name_text_size = 44
 
 ## The size of text in the game's user interface.
 define gui.interface_text_size = 24
@@ -210,12 +213,14 @@ define gui.quick_button_text_selected_color = gui.accent_color
 define gui.choice_button_width = 631
 define gui.choice_button_height = None
 define gui.choice_button_tile = False
-define gui.choice_button_borders = Borders(100, 16, 100, 5)
+define gui.choice_button_borders = Borders(20, 16, 20, 5)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
 define gui.choice_button_text_idle_color = "#cccccc"
-define gui.choice_button_text_hover_color = "#333333"
+define gui.choice_button_text_hover_color = "#040404"
+define gui.choice_button_text_hover_outlines = [ (1, "04040466", 0, 0)  ]
+# define gui.choice_button_text_hover_font = gui.text_bold_font
 
 
 ## File Slot Buttons ###########################################################
@@ -257,7 +262,7 @@ define gui.skip_ypos = 10
 define gui.notify_ypos = 45
 
 ## The spacing between menu choices.
-define gui.choice_spacing = 22
+define gui.choice_spacing = 24
 
 ## Buttons in the navigation section of the main and game menus.
 define gui.navigation_spacing = 4

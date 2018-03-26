@@ -14,8 +14,14 @@
 
 ### Character definitions ###
 define narrator = Character(ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg_narrator.png")
-define ignis = DynamicCharacter('ignis_name', who_color="#444176", ctc="ctc_blink", ctc_position="fixed")
-define you = DynamicCharacter('your_name', who_color="#aa748d", ctc="ctc_blink", ctc_position="fixed")
+define ignis = DynamicCharacter('ignis_name', who_color="#8985ce",
+                                who_outlines=[ (4, "#ffffff7f", 0, 0), (2, "#282645", 0, 0) ],
+                                # who_outlines=[ (8, "#0000000D", 0, 0), (4, "#ffffffbf", 0, 0), (2, "#282645", 0, 0)  ],
+                                ctc="ctc_blink", ctc_position="fixed")
+define you = DynamicCharacter('your_name', who_color="#c8a5b5",
+                                who_outlines=[ (4, "#ffffff7f", 0, 0), (2, "#3b2831", 0, 0) ],
+                                # who_outlines=[ (8, "#0000000D", 0, 0), (4, "#ffffffcc", 0, 0), (2, "#3b2831", 0, 0)  ],
+                                ctc="ctc_blink", ctc_position="fixed")
 define ravus = DynamicCharacter('ravus_name', who_color="#aa748d", ctc="ctc_blink", ctc_position="fixed")
 define ardyn = DynamicCharacter('ardyn_name', who_color="#aa748d", ctc="ctc_blink", ctc_position="fixed")
 define altissianguard = Character("Guard on Duty", ctc="ctc_blink", ctc_position="fixed")
@@ -26,8 +32,8 @@ define unidentified_voice = Character("Unidentified Voice", ctc="ctc_blink", ctc
 
 image ctc_blink = LiveComposite(
     (65, 65),
-    (930, 685), "ctc_base",
-    (930, 685), "glow",
+    (1135, 600), "ctc_base",
+    (1135, 600), "glow",
     )
 
 image ctc_base:
@@ -83,6 +89,9 @@ image bg mc_room = 'images/backgrounds/mc_room.png'
 
 image bg yureilplaza = 'images/backgrounds/yureil_plaza.png'
 image bg yureilplazadark = 'images/backgrounds/yureil_plaza_dark.png'
+image bg yureilplaza crowd = 'images/backgrounds/yureil_plaza_crowd.png'
+image bg yureilplaza crowd dark = 'images/backgrounds/yureil_plaza_crowd_dark.png'
+
 image bg yureilcorridor = 'images/backgrounds/yureil_corridor-2.png'
 image bg yureilcorridordark = 'images/backgrounds/yureil_corridor_dark.png'
 

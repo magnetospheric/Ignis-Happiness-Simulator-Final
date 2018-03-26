@@ -129,7 +129,7 @@ style window:
     ysize gui.textbox_height
 
     #background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
-    background Image("ui/dialog_bg.png", xalign=0.5, yalign=1.0)
+    background Image("ui/dialog_bg_narrator.png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -223,8 +223,8 @@ style choice_vbox:
 
 style choice_button:
     properties gui.button_properties("choice_button")
-    background "ui/choices_bg_hover.png"
-    hover_background "ui/choices_bg.png"
+    background "ui/choices_bg_dark.png"
+    hover_background "ui/choices_bg_light.png"
 
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")

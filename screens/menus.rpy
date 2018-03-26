@@ -331,7 +331,7 @@ style game_menu_content_frame:
     top_margin 10
 
 style game_menu_viewport:
-    xsize 920
+    xsize 1280
 
 style game_menu_vscrollbar:
     unscrollable gui.unscrollable
