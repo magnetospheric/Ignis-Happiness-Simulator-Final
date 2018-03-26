@@ -15,8 +15,8 @@ screen navigation():
         vbox:
             style_prefix "navigation"
 
-            xalign 0.82
-            yalign 0.92
+            xalign 0.77
+            yalign 0.90
 
             spacing 0
 
@@ -126,34 +126,36 @@ style navigation_button_text:
 
 ## Styles for indented main menu items ##
 style menu_item_text is text:
-    hover_color "#d1d7e3"
-    outlines [ (0, "#fff", 1, 1), (2, "#8f98a8", 0, 0) ]
-    color "#fff"
+    # hover_color "#d1d7e3"
+    hover_color "#cdb2cd"
+    # outlines [ (0, "#fff", 1, 1), (2, "#8f98a8", 0, 0) ]
+    outlines [ (0, "#fff", 1, 1), (2, "#481a36", 0, 0) ]
+    color "#f5ddf5"
     size 18
 
 style ingame_menu_item_text is text:
-    hover_color "#d0ddf4"
-    outlines [ (2, "#fff", 0, 0), (3, "#a3aec0", 1, 0) ]
-    color "#fff"
+    hover_color "#cdb2cd"
+    outlines [ (2, "#fff", 0, 0), (3, "#481a36", 1, 0) ]
+    color "#f5ddf5"
     size 20
 
 style menu_item_1:
     left_margin 0
 
 style menu_item_2:
-    left_margin 18
+    left_margin 28
 
 style menu_item_3:
-    left_margin 36
+    left_margin 56
 
 style menu_item_4:
-    left_margin 54
+    left_margin 84
 
 style menu_item_5:
-    left_margin 72
+    left_margin 112
 
 style menu_item_6:
-    left_margin 90
+    left_margin 140
 
 style menu_item_ingame:
     left_margin 20

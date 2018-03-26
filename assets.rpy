@@ -93,7 +93,7 @@ image bg fountaincourtyard = 'images/backgrounds/fountain_courtyard.png'
 
 image bg magisterialsquare = 'images/backgrounds/magisterial_square.png'
 
-image black = "images/backgrounds/black_bg.png"
+image black = "images/black.png"
 
 
 
