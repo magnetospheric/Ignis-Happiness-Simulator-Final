@@ -42,6 +42,9 @@ label start:
     $ ravus_name = "White-haired man"
     $ ardyn_name = "Sinister man"
 
+    $ happiness = 2
+    $ show_happiness = False
+
     jump first_conversation
 
     #scene dawns on an overview of altissia

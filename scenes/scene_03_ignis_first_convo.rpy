@@ -108,6 +108,27 @@ label first_conversation:
         "Express doubt about your own capabilities":
             you "I'll see what I can do."
 
+    $ show_happiness = True
+
+    pause 1.0
+
+    $ happiness += 2
+
+    show expression Text("Happiness increased!",
+    size=35,
+    yalign=0.5,
+    xalign=0.5,
+    drop_shadow=(1, 1),
+    color="#fff",
+    outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
+    ) as text
+    with dissolve
+
+    pause 0.5
+
+    hide text
+    with dissolve
+
     ignis "Glad to hear it."
 
     ignis "Tune in to frequency 4400 - "
