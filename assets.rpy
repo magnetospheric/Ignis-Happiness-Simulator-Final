@@ -49,6 +49,11 @@ image ignis neutral  = "images/characters/ignis/ignis-neutral.png"
 image altissianguard neutral  = "images/characters/altissianguard-neutral.png"
 image altissianguard smile  = "images/characters/altissianguard-smile.png"
 
+image captain neutral = "images/characters/captain-neutral.png"
+image captain smile = "images/characters/captain-smile.png"
+image captain neutral_openmouth = "images/characters/captain-neutral-openmouth.png"
+image captain looking_around = "images/characters/captain-looking-around.png"
+
 #ignis raised eyes
 #ignis skeptical
 #ignis calm

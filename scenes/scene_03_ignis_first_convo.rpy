@@ -10,12 +10,12 @@
 
 label first_conversation:
 
-    #scene bg yureilplazasteps
+    scene bg yureilplaza
 
     "Up the pale marble steps to the plaza entrance now. Yureil Mansion is grand and decked with flags, red and gold fabric that's dampened in the gatheing rain."
     "Usually, you think it looks overbearing, but today, it seems solemn, more like a tomb. It's not an inviting omen."
 
-    #show commander left in conversation
+    #show captain left in conversation
     scene bg yureilcorridor
 
     show captain neutral at left
@@ -23,10 +23,10 @@ label first_conversation:
 
     "When you report in, you notice the Captain of the Guard is accompanied by a stranger."
 
-    hide captain
     #show ignis left looking to the side
     show ignis neutral at right
     with dissolve
+    with moveinright
 
     "He's tall, slim, and all things considered, rather attractive indeed."
     "You approach hesitantly, not wanting to interrupt them."

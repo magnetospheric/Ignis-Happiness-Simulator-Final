@@ -42,8 +42,8 @@ label start:
     $ ravus_name = "White-haired man"
     $ ardyn_name = "Sinister man"
 
-    jump waitingforignis
-    
+    jump first_conversation
+
     #scene dawns on an overview of altissia
     scene bg altissian_skyline
 
