@@ -21,12 +21,12 @@ label first_conversation:
     show captain neutral at left
     with dissolve
 
-    "When you report in, you notice the Captain of the Guard is accompanied by a stranger."
-
     #show ignis left looking to the side
     show ignis neutral at right
     with dissolve
-    with moveinright
+
+    "When you report in, you notice the Captain of the Guard is accompanied by a stranger."
+
 
     "He's tall, slim, and all things considered, rather attractive indeed."
     "You approach hesitantly, not wanting to interrupt them."
