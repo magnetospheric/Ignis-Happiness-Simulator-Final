@@ -26,14 +26,14 @@ init python:
 define gui.accent_color = '#000000'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#aaaaaa'
+define gui.idle_color = '#bbbbbb'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = '#888888'
+define gui.idle_small_color = '#bbbbbb'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = '#000000'
+define gui.hover_color = '#fefefe'
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
@@ -48,7 +48,8 @@ define gui.muted_color = '#666666'
 define gui.hover_muted_color = '#999999'
 
 ## The colors used for dialogue and menu choice text.
-define gui.text_color = '#404040'
+define gui.text_color = '#fafafa'
+define gui.text_outlines = [ (2, "#040404", 0, 0), (1, "#999999", 0, 0)  ]
 define gui.interface_text_color = '#404040'
 
 
@@ -69,7 +70,7 @@ define gui.interface_text_font = "DejaVuSans.ttf"
 ## The size of normal dialogue text.
 define gui.text_size = 20
 ## The size of normal dialogue text.
-define gui.text_line_spacing = 12
+define gui.text_line_spacing = 16
 
 ## The size of character names.
 define gui.name_text_size = 44
@@ -103,7 +104,7 @@ define gui.show_name = False
 ## time.
 
 ## The height of the textbox containing dialogue.
-define gui.textbox_height = 300
+define gui.textbox_height = 260
 
 ## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
 ## center, and 1.0 is the bottom.
@@ -112,8 +113,8 @@ define gui.textbox_yalign = 1.0
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
-define gui.name_xpos = 120
-define gui.name_ypos = 25
+define gui.name_xpos = 80
+define gui.name_ypos = 20
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -136,11 +137,11 @@ define gui.namebox_tile = False
 ## The placement of dialogue relative to the textbox. These can be a whole
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
-define gui.dialogue_xpos = 200
-define gui.dialogue_ypos = 100
+define gui.dialogue_xpos = 100
+define gui.dialogue_ypos = 120
 
 ## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 800
+define gui.dialogue_width = 1070
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -198,6 +199,7 @@ define gui.quick_button_borders = Borders(10, 4, 10, 0)
 define gui.quick_button_text_size = 14
 define gui.quick_button_text_idle_color = gui.idle_small_color
 define gui.quick_button_text_selected_color = gui.accent_color
+define gui.quick_button_height = 25
 
 ## You can also add your own customizations, by adding properly-named variables.
 ## For example, you can uncomment the following line to set the width of a
