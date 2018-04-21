@@ -12,7 +12,7 @@ label first_conversation:
 
     scene bg yureilplaza
 
-    "Up the pale marble steps to the plaza entrance now. Yureil Mansion is grand and decked with flags, red and gold fabric that's dampened in the gatheing rain."
+    "Up the pale marble steps to the plaza entrance now. Yureil Mansion is grand and decked with flags, red and gold fabric that's dampened in the gathering rain."
     "Usually, you think it looks overbearing, but today, it seems solemn, more like a tomb. It's not an inviting omen."
 
     #show captain left in conversation
