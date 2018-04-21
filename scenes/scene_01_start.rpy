@@ -45,10 +45,20 @@ label start:
     $ happiness = 2
     $ show_happiness = False
 
-    jump first_conversation
+    #jump first_conversation
+
+    #black background, maybe some wisping smoke
+    scene black
+    "What does loyalty mean to you?"
+
+    "Who do you most want to protect?"
+
+    "Sometimes, one day can change everything."
 
     #scene dawns on an overview of altissia
+    #slow fade in
     scene bg altissian_skyline
+    with mediumfade
 
     "Altissia, on the day of the Covenant."
 
