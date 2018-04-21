@@ -11,23 +11,23 @@ init python:
         if show_happiness:
             # set up a transparent frame to put things in
             ui.frame(
-                xalign = 0.96,
+                xalign = 0.90,
                 ypos = 0.04,
                 style = "title_frame",
             )
 
             ui.vbox(xalign = 0)
 
-            ui.text ("HAPPINESS",
-                font = "fonts/Birch.ttf",
-                outlines = [ (3, "#ffffff7f", 0, 0), (2, "#321226", 0, 0)  ],
-                xalign = 0,
-                ypos = 12,
-                color = "#f7f3f1",
-                size=30)
-
             ui.bar(max_happiness, happiness,
                 style="my_bar")
+
+            ui.text ("HAPPINESS",
+                font = "fonts/Birch.ttf",
+                outlines = [ (2, "#ffffff26", 0, 0), (1, "#321226", 0, 0)  ],
+                xalign = 1.0,
+                ypos = 10,
+                color = "#f7f3f1",
+                size=26)
 
             ui.close() #closes vbox
 
@@ -87,8 +87,9 @@ init -5 python:
     #custom bar
     style.my_bar = Style(style.default)
     style.my_bar.xalign = 0.5
-    style.my_bar.xmaximum = 325 # bar width
-    style.my_bar.ymaximum = 25 # bar height
+    style.my_bar.ypos = 0
+    style.my_bar.xmaximum = 260 # bar width
+    style.my_bar.ymaximum = 18 # bar height
     style.my_bar.left_gutter = 10
     style.my_bar.right_gutter = 0
 
