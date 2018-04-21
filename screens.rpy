@@ -129,7 +129,7 @@ style window:
     ysize gui.textbox_height
 
     #background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
-    background Image("ui/dialog_bg_narrator.png", xalign=0.5, yalign=1.0)
+    background Image("ui/dialog_bg01.png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
