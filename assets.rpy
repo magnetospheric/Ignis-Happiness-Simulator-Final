@@ -11,9 +11,8 @@
 #
 # ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
-
 ### Character definitions ###
-define narrator = Character(ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+define narrator = Character(ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png", callback=clicky_typewriter)
 define ignis = DynamicCharacter('ignis_name', who_color="#eae9ff",
                                 who_outlines=[ (4, "#ffffff26", 0, 0), (3, "#282645", 0, 0) ],
                                 # who_outlines=[ (8, "#0000000D", 0, 0), (4, "#ffffffbf", 0, 0), (2, "#282645", 0, 0)  ],
