@@ -16,6 +16,7 @@ screen infobubble(title, content):
         yalign 0.5
         xsize 600
         #background should be different
+        background Image("ui/popup_box.png", xalign=0.5, yalign=0.5)
 
         vbox:
             text title id "{b}title{/b}"
