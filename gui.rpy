@@ -30,7 +30,7 @@ define gui.idle_color = '#bbbbbb'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = '#bbbbbb'
+define gui.idle_small_color = '#ffffff'
 
 ## The color that is used for buttons and bars that are hovered.
 define gui.hover_color = '#fefefe'
@@ -50,7 +50,7 @@ define gui.hover_muted_color = '#999999'
 ## The colors used for dialogue and menu choice text.
 define gui.text_color = '#fafafa'
 define gui.text_outlines = [ (2, "#040404", 0, 0), (1, "#999999", 0, 0)  ]
-define gui.interface_text_color = '#404040'
+define gui.interface_text_color = '#ffffff'
 
 
 ## Fonts and Font Sizes ########################################################
