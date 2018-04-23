@@ -5,6 +5,7 @@
 ## fades ######################################################################
 define slowfade = Fade(2.0, 0.0, 2.0)
 define mediumfade = Fade(3.0, 0.0, 3.0)
+define fastfade = Fade(1.0, 0.0, 1.0)
 
 ## dissolves ##################################################################
 define slowdissolve = Dissolve(8)
