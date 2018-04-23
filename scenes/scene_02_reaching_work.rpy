@@ -26,19 +26,25 @@ label to_work:
     #shows the first background
     scene bg mc_home
 
-    "You race through the streets, shrugging on your jacket."
-    "You've been working as a Municipal Guard for nigh on two months now. A good job with decent pay, and as far as jobs go, you enjoy it. So far."
+    narrator1 "You race through the streets, shrugging on your coat."
+    narrator1 "You've been working as a Municipal Guard for nigh on two months now. A good job with decent pay, and as far as jobs go, you enjoy it."
+
+    scene bg altissian_skyline
+
+    narrator1 "The air is colder than the soft skies would suggest. Although there's hardly a breeze to be felt, the cold cuts right through your coat."
+
+    narrator1 "There's a low hum in the streets. People are up and about, but more hushed than normal. They're feeling the anticipation as keenly as you are."
 
     scene bg yureilplaza
 
-    "Today, you've been stationed near Yureil Plaza. When you arrive at the gates, the guard on duty greets you with a salute."
+    narrator1 "Today, you've been stationed near Yureil Plaza. When you arrive at the gates, the guard on duty greets you with a salute."
 
     show altissianguard neutral at left
     with dissolve
 
     altissianguard "Morning. Please present your identification."
 
-    "You show him your ID card."
+    narrator1 "You show him your ID card."
 
     jump setname
 
@@ -103,7 +109,7 @@ label confirmgender:
 
 label after_user_name_set:
 
-    "The guard checks over your ID."
+    narrator1 "The guard checks over your ID."
 
     show altissianguard smile
 

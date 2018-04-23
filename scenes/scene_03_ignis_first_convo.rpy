@@ -12,8 +12,8 @@ label first_conversation:
 
     scene bg yureilplaza
 
-    "Up the pale marble steps to the plaza entrance now. Yureil Mansion is grand and decked with flags, red and gold fabric that's dampened in the gathering rain."
-    "Usually, you think it looks overbearing, but today, it seems solemn, more like a tomb. It's not an inviting omen."
+    narrator1 "Up the pale marble steps to the plaza entrance now. Yureil Mansion is grand and decked with flags, red and gold fabric that's dampened in the gathering rain."
+    narrator1 "Usually, you think it looks overbearing, but today, it seems solemn, more like a tomb. It's not an inviting omen."
 
     #show captain left in conversation
     scene bg yureilcorridor
@@ -25,21 +25,23 @@ label first_conversation:
     show ignis neutral at right
     with dissolve
 
-    "When you report in, you notice the Captain of the Guard is accompanied by a stranger."
+    narrator1 "When you report in, you notice the Captain of the Guard is accompanied by a stranger."
 
 
-    "He's tall, slim, and all things considered, rather attractive indeed."
-    "You approach hesitantly, not wanting to interrupt them."
+    narrator1 "He's tall, slim, and all things considered, rather attractive indeed."
+    narrator1 "You approach hesitantly, not wanting to interrupt them."
 
     you "Captain."
 
-    #show commander facing forward. neutral
+    show captain neutral_openmouth
 
     captain "Ah, [your_name]."
 
     you "Sorry I'm late, Ma'am."
 
-    "The Captain waves your apology away."
+    show captain neutral
+
+    narrator1 "The Captain waves your apology away."
 
     captain "Understandable. I hear the streets outside are swamped with people waiting to hear the Oracle's speech."
 
@@ -49,7 +51,7 @@ label first_conversation:
 
     you "Evac?"
 
-    "Here, the newcomer cuts in. His accent is sharp and learned."
+    narrator1 "Here, the newcomer cuts in. His accent is sharp and learned."
 
     #show ignis openmouth calm
 
@@ -57,18 +59,25 @@ label first_conversation:
 
     #show ignis closedmouth neutral again
 
-    "You've heard of the floods of yore. You nod."
+    narrator1 "You've heard of the floods of yore. You nod."
+
+    show captain neutral_openmouth
 
     captain "You will be stationed at the back of the plaza during her speech, but once the speech is over, we'll need you pointing the way to Finangia District."
 
-    "The furthest district from the Cathedral. It would be easy to get the citizens out of harm's way from there."
+    show captain neutral
+
+    narrator1 "The furthest district from the Cathedral. It would be easy to get the citizens out of harm's way from there."
 
     you "Understood, Captain."
 
-    "The Captain excuses herself then, making her way down the corridor to debrief the next guard outpost."
+    narrator1 "The Captain excuses herself then, making her way down the corridor to debrief the next guard outpost."
 
-    "You're left with the stranger, who watches you with interest. No part of his gaze is uncalculated. You wonder if he's a diplomat, or perhaps a spy."
-    "It's hardly something you're going to say aloud to him, though. You settle for simple."
+    hide captain
+    with dissolve
+
+    narrator1 "You're left with the stranger, who watches you with interest. No part of his gaze is uncalculated. You wonder if he's a diplomat, or perhaps a spy."
+    narrator1 "It's hardly something you're going to say aloud to him, though. You settle for simple."
 
     you "Hi."
 
@@ -80,24 +89,24 @@ label first_conversation:
 
     ignis "What was your name, again?"
 
-    "You introduce yourself."
-    "He nods as you speak your name."
+    narrator1 "You introduce yourself."
+    narrator1 "He nods as you speak your name."
 
     ignis "{color=#aa748d}[your_name]{/color}? That's a lovely name."
 
-    "You smile."
+    narrator1 "You smile."
 
     ignis "Well, it seems we shall both be on evacuation duty."
 
     you "Wait, you're on evacuation duty too?"
 
-    "You struggle to keep the incredulity out of your voice."
+    narrator1 "You struggle to keep the incredulity out of your voice."
 
     ignis "Indeed."
 
     ignis "While I am a Lucian envoy, as my nation is responsible for invoking the Covenant, I must do all I can to aid Altissia for its efforts."
 
-    "You feel like there's more to it than that, but you don't decide to bring it up."
+    narrator1 "You feel like there's more to it than that, but you don't decide to bring it up."
 
     #here you should get the first choice to make to get his happiness up or down
     menu:
@@ -156,7 +165,7 @@ label en_route_to_altar:
     # captain gets you to search the room for the fuse switch before you head out.
     # this will teach you the 'flashlight' mechanic
 
-    "The lights flicker off, casting the room into darkness."
+    narrator1 "The lights flicker off, casting the room into darkness."
     # have a sort of flash effect as the room goes dark, if possible.
     # Could be achieved by a sort of inverted colouring of the current room bg
 
@@ -171,17 +180,17 @@ label en_route_to_altar:
     captain "Take the torch with you, [your_name]. You might need it."
 
 
-    "Ignis has forgotten to turn his mic off, and you can hear everything that's happening."
+    narrator1 "Ignis has forgotten to turn his mic off, and you can hear everything that's happening."
 
-    "It's mostly muffled shouts and cries, accompanied by Ignis's breathing. He's clearly frantic, but doing an admirable job of stilling his own nerves."
+    narrator1 "It's mostly muffled shouts and cries, accompanied by Ignis's breathing. He's clearly frantic, but doing an admirable job of stilling his own nerves."
 
-    "Then, an angry voice."
+    narrator1 "Then, an angry voice."
 
     unidentified_voice "The King's lapdog, eh?"
 
-    "And a sharp cry of pain. Ignis is hurt."
+    narrator1 "And a sharp cry of pain. Ignis is hurt."
 
-    "You check your map. You're only a street away from the citizens you've been tasked with helping."
+    narrator1 "You check your map. You're only a street away from the citizens you've been tasked with helping."
 
     menu:
         "Continue onward to help the citizens":

@@ -51,19 +51,22 @@ label start:
     scene black
 
 
-    top_narrator "{outlinecolor=#ffffff33}{size=20}{cps=15}{alpha=0.8}What does  {/alpha}{/cps}{/size}{alpha=1.0}{size=24}{cps=10}loyalty{/cps}{/size}{/alpha}{size=20}{cps=15}{alpha=0.8}  mean to you?{/alpha}{/cps}{/size}{/outlinecolor}"
+    top_narrator "{size=20}{cps=15}{alpha=0.8}What does  {/alpha}{/cps}{/size}{alpha=1.0}{size=24}{cps=10}loyalty{/cps}{/size}{/alpha}{size=20}{cps=15}{alpha=0.8}  mean to you?{/alpha}{/cps}{/size}"
 
-    topcentre_narrator "{outlinecolor=#ffffff33}{size=20}{cps=15}{alpha=0.8}Who do you most want to protect?{/alpha}{/cps}{/size}{/outlinecolor}"
+    topcentre_narrator "{size=20}{cps=15}{alpha=0.8}Who do you most want to protect?{/alpha}{/cps}{/size}"
 
-    centre_narrator "{outlinecolor=#ffffff33}{size=20}{cps=15}{alpha=0.8}It's not an easy question. The answer can  {/alpha}{/cps}{/size}{alpha=1.0}{size=24}{cps=10}change.{/alpha}  {size=20}{cps=15}{alpha=0.8}And you may surprise yourself.{/alpha}{/cps}{/size}{/outlinecolor}"
+    centre_narrator "{size=20}{cps=15}{alpha=0.8}It's not an easy question. The answer can  {/alpha}{/cps}{/size}{alpha=1.0}{size=24}{cps=10}change.{/alpha}  {size=20}{cps=15}{alpha=0.8}And you may surprise yourself.{/alpha}{/cps}{/size}"
 
-    centrebottomright_narrator "{outlinecolor=#ffffff33}{size=20}{cps=15}{alpha=0.8}Sometimes, {/alpha}{/cps}{/size}{size=24}{cps=10}{alpha=1.0}all it takes is one day.{/alpha}{/cps}{/size}{/outlinecolor}"
+    centrebottomright_narrator "{size=20}{cps=15}{alpha=0.8}Sometimes, {/alpha}{/cps}{/size}{size=24}{cps=10}{alpha=1.0}all it takes is one day.{/alpha}{/cps}{/size}"
 
 
     #scene dawns on an overview of altissia
     #slow fade in
     scene bg altissian_skyline
-    with mediumfade
+    with fastfade
+
+
+    narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}Altissia, on the day of the Covenant.{/outlinecolor}{/alpha}{nw}" with Dissolve(0.5)
 
     $ quick_menu = True
 
@@ -79,7 +82,7 @@ label start:
 
     scene black
 
-    topcentre_narrator "So it really doesn't help that today, of all days, you are late to work."
+    centered "So it really doesn't help that today, of all days, you are late to work."
 
     jump mc_room
 
@@ -103,7 +106,7 @@ label mc_room:
 label find_keys:
 
     # this will teach you the 'find things' mechanic
-    call screen infobubble(title="{b}Locate the keys{/b}", content="Move your mouse around the room to find the keys, and click to pick them up.")
+    call screen infobubble(title="Locate the keys", content="Move your mouse around the room to find the keys, and click to pick them up.")
 
     hide screen infobubble
     hide screen keys_inactive
