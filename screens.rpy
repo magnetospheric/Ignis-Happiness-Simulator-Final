@@ -129,7 +129,7 @@ style window:
     ysize gui.textbox_height
 
     #background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
-    background Image("ui/dialog_bg01.png", xalign=0.5, yalign=1.0)
+    background Image("ui/transparent.png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -152,6 +152,7 @@ style say_dialogue:
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
+
 
 
 ## Input screen ################################################################

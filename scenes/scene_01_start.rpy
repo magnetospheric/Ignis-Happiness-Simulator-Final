@@ -42,38 +42,46 @@ label start:
     $ ravus_name = "White-haired man"
     $ ardyn_name = "Sinister man"
 
-    $ happiness = 2
+    $ happiness = 1
     $ show_happiness = False
 
     #jump first_conversation
 
     #black background, maybe some wisping smoke
     scene black
-    "What does loyalty mean to you?"
 
-    "Who do you most want to protect?"
 
-    "Sometimes, one day can change everything."
+    top_narrator "{outlinecolor=#ffffff33}{size=20}{cps=15}{alpha=0.8}What does  {/alpha}{/cps}{/size}{alpha=1.0}{size=24}{cps=10}loyalty{/cps}{/size}{/alpha}{size=20}{cps=15}{alpha=0.8}  mean to you?{/alpha}{/cps}{/size}{/outlinecolor}"
+
+    topcentre_narrator "{outlinecolor=#ffffff33}{size=20}{cps=15}{alpha=0.8}Who do you most want to protect?{/alpha}{/cps}{/size}{/outlinecolor}"
+
+    centre_narrator "{outlinecolor=#ffffff33}{size=20}{cps=15}{alpha=0.8}It's not an easy question. The answer can  {/alpha}{/cps}{/size}{alpha=1.0}{size=24}{cps=10}change.{/alpha}  {size=20}{cps=15}{alpha=0.8}And you may surprise yourself.{/alpha}{/cps}{/size}{/outlinecolor}"
+
+    centrebottomright_narrator "{outlinecolor=#ffffff33}{size=20}{cps=15}{alpha=0.8}Sometimes, {/alpha}{/cps}{/size}{size=24}{cps=10}{alpha=1.0}all it takes is one day.{/alpha}{/cps}{/size}{/outlinecolor}"
+
 
     #scene dawns on an overview of altissia
     #slow fade in
     scene bg altissian_skyline
     with mediumfade
 
-    "Altissia, on the day of the Covenant."
+    $ quick_menu = True
 
-    "The sky is a pale pastel glow, but despite this, the atmosphere is tense. You can feel it around you, thick as syrup."
+    narrator1 "Altissia, on the day of the Covenant."
 
-    "Today is the day that the Oracle, Lady Lunafreya, summons a goddess."
-    "Leviathan. The stuff of legends."
-    "You remember the stories. The prayers. You never thought you would see this in the flesh."
+    narrator1 "The sky is a pale pastel glow, but despite this, the atmosphere is tense. You can feel it around you, thick as syrup."
 
-    "An important day, indeed."
+    narrator1 "Today is the day that the Oracle, Lady Lunafreya, summons a goddess."
+    narrator1 "Leviathan. The stuff of legends."
+    narrator1 "You remember the stories. The prayers. You never thought you would see this in the flesh."
 
-    "So it really doesn't help that today, of all days, you are late to work."
+    narrator1 "An important day, indeed."
+
+    scene black
+
+    topcentre_narrator "So it really doesn't help that today, of all days, you are late to work."
 
     jump mc_room
-
 
 label mc_room:
 
@@ -83,7 +91,7 @@ label mc_room:
 
     # show screen infobubble(title="Locate the keys")
 
-    you "Ah, where did I put my keys?"
+    you "Ah, where did I put my keys?" with vpunch
 
     # main room view
     # would be cool to have a shaking effect here
@@ -95,7 +103,7 @@ label mc_room:
 label find_keys:
 
     # this will teach you the 'find things' mechanic
-    call screen infobubble(title="Locate the keys", content="Move your mouse around the room to find the keys, and click to pick them up.")
+    call screen infobubble(title="{b}Locate the keys{/b}", content="Move your mouse around the room to find the keys, and click to pick them up.")
 
     hide screen infobubble
     hide screen keys_inactive
