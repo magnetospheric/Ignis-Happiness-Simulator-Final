@@ -3,14 +3,17 @@ screen keys():
         imagebutton:
             idle "images/items/keys-default.png"
             hover "images/items/keys-hover.png"
-            xpos 85 ypos 265
+            xpos 92 ypos 327
             action Jump("found")
 
-
-screen blocking_button():
+screen keys_inactive():
     vbox:
         imagebutton:
             idle "images/items/keys-default.png"
-            xpos 85 ypos 265
-            xsize 1280
-            ysize 720
+            xpos 92 ypos 327
+
+screen keys_large():
+    vbox xalign 0.5 yalign 0.2:
+        imagebutton:
+            idle "images/items/keys-large.png"
+            xalign 1.0

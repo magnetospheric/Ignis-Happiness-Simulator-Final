@@ -16,7 +16,11 @@ label found:
 
     hide screen keys
 
+    show screen keys_large
+
     you "Ah!"
+
+    hide screen keys_large
 
     you "Found 'em!"
 
