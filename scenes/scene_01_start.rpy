@@ -86,6 +86,8 @@ label start:
 
     jump mc_room
 
+
+
 label mc_room:
 
     scene bg mc_room
@@ -102,6 +104,8 @@ label mc_room:
     you "Y'know, it would be {i}really{/i} useful if I could just ... find them ..."
 
     jump find_keys
+
+
 
 label find_keys:
 

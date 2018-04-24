@@ -164,19 +164,23 @@ style say_dialogue:
 ##
 ## http://www.renpy.org/doc/html/screen_special.html#input
 
+
+## custom modified input screen ##
 screen input(prompt):
-    style_prefix "input"
+    #style_prefix "input"
 
     window:
+        xpadding 30
+        ypadding 30
+        xalign 0.5
+        yalign 0.5
+        xsize 600
+        background Image("ui/quit_box.png", xalign=0.5, yalign=0.5)
+
 
         vbox:
-            xalign gui.dialogue_text_xalign
-            xpos gui.dialogue_xpos
-            xsize gui.dialogue_width
-            ypos gui.dialogue_ypos
-
-            text prompt style "input_prompt"
-            input id "input"
+            text prompt style "input_title"
+            input id "input" style "input_text"
 
 style input_prompt is default
 
@@ -185,9 +189,22 @@ style input_prompt:
     properties gui.text_properties("input_prompt")
 
 style input:
-    xalign gui.dialogue_text_xalign
-    xmaximum gui.dialogue_width
+    xmaximum 10
 
+style input_text is text:
+    hover_color "#e0cfa5"
+    outlines [ (0, "#e0b753", 1, 1), (1, "#8f98a8", 0, 0) ]
+    color "#e0b753"
+    size 26
+    xsize 400
+    ysize 1
+    yalign 1.0
+    line_leading 10
+
+style input_title is text:
+    outlines [ (0, "#fefefe", 1, 1), (1, "#8f98a8", 0, 0) ]
+    color "#fefefe"
+    size 26
 
 ## Choice screen ###############################################################
 ##

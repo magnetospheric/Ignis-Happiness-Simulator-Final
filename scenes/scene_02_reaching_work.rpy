@@ -24,13 +24,19 @@ label found:
 
     you "Found 'em!"
 
+    narrator1 "It doesn't take you long to lock up. Your apartment is nice enough, but it's small, and solitary."
+    narrator1 "Not that you like to dwell on that."
+
     jump to_work
 
 label to_work:
     #shows the first background
-    scene bg mc_home
+    scene bg mc_home with Dissolve(0.5)
+
+    narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}You race through{/outlinecolor}{/alpha}{nw}" with Dissolve(0.5)
 
     narrator1 "You race through the streets, shrugging on your coat."
+    narrator1 "Your workplace is a long way from here, but if you're lucky, you can grab a gondola before the tourists do."
     narrator1 "You've been working as a Municipal Guard for nigh on two months now. A good job with decent pay, and as far as jobs go, you enjoy it."
 
     scene bg altissian_skyline
@@ -41,7 +47,7 @@ label to_work:
 
     scene bg yureilplaza
 
-    narrator1 "Today, you've been stationed near Yureil Plaza. When you arrive at the gates, the guard on duty greets you with a salute."
+    narrator1 "Today, you've been stationed near Yureil Plaza. When you arrive at the gates, the guard on duty greets you."
 
     show altissianguard neutral at left
     with dissolve
@@ -54,11 +60,15 @@ label to_work:
 
 label setname:
 
+    # show screen input_screen(title="What is your name?")
+
+
     python:
         your_name = renpy.input("Type in your name.")
         your_name = your_name.strip()
         if not your_name:
             your_name = "Ilia"
+    # hide screen input_screen
     "[your_name], is that right?"
 
     jump confirmname
