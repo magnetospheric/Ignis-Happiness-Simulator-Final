@@ -4,15 +4,19 @@
 #       Asset definitions
 #
 #       Contains:
+#               narrator definitions
 #               character definitions
+#               ctc button
 #               character images
 #               background images
 #               sprites
+#               music?
 #
 # ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 ### Narrator definitions ###
-define centered = Character(None,
+define centered = Character(
+                            None,
                             what_size=20,
                             what_outlines=[(2, "#ffffff33", 0, 0)],
                             what_xalign=0.5,
@@ -21,30 +25,40 @@ define centered = Character(None,
                             window_yminimum=0,
                             window_xfill=False,
                             window_xalign=0.5,
-                            window_yalign=0.32)
-define top_narrator = Character('',
-                            ctc="ctc_blink", ctc_position="fixed",
+                            window_yalign=0.32
+                        )
+define top_narrator = Character(
+                            '',
+                            ctc="ctc_blink",
+                            ctc_position="fixed",
                             window_background="images/ui/transparent.png",
                             what_outlines=[(2, "#ffffff33", 0, 0)],
                             callback=clicky_typewriter,
                             window_yalign=0.1,
                             window_xalign=0,
-                            window_xsize=800)
-define topcentre_narrator = Character('', ctc="ctc_blink", ctc_position="fixed",
+                            window_xsize=800
+                        )
+define topcentre_narrator = Character(
+                            '',
+                            ctc="ctc_blink",
+                            ctc_position="fixed",
                             window_background="images/ui/transparent.png",
                             what_outlines=[(2, "#ffffff33", 0, 0)],
                             callback=clicky_typewriter,
                             window_yalign=0.3,
                             window_xalign=0.2,
-                            window_xsize=800)
-define centre_narrator = Character('',
+                            window_xsize=800
+                        )
+define centre_narrator = Character(
+                            '',
                             ctc="ctc_blink",
                             ctc_position="fixed",
                             window_background="images/ui/transparent.png",
                             callback=clicky_typewriter,
                             window_yalign=0.5,
                             window_xalign=0.45,
-                            window_xsize=900)
+                            window_xsize=900
+                        )
 define centrebottomright_narrator = Character('',
                             ctc="ctc_blink",
                             ctc_position="fixed",
@@ -52,27 +66,68 @@ define centrebottomright_narrator = Character('',
                             callback=clicky_typewriter,
                             window_yalign=0.85,
                             window_xalign=0.7,
-                            window_xsize=500)
-define narrator1 = Character('', ctc="ctc_blink", ctc_position="fixed", callback=clicky_typewriter, window_background="images/ui/dialog_bg01.png")
-define narrator1_nosound = Character('', ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+                            window_xsize=500
+                        )
+define narrator1 = Character(
+                            '',
+                            ctc="ctc_blink",
+                            ctc_position="fixed",
+                            callback=clicky_typewriter,
+                            window_background="images/ui/dialog_bg01.png"
+                        )
+define narrator1_nosound = Character(
+                            '',
+                            ctc="ctc_blink",
+                            ctc_position="fixed",
+                            window_background="images/ui/dialog_bg01.png"
+                        )
 
 ### Character definitions ###
-define ignis = DynamicCharacter('ignis_name', who_color="#eae9ff", window_background="images/ui/dialog_bg01.png",
-                                who_outlines=[ (4, "#ffffff26", 0, 0), (3, "#282645", 0, 0) ],
-                                # who_outlines=[ (8, "#0000000D", 0, 0), (4, "#ffffffbf", 0, 0), (2, "#282645", 0, 0)  ],
-                                ctc="ctc_blink", ctc_position="fixed")
-define you = DynamicCharacter('your_name', who_color="#ffeff6", window_background="images/ui/dialog_bg01.png",
-                                who_outlines=[ (4, "#ffffff26", 0, 0), (3, "#3b2831", 0, 0) ],
-                                # who_outlines=[ (8, "#0000000D", 0, 0), (4, "#ffffffcc", 0, 0), (2, "#3b2831", 0, 0)  ],
-                                ctc="ctc_blink", ctc_position="fixed")
+define ignis = DynamicCharacter(
+                            'ignis_name',
+                            who_color="#eae9ff",
+                            window_background="images/ui/dialog_bg01.png",
+                            who_outlines=[ (4, "#ffffff26", 0, 0), (3, "#282645", 0, 0) ],
+                            ctc="ctc_blink",
+                            ctc_position="fixed",
+                            callback=clicky_typewriter
+                        )
+define you = DynamicCharacter(
+                            'your_name',
+                            who_color="#ffeff6",
+                            window_background="images/ui/dialog_bg01.png",
+                            who_outlines=[ (4, "#ffffff26", 0, 0), (3, "#3b2831", 0, 0) ],
+                            ctc="ctc_blink",
+                            ctc_position="fixed",
+                            callback=clicky_typewriter
+                        )
 define ravus = DynamicCharacter('ravus_name', who_color="#aa748d", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 define ardyn = DynamicCharacter('ardyn_name', who_color="#aa748d", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
-define altissianguard = Character("Guard on Duty", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
-define captain = Character("Captain", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+
+define altissianguard = Character(
+                            "Guard on Duty",
+                            ctc="ctc_blink",
+                            ctc_position="fixed",
+                            window_background="images/ui/dialog_bg01.png",
+                            callback=clicky_typewriter
+                        )
+define captain = Character(
+                            "Captain",
+                            ctc="ctc_blink",
+                            ctc_position="fixed",
+                            window_background="images/ui/dialog_bg01.png",
+                            callback=clicky_typewriter
+                        )
+
+#MAKE SURE to use a robot sound for the typewriter noise for the trooper!
 define magitektrooper = Character("Trooper", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+
+#not sure I need these two any more?? well. maybe i do. dunno yet though. Probably nice-to-haves
 define caligo = Character("Caligo", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 define unidentified_voice = Character("Unidentified Voice", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 
+
+### CTC button definition ###
 image ctc_blink = LiveComposite(
     (65, 65),
     (1158, 640), "ctc_base",
