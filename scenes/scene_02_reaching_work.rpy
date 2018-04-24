@@ -69,7 +69,7 @@ label setname:
         if not your_name:
             your_name = "Ilia"
     # hide screen input_screen
-    "[your_name], is that right?"
+    narrator1 "[your_name], is that right?"
 
     jump confirmname
 
@@ -84,7 +84,7 @@ label confirmname:
 
 label setgender:
 
-    "Select your gender:"
+    narrator1 "Select your gender:"
     menu:
         "Male":
             $ your_gender= "male"
@@ -108,7 +108,7 @@ label setgender:
             $ you_gender_nicename = "person"
             $ you_gender_nickname = "individual"
 
-    "[your_gender], is that right?"
+    narrator1 "[your_gender], is that right?"
 
     jump confirmgender
 
@@ -127,7 +127,7 @@ label after_user_name_set:
 
     show altissianguard smile
 
-    altissianguard "All checks out fine, Guard [your_name]. Please proceed."
+    altissianguard "All checks out fine, [your_name]. Please proceed."
 
     you "Thank you."
 

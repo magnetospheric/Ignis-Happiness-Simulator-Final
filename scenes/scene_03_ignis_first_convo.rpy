@@ -71,7 +71,7 @@ label first_conversation:
 
     you "Understood, Captain."
 
-    narrator1 "The Captain excuses herself then, making her way down the corridor to debrief the next guard outpost."
+    narrator1 "The Captain excuses herself then, making her way down the corridor to debrief the next cadre of guards."
 
     hide captain
     with dissolve
@@ -83,16 +83,15 @@ label first_conversation:
 
     ignis "My apologies for not acknowledging you earlier. I did not wish to interrupt your superior."
 
-    ignis "I'm Ignis, by the way. Nice to meet you."
+    ignis "I'm Ignis, by the way. It's a pleasure to meet you."
 
     $ ignis_name = "Ignis"
 
     ignis "What was your name, again?"
 
-    narrator1 "You introduce yourself."
-    narrator1 "He nods as you speak your name."
+    narrator1 "You introduce yourself, and Ignis nods as you speak your name."
 
-    ignis "{color=#aa748d}[your_name]{/color}? That's a lovely name."
+    ignis "{color=#ffeff6}[your_name]{/color}? That's a lovely name."
 
     narrator1 "You smile."
 
