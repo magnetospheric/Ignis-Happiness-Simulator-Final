@@ -15,8 +15,8 @@ label lunas_speech:
 
     narrator1 "You and Ignis both make your way to the back of the plaza."
 
-    show ignis sidelong openmouth
-    ignis "The Niffs have arrived..."
+    show ignis neutral
+    with dissolve
 
     # sound effect crowd buzzing
 
@@ -38,6 +38,10 @@ label lunas_speech:
     narrator1 "You look up to see Imperial dreadnoughts approaching."
 
     narrator1 "Altissia has had so many years of peace under Niflheim's rule that you've almost forgotten the sight of these monstrosities."
+
+    show bg yureilplaza crowd dark with Dissolve(0.3)
+
+    ignis "What they bloody hell do they think they're doing?"
 
     jump power_cut
 
