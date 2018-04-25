@@ -1,6 +1,31 @@
+#define screen to notify whether happiness has increased or decreased
+#this appears in the centre of the screen - show/hide must be controlled on scene side
+screen happiness_text(title):
+    frame:
+        xpadding 30
+        ypadding 30
+        xalign 0.5
+        yalign 0.5
+        background None
+
+        vbox:
+            text title id _("title"):
+                style "happiness_style"
+
+style happiness_style is text:
+    color "#fefefe"
+    size 32
+    yalign 0.5
+    xalign 0.5
+    drop_shadow (1, 1)
+    outlines [ (2, "#040404", 0, 0), (1, "#444", 0, 0) ]
+
+
+#set overlay in python
+
 init python:
 
-    #This controls when the love-points floater appears.
+    #This controls when the floater appears.
     show_happiness=False
 
     ## ------------ Happiness Floater ----------------------
