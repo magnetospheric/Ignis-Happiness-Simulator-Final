@@ -111,7 +111,6 @@ screen say(who, what):
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
 
-
 style window is default
 style say_label is default
 style say_dialogue is default
@@ -177,7 +176,6 @@ screen input(prompt):
         xsize 600
         background Image("ui/quit_box.png", xalign=0.5, yalign=0.5)
 
-
         vbox:
             text prompt style "input_title"
             input id "input" style "input_text"
@@ -199,7 +197,6 @@ style input_text is text:
     xsize 400
     ysize 1
     yalign 1.0
-    line_leading 10
 
 style input_title is text:
     outlines [ (0, "#fefefe", 1, 1), (1, "#8f98a8", 0, 0) ]
