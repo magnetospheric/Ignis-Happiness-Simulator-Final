@@ -12,34 +12,38 @@ label first_conversation:
 
     scene bg yureilplaza
 
+    narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}You race{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
+
     narrator1 "Up the pale marble steps to the plaza entrance now. Yureil Mansion is grand and decked with flags, red and gold fabric that's dampened in the gathering rain."
     narrator1 "Usually, you think it looks overbearing, but today, it seems solemn, more like a tomb. It's not an inviting omen."
 
     #show captain left in conversation
-    scene bg yureilcorridor
+    scene bg yureilcorridor with Dissolve(0.5)
+
 
     show captain neutral at left
     with dissolve
+
+    narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}When you{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
+
+    narrator1 "When you report in, you notice the Captain of the Guard is accompanied by a stranger."
 
     #show ignis left looking to the side
     show ignis neutral at right
     with dissolve
 
-    narrator1 "When you report in, you notice the Captain of the Guard is accompanied by a stranger."
-
-
     narrator1 "He's tall, slim, and all things considered, rather attractive indeed."
     narrator1 "You approach hesitantly, not wanting to interrupt them."
 
-    you "Captain."
+    you "Captain — ah, morning, Ma'am!"
 
-    show captain neutral_openmouth
+    show captain neutral openmouth
 
     captain "Ah, [your_name]."
 
     you "Sorry I'm late, Ma'am."
 
-    show captain neutral
+    show captain smile
 
     narrator1 "The Captain waves your apology away."
 
@@ -47,27 +51,31 @@ label first_conversation:
 
     you "Since I was called in to Yureil Plaza ... am I to be guarding her during her speech today?"
 
-    captain "No - we need as many guards as possible on evac duty."
+    captain "No — we need as many guards as possible on evac duty."
 
     you "Evac?"
 
     narrator1 "Here, the newcomer cuts in. His accent is sharp and learned."
 
-    #show ignis openmouth calm
+    show ignis neutral openmouth
 
     ignis "Leviathan is a fickle goddess, powerful beyond measure. And with the Empire hanging by the sidelines, it is likely that we may see some destruction of the city."
 
-    #show ignis closedmouth neutral again
+    show ignis neutral
 
     narrator1 "You've heard of the floods of yore. You nod."
 
-    show captain neutral_openmouth
+    show captain neutral openmouth
 
     captain "You will be stationed at the back of the plaza during her speech, but once the speech is over, we'll need you pointing the way to Finangia District."
 
     show captain neutral
 
     narrator1 "The furthest district from the Cathedral. It would be easy to get the citizens out of harm's way from there."
+
+    narrator1 "Not that anything {i}that{/i} bad was going to happen, surely. You know you shouldn't read too much into this, but the mere presence of this Lucian official has you curious."
+
+    narrator1 "But you settle for your duty, and — is that an approving smile the handsome newcomer is shooting your way?"
 
     you "Understood, Captain."
 
@@ -76,16 +84,24 @@ label first_conversation:
     hide captain
     with dissolve
 
+    show ignis neutral at center
+    with move
+
     narrator1 "You're left with the stranger, who watches you with interest. No part of his gaze is uncalculated. You wonder if he's a diplomat, or perhaps a spy."
     narrator1 "It's hardly something you're going to say aloud to him, though. You settle for simple."
 
     you "Hi."
 
+    show ignis neutral openmouth
     ignis "My apologies for not acknowledging you earlier. I did not wish to interrupt your superior."
-
     ignis "I'm Ignis, by the way. It's a pleasure to meet you."
+    show ignis neutral
 
     $ ignis_name = "Ignis"
+
+    narrator1 "Ignis. A name that means {i}of the fire{/i}. You think it sounds beautiful. You want to complement him somehow, but he interrupts your train of thought."
+
+    show ignis neutral openmouth
 
     ignis "What was your name, again?"
 
@@ -93,7 +109,13 @@ label first_conversation:
 
     ignis "{color=#ffeff6}[your_name]{/color}? That's a lovely name."
 
-    narrator1 "You smile."
+    show ignis neutral
+
+    narrator1 "You smile. You're not really sure it's appropriate to show too much emotion, especially not before such an important event as this, but you want to show your appreciation somehow."
+
+    narrator1 "It gives you ... something of a thrill when Ignis smiles back."
+
+    show ignis smile
 
     ignis "Well, it seems we shall both be on evacuation duty."
 
@@ -103,16 +125,22 @@ label first_conversation:
 
     ignis "Indeed."
 
-    ignis "While I am a Lucian envoy, as my nation is responsible for invoking the Covenant, I must do all I can to aid Altissia for its efforts."
+    ignis "While I am a Lucian envoy, as my nation is responsible for invoking the Covenant, I must do all I can to aid Altissia for its efforts. You must be well aware of the danger this poses to your nation."
 
-    narrator1 "You feel like there's more to it than that, but you don't decide to bring it up."
+    show ignis neutral
+
+    narrator1 "You feel like there's more to it than that, but you don't decide to bring it up at this point."
+
+    ignis "So, are you prepared, [your_name]?"
 
     #here you should get the first choice to make to get his happiness up or down
     menu:
         "Express a desire to protect the Oracle":
             you "I shall do my best to protect the Oracle."
-        "Tell him you'll do your duty as best you can":
+            show ignis smile
+        "Tell him you'll protect the citizens as best you can":
             you "I shall do my best to ensure the citizens make it to safety."
+            show ignis smile
         "Express doubt about your own capabilities":
             you "I'll see what I can do."
 
@@ -122,99 +150,44 @@ label first_conversation:
 
     $ happiness += 2
 
-    show expression Text("Happiness increased!",
-    size=35,
-    yalign=0.5,
-    xalign=0.5,
-    drop_shadow=(1, 1),
-    color="#fff",
-    outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
-    ) as text
+    show screen happiness_text(title="Happiness increased!")
     with dissolve
 
-    pause 0.5
+    pause 0.3
 
-    hide text
+    hide screen happiness_text
     with dissolve
 
     ignis "Glad to hear it."
 
-    ignis "Tune in to frequency 4400 - "
+    show ignis neutral openmouth
 
-    altissianguard "Sir, it's begun"
+    ignis "I'll be tuning in to the security frequency should we get separated."
 
-    scene bg yureilcorridordark
+    # the sound of crowds clapping outside draws your attention
+    show ignis neutral
 
-    ignis "All right. To your stations, everyone."
+    narrator1 "Outside, the sound of the crowd is rising. You can hear clapping. And, from somwhere high up in the tower, the chime of a bell."
 
-    captain "Good luck out there, [your_name]."
+    show ignis sidelong openmouth
+    with dissolve
 
-    hide captain
+    ignis "Sounds like it's begun."
+
+    narrator1 "Your transceiver crackles into life."
+
+    show ignis sidelong
+
+    captain "{i}All right. To your stations, everyone!{/i}" with hpunch
+
+    captain "{i}You know the drill. Let's give this our all!{/i}"
+
+    show ignis neutral openmouth
+    with dissolve
+
+    ignis "Come on, [your_name]. We best not disappoint."
+
+    hide ignis
     with dissolve
 
     jump lunas_speech
-
-    return
-
-# ignis shows you where to go on the map, then leaves after this
-
-# if you go to help the citizens instead of rushing to his aid, he'll be happier with you
-label en_route_to_altar:
-
-    # captain gets you to search the room for the fuse switch before you head out.
-    # this will teach you the 'flashlight' mechanic
-
-    narrator1 "The lights flicker off, casting the room into darkness."
-    # have a sort of flash effect as the room goes dark, if possible.
-    # Could be achieved by a sort of inverted colouring of the current room bg
-
-    you "A power cut?"
-
-    captain "There's a torch on the table next to you. See if you can't find the fuse switch."
-
-    # info box: TORCH has been equipped
-
-    # enter flashlight section
-
-    captain "Take the torch with you, [your_name]. You might need it."
-
-
-    narrator1 "Ignis has forgotten to turn his mic off, and you can hear everything that's happening."
-
-    narrator1 "It's mostly muffled shouts and cries, accompanied by Ignis's breathing. He's clearly frantic, but doing an admirable job of stilling his own nerves."
-
-    narrator1 "Then, an angry voice."
-
-    unidentified_voice "The King's lapdog, eh?"
-
-    narrator1 "And a sharp cry of pain. Ignis is hurt."
-
-    narrator1 "You check your map. You're only a street away from the citizens you've been tasked with helping."
-
-    menu:
-        "Continue onward to help the citizens":
-            "You can't abandon your duty. You know this as clear as day."
-            # highlight current route on map
-            "The citizens aren't far away. You'll help them first, then come to Ignis's aid."
-        "Divert your route to help Ignis":
-            "You simply can't leave him in pain like that. What if the Niffs kill him, after all?"
-            #highlight new route on the map
-            "If you take this route, you can come to his aid and still be close enough to double back for the citizens afterward."
-
-label searchtheroom:
-
-    ignis "I've run into a bit of trouble. Would you care to help me?"
-
-    ignis "Look around this room and see if there's anything useful."
-
-    # $ mouse_visible = False
-
-    call screen flashlight
-
-    # $ mouse_visible = True
-
-    hide ignis neutral
-    with dissolve
-
-    #return to title screen
-    return

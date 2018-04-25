@@ -31,21 +31,25 @@ label found:
 
 label to_work:
     #shows the first background
-    scene bg mc_home with Dissolve(0.5)
+    scene bg mc_home with Dissolve(0.3)
 
-    narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}You race through{/outlinecolor}{/alpha}{nw}" with Dissolve(0.5)
+    narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}You race{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
     narrator1 "You race through the streets, shrugging on your coat."
     narrator1 "Your workplace is a long way from here, but if you're lucky, you can grab a gondola before the tourists do."
     narrator1 "You've been working as a Municipal Guard for nigh on two months now. A good job with decent pay, and as far as jobs go, you enjoy it."
 
-    scene bg altissian_skyline
+    scene bg altissian_skyline with Dissolve(0.3)
+
+    narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}The air{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
     narrator1 "The air is colder than the soft skies would suggest. Although there's hardly a breeze to be felt, the cold cuts right through your coat."
 
     narrator1 "There's a low hum in the streets. People are up and about, but more hushed than normal. They're feeling the anticipation as keenly as you are."
 
-    scene bg yureilplaza
+    scene bg yureilplaza with Dissolve(0.3)
+
+    narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}Today, you've{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
     narrator1 "Today, you've been stationed near Yureil Plaza. When you arrive at the gates, the guard on duty greets you."
 
@@ -60,15 +64,13 @@ label to_work:
 
 label setname:
 
-    # show screen input_screen(title="What is your name?")
-
-
     python:
         your_name = renpy.input("Type in your name.")
         your_name = your_name.strip()
         if not your_name:
             your_name = "Ilia"
-    # hide screen input_screen
+        your_name = your_name.title()
+
     narrator1 "[your_name], is that right?"
 
     jump confirmname
@@ -108,6 +110,7 @@ label setgender:
             $ you_gender_nicename = "person"
             $ you_gender_nickname = "individual"
 
+    $ your_gender = your_gender.capitalize()
     narrator1 "[your_gender], is that right?"
 
     jump confirmgender
