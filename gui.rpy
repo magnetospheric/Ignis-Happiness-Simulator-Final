@@ -23,7 +23,7 @@ init python:
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#000000'
+define gui.accent_color = '#ffffff'
 
 ## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = '#bbbbbb'
@@ -49,9 +49,8 @@ define gui.hover_muted_color = '#999999'
 
 ## The colors used for dialogue and menu choice text.
 define gui.text_color = '#fafafa'
-define gui.text_outlines = [ (2, "#040404", 0, 0), (1, "#999999", 0, 0)  ]
+define gui.text_outlines = [ (2, "#040404", 0, 0), (1, "#444", 0, 0)  ]
 define gui.interface_text_color = '#ffffff'
-
 
 ## Fonts and Font Sizes ########################################################
 
@@ -62,7 +61,7 @@ define gui.text_bold_font = "fonts/AvantGarde-Demi.ttf"
 ## The font used for character names.
 define gui.name_text_font = "fonts/Birch.ttf"
 define gui.name_text_color = "#ffffff"
-define gui.name_text_outlines = [ (3, "#ffffff7f", 0, 0), (2, "#321226", 0, 0)  ]
+define gui.name_text_outlines = [ (4, "#ffffff26", 0, 0), (3, "#321226", 0, 0) ]
 
 ## The font used for out-of-game text.
 define gui.interface_text_font = "DejaVuSans.ttf"
