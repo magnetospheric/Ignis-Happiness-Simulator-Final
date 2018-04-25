@@ -1,12 +1,22 @@
-# screen infobubble(who, what):
-#     window id "window":
-#         vbox:
-#             spacing 10
-#             xpos 150
-#             ypos 200
-#
-#             text who id "who"
-#             text what id "what"
+# info bubble that appears in the centre of the screen to provide help etc
+screen infobubble(title, content):
+    frame:
+        xpadding 30
+        ypadding 30
+        xalign 0.5
+        yalign 0.5
+        xsize 600
+        background Image("ui/quit_box.png", xalign=0.5, yalign=0.5)
+
+        vbox:
+            text title id _("title"):
+                style "info_bubble_title"
+            null height 10
+            text content id "content /n/n/n"
+            textbutton _("Got it"):
+                style "centered_button"
+                text_style "info_bubble_text"
+                action NullAction
 
 style centered_button:
     xalign 0.5
@@ -23,22 +33,17 @@ style info_bubble_title is text:
     color "#fefefe"
     size 28
 
-screen infobubble(title, content):
+# input screen for text inputs, similar to infobubble
+screen input_screen(title):
     frame:
         xpadding 30
         ypadding 30
         xalign 0.5
         yalign 0.5
         xsize 600
-        #background should be different
         background Image("ui/quit_box.png", xalign=0.5, yalign=0.5)
 
         vbox:
+
             text title id _("title"):
                 style "info_bubble_title"
-            null height 10
-            text content id "content /n/n/n"
-            textbutton _("Got it"):
-                style "centered_button"
-                text_style "info_bubble_text"
-                action NullAction
