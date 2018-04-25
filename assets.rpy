@@ -82,6 +82,7 @@ define narrator1_nosound = Character(
                             window_background="images/ui/dialog_bg01.png"
                         )
 
+
 ### Character definitions ###
 define ignis = DynamicCharacter(
                             'ignis_name',
@@ -118,7 +119,7 @@ define captain = Character(
                             window_background="images/ui/dialog_bg01.png",
                             callback=clicky_typewriter
                         )
-
+                        
 #MAKE SURE to use a robot sound for the typewriter noise for the trooper!
 define magitektrooper = Character("Trooper", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 
@@ -149,14 +150,18 @@ image glow:
 
 #### Character Images ####
 image ignis neutral  = "images/characters/ignis/ignis-neutral.png"
+image ignis neutral openmouth  = "images/characters/ignis/ignis-neutral-openmouth.png"
+image ignis smile  = "images/characters/ignis/ignis-smile.png"
+image ignis sidelong  = "images/characters/ignis/ignis-sidelong.png"
+image ignis sidelong openmouth  = "images/characters/ignis/ignis-sidelong-openmouth.png"
 
 image altissianguard neutral  = "images/characters/altissianguard-neutral.png"
 image altissianguard smile  = "images/characters/altissianguard-smile.png"
 
 image captain neutral = "images/characters/captain-neutral.png"
 image captain smile = "images/characters/captain-smile.png"
-image captain neutral_openmouth = "images/characters/captain-neutral-openmouth.png"
-image captain looking_around = "images/characters/captain-looking-around.png"
+image captain neutral openmouth = "images/characters/captain-neutral-openmouth.png"
+image captain looking around = "images/characters/captain-looking-around.png"
 
 #ignis raised eyes
 #ignis skeptical
