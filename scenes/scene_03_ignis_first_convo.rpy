@@ -20,7 +20,6 @@ label first_conversation:
     #show captain left in conversation
     scene bg yureilcorridor with Dissolve(0.5)
 
-
     show captain neutral at left
     with dissolve
 
@@ -55,7 +54,7 @@ label first_conversation:
 
     you "Evac?"
 
-    narrator1 "Here, the newcomer cuts in. His accent is sharp and learned."
+    narrator1 "Here, the newcomer cuts in. His accent is sharp and learned, and you get the impression he's a foreign envoy of some sort."
 
     show ignis neutral openmouth
 

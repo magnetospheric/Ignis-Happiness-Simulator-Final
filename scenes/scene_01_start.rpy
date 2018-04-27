@@ -8,30 +8,38 @@
 
 
 # use this start label to test things
-label startn:
+label start:
 
     #starting variables
 
     $ ignis_name = "Stranger"
     $ your_name = "You"
 
-    #shows the first background
-    scene bg altissia_alleyway
+    $ show_happiness = True
 
-    #shows the first character
-    show ignis neutral
-    with dissolve
+    $ happiness += 2
 
-    "Altissia, on the day of the Covenant. Everything is going to hell."
+    narrator1 "small test text before transition"
+    
+    jump lunas_speech
 
-    ignis "I've run into a bit of trouble. Would you care to help me?"
-
-    ignis "Look around this room and see if there's anything useful."
-
-    call screen flashlight
+    # #shows the first background
+    # scene bg altissia_alleyway
+    #
+    # #shows the first character
+    # show ignis neutral
+    # with dissolve
+    #
+    # "Altissia, on the day of the Covenant. Everything is going to hell."
+    #
+    # ignis "I've run into a bit of trouble. Would you care to help me?"
+    #
+    # ignis "Look around this room and see if there's anything useful."
+    #
+    # call screen flashlight
 
 # The game starts here.
-label start:
+label startn:
 
     # start scene needs to introduce the hunting-around mechanic for later
     # maybe protag is looking for their keys or something that'll be useful later
