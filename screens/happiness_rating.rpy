@@ -54,6 +54,14 @@ init python:
                 color = "#f7f3f1",
                 size=26)
 
+            ui.text ("[happiness]",
+                font = "fonts/Birch.ttf",
+                outlines = [ (2, "#ffffff26", 0, 0), (1, "#321226", 0, 0)  ],
+                xalign = 1.0,
+                ypos = 10,
+                color = "#f7f3f1",
+                size=26)
+
             ui.close() #closes vbox
 
 

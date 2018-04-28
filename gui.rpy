@@ -69,7 +69,7 @@ define gui.interface_text_font = "DejaVuSans.ttf"
 ## The size of normal dialogue text.
 define gui.text_size = 20
 ## The size of normal dialogue text.
-define gui.text_line_spacing = 16
+define gui.text_line_spacing = 17
 
 ## The size of character names.
 define gui.name_text_size = 44
