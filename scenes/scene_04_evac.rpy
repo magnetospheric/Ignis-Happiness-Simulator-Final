@@ -275,6 +275,7 @@ label niffs_arrive_on_the_scene:
     narrator1 "The few people left in the plaza, and those still being transported away on the boats, begin to scream." with vpunch
 
     show ignis sidelong openmouth at left
+    with dissolve
 
     ignis "What they bloody hell do they think they're doing?"
 
@@ -285,13 +286,17 @@ label niffs_arrive_on_the_scene:
 
     captain "{i}Everyone in the South sector of the plaza, report back to the palace immediately once the citizens have boarded the boats! I repeat: Report back to the palace immediately once the citizens have boarded.{/i}"
 
-    # new image of ignis sidelong but LOOKING AT YOU
-    
+    show ignis sidelong direct
+    with dissolve
+
     narrator1 "The crackling cuts off, and you and Ignis share a worried glance before ushering the last few stragglers onto the boats. You tell the last citizens that everything will be okay, then Ignis claps you briefly on the shoulder and together you race back to the palace."
 
     you "what's going on?"
 
     narrator1 "The two of you are running as fast as humanly possible, and Ignis's reply comes in sharp bursts."
+
+    show ignis sidelong direct openmouth
+    with dissolve
 
     ignis "The empire ... seeks to disrupt ... the ceremony."
 

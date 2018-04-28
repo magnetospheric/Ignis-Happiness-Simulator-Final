@@ -119,7 +119,7 @@ define captain = Character(
                             window_background="images/ui/dialog_bg01.png",
                             callback=clicky_typewriter
                         )
-                        
+
 #MAKE SURE to use a robot sound for the typewriter noise for the trooper!
 define magitektrooper = Character("Trooper", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 
@@ -154,6 +154,8 @@ image ignis neutral openmouth  = "images/characters/ignis/ignis-neutral-openmout
 image ignis smile  = "images/characters/ignis/ignis-smile.png"
 image ignis sidelong  = "images/characters/ignis/ignis-sidelong.png"
 image ignis sidelong openmouth  = "images/characters/ignis/ignis-sidelong-openmouth.png"
+image ignis sidelong direct  = "images/characters/ignis/ignis-sidelong-direct.png"
+image ignis sidelong direct openmouth  = "images/characters/ignis/ignis-sidelong-direct-openmouth.png"
 
 image altissianguard neutral  = "images/characters/altissianguard-neutral.png"
 image altissianguard smile  = "images/characters/altissianguard-smile.png"
