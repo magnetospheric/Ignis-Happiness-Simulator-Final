@@ -26,15 +26,13 @@ label lunas_speech:
 
     narrator1 "You glance at Ignis. He seems calm enough, although you recognise the offhand gaze with which he scans the audience."
 
-    narrator1 "He's checking for discrepancies and dissent as much as you are. His keen eyes rove the crowd, and he cuts quite the striking figure."
+    narrator1 "He's checking for discrepancies and dissent as much as you are. His keen eyes rove the crowd, before settling on the multi-spired, domed towers of the palace."
 
     ignis "It's a beautiful piece of architecture. Rather strategically-designed, too."
 
     you "How so?"
 
-    ignis "The plaza itself is long and narrow - and it bottlenecks quite naturally before these points they've got us guarding. It's exceedingly good for crowd control."
-
-    narrator1 "You had never thought of it that way before. But he's right."
+    ignis "The domed structures are a good shape to protect against assault or natural disaster. And the plaza itself is long and narrow - see where it bottlenecks quite naturally before these points they've got us guarding? It's exceedingly good for crowd control."
 
     you "Should make our job much easier, then."
 
@@ -56,7 +54,7 @@ label lunas_speech:
 
     ignis "Indeed he is."
 
-    narrator1 "Ignis is watching the young Prince carefully, like a protective older brother would. You're itching to know more about why the Prince is here."
+    narrator1 "Ignis is watching the young Prince carefully, like a protective older brother would. You're itching to know more, because it feels like there's a part of this plan you're missing."
 
     menu:
         "Press Ignis about why the Prince is here":
@@ -82,12 +80,15 @@ label ask_about_prince:
 
     ignis "It has been, thanks to our friends from Niflheim."
 
-    narrator1 "His tone is as stiff as his posture has suddenly become, and you get the sense you have put him on a back foot here. The way he talks, there's no love lost for the Empire."
+    narrator1 "His tone is as stiff as his posture has suddenly become, and you get the sense you have put him on a back foot here. The way he talks, there's no love lost for the Empire. But more than that — he seems uncomfortable discussing this in such a public space."
 
     menu:
         "Press Ignis once again about Prince Noctis":
+
             jump ask_again_about_prince
+
         "Backtrack":
+
             you "Sorry. I shouldn't really be asking at a time like this."
 
             ignis "It's quite all right. Curiosity is natural, although I would prefer you kept your focus on the task at hand."
@@ -110,7 +111,7 @@ label ask_again_about_prince:
     hide screen happiness_text
     with dissolve
 
-    ignis "Please, [your_name], some decorum. Lest our aforementioned friends take a shining to our conversation."
+    ignis "Please, [your_name], some decorum. Lest our aforementioned 'friends' take a shining to our conversation."
 
     jump niffs_arrive_on_the_scene
 
@@ -118,13 +119,15 @@ label ask_again_about_prince:
 
 label keep_quiet_about_prince:
 
-    narrator1 "You decide not to press him for details. It's not really the time nor the place, out in the open like this."
+    narrator1 "You decide not to press him for details. It's not really the time nor the place, out in the open like this where anyone could be listening."
 
-    narrator1 "You're just a guard, after all. You only get told things that are mission-critical."
+    narrator1 "Is it really necessary for you to know, anyway? You're just a guard, after all. You only get told things that are mission-critical."
 
-    narrator1 "Ignis seems to appreciate your discretion."
+    narrator1 "So you nod, and return to watching the crowd."
 
     show ignis smile
+
+    narrator1 "Ignis seems to appreciate your discretion."
 
     pause 1.0
 
@@ -135,6 +138,8 @@ label keep_quiet_about_prince:
     pause 0.3
     hide screen happiness_text
     with dissolve
+
+    ignis ""
 
     jump niffs_arrive_on_the_scene
 
@@ -142,11 +147,27 @@ label keep_quiet_about_prince:
 
 label change_subject_from_prince:
 
-    narrator1 "While you desperately want to know, you are well aware that you only get told things that are mission-critical."
+    narrator1 "While you desperately want to know, you are well aware that you only get told things that are mission-critical for a reason."
+
     narrator1 "And furthermore, you never know who might be listening in, in this busy place. So you change the subject, as casually as you can."
 
-    you "" #architecture q
+    you "You know, the palace is actually a lot newer than the rest of Altissia."
 
+    ignis "Oh?"
+
+    narrator1 "He seems to appreciate the distraction."
+
+    you "Yeah. I mean, the Altar of the Tidemother is still older than most things here, but there used to be a different shrine around it. It got destroyed a couple of hundred years ago, during a flood."
+
+    ignis "Did it now? Mm, I don't suppose it was built from the same material as the altar, then?"
+
+    narrator1 "You shake your head."
+
+    you "Just regular limestone. Not a great idea."
+
+    ignis "Indeed."
+
+    you "But yeah — a lot of people don't know that, about the palace. People have terrible memories when it comes to floods, though. We forget our histories too quickly."
 
     show ignis smile
 
@@ -156,43 +177,139 @@ label change_subject_from_prince:
 
     show screen happiness_text(title="Happiness increased!")
     with dissolve
-
     pause 0.3
-
     hide screen happiness_text
     with dissolve
+
+    ignis "True enough."
+
+    ignis "Well, I certainly didn't expect to get a personal tour guide on this assignment. But — you ought to know — you do a fine job."
+
+    narrator1 "His smile is broad and genuine, and you realise he's not simply humouring you for the sake of distracting any would-be eavesdroppers. You're glowing with his compliment, too — people are usually telling you to shut up around now."
 
     jump niffs_arrive_on_the_scene
 
 
 label niffs_arrive_on_the_scene:
 
-    narrator1 "Gods above, "
-    narrator1 "You're enjoying his company."
+    show ignis neutral
 
-    # sound effect engine hum
-    narrator1 "A distant hum interrupts your thoughts. A sort of revving, and it's getting closer."
+    # these next few lines you only get if you haven't seriously pissed him off so far.
+    if happiness > 4:
 
-    narrator1 "You look up to see Imperial dreadnoughts approaching."
+        narrator1 "Ignis turns back to survey the scene. Gods above, he cuts a sharp profile against the pastel morning light. You're staring but you don't care. Do all Lucians look this good?"
 
-    narrator1 "Altissia has had so many years of peace under Niflheim's rule that you've almost forgotten the sight of these monstrosities."
+        narrator1 "One thing stands out above all others. You're enjoying his company."
 
+    elif happiness > 3:
 
-    narrator1 "A cheer rises. Up at the steps of the palace, Lady Lunafreya has appeared."
+        narrator1 "Ignis turns back to survey the scene. You watch him for a short moment — he cuts a striking figure — but you soon turn back yourself and focus on your job."
+
+    elif happiness <= 3:
+
+        narrator1 "You try to think of something to say to fill the gap, but nothing comes."
+
+    narrator1 "Then, a cheer rises. Up at the steps of the palace, Lady Lunafreya has appeared."
 
     narrator1 "Even from the back of the plaza, you can see how she walks proudly and confidently. The same stiff-backed, determined attitude your own Captain displays all-too-often. She doesn't want anyone to worry."
 
+
+    narrator1 "Ignis activates his receiver."
+
+    ignis "{i}Don't forget the plan.{/i}"
+
+    narrator1 "Somewhere further in the crowd, a black head of hair shifts as the call is answered. It sounds like the Prince says something sarcastic then, because Ignis smiles wryly."
+
+    show ignis smile
+
+    ignis "Of course."
+
+    narrator1 "Up at the gates of the palace, Lunafreya begins to speak."
+
+    show ignis neutral
+    with dissolve
+
+    narrator1 "Her voice carries far, for someone so slight. She speaks of the coming darkness, of the scourge that plagues the world, and it sounds so foreboding, such mentions of horror and despair from someone so pure."
+
+    narrator1 "But then, she turns to talk of hope. {i}The Gods have not abandoned us,{/i} she says. And she speaks with such gravitas, you want to believe it. You {i}do{/i} believe it."
+
+    narrator1 "Lunafreya, too, makes no mention of Prince Noctis, although her eyes scan the crowd just before she leaves. You get the impression her plea to Leviathan will not be made alone, and you can only hope that the Empire does not catch wind of Noctis's presence."
+
+    narrator1 "Then Lady Lunafreya is gone, vanished back into the palace to make her petitions at the Altar of the Tidemother."
+
+    narrator1 "It's time for action."
+
+    you "Okay, everyone, please make your way to the back of the plaza. The boats here will take you to Finangia District, out of the flooding zone."
+
+    narrator1 "You wave the bemused citizens forward."
+
+    you "Please, exit this way."
+
+    narrator1 "You and Ignis both guide them towards the boats. You get a few questions — {i}why do we have to evacuate?{/i}, and {i}we want to support the Oracle{/i}, and {i}you can't tell us what to do in our own home{/i} — but for the most part, everyone is solemn enough to not cause any trouble."
+
+    # sound effect engine hum
+    narrator1 "A distant hum interrupts your work. A sort of revving, and it's getting closer."
+
+    narrator1 "You look up to see Imperial dreadnoughts approaching."
+
+    narrator1 "Altissia has had so many years of peace under Niflheim's rule that you've almost forgotten the sight of these monstrosities. It's always been there, that low-rumbling threat in the back of your mind, and it's a shock now to see so many of the massive machines, fencing the city in like this."
+
+    ignis "Don't draw too much attention to them."
+
+    narrator1 "You nod. You don't want to panic the crowd. You continue herding them as before, hoping the Empire won't be foolish enough to start anything before the citizens reach safety."
+
+    narrator1 "Ignis has taken to his receiver once again, and is speaking in hushed tones."
+
+    ignis "{i}Noct, do you read me? ... Good. Listen — the Empire has arrived.{/i}"
+
+    ignis "{i}Dropships are closing in on the port. You need to reach the altar before —{/i}"
+
+    hide ignis
+
     show bg yureilplaza crowd dark with Dissolve(0.3)
 
-    show ignis sidelong openmouth
+    narrator1 "With a burst of frenetic energy, the airships hovering above you open fire." with vpunch
+
+    narrator1 "Their focus seems to be on the altar beyond the palace, but they don't seem particularly bothered about catching people in the crossfire, and stray bursts of explosions from small missiles and gunfire erupt in the plaza."
+
+    narrator1 "The few people left in the plaza, and those still being transported away on the boats, begin to scream." with vpunch
+
+    show ignis sidelong openmouth at left
 
     ignis "What they bloody hell do they think they're doing?"
+
+    show ignis sidelong
+    with dissolve
+
+    narrator1 "Now both your receivers crackle into life."
+
+    captain "{i}Everyone in the South sector of the plaza, report back to the palace immediately once the citizens have boarded the boats! I repeat: Report back to the palace immediately once the citizens have boarded.{/i}"
+
+    # new image of ignis sidelong but LOOKING AT YOU
+    
+    narrator1 "The crackling cuts off, and you and Ignis share a worried glance before ushering the last few stragglers onto the boats. You tell the last citizens that everything will be okay, then Ignis claps you briefly on the shoulder and together you race back to the palace."
+
+    you "what's going on?"
+
+    narrator1 "The two of you are running as fast as humanly possible, and Ignis's reply comes in sharp bursts."
+
+    ignis "The empire ... seeks to disrupt ... the ceremony."
+
+    you "And you knew this was going to happen?"
+
+    ignis "Yes."
+
+    narrator1 "You would have liked to have known this beforehand. But there's little point in making a fuss now. You need to focus."
 
     jump power_cut
 
 
 
 label power_cut:
+
+    narrator1 "When you arrive in the palace entrance hall, the Captain and a handful of guards are already there."
+
+    captain "Ah, [your_name], [ignis_name], good work."
 
     # captain gets you to search the room for the fuse switch before you head out.
     # this will teach you the 'flashlight' mechanic

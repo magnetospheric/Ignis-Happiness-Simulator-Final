@@ -70,7 +70,7 @@ label first_conversation:
 
     show captain neutral
 
-    narrator1 "The furthest district from the Cathedral. It would be easy to get the citizens out of harm's way from there."
+    narrator1 "The furthest district from the Palace. It would be easy to get the citizens out of harm's way from there."
 
     narrator1 "Not that anything {i}that{/i} bad was going to happen, surely. You know you shouldn't read too much into this, but the mere presence of this Lucian official has you curious."
 

@@ -12,15 +12,15 @@ label start:
 
     #starting variables
 
-    $ ignis_name = "Stranger"
-    $ your_name = "You"
+    $ ignis_name = "Ignis"
+    $ your_name = "Ilia"
 
     $ show_happiness = True
 
     $ happiness += 2
 
     narrator1 "small test text before transition"
-    
+
     jump lunas_speech
 
     # #shows the first background
