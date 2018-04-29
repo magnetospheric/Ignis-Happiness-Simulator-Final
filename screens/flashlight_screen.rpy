@@ -170,6 +170,32 @@ screen flashlight_no_timer:
     # everything happens in Flashlight class
     add Flashlight(timer=False)
 
+screen flashlight_palace_hallway:
+    vbox:
+        imagebutton:
+            idle "images/items/yureil-hallway-door.png"
+            hover "images/items/yureil-hallway-door-hover.png"
+            xpos 673 ypos 293
+            action Jump("find_fuse")
+    add Flashlight(timer=False)
+
+screen door_idle:
+    vbox:
+        imagebutton:
+            idle "images/items/yureil-hallway-door.png"
+            hover "images/items/yureil-hallway-door.png"
+            xpos 673 ypos 293
+            action NullAction()
+
+screen flashlight_fuse:
+    vbox:
+        imagebutton:
+            idle "images/items/fuse-box.png"
+            hover "images/items/fuse-box-hover.png"
+            xpos 95 ypos 180
+            action Return()
+    add Flashlight(timer=False)
+
 # this will go in its own file eventually
 label boom:
     # will have conditions here according to where in the game you are on discovery
