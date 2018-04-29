@@ -118,7 +118,7 @@ label mc_room:
 label find_keys:
 
     # this will teach you the 'find things' mechanic
-    call screen infobubble(title="Locate the keys", content="Move your mouse around the room to find the keys, and click to pick them up.")
+    call screen infobubble(title="Locate the keys", content="Move your mouse around the room to find the keys, and click to pick them up.", confirmation="Got it")
 
     hide screen infobubble
     hide screen keys_inactive

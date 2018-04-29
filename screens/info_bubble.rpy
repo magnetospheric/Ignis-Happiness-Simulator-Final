@@ -1,5 +1,5 @@
 # info bubble that appears in the centre of the screen to provide help etc
-screen infobubble(title, content):
+screen infobubble(title, content, confirmation):
     zorder 3
 
     frame:
@@ -15,7 +15,7 @@ screen infobubble(title, content):
                 style "info_bubble_title"
             null height 10
             text content id "content /n/n/n"
-            textbutton _("Got it"):
+            textbutton confirmation id _("confirmation"):
                 style "centered_button"
                 text_style "info_bubble_text"
                 action NullAction
