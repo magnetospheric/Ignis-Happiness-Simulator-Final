@@ -12,6 +12,8 @@
 
 label power_cut:
 
+    $ show_happiness = False
+
     show bg yureilcorridor dark with Dissolve(0.3)
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
@@ -63,7 +65,9 @@ label power_cut:
 
     narrator1 "There's a resounding crash from somewhere up above." with vpunch
 
-    show bg yureilcorridor dark with Dissolve(0.3)
+    # show bg yureilcorridor dark with Dissolve(0.3)
+    show screen black_overlay
+    with softflash
 
     narrator1 "The lights flicker off, casting the room into darkness."
     # have a sort of flash effect as the room goes dark, if possible.
@@ -82,7 +86,8 @@ label power_cut:
     hide screen infobubble
 
     # enter flashlight section
-    $ show_happiness = False
+    hide screen black_overlay
+    #call screen open_door
     call screen flashlight_no_timer
 
     captain "Take the flashlight with you, [your_name]. You might need it."
