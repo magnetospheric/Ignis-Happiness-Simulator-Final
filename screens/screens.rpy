@@ -93,6 +93,7 @@ style frame:
 
 screen say(who, what):
     style_prefix "say"
+    zorder 2
 
     window:
         id "window"

@@ -1,5 +1,7 @@
 # info bubble that appears in the centre of the screen to provide help etc
 screen infobubble(title, content):
+    zorder 3
+
     frame:
         xpadding 30
         ypadding 30
