@@ -73,7 +73,7 @@ define narrator1 = Character(
                             ctc="ctc_blink",
                             ctc_position="fixed",
                             callback=clicky_typewriter,
-                            window_background="images/ui/dialog_bg01.png"
+                            window_background="images/ui/dialog_bg01.png",
                         )
 define narrator1_nosound = Character(
                             '',
@@ -132,7 +132,7 @@ define unidentified_voice = Character("Unidentified Voice", ctc="ctc_blink", ctc
 image ctc_blink = LiveComposite(
     (65, 65),
     (1158, 640), "ctc_base",
-    (1158, 640), "glow",
+    (1158, 640), "glow"
     )
 
 image ctc_base:
@@ -199,6 +199,8 @@ image bg yureilplaza crowd dark = 'images/backgrounds/yureil_plaza_crowd_dark.pn
 
 image bg yureilcorridor = 'images/backgrounds/yureil_corridor-2.png'
 image bg yureilcorridor dark = 'images/backgrounds/yureil_corridor_dark.png'
+image bg yureilcorridor fuse = 'images/backgrounds/yureil-fusebox-hallway.png'
+image bg yureilcorridor fuse idle = 'images/backgrounds/yureil-fusebox-hallway-idle.png'
 
 image bg refugeehideout = 'images/backgrounds/refugee_hideout.png'
 image bg refugeehideoutdark = 'images/backgrounds/refugee_hideout_dark.png'
@@ -208,7 +210,7 @@ image bg fountaincourtyard = 'images/backgrounds/fountain_courtyard.png'
 image bg magisterialsquare = 'images/backgrounds/magisterial_square.png'
 
 image black = "images/black.png"
-
+image blackoverlay = Image("ui/black-layer.png", xalign=0.5, yalign=0.5)
 
 
 # MUSIC #
