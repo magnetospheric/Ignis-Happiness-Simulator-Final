@@ -86,13 +86,15 @@ init python:
             # Render Guard Awareness (renders on top of flashlight)
             awareness = Transform(child=self.awareness, alpha=self.awareness_alpha)
             awareness_render = renpy.render(awareness, 1280, 7, st, at)
-            render.blit(awareness_render, (0, 10))
+            if self.timer == True:
+                render.blit(awareness_render, (0, 10))
 
             # Render Awareness counter (renders on top of flashlight)
             #^^THIS WILL CHANGE TO BATTERY LIFE (based on total time on?)
             awarenesscount = Transform(child=self.awareness_counter, alpha=self.awareness_counter_alpha)
             awareness_counter_render = renpy.render(awarenesscount, 30, 30, st, at)
-            render.blit(awareness_counter_render, ((flashlight_width / 4), 30))
+            if self.timer == True:
+                render.blit(awareness_counter_render, ((flashlight_width / 4), 30))
 
             return render
 
