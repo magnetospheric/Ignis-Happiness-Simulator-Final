@@ -198,7 +198,7 @@ image bg yureilplaza crowd = 'images/backgrounds/yureil_plaza_crowd.png'
 image bg yureilplaza crowd dark = 'images/backgrounds/yureil_plaza_crowd_dark.png'
 
 image bg yureilcorridor = 'images/backgrounds/yureil_corridor-2.png'
-image bg yureilcorridordark = 'images/backgrounds/yureil_corridor_dark.png'
+image bg yureilcorridor dark = 'images/backgrounds/yureil_corridor_dark.png'
 
 image bg refugeehideout = 'images/backgrounds/refugee_hideout.png'
 image bg refugeehideoutdark = 'images/backgrounds/refugee_hideout_dark.png'

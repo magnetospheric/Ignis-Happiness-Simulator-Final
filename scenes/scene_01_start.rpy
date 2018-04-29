@@ -17,11 +17,11 @@ label start:
 
     $ show_happiness = True
 
-    $ happiness += 2
+    $ happiness += 5
 
     narrator1 "small test text before transition"
 
-    jump lunas_speech
+    jump power_cut
 
     # #shows the first background
     # scene bg altissia_alleyway

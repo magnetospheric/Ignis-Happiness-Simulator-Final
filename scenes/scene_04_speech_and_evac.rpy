@@ -1,12 +1,17 @@
 #Scene 04
-#Evac
+#Speech and Evac
 
 #contains labels:
-    # speech_and_evac
-    # chaos_begins
+    # lunas_speech
+    # ask_about_prince
+    # ask_again_about_prince
+    # keep_quiet_about_prince
+    # change_subject_from_prince
+    # niffs_arrive_on_the_scene
+    # ask_about_prince
 
 
-# covers luna's speech and evac of those in the plaza, and reporting back to captain
+# covers luna's speech and evac of those in the plaza
 
 
 label lunas_speech:
@@ -157,6 +162,19 @@ label change_subject_from_prince:
 
     narrator1 "He seems to appreciate the distraction."
 
+    show ignis smile
+    with dissolve
+
+    pause 1.0
+
+    $ happiness += 1
+
+    show screen happiness_text(title="Happiness increased!")
+    with dissolve
+    pause 0.3
+    hide screen happiness_text
+    with dissolve
+
     you "Yeah. I mean, the Altar of the Tidemother is still older than most things here, but there used to be a different shrine around it. It got destroyed a couple of hundred years ago, during a flood."
 
     ignis "Did it now? Mm, I don't suppose it was built from the same material as the altar, then?"
@@ -169,18 +187,6 @@ label change_subject_from_prince:
 
     you "But yeah — a lot of people don't know that, about the palace. People have terrible memories when it comes to floods, though. We forget our histories too quickly."
 
-    show ignis smile
-
-    pause 1.0
-
-    $ happiness += 1
-
-    show screen happiness_text(title="Happiness increased!")
-    with dissolve
-    pause 0.3
-    hide screen happiness_text
-    with dissolve
-
     ignis "True enough."
 
     ignis "Well, I certainly didn't expect to get a personal tour guide on this assignment. But — you ought to know — you do a fine job."
@@ -192,34 +198,54 @@ label change_subject_from_prince:
 
 label niffs_arrive_on_the_scene:
 
-    show ignis neutral
-
     # these next few lines you only get if you haven't seriously pissed him off so far.
     if happiness > 4:
 
         narrator1 "Ignis turns back to survey the scene. Gods above, he cuts a sharp profile against the pastel morning light. You're staring but you don't care. Do all Lucians look this good?"
 
-        narrator1 "One thing stands out above all others. You're enjoying his company."
+        narrator1 "One thing stands out above all others, and it's not his looks, nor his demeanour. It's simply this: you're enjoying his company."
+
+        jump discuss_sightseeing
 
     elif happiness > 3:
 
-        narrator1 "Ignis turns back to survey the scene. You watch him for a short moment — he cuts a striking figure — but you soon turn back yourself and focus on your job."
+        narrator1 "Ignis turns back to survey the scene. You watch him for a short moment — he cuts a striking figure — but you soon turn back, eyes on the audience."
+
+        jump discuss_sightseeing
 
     elif happiness <= 3:
 
         narrator1 "You try to think of something to say to fill the gap, but nothing comes."
 
+label discuss_sightseeing:
+
+    narrator1 "Minutes pass, and still the speech has not begun."
+
+    you "Is this your first time in Altissia?"
+
+    ignis "No ... I came here once as a child. It was a diplomatic visit, however, so there was little time for sightseeing."
+
+    you "Maybe after this, you'll get time to explore."
+
+    ignis "One can only hope."
+
+label speech_begins:
+
+    show ignis neutral
+    with dissolve
+
     narrator1 "Then, a cheer rises. Up at the steps of the palace, Lady Lunafreya has appeared."
 
     narrator1 "Even from the back of the plaza, you can see how she walks proudly and confidently. The same stiff-backed, determined attitude your own Captain displays all-too-often. She doesn't want anyone to worry."
 
-
     narrator1 "Ignis activates his receiver."
 
+    # new image - ignis touching glasses
     ignis "{i}Don't forget the plan.{/i}"
 
     narrator1 "Somewhere further in the crowd, a black head of hair shifts as the call is answered. It sounds like the Prince says something sarcastic then, because Ignis smiles wryly."
 
+    # new image - ignis touching glasses with smile
     show ignis smile
 
     ignis "Of course."
@@ -258,6 +284,20 @@ label niffs_arrive_on_the_scene:
 
     narrator1 "You nod. You don't want to panic the crowd. You continue herding them as before, hoping the Empire won't be foolish enough to start anything before the citizens reach safety."
 
+    narrator1 "In the distance, a lone voice rises on the wind. A heavenly singing."
+
+    narrator1 "Lady Lunafreya. So the rite has begun."
+
+    narrator1 "You pause in your work, enraptured by the sound. Then, joining it, a tremendous splash of water and an unearthly, hallowed voice you cannot make sense of."
+
+    narrator1 "A chill seeds itself through your bones. {i}Leviathan.{/i}"
+
+    narrator1 "This is it; this is the moment of legend."
+
+    narrator1 "And the Imperial ships grow ever closer."
+
+    #image of ignis with hand to head again
+
     narrator1 "Ignis has taken to his receiver once again, and is speaking in hushed tones."
 
     ignis "{i}Noct, do you read me? ... Good. Listen — the Empire has arrived.{/i}"
@@ -277,7 +317,7 @@ label niffs_arrive_on_the_scene:
     show ignis sidelong openmouth at left
     with dissolve
 
-    ignis "What they bloody hell do they think they're doing?"
+    ignis "What the bloody hell do they think they're doing?"
 
     show ignis sidelong
     with dissolve
@@ -306,65 +346,6 @@ label niffs_arrive_on_the_scene:
 
     narrator1 "You would have liked to have known this beforehand. But there's little point in making a fuss now. You need to focus."
 
+    hide ignis
+
     jump power_cut
-
-
-
-label power_cut:
-
-    narrator1 "When you arrive in the palace entrance hall, the Captain and a handful of guards are already there."
-
-    captain "Ah, [your_name], [ignis_name], good work."
-
-    # captain gets you to search the room for the fuse switch before you head out.
-    # this will teach you the 'flashlight' mechanic
-
-    narrator1 "The lights flicker off, casting the room into darkness."
-    # have a sort of flash effect as the room goes dark, if possible.
-    # Could be achieved by a sort of inverted colouring of the current room bg
-
-    you "A power cut?"
-
-    captain "There's a flashlight on the table next to you. See if you can't find the fuse switch."
-
-    # info box: FLASHLIGHT has been equipped You take the FLASHLIGHT
-
-    # enter flashlight section
-
-    captain "Take the torch with you, [your_name]. You might need it."
-
-    you "Thank you."
-
-    captain "Good luck out there, [your_name]." # captain says this after u go out with the flashlight to find the breaker room
-
-    jump en_route_to_altar
-
-
-
-label en_route_to_altar:
-
-    # ignis shows you where to go on the map, then leaves after this
-
-    narrator1 "Ignis has forgotten to turn his mic off, and you can hear everything that's happening."
-
-    narrator1 "It's mostly muffled shouts and cries, accompanied by Ignis's breathing. He's clearly frantic, but doing an admirable job of stilling his own nerves."
-
-    narrator1 "Then, an angry voice."
-
-    unidentified_voice "The King's lapdog, eh?"
-
-    narrator1 "And a sharp cry of pain. Ignis is hurt."
-
-    narrator1 "You check your map. You're only a street away from the citizens you've been tasked with helping."
-
-    menu:
-        "Continue onward to help the citizens":
-            "You can't abandon your duty. You know this as clear as day."
-            # highlight current route on map
-            "The citizens aren't far away. You'll help them first, then come to Ignis's aid."
-        "Divert your route to help Ignis":
-            "You simply can't leave him in pain like that. What if the Niffs kill him, after all?"
-            #highlight new route on the map
-            "If you take this route, you can come to his aid and still be close enough to double back for the citizens afterward."
-
-    return
