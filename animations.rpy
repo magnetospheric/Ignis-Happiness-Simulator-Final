@@ -12,3 +12,8 @@ define slowdissolve = Dissolve(8)
 define mediumdissolve = Dissolve(5)
 define fastdissolve = Dissolve(2)
 define fastestdissolve = Dissolve(1)
+
+
+## other effects ##############################################################
+define flash = Fade(.25, 0.0, .75, color="#fff")
+define softflash = Fade(.3, 0.0, .4, color="#ffffff99")
