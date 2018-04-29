@@ -16,10 +16,14 @@ init python:
 
         lightcount = 0
         lightcounttext = "0"
+        timer = False
 
-        def __init__(self,**kwargs):
+        def __init__(self, **kwargs):
 
             super(Flashlight, self).__init__(**kwargs)
+
+            # set timer value for use in rest of class
+            self.timer = kwargs["timer"]
 
             # This image should be twice the width and twice the height
             # of the screen.
@@ -50,8 +54,9 @@ init python:
                 #reduce countdown by timeval
 
             # skip to timeout if time exceeds x seconds
-            if self.some_time_val >= 5:
-                renpy.ui.jumps("boom")()
+            if self.timer == True:
+                if self.some_time_val >= 5:
+                    renpy.ui.jumps("boom")()
 
             # redraw after x seconds
             renpy.display.render.redraw(self, 0.3)
@@ -157,7 +162,11 @@ init python:
 
 screen flashlight:
     # everything happens in Flashlight class
-    add Flashlight()
+    add Flashlight(timer=True)
+
+screen flashlight_no_timer:
+    # everything happens in Flashlight class
+    add Flashlight(timer=False)
 
 # this will go in its own file eventually
 label boom:
