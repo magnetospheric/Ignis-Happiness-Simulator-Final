@@ -1,6 +1,5 @@
 screen black_overlay():
-    tag example
-    zorder 1
+    zorder 0
     modal False
 
     window:

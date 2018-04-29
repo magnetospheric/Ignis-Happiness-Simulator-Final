@@ -93,7 +93,7 @@ style frame:
 
 screen say(who, what):
     style_prefix "say"
-    zorder 2
+    zorder 0
 
     window:
         id "window"
@@ -151,7 +151,6 @@ style say_dialogue:
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
-
 
 
 ## Input screen ################################################################
