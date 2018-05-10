@@ -14,7 +14,7 @@ label first_conversation:
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}You race{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
-    narrator1 "Up the pale marble steps to the plaza entrance now. Yureil Mansion is grand and decked with flags, red and gold fabric that's dampened in the gathering rain."
+    narrator1 "Up the pale marble steps to the plaza entrance now. The Palace is grand and decked with flags, red and gold fabric that's dampened in the gathering rain."
     narrator1 "Usually, you think it looks overbearing, but today, it seems solemn, more like a tomb. It's not an inviting omen."
 
     #show captain left in conversation
@@ -72,7 +72,7 @@ label first_conversation:
 
     narrator1 "The furthest district from the Palace. It would be easy to get the citizens out of harm's way from there."
 
-    narrator1 "Not that anything {i}that{/i} bad was going to happen, surely. You know you shouldn't read too much into this, but the mere presence of this Lucian official has you curious."
+    narrator1 "Not that anything {i}that{/i} bad was going to happen, surely. You know you shouldn't read too much into this, but the mere presence of this foreign official has you curious."
 
     narrator1 "But you settle for your duty, and — is that an approving smile the handsome newcomer is shooting your way?"
 
@@ -151,9 +151,7 @@ label first_conversation:
 
     show screen happiness_text(title="Happiness increased!")
     with dissolve
-
     pause 0.3
-
     hide screen happiness_text
     with dissolve
 
