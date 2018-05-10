@@ -165,6 +165,13 @@ image captain smile = "images/characters/captain-smile.png"
 image captain neutral openmouth = "images/characters/captain-neutral-openmouth.png"
 image captain looking around = "images/characters/captain-looking-around.png"
 
+image trooper distance = "images/characters/trooper-distance.png"
+image trooper lunging = "images/characters/trooper-lunging.png"
+
+# used to position images at specific x and y pos
+transform SpriteLoc2(x, y):
+    pos (x, y)
+
 #ignis raised eyes
 #ignis skeptical
 #ignis calm
@@ -202,10 +209,11 @@ image bg yureilcorridor dark = 'images/backgrounds/yureil_corridor_dark.png'
 image bg yureilcorridor fuse = 'images/backgrounds/yureil-fusebox-hallway.png'
 image bg yureilcorridor fuse idle = 'images/backgrounds/yureil-fusebox-hallway-idle.png'
 
-image bg refugeehideout = 'images/backgrounds/refugee_hideout.png'
-image bg refugeehideoutdark = 'images/backgrounds/refugee_hideout_dark.png'
+image bg evacuee hideout = 'images/backgrounds/evacuee_hideout.png'
+image bg evacuee hideout dark = 'images/backgrounds/evacuee_hideout_dark.png'
 
 image bg fountaincourtyard = 'images/backgrounds/fountain_courtyard.png'
+image bg widestreet = 'images/backgrounds/wide_garden_street.png'
 
 image bg magisterialsquare = 'images/backgrounds/magisterial_square.png'
 
