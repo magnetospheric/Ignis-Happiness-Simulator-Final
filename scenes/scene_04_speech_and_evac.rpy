@@ -317,7 +317,7 @@ label speech_begins:
     show ignis sidelong openmouth at left
     with dissolve
 
-    ignis "What the bloody hell do they think they're doing?"
+    ignis "What the bloody hell does the Empire think they're doing?"
 
     show ignis sidelong
     with dissolve
@@ -331,7 +331,7 @@ label speech_begins:
 
     narrator1 "The crackling cuts off, and you and Ignis share a worried glance before ushering the last few stragglers onto the boats. You tell the last citizens that everything will be okay, then Ignis claps you briefly on the shoulder and together you race back to the palace."
 
-    you "what's going on?"
+    you "What's going on?"
 
     narrator1 "The two of you are running as fast as humanly possible, and Ignis's reply comes in sharp bursts."
 

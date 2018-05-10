@@ -3,6 +3,8 @@
 
 #contains labels:
     # power_cut
+    # find_fuse
+    # leaving_palace
     # en_route_to_altar
 
 
@@ -98,6 +100,8 @@ label power_cut:
 
     jump find_fuse
 
+
+
 label find_fuse:
 
     # show screen black_overlay
@@ -140,6 +144,8 @@ label find_fuse:
     narrator1 "You race back to your superior."
 
     jump leaving_palace
+
+
 
 label leaving_palace:
 
@@ -204,59 +210,6 @@ label en_route_to_altar:
 
     narrator1 "You both don't talk much; you're busy leading the way, leaping over balconies and down side alleys while Ignis is entirely focussed on keeping up. While he's agile enough, he lacks the knowledge of the area that you have, and he's not prepared for a lot of the shortcuts you're taking."
 
-    narrator1 "It's when you've just started crossing a particularly wide street that you encounter your first Magitek Trooper. The thing's waiting, zombie-like and menacing, at the end of the street and there's nowhere else to run. You're in the open."
+    hide ignis
 
-    narrator1 "You ready your weapon, heart pounding."
-
-    narrator1 "But Ignis moves before you can do anything."
-
-    narrator1 "The first step he takes is accompanied by a crackling blue light and the faint smell of ozone. Where there had been nothing in his hands before, now he grips a pair of brilliant and ornate daggers."
-
-    ignis "Let's put a quick end to this."
-
-    narrator1 "You don't have time to wonder how Ignis summoned those weapons. The trooper lunges forward with a disturbing screech that you're not quite sure is mechanical or organic. It's all whirring limbs and strict, unexpressive movements, and everything about it makes you shiver."
-
-    narrator1 "Ignis sidesteps its first attack, parries the next, and manages to land a hit."
-
-    narrator1 "It somehow slips past him, and comes screaming straight for you."
-
-    narrator1 "You scream back, and draw back your sword rapidly, before stabbing forward in the swift motion you were taught during training."
-
-    narrator1 "The sword pierces what appears to be the trooper's core, and it falls to the ground, twitching and shrieking."
-
-    ignis "That was ... that was impressive, [your_name]."
-
-    narrator1 "You barely manage a smile. You're breathless, and enraptured by the horrific sight of the dying trooper, whose body has begun to smoke. Is it ... is it evaporating?"
-
-    ignis "They're infused with daemonic plasma."
-
-    you "Oh. That's ... pleasant."
-
-    narrator1 "f"
-    # ignis shows you where to go on the map, then leaves after this
-
-    ignis "Will you be okay?"
-
-    narrator1 "Ignis has forgotten to turn his mic off, and you can hear everything that's happening."
-
-    narrator1 "It's mostly muffled shouts and cries, accompanied by Ignis's breathing. He's clearly frantic, but doing an admirable job of stilling his own nerves."
-
-    narrator1 "Then, an angry voice."
-
-    unidentified_voice "The King's lapdog, eh?"
-
-    narrator1 "And a sharp cry of pain. Ignis is hurt."
-
-    narrator1 "You check your map. You're only a street away from the citizens you've been tasked with helping."
-
-    menu:
-        "Continue onward to help the citizens":
-            "You can't abandon your duty. You know this as clear as day."
-            # highlight current route on map
-            "The citizens aren't far away. You'll help them first, then come to Ignis's aid."
-        "Divert your route to help Ignis":
-            "You simply can't leave him in pain like that. What if the Niffs kill him, after all?"
-            #highlight new route on the map
-            "If you take this route, you can come to his aid and still be close enough to double back for the citizens afterward."
-
-    return
+    jump trooper_attack
