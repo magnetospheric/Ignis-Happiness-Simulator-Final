@@ -21,7 +21,7 @@ label start:
 
     narrator1 "small test text before transition"
 
-    jump power_cut
+    jump trooper_attack
 
     # #shows the first background
     # scene bg altissia_alleyway
@@ -59,13 +59,13 @@ label startn:
     scene black
 
 
-    top_narrator "{size=20}{cps=15}{alpha=0.8}What does  {/alpha}{/cps}{/size}{alpha=1.0}{size=24}{cps=10}loyalty{/cps}{/size}{/alpha}{size=20}{cps=15}{alpha=0.8}  mean to you?{/alpha}{/cps}{/size}"
+    top_narrator "{size=20}{cps=15}{alpha=0.8}What does  {/alpha}{/cps}{/size}{alpha=1.0}{size=22}{cps=10}loyalty{/cps}{/size}{/alpha}{size=20}{cps=15}{alpha=0.8}  mean to you?{/alpha}{/cps}{/size}"
 
     topcentre_narrator "{size=20}{cps=15}{alpha=0.8}Who do you most want to protect?{/alpha}{/cps}{/size}"
 
-    centre_narrator "{size=20}{cps=15}{alpha=0.8}It's not an easy question. The answer can  {/alpha}{/cps}{/size}{alpha=1.0}{size=24}{cps=10}change.{/alpha}  {size=20}{cps=15}{alpha=0.8}And you may surprise yourself.{/alpha}{/cps}{/size}"
+    centre_narrator "{size=20}{cps=15}{alpha=0.8}It's not an easy question. The answer can  {/alpha}{/cps}{/size}{alpha=1.0}{size=22}{cps=10}change.{/alpha}  {size=20}{cps=15}{alpha=0.8}And you may surprise yourself.{/alpha}{/cps}{/size}"
 
-    centrebottomright_narrator "{size=20}{cps=15}{alpha=0.8}Sometimes, {/alpha}{/cps}{/size}{size=24}{cps=10}{alpha=1.0}all it takes is one day.{/alpha}{/cps}{/size}"
+    centrebottomright_narrator "{size=20}{cps=15}{alpha=0.8}Sometimes, {/alpha}{/cps}{/size}{size=22}{cps=10}{alpha=1.0}all it takes is one day.{/alpha}{/cps}{/size}"
 
 
     #scene dawns on an overview of altissia
