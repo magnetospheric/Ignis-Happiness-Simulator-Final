@@ -14,6 +14,7 @@ label trooper_attack:
 
     show trooper distance at SpriteLoc2(0.425, 0.3)
     with dissolve
+    # THIS THING NEEDS A FKEOIGRWLKSGHF SHADOW
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
@@ -53,8 +54,10 @@ label trooper_attack:
 
     narrator1 "You scream back, and draw back your sword rapidly, before stabbing forward in the swift motion you were taught during training."
 
-    show trooper shortcircuit at SpriteLoc2(0.44, 0.0)
-    with softflash
+    show trooper shortcircuit at SpriteLoc2(0.47, 0.0)
+    with fastsoftflash
+    show trooper shortcircuit at SpriteLoc2(0.47, 0.0)
+    with hpunch
 
     narrator1 "The sword pierces what appears to be the trooper's core, and it falls to the ground, twitching and shrieking."
 
@@ -63,13 +66,13 @@ label trooper_attack:
 
     ignis "That was ... that was impressive, [your_name]."
 
-    show trooper shortcircuit07 at SpriteLoc2(0.44, 0.0)
+    show trooper shortcircuit07 at SpriteLoc2(0.47, 0.0)
     with dissolve
 
     narrator1 "You barely manage a smile. You're breathless, and enraptured by the horrific sight of the dying trooper, whose body has begun to smoke."
 
     # start smoke effect around trooper - not sure how I'm gonna do this yet
-    show trooper shortcircuit05 at SpriteLoc2(0.44, 0.0)
+    show trooper shortcircuit05 at SpriteLoc2(0.47, 0.0)
     with dissolve
 
     you "Is it ... is it evaporating?"
@@ -84,7 +87,7 @@ label trooper_attack:
     with fastdissolve
 
     # sound effect - buzzing
-    narrator1 "A ping interrupts you both. Ignis draws out his mobile phone and answers it hurriedly."
+    narrator1 "When the unnerving sight is over, a ping interrupts you both. Ignis draws out his mobile phone and answers it hurriedly."
 
     show ignis neutral openmouth
     with dissolve
@@ -176,6 +179,8 @@ label trooper_attack:
 
             jump ignis_leaving
 
+
+
 label ignis_leaving:
 
     you "Remember the security frequency!"
@@ -193,33 +198,4 @@ label ignis_leaving:
 
     narrator1 "You have a job to do."
 
-    # return
-
-    jump reaching_citizens
-
-    # nice-to-have : highlight citizen position on the map
-    narrator1 "The citizens aren't far away. You'll help them first, then come to Ignis's aid."
-
-    narrator1 "Ignis has forgotten to turn his mic off, and you can hear everything that's happening."
-
-    narrator1 "It's mostly muffled shouts and cries, accompanied by Ignis's breathing. He's clearly frantic, but doing an admirable job of stilling his own nerves."
-
-    narrator1 "Then, an angry voice."
-
-    unidentified_voice "The King's lapdog, eh?"
-
-    narrator1 "And a sharp cry of pain. Ignis is hurt."
-
-    narrator1 "You check your map. You're only a street away from the citizens you've been tasked with helping."
-
-    menu:
-        "Continue onward to help the citizens":
-            "You can't abandon your duty. You know this as clear as day."
-            # highlight current route on map
-            "The citizens aren't far away. You'll help them first, then come to Ignis's aid."
-        "Divert your route to help Ignis":
-            "You simply can't leave him in pain like that. What if the Niffs kill him, after all?"
-            #highlight new route on the map
-            "If you take this route, you can come to his aid and still be close enough to double back for the citizens afterward."
-
-    # return
+    jump reaching_padore_boats
