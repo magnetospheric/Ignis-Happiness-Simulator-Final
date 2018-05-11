@@ -168,6 +168,157 @@ image captain looking around = "images/characters/captain-looking-around.png"
 image trooper distance = "images/characters/trooper-distance.png"
 image trooper lunging = "images/characters/trooper-lunging.png"
 
+### trooper short circuiting animation definition ###
+image trooper shortcircuit = LiveComposite(
+    (758, 720),
+    (0, 0), "shortcircuit0"
+    )
+
+image shortcircuit0:
+    alpha 1.0
+    "images/characters/trooper-short-circuit-0.png"
+    choice:
+        0.07
+    choice:
+        0.1
+    choice:
+        0.2
+    choice:
+        0.3
+    choice:
+        0.4
+    # This randomizes the time between blinking.
+    "images/characters/trooper-short-circuit-1.png"
+    choice:
+        0.07
+    choice:
+        0.1
+    choice:
+        0.2
+    choice:
+        0.3
+    choice:
+        0.4
+    "images/characters/trooper-short-circuit-0.png"
+    choice:
+        0.07
+    choice:
+        0.1
+    choice:
+        0.2
+    choice:
+        0.3
+    choice:
+        0.4
+    "images/characters/trooper-short-circuit-2.png"
+    choice:
+        0.07
+    choice:
+        0.1
+    choice:
+        0.2
+    choice:
+        0.3
+    choice:
+        0.4
+    repeat
+
+
+### trooper short circuiting animation definition ###
+image trooper shortcircuit07 = LiveComposite(
+    (758, 720),
+    (0, 0), "shortcircuit1"
+    )
+
+image shortcircuit1:
+    alpha 0.7
+    "images/characters/trooper-short-circuit-0.png"
+    choice:
+        0.1
+    choice:
+        0.2
+    choice:
+        0.3
+    choice:
+        0.4
+    # This randomizes the time between blinking.
+    "images/characters/trooper-short-circuit-1.png"
+    choice:
+        0.1
+    choice:
+        0.2
+    choice:
+        0.3
+    choice:
+        0.4
+    "images/characters/trooper-short-circuit-0.png"
+    choice:
+        0.1
+    choice:
+        0.2
+    choice:
+        0.3
+    choice:
+        0.4
+    "images/characters/trooper-short-circuit-2.png"
+    choice:
+        0.1
+    choice:
+        0.2
+    choice:
+        0.3
+    choice:
+        0.4
+    repeat
+
+### trooper short circuiting animation definition ###
+image trooper shortcircuit05 = LiveComposite(
+    (758, 720),
+    (0, 0), "shortcircuit2"
+    )
+
+image shortcircuit2:
+    alpha 0.5
+    "images/characters/trooper-short-circuit-0.png"
+    choice:
+        0.2
+    choice:
+        0.3
+    choice:
+        0.4
+    choice:
+        0.5
+    # This randomizes the time between blinking.
+    "images/characters/trooper-short-circuit-1.png"
+    choice:
+        0.2
+    choice:
+        0.3
+    choice:
+        0.4
+    choice:
+        0.5
+    "images/characters/trooper-short-circuit-0.png"
+    choice:
+        0.2
+    choice:
+        0.3
+    choice:
+        0.4
+    choice:
+        0.5
+    "images/characters/trooper-short-circuit-2.png"
+    choice:
+        0.2
+    choice:
+        0.3
+    choice:
+        0.4
+    choice:
+        0.5
+    repeat
+
+
 # used to position images at specific x and y pos
 transform SpriteLoc2(x, y):
     pos (x, y)

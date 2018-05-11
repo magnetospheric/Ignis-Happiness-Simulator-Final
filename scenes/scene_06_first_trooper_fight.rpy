@@ -53,35 +53,46 @@ label trooper_attack:
 
     narrator1 "You scream back, and draw back your sword rapidly, before stabbing forward in the swift motion you were taught during training."
 
-    # show trooper twitching
-    # (would be neat to have a composite image for this)
+    show trooper shortcircuit at SpriteLoc2(0.44, 0.0)
+    with softflash
+
     narrator1 "The sword pierces what appears to be the trooper's core, and it falls to the ground, twitching and shrieking."
 
+    show ignis smile
+    with dissolve
+
     ignis "That was ... that was impressive, [your_name]."
+
+    show trooper shortcircuit07 at SpriteLoc2(0.44, 0.0)
+    with dissolve
 
     narrator1 "You barely manage a smile. You're breathless, and enraptured by the horrific sight of the dying trooper, whose body has begun to smoke."
 
     # start smoke effect around trooper - not sure how I'm gonna do this yet
+    show trooper shortcircuit05 at SpriteLoc2(0.44, 0.0)
+    with dissolve
+
     you "Is it ... is it evaporating?"
 
     ignis "Ah - they're infused with daemonic plasma. Rather unnerving the first time one sees it."
 
     you "Oh. That's ... pleasant."
 
-    # long dissolve on trooper body
-    hide trooper
-    with mediumdissolve
-    # maybe I should do the dissolve in stages, starting from 'is it evaporating'
-
     narrator1 "You watch the creature slip from uncanny-valley into nothing more than dust. Even some of the armour seems to disintegrate."
 
-    # return
-    # ignis shows you where to go on the map, then leaves after this
+    hide trooper
+    with fastdissolve
 
     # sound effect - buzzing
     narrator1 "A ping interrupts you both. Ignis draws out his mobile phone and answers it hurriedly."
 
+    show ignis neutral openmouth
+    with dissolve
+
     ignis "I'll be there as soon as I can, don't worry."
+
+    show ignis neutral
+    with dissolve
 
     you "Who was that?"
 
@@ -142,6 +153,9 @@ label trooper_attack:
 
             $ happiness += 1
 
+            show ignis smile
+            with dissolve
+
             show screen happiness_text(title="Happiness increased!")
             with dissolve
             pause 0.3
@@ -169,6 +183,9 @@ label ignis_leaving:
     ignis "4400 hertz, of course."
 
     narrator1 "Ignis summons the sparkling blue light again, and the daggers disappear into the ether. Then he's racing off towards the East Quarter."
+
+    hide ignis
+    with dissolve
 
     narrator1 "Damn. You had meant to ask him about that weird light."
 
