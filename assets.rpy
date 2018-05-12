@@ -127,6 +127,10 @@ define magitektrooper = Character("Trooper", ctc="ctc_blink", ctc_position="fixe
 define caligo = Character("Caligo", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 define unidentified_voice = Character("Unidentified Voice", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 
+#citizens
+define citizen1 = Character("Scared Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+define citizen2 = Character("Reasonable Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+define citizen3 = Character("Sceptical Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 
 ### CTC button definition ###
 image ctc_blink = LiveComposite(
@@ -164,6 +168,11 @@ image captain neutral = "images/characters/captain-neutral.png"
 image captain smile = "images/characters/captain-smile.png"
 image captain neutral openmouth = "images/characters/captain-neutral-openmouth.png"
 image captain looking around = "images/characters/captain-looking-around.png"
+
+image citizens dark = "images/characters/citizens-dark.png"
+image citizens scared = "images/characters/citizens-dark-scared.png"
+image citizens reasonable = "images/characters/citizens-dark-reasonable.png"
+image citizens sceptical = "images/characters/citizens-dark-sceptical.png"
 
 image trooper distance = "images/characters/trooper-distance.png"
 image trooper lunging = "images/characters/trooper-lunging.png"
