@@ -15,35 +15,41 @@ label reaching_padore_boats:
 
     show bg padore jetty with Dissolve(0.3)
 
+
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
+
+    narrator1 "When you reach Padore District, it doesn't take you long to scout out the area. On the western edge you can see the small jetty, and throngs of people, all busy boarding boats and sharing out bottled water."
 
     show altissianguard neutral at right
     with dissolve
 
     altissianguard "[your_name]! Gods, am I glad to see you!"
 
-    you "What's the situation here?"
+    you "Hi — I came as fast as I could. What's the situation here?"
 
     altissianguard "We have most residents out of the danger zone, but there's still a few clustered in the streets."
 
     altissianguard "Been seeing a lot of people run themselves dehydrated already with the panic."
 
-    you "You got enough?"
+    you "You got enough supplies?"
 
     altissianguard "I think so. But — can you round up the remaining people? I heard word they were waiting under the aqueduct."
 
     you "I'm on it."
 
-    narrator1 "You turn on your heel and immediately set to the task at hand."
+    narrator1 "You turn on your heel and immediately set to the task at hand. There's no time to waste."
 
     hide altissianguard
     with dissolve
 
-    narrator1 "Being a guard during a time of crisis is more a logistical nightmare than expected — you're feeling a little bit like you're on an endless stream of fetch quests, but you suppose it can't be helped."
-
     show bg mediumstreet with Dissolve(0.3)
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
+
+    narrator1 "So it's back down the street you just came from, then."
+
+    narrator1 "Being a guard during a time of crisis is more a logistical nightmare than expected — you're feeling a little bit like you're on an endless stream of fetch quests, but you suppose it can't be helped."
+
 
     narrator1 "You pass a few straggling Magitek units while slipping through the streets, but thankfully, you don't see more than two at a time, and they are too single-minded to notice you now you're keeping to the shadows."
 
@@ -63,13 +69,13 @@ label reaching_padore_boats:
 
     unidentified_voice "The Lucian King's lapdog, eh?"
 
+    #sound effects here
+
     narrator1 "It's followed by a thud, and a sharp cry of pain. Ignis is hurt."
 
-    narrator1 "Whoever this stranger is, they've really got it in for him. It must be the Empire. Some military commander, most likely."
+    narrator1 "The thudding comes again, followed by more yells. Whoever this stranger is — and he {i}must{/i} be from the Empire, he must — he's really got it in for Ignis."
 
-    narrator1 "You're bristling. Your skin's flushing hot and you want nothing more than to race over there, to use all your force to stop him from hurting Ignis."
-
-    unidentified_voice "You can't now, can you? And why was it you were so keen to cross it? Why not simply use one of the smaller footbridges?"
+    narrator1 "You're bristling. Your skin's flushing hot and you want nothing more than to race over there, to use all your force to put a stop to this."
 
     unidentified_voice "We're going to blow this bridge. And then, you won't be able to reach your dearly beloved King!"
 
@@ -81,11 +87,11 @@ label reaching_padore_boats:
 
     narrator1 "One thing is certain: he's in Tigiano District. There's only one bridge on this side wide enough to warrant being blown up."
 
-    narrator1 "You check your mental map of the city. You're far closer to the citizens you've been tasked with helping."
+    narrator1 "You check your mental map of the city. You're far closer to the citizens you've been tasked with helping than you are to Ignis."
 
     narrator1 "An uncomfortable weight settles in your stomach. Both of the paths that diverge before you lead to protecting people, but it's a divergence of duty. And of numbers."
 
-    narrator1 "There's far more people waiting under that aqueduct for you. They probably don't have combat experience like Ignis does — they're probably not going to last long. But at the same time, you don't want to leave Ignis alone at the mercy of the Empire."
+    narrator1 "There's far more people waiting under that aqueduct for you. They probably don't have combat experience like Ignis does — they're probably not going to last long if a squadron of Magitek Troopers find them. But at the same time, you don't want to leave Ignis alone at the mercy of the Empire."
 
     narrator1 "You try to imagine what Ignis would advise you to do."
 
@@ -116,11 +122,13 @@ label reaching_citizens:
 
     show bg evacuee hideout dark with Dissolve(0.3)
 
+    # rising sound of people chatting / murmuring
+
+    show citizens dark
+    with dissolve
+    
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
-    narrator1 "When you reach Padore District, it doesn't take you long to scout out the area. On the western edge you can see the port,"
-
-    # rising sound of people chatting / murmuring
 
     narrator1 "The underpass of the aqueduct is where you find a group of citizens, huddled together in the awning and chittering away like frightened birds as the chaos rages around them."
 
@@ -128,17 +136,32 @@ label reaching_citizens:
 
     you "Everyone, please, calm down."
 
+    show citizens scared
+    with dissolve
+
     citizen1 "They can't have sent just you! We need more protection from those... those {i}things!{/i}"
 
-    citizen2 "They're not 'things', Bob, they're Magitek Troopers. MTs."
+    show citizens reasonable
+    with dissolve
+
+    citizen2 "They're not 'things', Marcus, they're Magitek Troopers. MTs."
+
+    show citizens scared
+    with dissolve
 
     citizen1 "Same difference — they aren't alive anyways. And do we really expect {i}[your_pronoun_object]{/i} to take care of them?"
 
     you "I assure you, I can handle them."
 
+    show citizens sceptical
+    with dissolve
+
     citizen3 "We saw whole squads of 'em walking around. One guard can't go up against all that. No matter how good you are. No offense."
 
     narrator1 "You stifle a sigh. The citizens have every right be worried, but this is taking too much time."
+
+    show citizens dark
+    with dissolve
 
     you "You're right, but we don't have much choice right now. Come on — it's not far to the jetty. If we don't move now, the MTs will find you for sure."
 
