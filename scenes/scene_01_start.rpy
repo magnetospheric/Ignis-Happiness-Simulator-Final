@@ -13,7 +13,14 @@ label start:
     #starting variables
 
     $ ignis_name = "Ignis"
+
     $ your_name = "Ilia"
+    $ your_gender= "female"
+    $ your_pronoun_subject= "she"
+    $ your_pronoun_possessive = "hers"
+    $ your_pronoun_object = "her"
+    $ you_gender_nicename = "woman"
+    $ you_gender_nickname = "lass"
 
     $ show_happiness = True
 
@@ -21,7 +28,7 @@ label start:
 
     narrator1 "small test text before transition"
 
-    jump trooper_attack
+    jump reaching_citizens
 
     # #shows the first background
     # scene bg altissia_alleyway
