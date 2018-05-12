@@ -26,9 +26,11 @@ label start:
 
     $ happiness += 5
 
+    $ citizens_first = False
+
     narrator1 "small test text before transition"
 
-    jump reaching_citizens
+    jump meeting_ignis_again
 
     # #shows the first background
     # scene bg altissia_alleyway

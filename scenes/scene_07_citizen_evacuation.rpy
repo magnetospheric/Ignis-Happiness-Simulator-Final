@@ -100,6 +100,8 @@ label reaching_padore_boats:
     menu:
         "Continue onward to help the citizens first":
 
+            $ citizens_first = True
+
             narrator1 "You can't abandon your duty. You know this as clear as day. More people are depending on you right now, and you can't let them down. You can't let Ignis down."
 
             narrator1 "You {i}promised{/i}."
@@ -109,6 +111,8 @@ label reaching_padore_boats:
             jump reaching_citizens
 
         "Divert your route to help Ignis first":
+
+            $ citizens_first = False
 
             narrator1 "You simply can't leave Ignis in pain like that. What if the Niffs kill him, after all?"
 
@@ -126,7 +130,7 @@ label reaching_citizens:
 
     show citizens dark
     with dissolve
-    
+
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
 
@@ -189,7 +193,31 @@ label escort_to_jetty:
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
-    narrator1 "test"
+    narrator1 "It feels like an eternity passes before you reach the jetty, although you know it can't have been more than three or four minutes. Thankfully, no troopers surprise you along the way, and the citizens reach the water's edge unscathed."
+
+    show citizens reasonable
+    with dissolve
+
+    citizen2 "Thanks for escorting us."
+
+    show citizens sceptical
+    with dissolve
+
+    citizen3 "Yeah — we really appreciate it."
+
+    show citizens scared
+    with dissolve
+
+    citizen1 "Wh-where do we go now?"
+
+    narrator1 "You point at your fellow guard."
+
+    you "Talk to him. He'll deal with the rest. Now — I have to go check on some others."
+
+    narrator1 "About time. How many minutes did you waste? How many more bruises might Ignis have suffered? You grit your teeth and start to run."
+
+    hide citizens
+    with dissolve
 
     jump meeting_ignis_again
 
@@ -201,6 +229,6 @@ label divert_to_ignis:
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
-    narrator1 "test"
+    narrator1 "Back down the same streets, and it's starting to feel like deja-vu. You don't turn your radio back on for fear it might cause him to suffer more. You just trust that he'll still be there, in Tigiano District."
 
     jump meeting_ignis_again
