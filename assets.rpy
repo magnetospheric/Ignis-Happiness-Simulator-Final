@@ -376,6 +376,7 @@ image bg evacuee hideout dark = 'images/backgrounds/evacuee_hideout_dark.png'
 image bg fountaincourtyard = 'images/backgrounds/fountain_courtyard.png'
 image bg widestreet = 'images/backgrounds/wide_garden_street.png'
 image bg mediumstreet = 'images/backgrounds/medium_street.png'
+image bg rubblestreet = 'images/backgrounds/rubble_street.png'
 
 image bg magisterialsquare = 'images/backgrounds/magisterial_square.png'
 

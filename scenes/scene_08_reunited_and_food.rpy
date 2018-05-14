@@ -23,7 +23,7 @@ label meeting_ignis_again:
 
     narrator1 "So there's nothing to do but keep going, and trust that he'll still be there, in Tigiano District."
 
-    show bg rubble with Dissolve(0.3)
+    show bg rubblestreet with Dissolve(0.3)
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
