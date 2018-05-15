@@ -22,7 +22,7 @@ label start:
     $ you_gender_nicename = "woman"
     $ you_gender_nickname = "lass"
 
-    $ show_happiness = True
+    $ show_happiness = False
 
     $ happiness += 5
 
@@ -30,7 +30,7 @@ label start:
 
     narrator1 "small test text before transition"
 
-    jump meeting_ignis_again
+    jump citizens_test
 
     # #shows the first background
     # scene bg altissia_alleyway
@@ -133,3 +133,70 @@ label find_keys:
     hide screen keys_inactive
 
     call screen keys
+
+
+
+
+label citizens_test:
+
+    show bg evacuee hideout dark with Dissolve(0.3)
+
+    # rising sound of people chatting / murmuring
+
+    show citizens dark
+    with dissolve
+
+    show citizens scared
+    with dissolve
+
+    citizen1 "So why isn't this damn game ready yet?"
+
+    show citizens sceptical
+
+    citizen3 "I know, right? I wanna hug Ignis!"
+
+    show citizens reasonable
+
+    citizen2 "Well, I hear there's a lot of artwork to create."
+
+    show citizens sceptical
+
+    citizen3 "Oh, like that street artist? I like her - "
+
+    show citizens scared
+
+    citizen1 "What, the one that drew the weirdass banana on that woman's face?"
+
+    show citizens sceptical
+
+    citizen3 "Yeah, her!"
+
+    show citizens reasonable
+
+    citizen2 "Yeah... uh... Not quite like that."
+
+    show citizens sceptical
+
+    citizen3 "Well, I guess we'll just wait another week then."
+
+    show citizens scared
+
+    citizen1 "UGGGHHHH"
+
+    show citizens scared
+
+    citizen1 "Fine!"
+
+    hide citizens
+    with dissolve
+
+    call screen infobubble(title="THE GAME IS COMING SOON, FOLKS!", content="Life got in the way, but just a little longer and I'll make this thing the best I can!", confirmation="Got it")
+
+    hide screen infobubble
+
+    hide bg evacuee hideout dark
+    with dissolve
+
+    return
+
+    jump escort_to_jetty

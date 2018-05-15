@@ -128,9 +128,12 @@ define caligo = Character("Caligo", ctc="ctc_blink", ctc_position="fixed", windo
 define unidentified_voice = Character("Unidentified Voice", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 
 #citizens
-define citizen1 = Character("Scared Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+# define citizen1 = Character("Scared Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+# define citizen2 = Character("Reasonable Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+# define citizen3 = Character("Sceptical Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+define citizen1 = Character("Pondering Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 define citizen2 = Character("Reasonable Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
-define citizen3 = Character("Sceptical Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+define citizen3 = Character("Excited Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 
 ### CTC button definition ###
 image ctc_blink = LiveComposite(
