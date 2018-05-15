@@ -26,11 +26,15 @@ label start:
 
     $ happiness += 5
 
-    $ citizens_first = False
+    $ citizens_first = True
+    $ said_you_saved_citizens = False
+    $ waited = True
+
+    $ examined_harpoon = False
 
     narrator1 "small test text before transition"
 
-    jump citizens_test
+    jump meeting_ignis_again
 
     # #shows the first background
     # scene bg altissia_alleyway

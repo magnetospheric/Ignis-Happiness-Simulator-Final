@@ -102,8 +102,6 @@ define you = DynamicCharacter(
                             ctc_position="fixed",
                             callback=clicky_typewriter
                         )
-define ravus = DynamicCharacter('ravus_name', who_color="#aa748d", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
-define ardyn = DynamicCharacter('ardyn_name', who_color="#aa748d", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 
 define altissianguard = Character(
                             "Guard on Duty",
@@ -120,20 +118,24 @@ define captain = Character(
                             callback=clicky_typewriter
                         )
 
+# niffs
+define ravus = DynamicCharacter('ravus_name', who_color="#aa748d", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+define ardyn = DynamicCharacter('ardyn_name', who_color="#aa748d", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 #MAKE SURE to use a robot sound for the typewriter noise for the trooper!
 define magitektrooper = Character("Trooper", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
-
-#not sure I need these two any more?? well. maybe i do. dunno yet though. Probably nice-to-haves
 define caligo = Character("Caligo", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 define unidentified_voice = Character("Unidentified Voice", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 
+#other chocobros
+define prompto = Character("Prompto", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+
 #citizens
-# define citizen1 = Character("Scared Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
-# define citizen2 = Character("Reasonable Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
-# define citizen3 = Character("Sceptical Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
-define citizen1 = Character("Pondering Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+define citizen1 = Character("Scared Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 define citizen2 = Character("Reasonable Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
-define citizen3 = Character("Excited Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+define citizen3 = Character("Sceptical Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+# define citizen1 = Character("Pondering Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+# define citizen2 = Character("Reasonable Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+# define citizen3 = Character("Excited Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 
 ### CTC button definition ###
 image ctc_blink = LiveComposite(
@@ -163,6 +165,11 @@ image ignis sidelong  = "images/characters/ignis/ignis-sidelong.png"
 image ignis sidelong openmouth  = "images/characters/ignis/ignis-sidelong-openmouth.png"
 image ignis sidelong direct  = "images/characters/ignis/ignis-sidelong-direct.png"
 image ignis sidelong direct openmouth  = "images/characters/ignis/ignis-sidelong-direct-openmouth.png"
+
+# image ignis wet neutral  = "images/characters/ignis/ignis-wet-neutral.png"
+# image ignis wet openmouth  = "images/characters/ignis/ignis-wet-openmouth.png"
+# image ignis wet pained  = "images/characters/ignis/ignis-wet-pained.png" #openmouth eyesclosed
+# image ignis wet softsmile  = "images/characters/ignis/ignis-wet-softsmile.png" #openmouth eyesclosed
 
 image altissianguard neutral  = "images/characters/altissianguard-neutral.png"
 image altissianguard smile  = "images/characters/altissianguard-smile.png"

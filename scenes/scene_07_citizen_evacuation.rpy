@@ -3,6 +3,8 @@
 
 #contains labels:
     # reaching_padore_boats
+    # radio_interruption
+    # second_choice_who_to_rescue
     # reaching_citizens
     # escort_to_jetty
     # divert_to_ignis
@@ -14,7 +16,6 @@
 label reaching_padore_boats:
 
     show bg padore jetty with Dissolve(0.3)
-
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
@@ -42,6 +43,12 @@ label reaching_padore_boats:
     hide altissianguard
     with dissolve
 
+    jump radio_interruption
+
+
+
+label radio_interruption:
+
     show bg mediumstreet with Dissolve(0.3)
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
@@ -49,7 +56,6 @@ label reaching_padore_boats:
     narrator1 "So it's back down the street you just came from, then."
 
     narrator1 "Being a guard during a time of crisis is more a logistical nightmare than expected — you're feeling a little bit like you're on an endless stream of fetch quests, but you suppose it can't be helped."
-
 
     narrator1 "You pass a few straggling Magitek units while slipping through the streets, but thankfully, you don't see more than two at a time, and they are too single-minded to notice you now you're keeping to the shadows."
 
@@ -65,9 +71,9 @@ label reaching_padore_boats:
 
     narrator1 "It's mostly muffled shouts and cries, accompanied by Ignis's breathing. He's clearly frantic, but doing an admirable job of stilling his own nerves."
 
-    narrator1 "Then, an angry voice."
+    narrator1 "Then, an angry voice cuts through. It's not one you recognise."
 
-    unidentified_voice "The Lucian King's lapdog, eh?"
+    unidentified_voice "{i}The Lucian King's lapdog, eh?{/i}"
 
     #sound effects here
 
@@ -77,9 +83,11 @@ label reaching_padore_boats:
 
     narrator1 "You're bristling. Your skin's flushing hot and you want nothing more than to race over there, to use all your force to put a stop to this."
 
-    unidentified_voice "We're going to blow this bridge. And then, you won't be able to reach your dearly beloved King!"
+    unidentified_voice "{i}We're going to blow this bridge. And then, you won't be able to reach your dearly beloved King!{/i}"
 
-    ignis "No! Don't —"
+    ignis "{i}No! Don't —{/i}"
+
+    # sound effect - hipass thud
 
     narrator1 "There's a noise so loud that it's capped by the tinny speaker, then the connection cuts out entirely."
 
@@ -96,6 +104,51 @@ label reaching_padore_boats:
     narrator1 "You try to imagine what Ignis would advise you to do."
 
     narrator1 "What will you do?"
+
+    # would be good to have a ticking sound here - to highlight the 'i need more time' thing
+
+    menu:
+        "Continue onward to help the citizens first":
+
+            $ citizens_first = True
+
+            narrator1 "You can't abandon your duty. You know this as clear as day. More people are depending on you right now, and you can't let them down. You can't let Ignis down."
+
+            narrator1 "You {i}promised{/i}."
+
+            narrator1 "Besides, the citizens aren't far away. You'll help them first, then come to Ignis's aid."
+
+            jump reaching_citizens
+
+        "Divert your route to help Ignis first":
+
+            $ citizens_first = False
+
+            narrator1 "You simply can't leave Ignis in pain like that. What if the Niffs kill him, after all?"
+
+            narrator1 "If you take a detour round the side of the aqueduct, you can come to his aid and still be close enough to double back for the citizens afterward."
+
+            jump divert_to_ignis
+
+        "Wait! I need more time!":
+
+            $ waited = True
+
+            narrator1 "You pace in agitation, trying to come to a decision. The pressure has your mind reeling."
+
+            narrator1 "Ignis has that strange blue magic. It could be that he's just faking being hurt to get some information out of the enemy."
+
+            narrator1 "It could have been a tactical move, getting the enemy to blow up that bridge..."
+
+            narrator1 "You shake your head. Not likely."
+
+            narrator1 "But you really can't delay any more."
+
+            jump second_choice_who_to_rescue
+
+
+
+label second_choice_who_to_rescue:
 
     menu:
         "Continue onward to help the citizens first":

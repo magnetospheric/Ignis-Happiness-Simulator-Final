@@ -90,21 +90,21 @@ label setgender:
     menu:
         "Male":
             $ your_gender= "male"
-            $ your_pronoun_subject= "he"
+            $ your_pronoun_subject= "He is"
             $ your_pronoun_possessive = "his"
             $ your_pronoun_object = "him"
             $ you_gender_nicename = "man"
             $ you_gender_nickname = "lad"
         "Female":
             $ your_gender= "female"
-            $ your_pronoun_subject= "she"
+            $ your_pronoun_subject= "She is"
             $ your_pronoun_possessive = "hers"
             $ your_pronoun_object = "her"
             $ you_gender_nicename = "woman"
             $ you_gender_nickname = "lass"
         "Non-Binary":
             $ your_gender= "non-binary"
-            $ your_pronoun_subject= "they"
+            $ your_pronoun_subject= "They are"
             $ your_pronoun_possessive = "theirs"
             $ your_pronoun_object = "their"
             $ you_gender_nicename = "person"
