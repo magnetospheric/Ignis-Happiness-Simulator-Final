@@ -56,10 +56,9 @@ label meeting_ignis_again:
 
 label search_tigiano_rubble:
 
-    call screen infobubble(title="Search the rubble", content="You never know what you might find.", confirmation="Let's go")
+    call screen infobubble_confirm_cancel(title="Search the rubble", content="You never know what you might find.", confirmation="Let's search!", cancel="I don't have time for this", cancel_destination="found_ignis")
 
     hide screen infobubble
-    #hide screen tigiano_inactive
 
     call screen tigiano_rubble
 
@@ -67,19 +66,29 @@ label search_tigiano_rubble:
 
 label harpoon:
 
+    show screen harpoon_large
+    with dissolve
+
     you "What is this? It looks different from the other mechs..."
 
     narrator1 "You prod the slab of metal and it clunks heavily to the side. Then you realise it's not a mech component at all, but rather a giant harpoon."
 
+    hide screen harpoon_large
+    with dissolve
 
     menu:
         "Examine it some more?":
 
             $ examined_harpoon = True
 
+            show screen harpoon_large
+            with dissolve
+
             narrator1 "You peer closer."
 
             narrator1 "It doesn't seem to have any living or robotic components, and anyway, the circuits seem fried. You trace a finger along the chrome, marvelling at the intricacy."
+
+            narrator1 "There's this weird curved panel at the end, which seems like a good base to stand upon."
 
             narrator1 "It looks almost like a hoverboard, and you're struck by the oddly hilarious mental image of someone trying to ride it."
 
@@ -89,28 +98,51 @@ label harpoon:
 
             narrator1 "This is Imperial tech, and you really don't trust it. You step away before it does something weird."
 
+    hide screen harpoon_large
+    with dissolve
+
     menu:
         "Keep looking through the rubble":
+
+
             call screen tigiano_rubble
+
         "Try something else":
+
+            hide screen harpoon_large
+
             jump found_ignis
 
 
 
-label painting:
+label soupy:
+
 
     you "A picture? Wait..."
 
+    show screen soupy_large
+    with dissolve
+
     narrator1 "You pull the framed canvas out from the rubble. It's a portrait of a man with a can of soup on his head."
+
+    narrator1 "Oh dear. It's probably the work of that street artist that hangs around Listro Park."
+
+    narrator1 "What on earth could it mean?"
 
     you "Whoa-oh."
 
     narrator1 "You replace the picture. It's not exactly useful."
 
+    hide screen soupy_large
+    with dissolve
+
     menu:
         "Keep looking through the rubble":
+
             call screen tigiano_rubble
+
         "Try something else":
+
             jump found_ignis
 
 
@@ -299,7 +331,7 @@ label escape_tigiano:
             narrator1 "Ignis seems impressed by your tenacity."
 
             jump other_side_of_canal
-            
+
 
 
 label other_side_of_canal:
