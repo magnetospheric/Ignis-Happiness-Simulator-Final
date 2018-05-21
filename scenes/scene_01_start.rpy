@@ -34,7 +34,7 @@ label start:
 
     narrator1 "small test text before transition"
 
-    jump meeting_ignis_again
+    jump ignis_animation_reel
 
     # #shows the first background
     # scene bg altissia_alleyway
@@ -204,3 +204,174 @@ label citizens_test:
     return
 
     jump escort_to_jetty
+
+
+label ignis_animation_reel:
+
+    show bg rubblestreet with Dissolve(0.3)
+
+    show ignis neutral with dissolve
+
+    pause 0.4
+
+    show ignis neutral eyesclosed with dissolve
+
+    pause 0.4
+
+    show ignis neutral openmouth with dissolve
+
+    pause 0.4
+
+    show ignis neutral openmouth eyesclosed with dissolve
+
+    pause 0.4
+
+    show ignis smile with dissolve
+
+    pause 0.4
+
+    show ignis smile eyesclosed with dissolve
+
+    pause 0.4
+
+    show ignis touching glasses with dissolve
+
+    pause 0.4
+
+    show ignis touching glasses eyesclosed with dissolve
+
+    pause 0.4
+
+    show ignis unimpressed with dissolve
+
+    pause 0.4
+
+    show ignis unimpressed eyesclosed with dissolve
+
+    pause 0.4
+
+    show ignis unimpressed openmouth with dissolve
+
+    pause 0.4
+
+    show ignis unimpressed openmouth eyesclosed with dissolve
+
+    pause 0.4
+
+    show ignis sidelong with dissolve
+
+    pause 0.4
+
+    show ignis sidelong openmouth with dissolve
+
+    pause 0.4
+
+    show ignis sidelong direct with dissolve
+
+    pause 0.4
+
+    show ignis sidelong direct openmouth with dissolve
+
+    pause 0.4
+
+    #######
+
+    show ignis neutral wet with dissolve
+
+    pause 0.4
+
+    show ignis neutral eyesclosed wet with dissolve
+
+    pause 0.4
+
+    show ignis neutral openmouth wet with dissolve
+
+    pause 0.4
+
+    show ignis neutral openmouth eyesclosed wet with dissolve
+
+    pause 0.4
+
+    show ignis smile wet with dissolve
+
+    pause 0.4
+
+    show ignis smile eyesclosed wet with dissolve
+
+    pause 0.4
+
+    show ignis touching glasses wet with dissolve
+
+    pause 0.4
+
+    show ignis touching glasses eyesclosed wet with dissolve
+
+    pause 0.4
+
+    show ignis unimpressed wet with dissolve
+
+    pause 0.4
+
+    show ignis unimpressed eyesclosed wet with dissolve
+
+    pause 0.4
+
+    show ignis unimpressed openmouth wet with dissolve
+
+    pause 0.4
+
+    show ignis unimpressed openmouth eyesclosed wet with dissolve
+
+    pause 0.4
+
+    show ignis sidelong wet with dissolve
+
+    pause 0.4
+
+    show ignis sidelong openmouth wet with dissolve
+
+    pause 0.4
+
+    show ignis sidelong direct wet with dissolve
+
+    pause 0.4
+
+    show ignis sidelong direct openmouth wet with dissolve
+
+    pause 0.4
+
+    show ignis neutral blind with dissolve
+
+    pause 0.4
+
+    show ignis neutral openmouth blind with dissolve
+
+    pause 0.4
+
+    show ignis smile blind with dissolve
+
+    pause 0.4
+
+    show ignis unimpressed blind with dissolve
+
+    pause 0.4
+
+    show ignis unimpressed openmouth blind with dissolve
+
+    pause 0.4
+
+    show ignis pain blind with dissolve
+
+    pause 0.4
+
+    show ignis pain openmouth blind with dissolve
+
+    pause 0.4
+
+    show ignis happy blind with dissolve
+
+    pause 0.8
+
+    hide ignis with dissolve
+
+    hide bg with dissolve
