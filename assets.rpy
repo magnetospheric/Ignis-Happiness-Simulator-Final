@@ -84,15 +84,8 @@ define narrator1_nosound = Character(
 
 
 ### Character definitions ###
-define ignis = DynamicCharacter(
-                            'ignis_name',
-                            who_color="#eae9ff",
-                            window_background="images/ui/dialog_bg01.png",
-                            who_outlines=[ (4, "#ffffff26", 0, 0), (3, "#282645", 0, 0) ],
-                            ctc="ctc_blink",
-                            ctc_position="fixed",
-                            callback=clicky_typewriter
-                        )
+# IGNIS IS IN HIS OWN FILE
+
 define you = DynamicCharacter(
                             'your_name',
                             who_color="#ffeff6",
@@ -146,25 +139,19 @@ image ctc_blink = LiveComposite(
 
 image ctc_base:
     "images/ui/next_button_small.png"
-    linear 0.8 alpha 0.95
+    linear 0.8 alpha 1.0
     repeat
 
 image glow:
     "images/ui/next_button_hover_small.png"
     linear 0.8 alpha 0.0
     "images/ui/next_button_hover_small.png"
-    linear 0.8 alpha 0.5
+    linear 0.8 alpha 0.8
     repeat
 
 
 #### Character Images ####
-image ignis neutral  = "images/characters/ignis/ignis-neutral.png"
-image ignis neutral openmouth  = "images/characters/ignis/ignis-neutral-openmouth.png"
-image ignis smile  = "images/characters/ignis/ignis-smile.png"
-image ignis sidelong  = "images/characters/ignis/ignis-sidelong.png"
-image ignis sidelong openmouth  = "images/characters/ignis/ignis-sidelong-openmouth.png"
-image ignis sidelong direct  = "images/characters/ignis/ignis-sidelong-direct.png"
-image ignis sidelong direct openmouth  = "images/characters/ignis/ignis-sidelong-direct-openmouth.png"
+# IGNIS IS IN HIS OWN FILE
 
 # image ignis wet neutral  = "images/characters/ignis/ignis-wet-neutral.png"
 # image ignis wet openmouth  = "images/characters/ignis/ignis-wet-openmouth.png"
