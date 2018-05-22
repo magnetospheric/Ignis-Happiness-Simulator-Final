@@ -15,7 +15,7 @@ define ignis = DynamicCharacter(
                             'ignis_name',
                             who_color="#eae9ff",
                             window_background="images/ui/dialog_bg01.png",
-                            who_outlines=[ (4, "#ffffff26", 0, 0), (3, "#282645", 0, 0) ],
+                            who_outlines=[ (7, "#0000004D", 0, 0), (5, "#ffffffd9", 0, 0), (4, "#282645", 0, 0) ],
                             ctc="ctc_blink",
                             ctc_position="fixed",
                             callback=clicky_typewriter
@@ -286,6 +286,10 @@ image ignis smile eyesclosed wet = "images/characters/ignis/ignis-smile-wet-blin
 image ignis touching glasses eyesclosed wet = "images/characters/ignis/ignis-touching-glasses-wet-blink.png"
 image ignis unimpressed eyesclosed wet = "images/characters/ignis/ignis-unimpressed-wet-blink.png"
 image ignis unimpressed openmouth eyesclosed wet = "images/characters/ignis/ignis-unimpressed-openmouth-wet-blink.png"
+
+# the no-blinks
+image ignis unimpressed openmouth wet noblink = "images/characters/ignis/ignis-unimpressed-openmouth-wet.png"
+
 
 image ignis sidelong wet = "images/characters/ignis/ignis-sidelong-wet.png"
 image ignis sidelong openmouth wet = "images/characters/ignis/ignis-sidelong-openmouth-wet.png"

@@ -90,7 +90,7 @@ define you = DynamicCharacter(
                             'your_name',
                             who_color="#ffeff6",
                             window_background="images/ui/dialog_bg01.png",
-                            who_outlines=[ (4, "#ffffff26", 0, 0), (3, "#3b2831", 0, 0) ],
+                            who_outlines=[ (7, "#0000004D", 0, 0), (5, "#ffffffd9", 0, 0), (4, "#3b2831", 0, 0) ],
                             ctc="ctc_blink",
                             ctc_position="fixed",
                             callback=clicky_typewriter
@@ -374,6 +374,8 @@ image bg fountaincourtyard = 'images/backgrounds/fountain_courtyard.png'
 image bg widestreet = 'images/backgrounds/wide_garden_street.png'
 image bg mediumstreet = 'images/backgrounds/medium_street.png'
 image bg rubblestreet = 'images/backgrounds/rubble_street.png'
+image bg jettynearcellar = 'images/backgrounds/jetty-near-cellar2.png'
+image bg cellar = 'images/backgrounds/cellar2.png'
 
 image bg magisterialsquare = 'images/backgrounds/magisterial_square.png'
 

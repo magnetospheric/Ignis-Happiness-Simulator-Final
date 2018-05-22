@@ -61,7 +61,7 @@ define gui.text_bold_font = "fonts/AvantGarde-Demi.ttf"
 ## The font used for character names.
 define gui.name_text_font = "fonts/Birch.ttf"
 define gui.name_text_color = "#ffffff"
-define gui.name_text_outlines = [ (4, "#ffffff26", 0, 0), (3, "#321226", 0, 0) ]
+define gui.name_text_outlines = [ (7, "#0000004D", 0, 0), (5, "#ffffffd9", 0, 0), (4, "#321226", 0, 0) ]
 
 ## The font used for out-of-game text.
 define gui.interface_text_font = "DejaVuSans.ttf"
@@ -145,6 +145,10 @@ define gui.dialogue_width = 1050
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
 define gui.dialogue_text_xalign = 0.0
+
+## kerning for name and dialogue
+define gui.dialogue_text_kerning = 0
+define gui.name_text_kerning = 1
 
 
 ## Buttons #####################################################################
