@@ -9,6 +9,13 @@
 
 label food_break:
 
+    show bg cellar with Dissolve(0.3)
+
+    show ignis at left
+    with move
+
+    narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
+
     narrator1 "Inside the cellar it's damp and airy. There's stacks of boxes everywhere — merchandise, most likely, discarded amid the chaos."
 
     narrator1 "You turn over a box to reveal a sign saying 'LEIDEN POTATOES — IMPORT'."
@@ -21,11 +28,19 @@ label food_break:
 
     ignis "We need to replenish our strength ... but let's take only what we need."
 
+    you "You know what I want to know more than anything? Why there's so many weird pieces of artwork around this city."
+
+    narrator1 "Ignis laughs"
+
+    narrator1 "But a moment later he falls back into thought."
+
+    narrator1 "You don't enjoy that expression. He seems sad, frustrated."
+
     ignis "Agh — I have no idea how we're to get Noctis to the altar."
 
     if examined_harpoon == True:
 
-        you "Hey, I don't know if this is useful, but earlier"
+        you "Hey, I don't know if this is useful, but earlier I saw this"
 
         narrator1 "At this, Ignis's face lights up. You can practically see the cogs turning in his brain."
 
@@ -55,9 +70,9 @@ label food_break:
     else:
         ignis "A gentleman has his secrets."
 
-    prompto "{i}Okay, cool. Should I, uh, come meet you?{/i}"
+    prompto "{i}Heheh. Okay, cool. Should I, uh, come meet you?{/i}"
 
-    ignis "Please. We're in a warehouse just across from the Tigiano bridge. There's a harpoon in the square."
+    ignis "Please. We're in a warehouse cellar just across from the Tigiano bridge. There's a harpoon in the square."
 
     prompto "{i}On it. Laters!{/i}"
 
