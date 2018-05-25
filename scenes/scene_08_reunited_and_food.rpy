@@ -103,7 +103,6 @@ label harpoon:
     menu:
         "Keep looking through the rubble":
 
-
             call screen tigiano_rubble
 
         "Try something else":
