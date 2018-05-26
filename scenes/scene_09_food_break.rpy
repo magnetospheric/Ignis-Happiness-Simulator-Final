@@ -11,7 +11,7 @@ label food_break:
 
     show bg cellar with Dissolve(0.3)
 
-    show ignis at left
+    show ignis touching glasses wet at left
     with move
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
@@ -33,6 +33,10 @@ label food_break:
     narrator1 "You root around for something suitable to eat. Maybe a chocolate bar, or some fruit..."
 
     narrator1 "By the time you've turned around, Ignis has already found a small portable stove, and has grabbed some Leiden potatoes, peppers and herbs."
+
+    show bluelightning at SpriteLoc2(-0.11, -0.01) behind ignis with Dissolve(1.5)
+
+    hide bluelightning with Dissolve(1.5)
 
     narrator1 "Did you spy a crackle of blue light there?"
 
@@ -186,7 +190,7 @@ label food_break:
 
     narrator1 "Seems you have some more time to rest up. You settle back against the wall, trying to ignore how scratchy the brick is against your uniform."
 
-    you "Wow, I'm still kind of stuffed after that food, or I'd ask for more".
+    you "Wow, I'm still kind of stuffed after that food, or I'd ask for more."
 
     show ignis neutral eyesclosed wet with dissolve
 
