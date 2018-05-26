@@ -55,6 +55,8 @@ label meeting_ignis_again:
 
 label search_tigiano_rubble:
 
+    $ rubble_items_found = 0
+
     call screen infobubble_confirm_cancel(title="Search the rubble", content="You never know what you might find.", confirmation="Let's search!", cancel="I don't have time for this", cancel_destination="found_ignis")
 
     hide screen infobubble
@@ -67,6 +69,8 @@ label harpoon:
 
     show screen harpoon_large
     with dissolve
+
+    $ rubble_items_found += 1
 
     you "What is this? It looks different from the other mechs..."
 
@@ -89,7 +93,7 @@ label harpoon:
 
             narrator1 "There's this weird curved panel at the end, which seems like a good base to stand upon."
 
-            narrator1 "It looks almost like a hoverboard, and you're struck by the oddly hilarious mental image of someone trying to ride it."
+            narrator1 "It looks almost like a hoverboard, and you're struck by the hilarious mental image of someone trying to ride it."
 
             narrator1 "You file this away in your head. Never know when it might be useful."
 
@@ -100,20 +104,22 @@ label harpoon:
     hide screen harpoon_large
     with dissolve
 
-    menu:
-        "Keep looking through the rubble":
-
-            call screen tigiano_rubble
-
-        "Try something else":
-
-            hide screen harpoon_large
-
-            jump found_ignis
+    if rubble_items_found < 2:
+        menu:
+            "Keep looking through the rubble":
+                call screen tigiano_rubble
+            "Try something else":
+                jump found_ignis
+    else:
+        menu:
+            "Try something else":
+                jump found_ignis
 
 
 
 label soupy:
+
+    $ rubble_items_found += 1
 
     you "A picture? Wait..."
 
@@ -133,14 +139,16 @@ label soupy:
     hide screen soupy_large
     with dissolve
 
-    menu:
-        "Keep looking through the rubble":
-
-            call screen tigiano_rubble
-
-        "Try something else":
-
-            jump found_ignis
+    if rubble_items_found < 2:
+        menu:
+            "Keep looking through the rubble":
+                call screen tigiano_rubble
+            "Try something else":
+                jump found_ignis
+    else:
+        menu:
+            "Try something else":
+                jump found_ignis
 
 
 
@@ -171,7 +179,11 @@ label found_ignis:
 
     show ignis neutral wet
 
-    narrator1 "It's a shock to see Ignis looking so dishevelled. You bite your lip as you steady him, thinking this is all your fault for being late."
+    # says s
+    if citizens_first == True or waited == True:
+        narrator1 "It's a shock to see Ignis looking so dishevelled. You bite your lip as you steady him, thinking this is all your fault for being late."
+    else:
+        narrator1 "It's a shock to see Ignis looking so dishevelled. You bite your lip as you steady him. Even though you came as fast as you could, it still wasn't enough."
 
     you "I — I heard over the radio. Who was that man? Are you okay?"
 
@@ -318,11 +330,11 @@ label escape_tigiano:
 
     you "So what did —"
 
-    show ignis sidelong wet with dissolve
+    show ignis sidelong wet with vpunch
 
     #sound effect - metal screeching and clanging and thudding (3 noises merged)
 
-    narrator1 "You're interrupted by the screeching sound of metal hitting concrete. Something has landed nearby." with vpunch
+    narrator1 "You're interrupted by the screeching sound of metal hitting concrete. Something has landed nearby."
 
     # you soundeffect voice intake of breath (consider making diff intakes of breath for male and female and nb)
     you "A mech!"
