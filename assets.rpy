@@ -374,13 +374,23 @@ image bg fountaincourtyard = 'images/backgrounds/fountain_courtyard.png'
 image bg widestreet = 'images/backgrounds/wide_garden_street.png'
 image bg mediumstreet = 'images/backgrounds/medium_street.png'
 image bg rubblestreet = 'images/backgrounds/rubble_street.png'
+image bg rubblestreet dark = 'images/backgrounds/rubble_street_dark.png'
 image bg jettynearcellar = 'images/backgrounds/jetty-near-cellar2.png'
 image bg cellar = 'images/backgrounds/cellar2.png'
+
+image bg leviathan = 'images/backgrounds/leviathan.png'
+image bg altar = 'images/backgrounds/altar01.png'
 
 image bg magisterialsquare = 'images/backgrounds/magisterial_square.png'
 
 image black = "images/black.png"
 image blackoverlay = Image("ui/black-layer.png", xalign=0.5, yalign=0.5)
+
+
+# ITEMS #
+# those not defined in screens
+image soup = "images/items/soup1.png"
+image soup empty = "images/items/empty-soup1.png"
 
 
 # MUSIC #
