@@ -76,3 +76,60 @@ image bluelightning-mid:
     "images/effects/blue-lightning03.png"
     linear 0.6 alpha 0.05
     repeat
+
+
+
+
+
+### CTC button definition ###
+image smoke = LiveComposite(
+    (1280, 720),
+    (0, 0), "smoke1a",
+    (0, 0), "smoke1b",
+    (0, 0), "smoke2a",
+    (0, 0), "smoke2b",
+    (0, 0), "smoke3a",
+    (0, 0), "smoke3b"
+    )
+
+image smoke1a:
+    im.Alpha("images/effects/smoke1a.png",0.4)
+    linear 3.0 alpha 1.0
+    im.Alpha("images/effects/smoke1a.png",0.4)
+    linear 3.0 alpha 0.0
+    repeat
+
+image smoke1b:
+    im.Alpha("images/effects/smoke1b.png",0.4)
+    linear 3.0 alpha 0.0
+    im.Alpha("images/effects/smoke1b.png",0.4)
+    linear 3.0 alpha 1.0
+    repeat
+
+image smoke2a:
+    im.Alpha("images/effects/smoke2a.png",0.4)
+    linear 2.0 alpha 1.0
+    im.Alpha("images/effects/smoke2a.png",0.4)
+    linear 2.0 alpha 0.0
+    repeat
+
+image smoke2b:
+    im.Alpha("images/effects/smoke2b.png",0.4)
+    linear 2.0 alpha 0.0
+    im.Alpha("images/effects/smoke2b.png",0.4)
+    linear 2.0 alpha 1.0
+    repeat
+
+image smoke3a:
+    im.Alpha("images/effects/smoke3a.png",0.6)
+    linear 2.0 alpha 1.0
+    im.Alpha("images/effects/smoke3a.png",0.6)
+    linear 2.0 alpha 0.0
+    repeat
+
+image smoke3b:
+    im.Alpha("images/effects/smoke3b.png",0.6)
+    linear 2.0 alpha 0.0
+    im.Alpha("images/effects/smoke3b.png",0.6)
+    linear 2.0 alpha 1.0
+    repeat
