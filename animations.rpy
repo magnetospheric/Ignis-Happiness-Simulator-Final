@@ -22,22 +22,30 @@ define fastsoftflash = Fade(.2, 0.0, .3, color="#ffffff99")
 
 ## particles ##################################################################
 image soot_particles:
-        choice (show_soot == True):
-            Fixed(
-                    SnowBlossom(im.Alpha("images/effects/big_soot.png",0.9), count=10, start=10, yspeed=(40,80)),
-                    SnowBlossom(im.Alpha("images/effects/medium_soot.png",0.9), count=20, start=10, yspeed=(40,80)),
-                    SnowBlossom(im.Alpha("images/effects/little-soot.png",0.9), count=30, start=10, yspeed=(40,80)) )
+        # choice (show_soot == True):
+        Fixed(
+            SnowBlossom(im.Alpha("images/effects/big-soot.png",0.7), border=10, xspeed=(-50, 50), yspeed=(50, -50), count=100, start=0, fast=True),
+            SnowBlossom(im.Alpha("images/effects/medium-soot.png",0.8), border=10, xspeed=(-50, 50), yspeed=(50, -50), count=150, start=0, fast=True),
+            SnowBlossom(im.Alpha("images/effects/little-soot.png",0.9), border=10, xspeed=(-50, 50), yspeed=(50, -50), count=380, start=0, fast=True),
+            SnowBlossom(im.Alpha("images/effects/little-soot.png",0.6), border=10, xspeed=(-50, 50), yspeed=(50, -50), count=180, start=0, fast=True)
+            )
+# this one is designed to be shown above character images / only a few particles
+image soot_particles_sparse:
+        # choice (show_soot == True):
+        Fixed(
+            SnowBlossom(im.Alpha("images/effects/big-soot.png",0.3), border=10, xspeed=(-50, 50), yspeed=(50, -50), count=50, start=0, fast=True),
+            SnowBlossom(im.Alpha("images/effects/medium-soot.png",0.3), border=10, xspeed=(-50, 50), yspeed=(50, -50), count=50, start=0, fast=True)
+            )
 
-image snow:
-        choice (show_snow == True):
-            Fixed(
-                    SnowBlossom(im.Alpha("images/sprites/big_snow.png",0.82), count=2, start=10, yspeed=(40,80)),
-                    SnowBlossom(im.Alpha("images/sprites/medium_snow.png",0.94), count=8, start=10, yspeed=(40,80)),
-                    SnowBlossom(im.Alpha("images/sprites/small_snow.png",0.97), count=12, start=10, yspeed=(40,80)),
-                    SnowBlossom(im.Alpha("images/sprites/tiny_snow.png",0.99), count=22, start=5, yspeed=(40,80)) )
-        choice (show_snow == False):
-            Fixed(
-                    SnowBlossom(im.Alpha("images/sprites/big_snow.png",0.0), count=1, start=10, yspeed=(40,80)),
-                    SnowBlossom(im.Alpha("images/sprites/medium_snow.png",0.0), count=1, start=10, yspeed=(40,80)),
-                    SnowBlossom(im.Alpha("images/sprites/small_snow.png",0.0), count=1, start=10, yspeed=(40,80)),
-                    SnowBlossom(im.Alpha("images/sprites/tiny_snow.png",0.0), count=1, start=5, yspeed=(40,80)) )
+
+image glow_particles:
+        # choice (show_snow == True):
+        Fixed(
+            SnowBlossom(im.Alpha("images/effects/pink-glow-small.png",0.3), border=10, xspeed=(-30, 30), yspeed=(40, -40), count=12, start=0, fast=True),
+            SnowBlossom(im.Alpha("images/effects/purple-glow-small.png",0.3), border=10, xspeed=(-30, 30), yspeed=(40, -40), count=12, start=0, fast=True),
+            SnowBlossom(im.Alpha("images/effects/blue-glow-small.png",0.3), border=10, xspeed=(-30, 30), yspeed=(40, -40), count=12, start=0, fast=True),
+
+            SnowBlossom(im.Alpha("images/effects/pink-glow-medium.png",0.2), border=10, xspeed=(-20, 20), yspeed=(40, -40), count=1, start=0, fast=True),
+            SnowBlossom(im.Alpha("images/effects/purple-glow-medium.png",0.2), border=10, xspeed=(-20, 20), yspeed=(40, -30), count=1, start=0, fast=True),
+            SnowBlossom(im.Alpha("images/effects/blue-glow-medium.png",0.2), border=10, xspeed=(-20, 20), yspeed=(40, -40), count=1, start=0, fast=True)
+            )
