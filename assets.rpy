@@ -90,7 +90,7 @@ define you = DynamicCharacter(
                             'your_name',
                             who_color="#ffeff6",
                             window_background="images/ui/dialog_bg01.png",
-                            who_outlines=[ (7, "#0000004D", 0, 0), (5, "#ffffffd9", 0, 0), (4, "#3b2831", 0, 0) ],
+                            who_outlines=[ (7, "#0000004D", 0, 0), (4, "#ffffff59", 0, 0), (3, "#3b2831", 0, 0) ],
                             ctc="ctc_blink",
                             ctc_position="fixed",
                             callback=clicky_typewriter
@@ -112,8 +112,8 @@ define captain = Character(
                         )
 
 # niffs
-define ravus = DynamicCharacter('ravus_name', who_color="#aa748d", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
-define ardyn = DynamicCharacter('ardyn_name', who_color="#aa748d", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+define ravus = DynamicCharacter('ravus_name', who_color="#e0e0e0", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
+define ardyn = DynamicCharacter('ardyn_name', who_color="#d0c3bf", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 #MAKE SURE to use a robot sound for the typewriter noise for the trooper!
 define magitektrooper = Character("Trooper", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
 define caligo = Character("Caligo", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg01.png")
@@ -133,8 +133,8 @@ define citizen3 = Character("Sceptical Citizen", ctc="ctc_blink", ctc_position="
 ### CTC button definition ###
 image ctc_blink = LiveComposite(
     (65, 65),
-    (1158, 640), "ctc_base",
-    (1158, 640), "glow"
+    (1120, 635), "ctc_base",
+    (1120, 635), "glow"
     )
 
 image ctc_base:
@@ -153,11 +153,6 @@ image glow:
 #### Character Images ####
 # IGNIS IS IN HIS OWN FILE
 
-# image ignis wet neutral  = "images/characters/ignis/ignis-wet-neutral.png"
-# image ignis wet openmouth  = "images/characters/ignis/ignis-wet-openmouth.png"
-# image ignis wet pained  = "images/characters/ignis/ignis-wet-pained.png" #openmouth eyesclosed
-# image ignis wet softsmile  = "images/characters/ignis/ignis-wet-softsmile.png" #openmouth eyesclosed
-
 image altissianguard neutral  = "images/characters/altissianguard-neutral.png"
 image altissianguard smile  = "images/characters/altissianguard-smile.png"
 
@@ -170,6 +165,10 @@ image citizens dark = "images/characters/citizens-dark.png"
 image citizens scared = "images/characters/citizens-dark-scared.png"
 image citizens reasonable = "images/characters/citizens-dark-reasonable.png"
 image citizens sceptical = "images/characters/citizens-dark-sceptical.png"
+
+image ardyn trashbags = "images/characters/ardyn.png"
+image ardyn neon = "images/characters/ardyn-neon.png"
+image ardyn silhouette = "images/characters/ardyn-silhouette.png"
 
 image trooper distance = "images/characters/trooper-distance.png"
 image trooper lunging = "images/characters/trooper-lunging.png"
@@ -380,12 +379,50 @@ image bg cellar = 'images/backgrounds/cellar2.png'
 
 image bg leviathan = 'images/backgrounds/leviathan.png'
 image bg altar = 'images/backgrounds/altar01.png'
+image bg altar whiteout static = 'images/backgrounds/altar-whiteout.png'
 
 image bg magisterialsquare = 'images/backgrounds/magisterial_square.png'
 
 image black = "images/black.png"
 image blackoverlay = Image("ui/black-layer.png", xalign=0.5, yalign=0.5)
 
+
+### CTC button definition ###
+image bg altar whiteout = LiveComposite(
+    (1280, 720),
+    (0, 0), "altar_base",
+    (0, 0), "altar_glow"
+    )
+
+image altar_base:
+    "images/backgrounds/altar01.png"
+    linear 0.8 alpha 1.0
+    repeat
+
+image altar_glow:
+    "images/backgrounds/altar-whiteout.png"
+    linear 0.8 alpha 0.0
+    choice:
+        0.5
+    choice:
+        1
+    choice:
+        2
+    choice:
+        3
+    choice:
+        3
+    choice:
+        4
+    choice:
+        4
+    choice:
+        4.5
+    choice:
+        5
+    "images/backgrounds/altar-whiteout.png"
+    alpha 0.8
+    repeat
 
 # ITEMS #
 # those not defined in screens
