@@ -61,7 +61,7 @@ define gui.text_bold_font = "fonts/AvantGarde-Demi.ttf"
 ## The font used for character names.
 define gui.name_text_font = "fonts/Birch.ttf"
 define gui.name_text_color = "#ffffff"
-define gui.name_text_outlines = [ (7, "#0000004D", 0, 0), (5, "#ffffffd9", 0, 0), (4, "#321226", 0, 0) ]
+define gui.name_text_outlines = [ (7, "#0000004D", 0, 0), (5, "#ffffff59", 0, 0), (4, "#180f15", 0, 0) ]
 
 ## The font used for out-of-game text.
 define gui.interface_text_font = "DejaVuSans.ttf"
@@ -72,7 +72,7 @@ define gui.text_size = 20
 define gui.text_line_spacing = 17
 
 ## The size of character names.
-define gui.name_text_size = 44
+define gui.name_text_size = 36
 
 ## The size of text in the game's user interface.
 define gui.interface_text_size = 24
@@ -103,7 +103,7 @@ define gui.show_name = False
 ## time.
 
 ## The height of the textbox containing dialogue.
-define gui.textbox_height = 260
+define gui.textbox_height = 222
 
 ## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
 ## center, and 1.0 is the bottom.
@@ -112,8 +112,8 @@ define gui.textbox_yalign = 1.0
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
-define gui.name_xpos = 100
-define gui.name_ypos = 20
+define gui.name_xpos = 175
+define gui.name_ypos = 24
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -136,11 +136,11 @@ define gui.namebox_tile = False
 ## The placement of dialogue relative to the textbox. These can be a whole
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
-define gui.dialogue_xpos = 120
-define gui.dialogue_ypos = 120
+define gui.dialogue_xpos = 220
+define gui.dialogue_ypos = 84
 
 ## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 1050
+define gui.dialogue_width = 840
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
