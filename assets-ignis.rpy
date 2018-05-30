@@ -286,6 +286,7 @@ image ignis smile eyesclosed wet = "images/characters/ignis/ignis-smile-wet-blin
 image ignis touching glasses eyesclosed wet = "images/characters/ignis/ignis-touching-glasses-wet-blink.png"
 image ignis unimpressed eyesclosed wet = "images/characters/ignis/ignis-unimpressed-wet-blink.png"
 image ignis unimpressed openmouth eyesclosed wet = "images/characters/ignis/ignis-unimpressed-openmouth-wet-blink.png"
+image ignis wet silhouette = "images/characters/ignis/ignis-wet-silhouette.png"
 
 # the no-blinks
 image ignis unimpressed openmouth wet noblink = "images/characters/ignis/ignis-unimpressed-openmouth-wet.png"
