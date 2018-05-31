@@ -16,6 +16,7 @@ define fastestdissolve = Dissolve(1)
 
 ## other effects ##############################################################
 define flash = Fade(.25, 0.0, .75, color="#fff")
+define hardflash = Fade(.25, 0.0, .35, color="#ffffffCC")
 define softflash = Fade(.25, 0.0, .35, color="#ffffff99")
 define fastsoftflash = Fade(.2, 0.0, .3, color="#ffffff99")
 
