@@ -54,9 +54,9 @@ label ardyn_appears:
 
     narrator1 "The altar isn't far, but when you finally reach it, it's nothing like you expected."
 
-    narrator1 "Leviathan has sunk below the waves now; whether dead or merely returned to her deep slumber, you do not know."
+    narrator1 "The whole place is rife with energy; the altar stands half-destroyed, and an unholy miasma fills the air."
 
-    narrator1 "The altar stands half-destroyed, and an unholy miasma fills the air."
+    narrator1 "Leviathan has sunk below the waves now; whether dead or merely returned to her deep slumber, you do not know."
 
     narrator1 "But more stunning is the unearthly activity at the foot of the altar. It's like witnessing the centre of a storm."
 
@@ -75,8 +75,8 @@ label ardyn_appears:
     narrator1 "Another crash, another lightning strike as their forces collide. Is Ignis really so powerful? And who the hell is this other guy?"
 
     # crash sf here
-    show bg altar whiteout with softflash
-    show bg altar
+    show bg altar whiteout with hardflash
+    show bg altar with Dissolve(1.0)
 
     narrator1 "The stranger lunges forth. After one final, terrifying strike, Ignis drops to the floor."
 
@@ -111,7 +111,7 @@ label ardyn_appears:
     narrator1 "Even with the stranger's voice, sonorous as it is, the rest of the sentence is muffled. You're too far away to hear."
 
     menu:
-        "Get closer to catch the conversation":
+        "Get closer to catch his words":
 
             show bg altar whiteout static
             show ardyn trashbags with softflash
@@ -151,30 +151,32 @@ label ardyn_appears:
                     narrator1 "But it turns out you don't have much time anyway."
                     $ ardyn_affiliation = "play";
 
-                "(run)":
+                "\[run\]":
                     ardyn "Ah-ah, I think not."
+                    narrator1 "You barely take a step before he blocks you."
                     $ ardyn_affiliation = "fear";
 
             narrator1 "A crooked smile, then —"
 
-            hide ardyn with dissolve
+            hide ardyn
             show bg altar whiteout static
-            show ardyn neon at center with MoveTransition(0.03)
+            show ardyn neon at center with MoveTransition(0.02)
             # show ardyn neon at right with MoveTransition(0.01)
-            show ardyn neon at left with MoveTransition(0.03)
-            show bg altar whiteout static with flash
+            show ardyn neon at left with MoveTransition(0.02)
+            # show bg altar whiteout static
 
             narrator1 "Something hits you at full force; a jolt of gravity to your solar plexus. The world seems to turn in on itself in shades of purple and red, then —"
 
             hide ardyn
-            hide bg
+            show black
             with fastdissolve
             # cut to black
 
-            scene black
             hide soot_particles
             hide glow_particles
             hide soot_particles_sparse
+
+            narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
             narrator1 "..."
 
@@ -182,7 +184,8 @@ label ardyn_appears:
 
             narrator1 "You're getting really sick of this being-knocked-out business by now..."
 
-            show bg altar with dissolve
+            show bg altar
+            hide black with dissolve
 
             narrator1 "When you wake this time, it feels like your head's been hit by a freight truck."
 
@@ -196,29 +199,52 @@ label ardyn_appears:
 
             narrator1 "There's no sign of the stranger, and no sign of Ignis. But instead —"
 
-            you "Oh no, what now..."
-
-            narrator1 "There's a white-haired man standing at the altar"
-
-            you "There has to be some clue left here!"
-
         "Stay where you are":
 
             narrator1 "You're not going to risk having this man hear you. You've seen him fight; it's clear he's infinitely dangerous."
 
             narrator1 "Not to mention the vibe you get off him is blood-curdling."
 
-            narrator1 "So you resign yourself to watching "
+            narrator1 "So you resign yourself to watching as the stranger"
 
     jump ravus_conversation
 
 label ravus_conversation:
 
-    narrator1 ""
+    you "Oh no, what now..."
+
+    narrator1 "There's a white-haired man standing at the altar. He cuts a solemn figure, head slightly bowed, arms loose at his sides."
+
+    narrator1 "His pale clothes are sullied, and while their design screams {i}Empire{/i}, you're not reading any desire to fight off him."
 
     you "Where did that man take Ignis?"
 
-    you "What did you do to him?"
+    if ardyn_affiliation == 'anger':
+        ravus "{i}That man...{\i} You really don't know what you were up against, do you?"
+        you "Wh-what do you mean?"
+        ravus "Really... Chancellor Ardyn Izunia corners you and you ... shout in his face!"
+        narrator1 "The white-haired man spares a moment to laugh to himself. It's not unkind, more ... disbelieving."
+        you "Oh gods... That was the Chancellor?"
+        ravus "Yes, and while your actions were foolish, I'm ... actually quite impressed."
+        narrator1 "You're unsure if he's trying to compliment you or not. Either way, it's a distraction from the main problem."
+    if ardyn_affiliation == 'play':
+        ravus "{i}That man{/i} was Chancellor Ardyn Izunia, and you would do well not to joke around with him."
+        you "I know what I'm doing!"
+        narrator1 "He eyes your dishevelled hair and snorts."
+        ravus "Evidently."
+        you "Enough."
+    if ardyn_affiliation == 'run':
+        ravus "For one who doesn't know who he is, you were wise to try to run."
+        ravus "{i}That man{/i} was none other than Chancellor Ardyn Izunia."
+        you "The Chancellor ... of Niflheim?"
+        ravus "The very same."
+        you "... Oh."
+    if ardyn_affiliation == 'nothing':
+        ravus "You were wise to kepe your distance. That man was Chancellor Ardyn Izunia. Had he noticed you, you likely would not have survived long."
+
+    you "Maybe you can tell me then. What did you do to Ignis?"
+
+    you "Where is he!" with vpunch
 
     ravus "Calm down, brat. I didn't—"
 
@@ -226,7 +252,9 @@ label ravus_conversation:
 
     narrator1 "At this, the man laughs."
 
-    ravus "Oh, I'm not just 'with' the Empire. Ravus Nox Fleuret — Commander of the Nilfheim Military."
+    ravus "Oh, I'm not just 'with' the Empire. Ravus Nox Fleuret — Commander of the Niflheim Military."
+
+    $ ravus_name = "Ravus"
 
     narrator1 "So {i}this{/i} is Ravus. Brother of the Oracle. You've heard of him, for sure, but in person, you never expected him to look so ... young."
 
@@ -257,7 +285,14 @@ label ravus_conversation:
     you "I'm sorry."
     narrator1 "Ravus acts like he hasn't heard you. He's probably hurting too much to acknowledge it."
     ravus "I'm staying with them. If you want to rescue your friend, you'll need to head to the dropship over there."
+    ravus "You'd best hurry. Our {i}esteemed{/i} Chancellor spoke of taking him to Niflheim."
+    menu:
+        "Thank him":
+            you "Thank you, Ravus."
+            narrator1 "Then you leave, heading for the dropship as fast as you can."
+        "Don't waste any more time - Leave":
+            narrator1 "You give only the briefest of nods before turning heel and racing toward the dropship he mentioned."
 
+    narrator1 "There's no reason why he should lie. But all the same, your grip tightens on your sword."
 
-
-    return
+    jump entering_dropship
