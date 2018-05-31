@@ -210,6 +210,8 @@ label food_break:
 
             ignis "There's something else at play... It's not apparent to me yet, but... Something doesn't add up."
 
+            $ ignis_revealed_suspicions = True
+
             narrator1 "And there, he's lost in thought again. You leave him to it."
 
     ignis "Agh — I have no idea how we're to get Noctis to the altar now."

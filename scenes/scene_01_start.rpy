@@ -16,40 +16,36 @@ label start:
 
     $ your_name = "Ilia"
     $ your_gender= "female"
-    $ your_pronoun_subject= "she"
+    $ your_pronoun_subject= "She's"
     $ your_pronoun_possessive = "hers"
     $ your_pronoun_object = "her"
     $ you_gender_nicename = "woman"
     $ you_gender_nickname = "lass"
 
+    $ ravus_name = "White-haired man"
+    $ ardyn_name = "Sinister man"
+
     $ show_happiness = False
 
-    $ happiness += 5
+    $ happiness += 8
 
-    $ citizens_first = True
+    $ citizens_first = False
     $ said_you_saved_citizens = False
     $ waited = True
 
     $ examined_harpoon = False
 
+    $ ignis_revealed_suspicions = False
+    $ motivation = "help"
+
+    $ ardyn_affiliation = "none";
+
+    show screen gold_border
+
     narrator1 "small test text before transition"
 
-    jump ignis_animation_reel
+    jump ardyn_appears
 
-    # #shows the first background
-    # scene bg altissia_alleyway
-    #
-    # #shows the first character
-    # show ignis neutral
-    # with dissolve
-    #
-    # "Altissia, on the day of the Covenant. Everything is going to hell."
-    #
-    # ignis "I've run into a bit of trouble. Would you care to help me?"
-    #
-    # ignis "Look around this room and see if there's anything useful."
-    #
-    # call screen flashlight
 
 # The game starts here.
 label startn:
