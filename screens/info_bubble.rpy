@@ -11,7 +11,7 @@ style info_bubble_frame:
     top_padding 50
     xalign 0.5
     yalign 0.5
-    xsize 706
+    xsize 666
     ysize 311
 
 style centered_button:
@@ -65,13 +65,13 @@ screen infobubble(title, content, confirmation):
         vbox:
             yalign 0.0
             frame:
-                xsize 706
+                xsize 666
                 background None
                 text title id _("title"):
                     style "info_bubble_title"
             null height 10
             frame:
-                xsize 706
+                xsize 666
                 background None
                 text content id "content /n/n/n":
                     style "info_bubble_content"
