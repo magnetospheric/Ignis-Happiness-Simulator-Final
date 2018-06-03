@@ -125,7 +125,7 @@ label find_fuse:
     hide screen infobubble
     hide screen black_overlay
 
-    show bg yureilcorridor fuse
+    show bg yureilcorridor fuse idle
 
     call screen flashlight_fuse
 
@@ -134,8 +134,9 @@ label find_fuse:
 
 label found_fuse:
 
+    show screen black_overlay
     hide flashlight_fuse
-    
+
     you "Aha! Now that looks like a fuse box!"
 
     narrator1 "You flip the switches one by one, until eventually the lights flicker back to life."

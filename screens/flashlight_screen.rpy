@@ -30,8 +30,10 @@ init python:
         lightcount = 0
         lightcounttext = "0"
         timer = False
-        buttonPosX = 195
-        buttonPosY = 280
+        buttonPosX = 0
+        buttonPosY = 0
+        button_idle_image = "images/items/fuse-box.png"
+        button_hover_image = "images/items/fuse-box-hover.png"
 
         def __init__(self, **kwargs):
 
@@ -39,22 +41,15 @@ init python:
 
             # set timer value for use in rest of class
             self.timer = kwargs["timer"]
+            self.button_idle_image = kwargs["button_idle_image"]
+            self.button_hover_image = kwargs["button_hover_image"]
+            self.buttonPosX = kwargs["buttonPosX"]
+            self.buttonPosY = kwargs["buttonPosY"]
 
             # This image should be twice the width and twice the height
             # of the screen.
             self.child = Image("images/flashlight-off.png")
             self.button = None
-
-            # def transparent_screen(**kwargs):
-            #     ui.window(id="window")
-            #     ui.vbox(id="say_vbox")
-            #
-            #     # ui.Image("images/ui/transparent_modal.png")
-            #     ui.image("images/backgrounds/altar01.png")
-            #
-            #     ui.close()
-            #
-            # renpy.define_screen("transparent", transparent_screen, modal="True")
 
             # (-1, -1) is the way the event system represents
             # "outside the game window".
@@ -171,8 +166,8 @@ init python:
 
                     # swap out for flashlight ON (if countdown > 0)
                     self.child = Image("images/flashlight.png")
-                    self.button = ui._imagebutton(idle_image = "images/items/fuse-box.png",
-                                                  hover_image = "images/items/fuse-box-hover.png",
+                    self.button = ui._imagebutton(idle_image = self.button_idle_image,
+                                                  hover_image = self.button_hover_image,
                                                   clicked = DelayAction(Jump("found_fuse"), 0.3))
                     #if countdown < 0,
 
@@ -233,15 +228,14 @@ screen door_idle:
             action NullAction()
 
 screen flashlight_fuse:
-    add Flashlight(timer=False)
+    add Flashlight(
+                    timer=False,
+                    button_idle_image="images/items/fuse-box.png",
+                    button_hover_image="images/items/fuse-box-hover.png",
+                    buttonPosX=96,
+                    buttonPosY=181
+                )
 
-screen fuse_button:
-    vbox:
-        imagebutton:
-            idle "images/items/fuse-box.png"
-            hover "images/items/fuse-box-hover.png"
-            xpos 95 ypos 180
-            action Return()
 # this will go in its own file eventually
 label boom:
     # will have conditions here according to where in the game you are on discovery
