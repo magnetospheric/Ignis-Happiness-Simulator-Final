@@ -11,12 +11,27 @@
 # ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 init python:
+    import time
+
+    class DelayAction():
+        wrapped = None
+        start_time = 0
+
+        def __init__(self, wrapped, delay):
+            self.wrapped = wrapped
+            self.start_time = time.time() + delay
+
+        def __call__(self, *args, **kwargs):
+            if time.time() > self.start_time:
+                self.wrapped.__call__(*args, **kwargs)
 
     class Flashlight(renpy.Displayable):
 
         lightcount = 0
         lightcounttext = "0"
         timer = False
+        buttonPosX = 195
+        buttonPosY = 280
 
         def __init__(self, **kwargs):
 
@@ -28,6 +43,18 @@ init python:
             # This image should be twice the width and twice the height
             # of the screen.
             self.child = Image("images/flashlight-off.png")
+            self.button = None
+
+            # def transparent_screen(**kwargs):
+            #     ui.window(id="window")
+            #     ui.vbox(id="say_vbox")
+            #
+            #     # ui.Image("images/ui/transparent_modal.png")
+            #     ui.image("images/backgrounds/altar01.png")
+            #
+            #     ui.close()
+            #
+            # renpy.define_screen("transparent", transparent_screen, modal="True")
 
             # (-1, -1) is the way the event system represents
             # "outside the game window".
@@ -76,6 +103,11 @@ init python:
             # Render the flashlight image.
             child_render = renpy.render(self.child, width, height, st, at)
 
+            #
+            if self.button != None:
+                button_render = renpy.render(self.button, width, height, st, at)
+                render.blit(button_render, (self.buttonPosX, self.buttonPosY))
+
             # Draw the image centered on the cursor.
             flashlight_width, flashlight_height = child_render.get_size()
             x, y = self.pos
@@ -98,11 +130,14 @@ init python:
 
             return render
 
-
         def event(self, ev, x, y, st):
             #redraw the instant event is triggered
             #this allows flashlight to appear without req. drag + pos change
             renpy.redraw(self, 0)
+
+            # pass event to button
+            if self.button!=None:
+                self.button.event(ev, x, y, st)
 
             # has to be defined inside event
             def setlightcount(count):
@@ -114,10 +149,11 @@ init python:
             # if mouse clicked
             if renpy.map_event(ev,"mousedown_1"):
 
-                if self.child == Image("images/flashlight.png"):
+                if self.button!=None:
 
                     # swap out for flashlight OFF
                     self.child = Image("images/flashlight-off.png")
+                    self.button = None
 
                     # turns off the countdown
                     self.flashlight_start_time = 0
@@ -126,10 +162,18 @@ init python:
                     self.awareness_alpha = 0
                     self.awareness_counter_alpha = 0
 
-                elif self.child == Image("images/flashlight-off.png"):
+                else:
+                    # modalval = False
+
+                    # need to somehow activate image buttons now
+                    # self.button = renpy.displayable(ImageButton
+                    # self.button = ui.imagebutton("images/items/fuse-box.png", hover = "images/items/fuse-box-hover.png", clicked = Return(), xpos=5, ypos= 0)
 
                     # swap out for flashlight ON (if countdown > 0)
                     self.child = Image("images/flashlight.png")
+                    self.button = ui._imagebutton(idle_image = "images/items/fuse-box.png",
+                                                  hover_image = "images/items/fuse-box-hover.png",
+                                                  clicked = DelayAction(Jump("found_fuse"), 0.3))
                     #if countdown < 0,
 
                     #turns on countdown
@@ -156,10 +200,11 @@ init python:
 
             # Update stored position
             self.pos = (x, y)
+            return None
 
         #return our objects
         def visit(self):
-            return [ self.awareness, self.awareness_counter, self.child ]
+            return [ self.awareness, self.awareness_counter, self.child, self.button ]
 
 
 screen flashlight:
@@ -188,14 +233,15 @@ screen door_idle:
             action NullAction()
 
 screen flashlight_fuse:
+    add Flashlight(timer=False)
+
+screen fuse_button:
     vbox:
         imagebutton:
             idle "images/items/fuse-box.png"
             hover "images/items/fuse-box-hover.png"
             xpos 95 ypos 180
             action Return()
-    add Flashlight(timer=False)
-
 # this will go in its own file eventually
 label boom:
     # will have conditions here according to where in the game you are on discovery
