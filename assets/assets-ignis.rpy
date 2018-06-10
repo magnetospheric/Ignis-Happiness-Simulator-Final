@@ -1,4 +1,3 @@
-
 # ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 #
 #       Asset definitions for IGNIS ONLY
@@ -14,7 +13,7 @@
 define ignis = DynamicCharacter(
                             'ignis_name',
                             who_color="#eae9ff",
-                            window_background="images/ui/dialog_bg01.png",
+                            window_background="images/ui/dialog_bg02.png",
                             who_outlines=[ (7, "#0000004D", 0, 0), (5, "#ffffffd9", 0, 0), (4, "#282645", 0, 0) ],
                             ctc="ctc_blink",
                             ctc_position="fixed",
@@ -302,6 +301,14 @@ image ignis sidelong direct openmouth wet = "images/characters/ignis/ignis-sidel
 # CHAPTER 3 - RESCUE #
 # CONTAINS:
 #           NOTHING YET
+
+image ignis neutral injured = "images/characters/ignis/ignis-neutral-injured.png"
+image ignis neutral openmouth injured = "images/characters/ignis/ignis-neutral-openmouth-injured.png"
+image ignis smile injured = "images/characters/ignis/ignis-smile-injured.png"
+# image ignis touching glasses blind = "images/characters/ignis/ignis-touching-glasses-blind.png"
+image ignis unimpressed injured = "images/characters/ignis/ignis-unimpressed-injured.png"
+image ignis unimpressed openmouth injured = "images/characters/ignis/ignis-unimpressed-openmouth-injured.png"
+
 
 
 # CHAPTER 4 - DATE #
