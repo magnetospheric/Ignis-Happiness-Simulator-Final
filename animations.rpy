@@ -19,6 +19,8 @@ define flash = Fade(.25, 0.0, .75, color="#fff")
 define hardflash = Fade(.25, 0.0, .35, color="#ffffffCC")
 define softflash = Fade(.25, 0.0, .35, color="#ffffff99")
 define fastsoftflash = Fade(.2, 0.0, .3, color="#ffffff99")
+define fasthardflash = Fade(.2, 0.0, .3, color="#ffffffCC")
+define fastesthardflash = Fade(.15, 0.0, .25, color="#ffffffCC")
 
 
 ## particles ##################################################################
@@ -50,3 +52,63 @@ image glow_particles:
             SnowBlossom(im.Alpha("images/effects/purple-glow-medium.png",0.2), border=10, xspeed=(-20, 20), yspeed=(40, -30), count=1, start=0, fast=True),
             SnowBlossom(im.Alpha("images/effects/blue-glow-medium.png",0.2), border=10, xspeed=(-20, 20), yspeed=(40, -40), count=1, start=0, fast=True)
             )
+
+
+### Glowing CTC button definition ###
+image ctc_blink = LiveComposite(
+    (65, 65),
+    (1120, 635), "ctc_base",
+    (1120, 635), "glow"
+    )
+
+image ctc_base:
+    "images/ui/next_button_small.png"
+    linear 0.8 alpha 1.0
+    repeat
+
+image glow:
+    "images/ui/next_button_hover_small.png"
+    linear 0.8 alpha 0.0
+    "images/ui/next_button_hover_small.png"
+    linear 0.8 alpha 0.8
+    repeat
+
+
+
+# AWARENESS BAR ANIMATIONS FOR MAGITEK TROOPERS #
+image awareness20:
+    "images/ui/awareness/awareness20.png"
+    linear 0.5 alpha 0.5
+    "images/ui/awareness/awareness20.png"
+    linear 0.5 alpha 1.0
+    repeat
+image awareness40:
+    "images/ui/awareness/awareness40.png"
+    linear 0.5 alpha 0.5
+    "images/ui/awareness/awareness40.png"
+    linear 0.5 alpha 1.0
+    repeat
+image awareness60:
+    "images/ui/awareness/awareness60.png"
+    linear 0.5 alpha 0.5
+    "images/ui/awareness/awareness60.png"
+    linear 0.5 alpha 1.0
+    repeat
+image awareness80:
+    "images/ui/awareness/awareness80.png"
+    linear 0.5 alpha 0.5
+    "images/ui/awareness/awareness80.png"
+    linear 0.5 alpha 1.0
+    repeat
+image awareness100:
+    "images/ui/awareness/awareness100.png"
+    linear 0.5 alpha 0.5
+    "images/ui/awareness/awareness100.png"
+    linear 0.5 alpha 1.0
+    repeat
+image awarenesscrit:
+    "images/ui/awareness/awarenesscrit.png"
+    linear 0.5 alpha 0.8
+    "images/ui/awareness/awarenesscrit.png"
+    linear 0.5 alpha 1.0
+    repeat
