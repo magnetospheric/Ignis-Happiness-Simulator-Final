@@ -17,6 +17,8 @@ label separation:
 
     show ignis neutral wet at center with dissolve
 
+    narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
+
     ignis "Ah, there you are, [your_name]. Now, hurry, we have to..."
 
     show ignis sidelong wet with vpunch

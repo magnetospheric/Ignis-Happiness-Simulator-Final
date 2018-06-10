@@ -27,7 +27,10 @@ label trooper_attack:
 
     narrator1 "But Ignis moves before you can do anything."
 
-    # would be GREAT to have an actual crackling blue light effect here
+    show bluelightning at SpriteLoc2(-0.11, -0.01) behind ignis with Dissolve(1.5)
+
+    hide bluelightning with Dissolve(1.5)
+
     narrator1 "The first step he takes is accompanied by a crackling blue light and the faint smell of ozone. Where there had been nothing in his hands before, now he grips a pair of brilliant and ornate daggers."
 
     ignis "Let's put a quick end to this."

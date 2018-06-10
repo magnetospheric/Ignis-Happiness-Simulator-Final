@@ -172,7 +172,7 @@ label food_break:
 
             you "Oh, yeah? You don't look like you liked it much."
 
-            ignis "Yes, well. She made my ears look massive."
+            ignis "Yes, well. She made my forehead look massive."
 
             narrator1 "You giggle at this."
 

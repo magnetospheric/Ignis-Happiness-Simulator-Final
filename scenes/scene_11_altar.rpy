@@ -12,6 +12,8 @@ label head_to_altar:
 
     show bg jettynearcellar with Dissolve(0.3)
 
+    narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
+
     narrator1 "It takes some effort to swim back over the canal, but you manage."
 
     narrator1 "This is the fastest way to the altar, now that the bridge is gone, after all."
