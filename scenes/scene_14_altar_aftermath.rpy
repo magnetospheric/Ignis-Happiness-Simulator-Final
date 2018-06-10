@@ -11,6 +11,8 @@ label altar_aftermath:
 
     show bg altar with dissolve
 
+    show ignis neutral injured at right with move
+
     show ravus at left with move
 
     ravus "Ah, the prodigal Advisor returns."
@@ -25,7 +27,7 @@ label altar_aftermath:
 
     narrator1 "Ignis tries to reach out to him, but falls back, exhaustion getting the better of him."
 
-    you "Ah! Ignis!"
+    you "Aah! Ignis!"
 
     ravus "I'm not surprised, with those wounds."
 
@@ -41,6 +43,8 @@ label altar_aftermath:
 
     you "He doesn't care? Why go to all the trouble if he doesn't care?"
 
+    ravus "He was merely taking advantage of the opportunity."
+
     ravus "He'll just find someone else to play the role he desires."
 
     narrator1 "You don't quite know what this means, but it gives you a sickly feeling in the pit of your stomach."
@@ -49,7 +53,7 @@ label altar_aftermath:
 
     narrator1 "How could anyone hurt him?"
 
-    narrator1 "How could anyone use him?"
+    narrator1 "How could anyone seek to {i}use{/i} him?"
 
     narrator1 "The urge to protect him is so strong, you never thought it possible to feel this intensely."
 
