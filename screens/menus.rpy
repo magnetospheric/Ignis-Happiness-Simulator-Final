@@ -179,9 +179,9 @@ screen main_menu():
     add gui.main_menu_background
 
     # show soot_particles
-    add SnowBlossom(im.Alpha("images/effects/big-soot.png",0.7), border=10, xspeed=(-50, 50), yspeed=(50, -50), count=80, start=0, fast=True)
-    add SnowBlossom(im.Alpha("images/effects/medium-soot.png",0.8), border=10, xspeed=(-50, 50), yspeed=(50, -50), count=120, start=0, fast=True)
-    add SnowBlossom(im.Alpha("images/effects/little-soot.png",0.9), border=10, xspeed=(-50, 50), yspeed=(60, -60), count=280, start=0, fast=True)
+    add SnowBlossom(im.Alpha("images/effects/big-soot.png",0.7), border=10, xspeed=(-50, 50), yspeed=(50, -50), count=60, start=0, fast=True)
+    add SnowBlossom(im.Alpha("images/effects/medium-soot.png",0.8), border=10, xspeed=(-50, 50), yspeed=(50, -50), count=80, start=0, fast=True)
+    add SnowBlossom(im.Alpha("images/effects/little-soot.png",0.9), border=10, xspeed=(-50, 50), yspeed=(60, -60), count=50, start=0, fast=True)
     add SnowBlossom(im.Alpha("images/effects/little-soot.png",0.6), border=10, xspeed=(-50, 50), yspeed=(60, -60), count=100, start=0, fast=True)
 
     add SnowBlossom(im.Alpha("images/effects/pink-glow-small.png",0.7), border=10, xspeed=(-20, 20), yspeed=(30, -30), count=12, start=0, fast=True)
