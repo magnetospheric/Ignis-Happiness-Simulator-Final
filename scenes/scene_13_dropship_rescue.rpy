@@ -25,9 +25,11 @@ label returned_to_cell:
     show cell bars
     with dissolve
 
+    you "Owww, my head..."
+
     narrator1 "You're back in the prison."
 
-    narrator1 "It seems the magitek Ttooper thought you were nothing more than an escaped prisoner."
+    narrator1 "It seems the Magitek Ttooper thought you were nothing more than an escaped prisoner."
 
     narrator1 "It isn't the sharpest tool in the box, because it seems to have left you in a cell with the door only loosely closed."
 
@@ -37,13 +39,13 @@ label returned_to_cell:
 
     you "Yeah..."
 
-    ignis "I heard the magitek trooper drag you into the cell adjacent to mine. Can you move?"
+    ignis "I heard the Magitek Trooper drag you into the cell adjacent to mine. Can you move?"
 
     you "It hit me on the head a little hard but... I'm okay."
 
     you "The door seems to be left open..."
 
-    narrator1 "You struggle upright and push on the door."
+    narrator1 "You struggle upright and push on the door. It gives with little problem."
 
     you "Okay. I'm gonna go searching again."
 
@@ -81,13 +83,14 @@ label dropship_corridor02:
 screen flashlight_dropship_corridor02:
     add Flashlight(
                     timer=True,
-                    button_idle_image="images/items/interior-corridor-1-door-idle.png",
-                    button_hover_image="images/items/interior-corridor-1-door-hover.png",
-                    buttonPosX=502,
-                    buttonPosY=321,
+                    button_idle_image="images/items/interior-corridor-2-door-idle.png",
+                    button_hover_image="images/items/interior-corridor-2-door-hover.png",
+                    buttonPosX=643,
+                    buttonPosY=137,
                     jump_destination="dropship_corridor03",
                     size="small"
                 )
+
 
 
 label dropship_corridor03:
@@ -95,6 +98,10 @@ label dropship_corridor03:
     show bg dropship corridor3
     show screen black_overlay
     with dissolve
+
+    narrator1 "The next area is a sort of open room - your footsteps pan out into more of an echo when you enter."
+
+    narrator1 "You can see faint lights in one corner. Time to get searching."
 
     hide screen black_overlay
 
@@ -108,10 +115,10 @@ label dropship_corridor03:
 screen flashlight_dropship_corridor03:
     add Flashlight(
                     timer=True,
-                    button_idle_image="images/items/interior-corridor-1-door-idle.png",
-                    button_hover_image="images/items/interior-corridor-1-door-hover.png",
-                    buttonPosX=502,
-                    buttonPosY=321,
+                    button_idle_image="images/items/interior-corridor-3-door-idle.png",
+                    button_hover_image="images/items/interior-corridor-3-door-hover.png",
+                    buttonPosX=871,
+                    buttonPosY=338,
                     jump_destination="ardyn_conversation",
                     size="small"
                 )
@@ -124,7 +131,7 @@ label ardyn_conversation:
     show screen black_overlay_light
     with dissolve
 
-    show soot_particles_sparse
+    show soot_particles
 
     narrator1 "Here you find stairs leading up to another level."
 
@@ -138,29 +145,29 @@ label ardyn_conversation:
 
     narrator1 "{i}The Chancellor is here.{/i}"
 
-    show soot_particles
+    show ardyn silhouette at SpriteLoc2(-0.08, 0.07) with moveinright
 
-    show ardyn silhouette at left with moveinright
+    show trooper dropship silhouette at SpriteLoc2(0.48, 0.0) with moveinleft
 
-    show trooper dropship silhouette at right with moveinleft
+    show soot_particles_sparse
 
     you "Ah!"
 
     narrator1 "You hang back behind the railing."
 
-    narrator1 "He's fiddling with something in his pocket that makes a clinking sound. A key?"
+    narrator1 "The Chancellor is fiddling with something in his pocket that makes a clinking sound. A key?"
 
-    narrator1 "It must be. And it's tantalising to hear it so close within your grasp."
+    narrator1 "It must be. And it's tantalising to have it so close within your grasp."
 
     ardyn "Well, I daresay we're just about ready to set off."
 
     ardyn "How's our dear friend doing down in the cargo bay, tell me - is he enjoying his station?"
 
-    trooper "{i}*screeches*{/i}"
+    magitektrooper "{i}*screeches*{/i}" with hpunch
 
     ardyn "Ah, of course. You can't reply, can you?"
 
-    narrator1 "You can't see him too well, but you're pretty sure he's smirking."
+    narrator1 "You can't see the Chancellor too well, but you're pretty sure he's smirking."
 
     ardyn "No matter. Go see to the generators, now, run along."
 
@@ -181,24 +188,28 @@ label ardyn_conversation:
     menu:
         "Go into the generator room":
             hide screen black_overlay_light
+            hide ardyn
+            hide trooper
             jump room02
         "Trail Ardyn along the corridor":
             hide screen black_overlay_light
+            hide ardyn
+            hide trooper
             jump room01
 
 
 
 label room01:
 
-    show bg dropship room01
-    show screen black_overlay
-    with dissolve
-
-    if generator_room == False:
+    if deactivated_generator == False:
         narrator1 "You pause outside the door to this room. You can hear movement inside."
         narrator1 "So you wait just a few moments, until the footsteps recede. It sounds like he's left the room through another exit. Should be safe."
     else:
         narrator1 "You can't hear any sound of movement within the room. It seems the Chancellor has moved on."
+
+    show bg dropship room1
+    show screen black_overlay
+    with dissolve
 
     narrator1 "Hesitantly, slowly, you push open the door and slip inside."
 
@@ -230,7 +241,7 @@ screen flashlight_dropship_room01:
 
 label dropship_room01_success:
 
-    show bg dropship room01
+    show bg dropship room1
     show screen black_overlay
     with dissolve
 
@@ -253,13 +264,13 @@ label dropship_room01_success:
 
 label room02:
 
-    show bg dropship room02
+    show bg dropship room2
     show screen black_overlay_light
     with dissolve
 
     narrator1 "You enter the room quietly."
 
-    show trooper dropship silhouette at left with dissolve
+    show trooper dropship silhouette at center with dissolve
 
     narrator1 "The trooper has its back turned, and is busy fiddling with something at a terminal."
 
@@ -271,6 +282,7 @@ label room02:
         "Attack with your sword":
             narrator1 "You creep towards the trooper and draw your sword."
             narrator1 "Raising it silently, you drive it forth and into the creature's neck."
+            show trooper dropship at center with fastesthardflash
             narrator1 "By the time it's noticed you, it's too late. The trooper crumples to the floor with a ghastly shriek."
             hide trooper with dissolve
             jump room02_continue
@@ -284,15 +296,22 @@ label room02:
                     hide trooper with dissolve
                     jump returned_to_cell
                 "Draw your sword":
-                    narrator1 "You don't waste any more time, drawing your sword and striking swiftly. You aim for its core, and watch it dissolve into shadow with a shriek."
+                    narrator1 "You don't waste any more time, drawing your sword and striking swiftly."
+                    show trooper dropship at center with fastesthardflash
+                    narrator1 "You aim for its core, and watch it dissolve into shadow with a shriek."
                     hide trooper with dissolve
                     jump room02_continue
         "Shine your flashlight at it":
             narrator1 "You shine your flashlight at the back of the trooper's head."
             narrator1 "It doesn't really have much effect."
-            narrator1 "it does make the trooper notice you, though. It wheels round and lunges for you immediately, more reflex than murderous intent."
+            narrator1 "It does make the trooper notice you, though."
+            show trooper dropship at center with fastesthardflash
+            narrator1 "It wheels round and lunges for you immediately, more reflex than murderous intent."
             narrator1 "One strike, and you're knocked out cold."
-            hide trooper with dissolve
+            scene black
+            hide trooper
+            narrator1 "..."
+            narrator1 "......"
             jump returned_to_cell
 
 
@@ -305,44 +324,11 @@ label room02_continue:
 
     you "This must be the generator."
 
-    narrator1 "It can't be that hard to put it out of commission, right?"
-
-    $ won_fight_label = "dropship_room02_success"
-    $ lost_fight_label = "returned_to_cell"
-
-    call screen flashlight_dropship_room02
-
-
-
-label dropship_room02_success:
-
-    narrator1 "With the trooper dealt with, you turn your attention towards the terminal."
-
-    narrator1 "There's a whirring sound coming from it."
-
-    you "This must be the generator."
-
     narrator1 "It's probably not the only one a ship of this size has, but messing with it has got to be enough to make a serious dent in the ship's operations."
 
     narrator1 "It can't be that hard to put it out of commission, right?"
 
-    $ won_fight_label = "dropship_room02_success"
-    $ lost_fight_label = "returned_to_cell"
-
-    call screen flashlight_dropship_room02
-
-
-
-screen flashlight_dropship_room02:
-    add Flashlight(
-                    timer=True,
-                    button_idle_image="images/items/interior-corridor-1-door-idle.png",
-                    button_hover_image="images/items/interior-corridor-1-door-hover.png",
-                    buttonPosX=502,
-                    buttonPosY=321,
-                    jump_destination="room02_post_generator",
-                    size="small"
-                )
+    call screen generator_button
 
 
 
@@ -350,12 +336,18 @@ label room_02_post_generator:
 
     $ deactivated_generator = True
 
-    show bg dropship room02_generator_turned_off
+    show bg dropship room2 active
     show screen black_overlay_light
 
     you "There! That went pretty well."
 
     narrator1 "Now that the generator is turned off, you turn your attentions to finding that key again."
+
+    show bg dropship corridor4
+    show screen black_overlay_light
+    with dissolve
+
+    narrator1 "You edge back out into the corridor, and creep slowly towards the door the Chancellor disappeared through."
 
     jump room01
 
