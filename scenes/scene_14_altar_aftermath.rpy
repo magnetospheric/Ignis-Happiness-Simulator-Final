@@ -1,4 +1,4 @@
-#Scene 13
+#Scene 14
 #Altar Aftermath
 
 #contains labels:
@@ -25,7 +25,7 @@ label altar_aftermath:
 
     you "Yes. He's right beside you."
 
-    narrator1 "Ignis tries to reach out to him, but falls back, exhaustion getting the better of him."
+    narrator1 "Ignis tries to reach out, but falls back, exhaustion getting the better of him."
 
     you "Aah! Ignis!"
 
@@ -37,9 +37,15 @@ label altar_aftermath:
 
     you "You'll be okay. You will."
 
-    narrator1 "Behind you, "
+    narrator1 "Ignis tries to speak, but he's too exhausted."
 
-    ravus "Either he doesn't realise he's not on the ship, or he doesn't care."
+    narrator1 "Moments later, he falls into unconsciousness. You watch his chest rise and fall, and tell yourself he's fine."
+
+    narrator1 "Behind you, the Chancellor's airship takes off with a bassy rumble. He's leaving the area."
+
+    you "I thought he was going to come after us."
+
+    ravus "Either he doesn't realise Ignis not on the ship, or he doesn't care."
 
     you "He doesn't care? Why go to all the trouble if he doesn't care?"
 
@@ -81,13 +87,45 @@ label altar_aftermath:
 
     menu:
         "Thank him, wish him well":
-            you ""
+
+            you "Thank you. I hope you make it out okay."
+
+            $ ravus_happiness += 1
+
+            ravus "I appreciate that."
+
+            ravus "I'm sorry about your city."
+
+            narrator1 "And he leaves."
 
         "Just thank":
-            you ""
+
+            you "Thank you."
+
+            narrator1 "Ravus nods."
+
+            ravus "Farewell."
+
+            narrator1 "Then he leaves."
 
         "No thank, only farewell":
-            you ""
 
+            you "Goodbye."
+
+            narrator1 "Ravus gives only the briefest of nods, then leaves."
+
+    narrator1 "In the stillness that follows, it feels like you're the only one left alive."
+
+    narrator1 "You turn on your radio."
+
+    you "Captain? I'm at the altar. The Empire's retreating but... We have some serious casualties."
+
+    captain "{i}Okay - stay right where you are, [your_name]. A relief team is on their way.{/i}"
+
+    narrator1 "You wait for them to arrive, sitting down on a broken pillar, not quite sure what to do with yourself."
+
+    narrator1 "And around you, the dust and ash continues to swirl."
+
+    #fade out, sounds of footsteps as people arrive, fading sound of engines.
 
     return
