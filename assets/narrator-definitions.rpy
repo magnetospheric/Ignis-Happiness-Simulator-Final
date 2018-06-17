@@ -18,6 +18,19 @@ define centered = Character(
                             window_xalign=0.5,
                             window_yalign=0.32
                         )
+define centered_titles = Character(
+                            None,
+                            what_size=20,
+                            what_outlines=[(2, "#ffffff33", 0, 0)],
+                            callback=clicky_typewriter_titles,
+                            what_xalign=0.5,
+                            what_text_align=0.5,
+                            window_background=None,
+                            window_yminimum=0,
+                            window_xfill=False,
+                            window_xalign=0.5,
+                            window_yalign=0.32
+                        )
 define top_narrator = Character(
                             '',
                             ctc="ctc_blink",
