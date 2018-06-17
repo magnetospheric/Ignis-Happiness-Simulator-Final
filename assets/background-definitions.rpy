@@ -59,7 +59,9 @@ image bg dropship loading bay exit = 'images/backgrounds/dropship/loading-bay-ex
 image cell bars = 'images/backgrounds/dropship/cell-bars.png'
 
 # CHAPTER 4 - DATE #
-
+image bg leville exterior = 'images/backgrounds/leville-exterior.png'
+image bg leville corridor = 'images/backgrounds/leville-corridor.png'
+image bg leville room = 'images/backgrounds/leville-room.png'
 image bg magisterialsquare = 'images/backgrounds/magisterial_square.png'
 
 image black = "images/black.png"
