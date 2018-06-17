@@ -321,6 +321,7 @@ image ignis unimpressed openmouth injured = "images/characters/ignis/ignis-unimp
 #           Ignis pain BLIND
 #           Ignis pain openmouth BLIND
 
+image ignis silhouette blind = "images/characters/ignis/ignis-silhouette-blind.png"
 image ignis neutral blind = "images/characters/ignis/ignis-neutral-blind.png"
 image ignis neutral openmouth blind = "images/characters/ignis/ignis-neutral-openmouth-blind.png"
 image ignis smile blind = "images/characters/ignis/ignis-smile-blind.png"
