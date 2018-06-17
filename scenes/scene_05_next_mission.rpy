@@ -203,8 +203,10 @@ label leaving_palace:
 
 label en_route_to_altar:
 
-    show bg fountaincourtyard
-    # will probably have a different bg here, like, the random streets or suchlike
+    scene black with dissolve
+    centered "{size=26}Chapter Two\n\n{/size}{size=36}Lightning Strikes{/size}"
+
+    show bg fountaincourtyard with dissolve
 
     show ignis sidelong at center
     with dissolve

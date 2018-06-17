@@ -18,6 +18,9 @@ label lunas_speech:
 
     show bg yureilplaza crowd with Dissolve(0.3)
 
+    stop ambient fadeout 2.286
+    play music tense_morning_2 fadein 2.286
+
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
     narrator1 "You and Ignis both make your way to the back of the plaza."
@@ -307,6 +310,9 @@ label speech_begins:
     hide ignis
 
     show bg yureilplaza crowd dark with Dissolve(0.3)
+
+    stop music fadeout 2.286
+    play ambient attack_commences fadein 2.286
 
     narrator1 "With a burst of frenetic energy, the airships hovering above you open fire." with vpunch
 

@@ -13,7 +13,7 @@
 
 label separation:
 
-    show bg jettynearcellar with Dissolve(0.3)
+    scene bg jettynearcellar with Dissolve(0.3)
 
     show ignis neutral wet at center with dissolve
 
@@ -42,6 +42,8 @@ label separation:
     ignis "[your_name]!"
 
     jump awakening
+
+
 
 label awakening:
 
@@ -133,6 +135,9 @@ label awakening:
             narrator1 "It's probably better you return to the evac point. it's your job, after all."
 
             jump return_to_evac
+
+
+
 
 label return_to_evac:
 

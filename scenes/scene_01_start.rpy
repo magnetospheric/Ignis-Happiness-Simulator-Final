@@ -8,7 +8,7 @@
 
 
 # use this start label to test things
-label start:
+label startn:
 
     #starting variables
 
@@ -27,31 +27,41 @@ label start:
 
     $ show_happiness = False
 
-    $ happiness += 8
+    $ happiness = 1
+    $ ravus_happiness = 0
+    $ ardyn_happiness = 0
 
     $ citizens_first = False
     $ said_you_saved_citizens = False
-    $ waited = True
+    $ waited = False
 
     $ examined_harpoon = False
 
     $ ignis_revealed_suspicions = False
     $ motivation = "help"
+    $ extra_item = "water"
 
-    $ ardyn_affiliation = "none";
+    $ ardyn_affiliation = "none"
+
+    $ discovered = False
+    $ number_of_encounters = 0
+    $ shone_torch = False
+    $ used_sword = False
+    $ deactivated_generator = False
+    $ origin_label = "loading_bay"
+
+    $ chose_tea = False
+    $ chose_window = False
+    $ chose_sleep = False
 
     show screen gold_border
 
-    narrator1 "small test text before transition"
+    jump entering_dropship
 
-    jump ardyn_appears
 
 
 # The game starts here.
-label startn:
-
-    # start scene needs to introduce the hunting-around mechanic for later
-    # maybe protag is looking for their keys or something that'll be useful later
+label start:
 
     #starting variables
     $ ignis_name = "Stranger"
@@ -62,11 +72,49 @@ label startn:
     $ happiness = 1
     $ show_happiness = False
 
-    #jump first_conversation
+    # set a default gender
+    $ your_gender= "female"
+    $ your_pronoun_subject= "She's"
+    $ your_pronoun_possessive = "hers"
+    $ your_pronoun_object = "her"
+    $ you_gender_nicename = "woman"
+    $ you_gender_nickname = "lass"
+
+
+    $ show_happiness = False
+
+    $ happiness = 1
+
+    $ citizens_first = False
+    $ said_you_saved_citizens = False
+    $ waited = False
+
+    $ examined_harpoon = False
+
+    $ ignis_revealed_suspicions = False
+    $ motivation = "help"
+    $ extra_item = "water"
+
+    $ ardyn_affiliation = "none"
+
+    $ discovered = False
+    $ number_of_encounters = 0
+    $ shone_torch = False
+    $ used_sword = False
+    $ deactivated_generator = False
+    $ origin_label = "loading_bay"
+
+    $ chose_tea = False
+    $ chose_window = False
+    $ chose_sleep = False
 
     #black background, maybe some wisping smoke
     scene black
 
+    play music reverse_guitar noloop
+    queue music tense_morning loop
+
+    pause 0.3
 
     top_narrator "{size=20}{cps=15}{alpha=0.8}What does  {/alpha}{/cps}{/size}{alpha=1.0}{size=22}{cps=10}loyalty{/cps}{/size}{/alpha}{size=20}{cps=15}{alpha=0.8}  mean to you?{/alpha}{/cps}{/size}"
 
@@ -76,16 +124,20 @@ label startn:
 
     centrebottomright_narrator "{size=20}{cps=15}{alpha=0.8}Sometimes, {/alpha}{/cps}{/size}{size=22}{cps=10}{alpha=1.0}all it takes is one day.{/alpha}{/cps}{/size}"
 
+    centered_titles "{cps=15}{size=26}Chapter One\n\n{/size}{p=0.5}{size=36}Awaken{/size}{/cps}"
 
     #scene dawns on an overview of altissia
     #slow fade in
+    show screen gold_border
     scene bg altissian_skyline
     with fastfade
-
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}Altissia, on the day of the Covenant.{/outlinecolor}{/alpha}{nw}" with Dissolve(0.5)
 
     $ quick_menu = True
+
+    stop music fadeout 2.286
+    play ambient hazy_morning fadein 2.286
 
     narrator1 "Altissia, on the day of the Covenant."
 
