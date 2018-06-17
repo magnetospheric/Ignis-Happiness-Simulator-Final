@@ -269,13 +269,15 @@ screen flashlight_no_timer:
     add Flashlight(timer=False)
 
 screen flashlight_palace_hallway:
-    vbox:
-        imagebutton:
-            idle "images/items/yureil-hallway-door.png"
-            hover "images/items/yureil-hallway-door-hover.png"
-            xpos 673 ypos 293
-            action Jump("find_fuse")
-    add Flashlight(timer=False)
+    add Flashlight(
+                    timer=False,
+                    button_idle_image="images/items/yureil-hallway-door.png",
+                    button_hover_image="images/items/yureil-hallway-door-hover.png",
+                    buttonPosX=673,
+                    buttonPosY=293,
+                    jump_destination="find_fuse",
+                    size="normal"
+                )
 
 screen door_idle:
     vbox:
