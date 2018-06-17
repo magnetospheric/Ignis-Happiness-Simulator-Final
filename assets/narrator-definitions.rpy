@@ -10,6 +10,7 @@ define centered = Character(
                             None,
                             what_size=20,
                             what_outlines=[(2, "#ffffff33", 0, 0)],
+                            callback=clicky_typewriter_titles,
                             what_xalign=0.5,
                             what_text_align=0.5,
                             window_background=None,
