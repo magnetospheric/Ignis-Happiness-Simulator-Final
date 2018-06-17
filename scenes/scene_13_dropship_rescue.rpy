@@ -141,6 +141,8 @@ label ardyn_conversation:
 
     narrator1 "A nauseous feeling overcomes you. You've felt this before, only recently, at the—"
 
+    narrator1 "At the altar."
+
     narrator1 "Your stomach overturns."
 
     narrator1 "{i}The Chancellor is here.{/i}"
@@ -157,7 +159,9 @@ label ardyn_conversation:
 
     narrator1 "The Chancellor is fiddling with something in his pocket that makes a clinking sound. A key?"
 
-    narrator1 "It must be. And it's tantalising to have it so close within your grasp."
+    narrator1 "It must be."
+
+    narrator1 "It's tantalising to have it so close within your grasp."
 
     ardyn "Well, I daresay we're just about ready to set off."
 
@@ -177,7 +181,9 @@ label ardyn_conversation:
 
     narrator1 "The Magitek Trooper salutes his receding form, then walks off through the door on the left."
 
-    narrator1 "Your eyes track Ardyn's silhouette. He's undoubtedly got the key. But... it's tempting, to mess with the ship's operations."
+    narrator1 "Your eyes track Ardyn's silhouette. He's undoubtedly got the key, and you ought to be following him."
+
+    narrator1 "But... it's tempting, to mess with the ship's operations."
 
     hide soot_particles_sparse
 
@@ -367,6 +373,8 @@ label unlocking_cell:
 
     narrator1 "Funny how it's always so much easier to retrace your steps. Seems shorter, somehow."
 
+    narrator1 "You move swiftly, silently, and you reach the prison area in a matter of minutes."
+
     show bg dropship cell
     show screen black_overlay
     show ignis unimpressed injured at left
@@ -378,6 +386,8 @@ label unlocking_cell:
     ignis "Fantastic!"
 
     if discovered == False:
+
+        you "Didn't get spotted once!"
 
         $ show_happiness = True
 
@@ -410,6 +420,8 @@ label unlocking_cell:
     you "Oh gods..."
 
     you "Oh, no, no, no..."
+
+    narrator1 "The injury has split his skin red and raw, razed the flesh around his eyes. It looks so painful you want to turn away, but you hold fast your gaze."
 
     show ignis unimpressed openmouth injured with dissolve
 
@@ -528,7 +540,7 @@ label escaping_dropship:
 
     narrator1 "The light showing from the open hatch is so close, so tantalising. But you have to wait."
 
-    narrator1 "Now's as good a time as any to "
+    narrator1 "Now's as good a time as any to ask about what happened."
 
     narrator1 "You keep one eye on the troopers while you talk."
 
@@ -572,11 +584,9 @@ label escaping_dropship:
 
     show ignis unimpressed injured at right
 
-    narrator1 ""
-
     you "I'll give him hell if I ever see him again!"
 
-    narrator1 "You're aware you're clenching your fists, but you don't want to stop."
+    narrator1 "You're aware you're clenching your fists, but you don't want to relax."
 
     you "How dare he... How dare he do {i}this{/i} to you!"
 
@@ -595,6 +605,10 @@ label escaping_dropship:
     menu:
         "Hug":
             narrator1 "You hug him"
+            narrator1 "At first, his breath quickens."
+            you "Sorry, I -"
+            ignis "No, I... I appreciate it."
+            narrator1 "He doesn't seem used to the physical contact - there's something in the way he clings fervently on to you that shows this."
 
         "Do not hug":
             narrator1 "He probably needs his space. You don't want to surprise him the wrong way, especially not if he's in pain."

@@ -73,11 +73,12 @@ label waitingforignis:
     #ask him if he's hungry
     menu:
         "Suggest listening to the street musicians":
+            return
 
         "Ask him if he's hungry":
-
+            return
         "":
-
+            return
 
     jump dinner_together
 

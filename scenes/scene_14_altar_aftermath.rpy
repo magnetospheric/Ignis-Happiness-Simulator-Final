@@ -13,7 +13,7 @@ label altar_aftermath:
 
     show ignis neutral injured at right with move
 
-    show ravus at left with move
+    show ravus neutral at left with move
 
     ravus "Ah, the prodigal Advisor returns."
 

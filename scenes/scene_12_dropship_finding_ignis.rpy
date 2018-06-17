@@ -53,6 +53,8 @@ label loading_bay:
     show screen black_overlay
     with dissolve
 
+    #when inside the dropship, have atmospheric creaking and industrial sounds
+
     narrator1 "It's so dark in here. Your foot bumps into something hard. A crate, like the ones at the door."
 
     narrator1 "This must be the loading bay."

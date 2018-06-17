@@ -42,7 +42,7 @@ label placeholder:
 
 
 
-report_in_post_ceremony
+label report_in_post_ceremony:
 
     scene bg mc_room
     with dissolve
@@ -65,7 +65,7 @@ report_in_post_ceremony
 
 
 
-label cabin_fever
+label cabin_fever:
 
     friend "..."
 
@@ -198,6 +198,8 @@ label give_up:
 
     narrator1 "The hotel's a half hour away, in the tourist district."
 
+    you "Right, time to get going then."
+
 
 
 label leville:
@@ -205,7 +207,25 @@ label leville:
     scene bg leville exterior
     with dissolve
 
-    scene bg leville hallway
+    narrator1 "The Leville lies sandwiched between restaurants and cafés on the waterfront."
+
+    narrator1 "It all seems so idyllic here, in this sector, where the gunfire didn't reach so intensely."
+
+    narrator1 "There's far more people in the tourist district than you expected."
+
+    narrator1 "Chatting in cafés, watching the boats in the bay, sipping their tea and soda and acting for all the world like nothing's wrong."
+
+    narrator1 "Someone nearby mentions the Totomostro games have started up again already."
+
+    narrator1 "It's only been three days, but you suppose the attractions are sorely needed."
+
+    narrator1 "But you've dallied outside the hotel for too long now."
+
+    narrator1 "Without further ado, you walk into the Leville and tell the steward you're here to see Ignis."
+
+    narrator1 "Top floor, Room 27. Right."
+
+    scene bg leville corridor
     with dissolve
 
     show noctis at center
@@ -239,7 +259,7 @@ label leville:
 
     you "Thanks."
 
-    scene bg leville ignis room
+    scene bg leville room
     with dissolve
 
     show ignis silhouette blind at center with dissolve
