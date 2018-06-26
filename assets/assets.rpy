@@ -76,9 +76,46 @@ image citizens scared = "images/characters/citizens-dark-scared.png"
 image citizens reasonable = "images/characters/citizens-dark-reasonable.png"
 image citizens sceptical = "images/characters/citizens-dark-sceptical.png"
 
+
 image ardyn trashbags = "images/characters/ardyn.png"
 image ardyn neon = "images/characters/ardyn-neon.png"
 image ardyn silhouette = "images/characters/ardyn-silhouette.png"
+
+image ravus neutral:
+    "images/characters/ravus-neutral.png"
+    choice:
+        4
+    choice:
+        5
+    choice:
+        6
+    choice:
+        7
+    # This randomizes the time between blinking.
+    "images/characters/ravus-neutral-blink.png"
+    choice:
+        0.09
+    choice:
+        0.11
+    repeat
+
+image ravus smile:
+    "images/characters/ravus-smile.png"
+    choice:
+        4
+    choice:
+        5
+    choice:
+        6
+    choice:
+        7
+    # This randomizes the time between blinking.
+    "images/characters/ravus-smile-blink.png"
+    choice:
+        0.09
+    choice:
+        0.11
+    repeat
 
 image trooper distance = "images/characters/trooper-distance.png"
 image trooper lunging = "images/characters/trooper-lunging.png"
