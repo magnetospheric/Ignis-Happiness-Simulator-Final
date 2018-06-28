@@ -54,11 +54,14 @@ define unidentified_voice = Character("Unidentified Voice", ctc="ctc_blink", ctc
 
 #other chocobros
 define prompto = Character("Prompto", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg02.png")
+define noctis = Character("Noctis", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg02.png")
 
 #citizens
 define citizen1 = Character("Scared Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg02.png")
 define citizen2 = Character("Reasonable Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg02.png")
 define citizen3 = Character("Sceptical Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg02.png")
+
+define friend = Character("Friend", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg02.png")
 
 #### Character Images ####
 # IGNIS IS IN HIS OWN FILE
@@ -99,6 +102,24 @@ image ravus neutral:
         0.11
     repeat
 
+image ravus neutral openmouth:
+    "images/characters/ravus-neutral-openmouth.png"
+    choice:
+        4
+    choice:
+        5
+    choice:
+        6
+    choice:
+        7
+    # This randomizes the time between blinking.
+    "images/characters/ravus-neutral-openmouth-blink.png"
+    choice:
+        0.09
+    choice:
+        0.11
+    repeat
+
 image ravus smile:
     "images/characters/ravus-smile.png"
     choice:
@@ -116,6 +137,25 @@ image ravus smile:
     choice:
         0.11
     repeat
+
+image ravus smile openmouth:
+    "images/characters/ravus-smile-openmouth.png"
+    choice:
+        4
+    choice:
+        5
+    choice:
+        6
+    choice:
+        7
+    # This randomizes the time between blinking.
+    "images/characters/ravus-smile-openmouth-blink.png"
+    choice:
+        0.09
+    choice:
+        0.11
+    repeat
+
 
 image trooper distance = "images/characters/trooper-distance.png"
 image trooper lunging = "images/characters/trooper-lunging.png"
@@ -327,6 +367,80 @@ image dropshipshortcircuit0:
     choice:
         0.4
     repeat
+
+
+image noctis neutral:
+    "images/characters/noctis-neutral.png"
+    choice:
+        4
+    choice:
+        5
+    choice:
+        6
+    choice:
+        7
+    # This randomizes the time between blinking.
+    "images/characters/noctis-neutral-blink.png"
+    choice:
+        0.09
+    choice:
+        0.11
+    repeat
+
+image noctis neutral openmouth:
+    "images/characters/noctis-neutral-openmouth.png"
+    choice:
+        4
+    choice:
+        5
+    choice:
+        6
+    choice:
+        7
+    # This randomizes the time between blinking.
+    "images/characters/noctis-neutral-openmouth-blink.png"
+    choice:
+        0.09
+    choice:
+        0.11
+    repeat
+
+image noctis smile:
+    "images/characters/noctis-smile.png"
+    choice:
+        4
+    choice:
+        5
+    choice:
+        6
+    choice:
+        7
+    # This randomizes the time between blinking.
+    "images/characters/noctis-smile-blink.png"
+    choice:
+        0.09
+    choice:
+        0.11
+    repeat
+
+image noctis smile openmouth:
+    "images/characters/noctis-smile-openmouth.png"
+    choice:
+        4
+    choice:
+        5
+    choice:
+        6
+    choice:
+        7
+    # This randomizes the time between blinking.
+    "images/characters/noctis-smile-openmouth-blink.png"
+    choice:
+        0.09
+    choice:
+        0.11
+    repeat
+
 
 # ITEMS #
 # those not defined in screens
