@@ -62,7 +62,14 @@ image cell bars = 'images/backgrounds/dropship/cell-bars.png'
 image bg leville exterior = 'images/backgrounds/leville-exterior.png'
 image bg leville corridor = 'images/backgrounds/leville-corridor.png'
 image bg leville room = 'images/backgrounds/leville-room.png'
+image bg leville alleyway = 'images/backgrounds/leville-alleyway.png'
+image bg leville alleyway whiteout = 'images/backgrounds/leville-alleyway-whiteout.png'
+image bg listropark = 'images/backgrounds/listropark.png'
+image bg foodcart = 'images/backgrounds/food-cart.png'
+image bg buskers = 'images/backgrounds/buskers.png'
+image bg gondola = 'images/backgrounds/gondola.png'
 image bg magisterialsquare = 'images/backgrounds/magisterial_square.png'
+image bg restaurant = 'images/backgrounds/restaurant.png'
 
 image black = "images/black.png"
 image blackoverlay = Image("ui/black-layer.png", xalign=0.5, yalign=0.5)
