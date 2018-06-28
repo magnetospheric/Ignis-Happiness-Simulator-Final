@@ -180,6 +180,8 @@ label reaching_citizens:
     show bg evacuee hideout dark with Dissolve(0.3)
 
     # rising sound of people chatting / murmuring
+    stop ambient
+    play music stubborn_citizens
 
     show citizens dark
     with dissolve
@@ -227,6 +229,8 @@ label reaching_citizens:
     you "Follow me."
 
     narrator1 "The citizens anxiously wring their hands for precious seconds more, then they obey."
+
+    stop music
 
     jump escort_to_jetty
 

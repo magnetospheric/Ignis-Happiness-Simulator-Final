@@ -46,7 +46,12 @@ label head_to_altar:
 
     jump ardyn_appears
 
+
+
 label ardyn_appears:
+
+    scene black with dissolve
+    centered "{size=26}Chapter Three\n\n{/size}{size=36}Machine Messiah{/size}"
 
     show bg altar whiteout with softflash
 
@@ -138,7 +143,12 @@ label ardyn_appears:
 
             narrator1 "Then his eyes turn on you again."
 
-            ardyn "I think not, little mouse. Can't have you spoiling the party."
+            $ reset_game_once = None
+
+            if reset_game_once == True:
+                ardyn "Did you not learn from last time? Can't have you spoiling the party."
+            else:
+                ardyn "I think not, little mouse. Can't have you spoiling the party."
 
             menu:
                 "What the hell did you do to Ignis?":
@@ -211,9 +221,13 @@ label ardyn_appears:
 
     jump ravus_conversation
 
+
+
 label ravus_conversation:
 
     you "Oh no, what now..."
+
+    show ravus neutral with dissolve
 
     narrator1 "There's a white-haired man standing at the altar. He cuts a solemn figure, head slightly bowed, arms loose at his sides."
 
@@ -222,27 +236,48 @@ label ravus_conversation:
     you "Where did that man take Ignis?"
 
     if ardyn_affiliation == 'anger':
-        ravus "{i}That man...{\i} You really don't know what you were up against, do you?"
+
+        ravus "{i}That man...{/i} You really don't know what you were up against, do you?"
+
         you "Wh-what do you mean?"
+
         ravus "Really... Chancellor Ardyn Izunia corners you and you ... shout in his face!"
+
         narrator1 "The white-haired man spares a moment to laugh to himself. It's not unkind, more ... disbelieving."
+
         you "Oh gods... That was the Chancellor?"
+
         ravus "Yes, and while your actions were foolish, I'm ... actually quite impressed."
+
         narrator1 "You're unsure if he's trying to compliment you or not. Either way, it's a distraction from the main problem."
+
     if ardyn_affiliation == 'play':
+
         ravus "{i}That man{/i} was Chancellor Ardyn Izunia, and you would do well not to joke around with him."
+
         you "I know what I'm doing!"
+
         narrator1 "He eyes your dishevelled hair and snorts."
+
         ravus "Evidently."
+
         you "Enough."
+
     if ardyn_affiliation == 'run':
+
         ravus "For one who doesn't know who he is, you were wise to try to run."
+
         ravus "{i}That man{/i} was none other than Chancellor Ardyn Izunia."
+
         you "The Chancellor ... of Niflheim?"
+
         ravus "The very same."
+
         you "... Oh."
+
     if ardyn_affiliation == 'nothing':
-        ravus "You were wise to kepe your distance. That man was Chancellor Ardyn Izunia. Had he noticed you, you likely would not have survived long."
+
+        ravus "You were wise to keep your distance. That man was Chancellor Ardyn Izunia. Had he noticed you, you likely would not have survived long."
 
     you "Maybe you can tell me then. What did you do to Ignis?"
 
@@ -265,6 +300,8 @@ label ravus_conversation:
     ravus "But I've absconded."
 
     ravus "I was only trying to protect my sister. And they... they..."
+
+    $ quick_menu = True
 
     menu:
         "Show anger":

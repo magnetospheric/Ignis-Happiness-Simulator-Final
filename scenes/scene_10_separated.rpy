@@ -141,6 +141,8 @@ label awakening:
 
 label return_to_evac:
 
+    $ reached_chapter_three = False
+
     show bg padore jetty with Dissolve(0.3)
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)

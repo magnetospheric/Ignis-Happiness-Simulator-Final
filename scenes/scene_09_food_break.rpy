@@ -14,6 +14,9 @@ label food_break:
 
     show bg cellar with Dissolve(0.3)
 
+    stop ambient fadeout 2.286
+    play music a_spot_of_lunch fadein 2.286
+
     show ignis touching glasses wet at left
     with move
 
@@ -481,6 +484,8 @@ label openup:
 
             you "Getting to know people... and not just for work or the like. It can be really rewarding."
 
+            $ ignis_opened_up = True
+
             jump ignis_opens_up
 
         "Well, it's important to be cautious":
@@ -663,5 +668,7 @@ label meet_prompto:
             $ extra_item = "biscuits"
         "Stop wasting time and hurry outside":
             $ extra_item = "nothing"
+
+    stop music fadeout 2.286
 
     jump separation

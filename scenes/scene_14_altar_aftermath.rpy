@@ -128,4 +128,7 @@ label altar_aftermath:
 
     #fade out, sounds of footsteps as people arrive, fading sound of engines.
 
-    return
+    jump going_home
+
+
+    

@@ -220,6 +220,8 @@ label niffs_arrive_on_the_scene:
 
         narrator1 "You try to think of something to say to fill the gap, but nothing comes."
 
+
+
 label discuss_sightseeing:
 
     narrator1 "Minutes pass, and still the speech has not begun."
@@ -231,6 +233,8 @@ label discuss_sightseeing:
     you "Maybe after this, you'll get time to explore."
 
     ignis "One can only hope."
+
+
 
 label speech_begins:
 

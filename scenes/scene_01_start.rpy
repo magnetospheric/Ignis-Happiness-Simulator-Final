@@ -8,7 +8,7 @@
 
 
 # use this start label to test things
-label startn:
+label start:
 
     #starting variables
 
@@ -39,6 +39,7 @@ label startn:
 
     $ ignis_revealed_suspicions = False
     $ motivation = "help"
+    $ ignis_opened_up = False
     $ extra_item = "water"
 
     $ ardyn_affiliation = "none"
@@ -50,18 +51,25 @@ label startn:
     $ deactivated_generator = False
     $ origin_label = "loading_bay"
 
+    $ reached_chapter_three = True
+
     $ chose_tea = False
     $ chose_window = False
     $ chose_sleep = False
 
+    $ noctis_friendly = False
+
+    $ want_to_reset = False
+    $ reset_game_once = None
+
     show screen gold_border
 
-    jump entering_dropship
+    jump time_for_a_redo
 
 
 
 # The game starts here.
-label start:
+label startn:
 
     #starting variables
     $ ignis_name = "Stranger"
@@ -80,10 +88,10 @@ label start:
     $ you_gender_nicename = "woman"
     $ you_gender_nickname = "lass"
 
-
     $ show_happiness = False
-
     $ happiness = 1
+    $ ravus_happiness = 0
+    $ ardyn_happiness = 0
 
     $ citizens_first = False
     $ said_you_saved_citizens = False
@@ -104,9 +112,18 @@ label start:
     $ deactivated_generator = False
     $ origin_label = "loading_bay"
 
+    $ reached_chapter_three = None
+
     $ chose_tea = False
     $ chose_window = False
     $ chose_sleep = False
+
+    $ noctis_friendly = False
+
+    $ want_to_reset = False
+    $ reset_game_once = None
+
+    # starts from here #
 
     #black background, maybe some wisping smoke
     scene black
@@ -125,6 +142,12 @@ label start:
     centrebottomright_narrator "{size=20}{cps=15}{alpha=0.8}Sometimes, {/alpha}{/cps}{/size}{size=22}{cps=10}{alpha=1.0}all it takes is one day.{/alpha}{/cps}{/size}"
 
     centered_titles "{cps=15}{size=26}Chapter One\n\n{/size}{p=0.5}{size=36}Awaken{/size}{/cps}"
+
+    jump covenant_morning
+
+
+
+label covenant_morning:
 
     #scene dawns on an overview of altissia
     #slow fade in
