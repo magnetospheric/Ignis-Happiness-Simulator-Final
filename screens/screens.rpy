@@ -174,7 +174,7 @@ screen input(prompt):
         xalign 0.5
         yalign 0.5
         xsize 600
-        background Image("ui/quit_box.png", xalign=0.5, yalign=0.5)
+        background Image("ui/quit_box2.png", xalign=0.5, yalign=0.5)
 
         vbox:
             text prompt style "input_title"
@@ -191,7 +191,7 @@ style input:
 
 style input_text is text:
     hover_color "#e0cfa5"
-    outlines [ (0, "#e0b753", 1, 1), (1, "#8f98a8", 0, 0) ]
+    outlines [ (0, "#e0b753", 1, 1), (1, "#fdd77a99", 0, 0) ]
     color "#e0b753"
     size 26
     xsize 400
@@ -884,7 +884,7 @@ style confirm_button is gui_medium_button
 style confirm_button_text is gui_medium_button_text
 
 style confirm_frame:
-    background Frame("ui/quit_box.png", 3, 3, 3, 3, tile=False)
+    background Frame("ui/quit_box2.png", 3, 3, 3, 3, tile=False)
     padding gui.confirm_frame_borders.padding
     xalign .5
     yalign .5
