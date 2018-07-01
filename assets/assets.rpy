@@ -63,17 +63,118 @@ define citizen3 = Character("Sceptical Citizen", ctc="ctc_blink", ctc_position="
 
 define friend = Character("Friend", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg02.png")
 
+
 #### Character Images ####
 # IGNIS IS IN HIS OWN FILE
 
-image altissianguard neutral  = "images/characters/altissianguard-neutral.png"
-image altissianguard smile  = "images/characters/altissianguard-smile.png"
+image altissianguard neutral:
+    "images/characters/altissianguard-neutral.png"
+    choice:
+        4
+    choice:
+        5
+    choice:
+        6
+    choice:
+        7
+    # This randomizes the time between blinking.
+    "images/characters/altissianguard-neutral-blink.png"
+    choice:
+        0.09
+    choice:
+        0.11
+    repeat
 
-image captain neutral = "images/characters/captain-neutral.png"
-image captain smile = "images/characters/captain-smile.png"
-image captain neutral openmouth = "images/characters/captain-neutral-openmouth.png"
-image captain looking around = "images/characters/captain-looking-around.png"
+image altissianguard smile:
+    "images/characters/altissianguard-smile.png"
+    choice:
+        4
+    choice:
+        5
+    choice:
+        6
+    choice:
+        7
+    # This randomizes the time between blinking.
+    "images/characters/altissianguard-smile-blink.png"
+    choice:
+        0.09
+    choice:
+        0.11
+    repeat
 
+image captain neutral:
+    "images/characters/captain-neutral.png"
+    choice:
+        4
+    choice:
+        5
+    choice:
+        6
+    choice:
+        7
+    # This randomizes the time between blinking.
+    "images/characters/captain-neutral-blink.png"
+    choice:
+        0.09
+    choice:
+        0.11
+    repeat
+
+image captain smile:
+    "images/characters/captain-smile.png"
+    choice:
+        4
+    choice:
+        5
+    choice:
+        6
+    choice:
+        7
+    # This randomizes the time between blinking.
+    "images/characters/captain-smile-blink.png"
+    choice:
+        0.09
+    choice:
+        0.11
+    repeat
+
+image captain neutral openmouth:
+    "images/characters/captain-neutral-openmouth.png"
+    choice:
+        4
+    choice:
+        5
+    choice:
+        6
+    choice:
+        7
+    # This randomizes the time between blinking.
+    "images/characters/captain-neutral-openmouth-blink.png"
+    choice:
+        0.09
+    choice:
+        0.11
+    repeat
+
+image captain neutral sidelong:
+    "images/characters/captain-neutral-sidelong.png"
+    choice:
+        4
+    choice:
+        5
+    choice:
+        6
+    choice:
+        7
+    # This randomizes the time between blinking.
+    "images/characters/captain-neutral-blink.png"
+    choice:
+        0.09
+    choice:
+        0.11
+    repeat
+    
 image citizens dark = "images/characters/citizens-dark.png"
 image citizens scared = "images/characters/citizens-dark-scared.png"
 image citizens reasonable = "images/characters/citizens-dark-reasonable.png"
