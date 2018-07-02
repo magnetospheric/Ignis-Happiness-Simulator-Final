@@ -14,6 +14,9 @@
 
 label power_cut:
 
+    stop music fadeout 2.286
+    play ambient attack_commences_2 fadein 2.286
+
     $ show_happiness = False
 
     show bg yureilcorridor dark with Dissolve(0.3)

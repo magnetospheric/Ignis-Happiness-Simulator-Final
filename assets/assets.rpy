@@ -21,9 +21,9 @@ transform SpriteLoc2(x, y):
 
 define you = DynamicCharacter(
                             'your_name',
-                            who_color="#ffeff6",
+                            who_color="#faf2f6",
                             window_background="images/ui/dialog_bg02.png",
-                            who_outlines=[ (7, "#0000004D", 0, 0), (4, "#ffffff59", 0, 0), (3, "#3b2831", 0, 0) ],
+                            who_outlines=[ (7, "#0000004D", 0, 0), (5, "#ffffff59", 0, 0), (4, "#180f15", 0, 0) ],
                             ctc="ctc_blink",
                             ctc_position="fixed",
                             callback=clicky_typewriter
@@ -174,7 +174,7 @@ image captain neutral sidelong:
     choice:
         0.11
     repeat
-    
+
 image citizens dark = "images/characters/citizens-dark.png"
 image citizens scared = "images/characters/citizens-dark-scared.png"
 image citizens reasonable = "images/characters/citizens-dark-reasonable.png"
@@ -541,6 +541,8 @@ image noctis smile openmouth:
     choice:
         0.11
     repeat
+
+image noctis silhouette  = "images/characters/noctis-silhouette.png"
 
 
 # ITEMS #

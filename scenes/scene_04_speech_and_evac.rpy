@@ -16,18 +16,22 @@
 
 label lunas_speech:
 
-    show bg yureilplaza crowd with Dissolve(0.3)
+    $ renpy.music.set_volume(0.2, delay=1, channel='foley')
+    $ renpy.music.set_volume(0.09, delay=1, channel='foley2')
 
-    stop ambient fadeout 2.286
-    play music tense_morning_2 fadein 2.286
+    play foley2 plaza_crowd
 
-    narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
+    show bg yureilplaza crowd with Dissolve(1.5)
+
+    narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(1.0)
 
     narrator1 "You and Ignis both make your way to the back of the plaza."
 
     # sound effect crowd buzzing
 
-    narrator1 "The crowd is abuzz with conversation. Everyone's making small talk — it's much too big an event to get into deep conversation — and they all seem tense, hiding anticipation behind their smiling faces."
+    narrator1 "The crowd is abuzz with conversation."
+
+    narrator1 "Everyone's making small talk — it's much too big an event to get into deep conversation — and they all seem tense, hiding anticipation behind their smiling faces."
 
     show ignis neutral at left
     with dissolve
@@ -40,7 +44,9 @@ label lunas_speech:
 
     you "How so?"
 
-    ignis "The domed structures are a good shape to protect against assault or natural disaster. And the plaza itself is long and narrow - see where it bottlenecks quite naturally before these points they've got us guarding? It's exceedingly good for crowd control."
+    ignis "The domed structures are a good shape to protect against assault or natural disaster."
+
+    ignis "And the plaza itself is long and narrow - see where it bottlenecks quite naturally before these points they've got us guarding? It's exceedingly good for crowd control."
 
     you "Should make our job much easier, then."
 
@@ -48,13 +54,21 @@ label lunas_speech:
 
     narrator1 "You turn back to the crowd. They're still restless, still chatty."
 
+    show noctis silhouette at right with Dissolve(0.5)
+
     narrator1 "Before long, you catch sight of a black-haired individual making his way through the crowd. He's moving irregularly, and as a guard, this is a cause for concern."
 
     narrator1 "But there's something about him that looks familiar..."
 
-    narrator1 "And then you place it. It's a figure you've seen countless times on news reports before. The Crown Prince of Insomnia: Noctis Lucis Caelum. What's he doing here? It's odd to see him dressed so casually, and without bodyguards flanking him."
+    narrator1 "And then you place it. It's a figure you've seen countless times on news reports before."
+
+    narrator1 "The Crown Prince of Insomnia: Noctis Lucis Caelum."
+
+    narrator1 "What's he doing here? It's odd to see him dressed so casually, and without bodyguards flanking him."
 
     narrator1 "Especially as, last you heard, the wedding between him and Lady Lunafreya had been called off."
+
+    hide noctis silhouette with dissolve
 
     narrator1 "Ignis catches your gaze, and holds a finger to his lips softly. Oh. You should have guessed sooner."
 
@@ -82,7 +96,7 @@ label ask_about_prince:
 
     show screen happiness_text(title="Happiness decreased")
     with dissolve
-    pause 0.3
+    pause 0.5
     hide screen happiness_text
     with dissolve
 
@@ -194,9 +208,12 @@ label change_subject_from_prince:
 
     ignis "Well, I certainly didn't expect to get a personal tour guide on this assignment. But — you ought to know — you do a fine job."
 
-    narrator1 "His smile is broad and genuine, and you realise he's not simply humouring you for the sake of distracting any would-be eavesdroppers. You're glowing with his compliment, too — people are usually telling you to shut up around now."
+    narrator1 "His smile is broad and genuine, and you realise he's not simply humouring you for the sake of distracting any would-be eavesdroppers."
+
+    narrator1 "You're glowing with his compliment, too — people are usually telling you to shut up around now."
 
     jump niffs_arrive_on_the_scene
+
 
 
 label niffs_arrive_on_the_scene:
@@ -234,16 +251,25 @@ label discuss_sightseeing:
 
     ignis "One can only hope."
 
+    jump speech_begins
+
 
 
 label speech_begins:
 
+    stop ambient fadeout 2.286
+    play music shrinemaiden fadein 2.286 loop
+
     show ignis neutral
     with dissolve
 
+    $ renpy.music.set_volume(0.08, delay=0, channel='foley')
+    $ renpy.music.set_volume(0.06, delay=1, channel='foley2')
+    play foley cheering1 fadein 2.286 noloop
+
     narrator1 "Then, a cheer rises. Up at the steps of the palace, Lady Lunafreya has appeared."
 
-    narrator1 "Even from the back of the plaza, you can see how she walks proudly and confidently. The same stiff-backed, determined attitude your own Captain displays all-too-often. She doesn't want anyone to worry."
+    narrator1 "Even from the back of the plaza, you can see how she walks proudly and confidently. The same stiff-backed, determined attitude your own Captain displays all-too-often."
 
     narrator1 "Ignis activates his receiver."
 
@@ -266,26 +292,34 @@ label speech_begins:
 
     narrator1 "But then, she turns to talk of hope. {i}The Gods have not abandoned us,{/i} she says. And she speaks with such gravitas, you want to believe it. You {i}do{/i} believe it."
 
-    narrator1 "Lunafreya, too, makes no mention of Prince Noctis, although her eyes scan the crowd just before she leaves. You get the impression her plea to Leviathan will not be made alone, and you can only hope that the Empire does not catch wind of Noctis's presence."
+    narrator1 "Lunafreya, too, makes no mention of Prince Noctis, although her eyes scan the crowd just before she leaves."
+
+    narrator1 "You get the impression her plea to Leviathan will not be made alone, and you can only hope that the Empire does not catch wind of Noctis's presence."
 
     narrator1 "Then Lady Lunafreya is gone, vanished back into the palace to make her petitions at the Altar of the Tidemother."
 
     narrator1 "It's time for action."
 
-    you "Okay, everyone, please make your way to the back of the plaza. The boats here will take you to Finangia District, out of the flooding zone."
+    you "Okay, everyone!"
+
+    you "Please make your way to the back of the plaza. The boats here will take you to Finangia District, out of the flooding zone."
 
     narrator1 "You wave the bemused citizens forward."
 
     you "Please, exit this way."
 
-    narrator1 "You and Ignis both guide them towards the boats. You get a few questions — {i}why do we have to evacuate?{/i}, and {i}we want to support the Oracle{/i}, and {i}you can't tell us what to do in our own home{/i} — but for the most part, everyone is solemn enough to not cause any trouble."
+    narrator1 "You and Ignis both guide them towards the boats."
+
+    narrator1 "You get a few questions — {i}why do we have to evacuate?{/i}, and {i}we want to support the Oracle{/i}, and {i}you can't tell us what to do in our own home{/i} — but for the most part, everyone is solemn enough to not cause any trouble."
 
     # sound effect engine hum
     narrator1 "A distant hum interrupts your work. A sort of revving, and it's getting closer."
 
     narrator1 "You look up to see Imperial dreadnoughts approaching."
 
-    narrator1 "Altissia has had so many years of peace under Niflheim's rule that you've almost forgotten the sight of these monstrosities. It's always been there, that low-rumbling threat in the back of your mind, and it's a shock now to see so many of the massive machines, fencing the city in like this."
+    narrator1 "Altissia has had so many years of peace under Niflheim's rule that you've almost forgotten the sight of these monstrosities."
+
+    narrator1 "It's always been there, that low-rumbling threat in the back of your mind, and it's a shock now to see so many of the massive machines, fencing the city in like this."
 
     ignis "Don't draw too much attention to them."
 
@@ -315,8 +349,8 @@ label speech_begins:
 
     show bg yureilplaza crowd dark with Dissolve(0.3)
 
-    stop music fadeout 2.286
-    play ambient attack_commences fadein 2.286
+    stop ambient fadeout 2.286
+    play music attack_commences fadein 2.286 loop
 
     narrator1 "With a burst of frenetic energy, the airships hovering above you open fire." with vpunch
 
