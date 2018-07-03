@@ -118,7 +118,7 @@ label setgender:
             $ your_gender= "non-binary"
             $ your_pronoun_subject= "They're"
             $ your_pronoun_possessive = "theirs"
-            $ your_pronoun_object = "their"
+            $ your_pronoun_object = "them"
             $ you_gender_nicename = "person"
             $ you_gender_nickname = "individual"
 

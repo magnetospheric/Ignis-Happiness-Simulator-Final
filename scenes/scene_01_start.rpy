@@ -131,7 +131,7 @@ label start:
     # play music reverse_guitar noloop
     play music tense_morning loop
 
-    pause 0.3
+    pause 1.0
 
     top_narrator "{size=20}{cps=15}{alpha=0.8}What does  {/alpha}{/cps}{/size}{alpha=1.0}{size=22}{cps=10}loyalty{/cps}{/size}{/alpha}{size=20}{cps=15}{alpha=0.8}  mean to you?{/alpha}{/cps}{/size}"
 

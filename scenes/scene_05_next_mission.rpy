@@ -20,8 +20,6 @@ label power_cut:
     stop foley2 fadeout 2.286
     $ renpy.music.set_volume(0.08, delay=1, channel='foley')
 
-    $ show_happiness = False
-
     show bg yureilcorridor dark with Dissolve(0.3)
 
     show screen door_idle
@@ -93,6 +91,7 @@ label power_cut:
     $ renpy.music.set_volume(0.4, delay=0, channel='music')
     play music lights_out_3 fadein 2.286 loop
 
+    $ show_happiness = False
     show screen black_overlay
     with softflash
 
@@ -202,6 +201,7 @@ label leaving_palace:
 
     show ignis neutral at right
     with dissolve
+    $ show_happiness = True
 
     ignis "So, are you ready to go?"
 
@@ -259,5 +259,7 @@ label en_route_to_altar:
     narrator1 "While he's agile enough, he lacks the knowledge of the area that you have, and he's not prepared for a lot of the shortcuts you're taking."
 
     hide ignis
+
+    scene black with Dissolve(1.0)
 
     jump trooper_attack

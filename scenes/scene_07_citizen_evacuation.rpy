@@ -15,14 +15,18 @@
 
 label reaching_padore_boats:
 
-    show bg padore jetty with Dissolve(0.3)
+    show bg padore jetty with Dissolve(1.5)
+
+    $ renpy.music.set_volume(0.05, delay=1, channel='foley2')
+    play foley2 plaza_crowd
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
-    narrator1 "When you reach Padore District, it doesn't take you long to scout out the area. On the western edge you can see the small jetty, and throngs of people, all busy boarding boats and sharing out bottled water."
+    narrator1 "When you reach Padore District, it doesn't take you long to scout out the area."
 
-    show altissianguard neutral at right
-    with dissolve
+    narrator1 "On the western edge you can see the small jetty, and throngs of people, all busy boarding boats and sharing out bottled water."
+
+    show altissianguard neutral at center with dissolve
 
     altissianguard "[your_name]! Gods, am I glad to see you!"
 
@@ -43,29 +47,42 @@ label reaching_padore_boats:
     hide altissianguard
     with dissolve
 
+    scene black with Dissolve(1.0)
+
     jump radio_interruption
 
 
 
 label radio_interruption:
 
-    show bg mediumstreet with Dissolve(0.3)
+    stop foley2 fadeout 2.0
+    show bg mediumstreet with Dissolve(1.0)
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
     narrator1 "So it's back down the street you just came from, then."
 
-    narrator1 "Being a guard during a time of crisis is more a logistical nightmare than expected — you're feeling a little bit like you're on an endless stream of fetch quests, but you suppose it can't be helped."
+    narrator1 "Being a guard during a time of crisis is more a logistical nightmare than expected."
 
-    narrator1 "You pass a few straggling Magitek units while slipping through the streets, but thankfully, you don't see more than two at a time, and they are too single-minded to notice you now you're keeping to the shadows."
+    narrator1 "You're feeling a little bit like you're on an endless stream of fetch quests, but you suppose it can't be helped."
 
-    narrator1 "You're still a few blocks away from the aqueduct when your radio crackles. Immediately you duck behind a wall, and holding the receiver to your ear."
+    narrator1 "You pass a few straggling Magitek units while slipping through the streets, but thankfully, you don't see more than two at a time."
+
+    narrator1 "And besides, they are too single-minded to notice you now you're keeping to the shadows."
+
+    narrator1 "You're still a few blocks away from the aqueduct when your radio crackles. Immediately you duck behind a wall, holding the receiver to your ear."
 
     narrator1 "You can't quite make it out at first, but it sounds like ... is that Ignis?"
 
+    stop music fadeout 2.286
+    $ renpy.music.set_volume(0.18, delay=0, channel='ambient')
+    play ambient "<from 5.5>audio/bgmusic/Interloper.wav" loop fadein 2.286
+
     narrator1 "Why isn't he talking to you?"
 
-    narrator1 "You pause, fingers running against the brick, other hand tightening round the receiver. You're expecting instructions, updates, something, anything, but it's just this strange mush of noise."
+    narrator1 "You pause, fingers running against the brick, other hand tightening round the receiver."
+
+    narrator1 "You're expecting instructions, updates, something, anything, but it's just this strange mush of noise."
 
     narrator1 "Then you realise. Ignis has somehow hit the transmit button, and you can hear everything that's happening around him."
 
@@ -74,8 +91,6 @@ label radio_interruption:
     narrator1 "Then, an angry voice cuts through. It's not one you recognise."
 
     unidentified_voice "{i}The Lucian King's lapdog, eh?{/i}"
-
-    #sound effects here
 
     narrator1 "It's followed by a thud, and a sharp cry of pain. Ignis is hurt."
 
@@ -87,9 +102,9 @@ label radio_interruption:
 
     ignis "{i}No! Don't —{/i}"
 
-    # sound effect - hipass thud
-
     narrator1 "There's a noise so loud that it's capped by the tinny speaker, then the connection cuts out entirely."
+
+    play foley3 out_of_bed noloop
 
     narrator1 "You thump the wall. You want to curse."
 
@@ -99,13 +114,17 @@ label radio_interruption:
 
     narrator1 "An uncomfortable weight settles in your stomach. Both of the paths that diverge before you lead to protecting people, but it's a divergence of duty. And of numbers."
 
-    narrator1 "There's far more people waiting under that aqueduct for you. They probably don't have combat experience like Ignis does — they're probably not going to last long if a squadron of Magitek Troopers find them. But at the same time, you don't want to leave Ignis alone at the mercy of the Empire."
+    narrator1 "There's far more people waiting under that aqueduct for you."
 
-    narrator1 "You try to imagine what Ignis would advise you to do."
+    narrator1 "They probably don't have combat experience like Ignis does — they're not going to last long if a squadron of Magitek Troopers find them."
+
+    narrator1 "But at the same time, you don't want to leave Ignis alone at the mercy of the Empire."
+
+    narrator1 "You try to imagine what Ignis would advise."
+
+    narrator1 "So."
 
     narrator1 "What will you do?"
-
-    # would be good to have a ticking sound here - to highlight the 'i need more time' thing
 
     menu:
         "Continue onward to help the citizens first":
@@ -177,19 +196,25 @@ label second_choice_who_to_rescue:
 
 label reaching_citizens:
 
-    show bg evacuee hideout dark with Dissolve(0.3)
+    stop ambient fadeout 2.286
+    $ renpy.music.set_volume(0.02, delay=1, channel='foley')
 
-    # rising sound of people chatting / murmuring
-    stop ambient
+    scene black with Dissolve(1.5)
+
+    show bg evacuee hideout dark with Dissolve(1.0)
+
+    $ renpy.music.set_volume(0.4, delay=0, channel='music')
     play music stubborn_citizens
-
-    show citizens dark
-    with dissolve
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
+    narrator1 "The underpass of the aqueduct is quieter than the surrounding streets."
 
-    narrator1 "The underpass of the aqueduct is where you find a group of citizens, huddled together in the awning and chittering away like frightened birds as the chaos rages around them."
+    narrator1 "It feels like a little pocket of calm amid the noise."
+
+    show citizens dark with dissolve
+
+    narrator1 "It's here you find a group of citizens, huddled together in the awning and chittering away like frightened birds."
 
     narrator1 "As soon as they see you, their faces light up ... only to fall once more when they realise you're the only guard to come to their aid."
 
@@ -230,27 +255,31 @@ label reaching_citizens:
 
     narrator1 "The citizens anxiously wring their hands for precious seconds more, then they obey."
 
-    stop music
-
     jump escort_to_jetty
 
 
 
 label escort_to_jetty:
 
-    show bg mediumstreet with Dissolve(0.3)
+    show bg mediumstreet with Dissolve(1.0)
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
-    narrator1 "The whole way back to the evacuation zone, your panic climbs. Behind you, the citizens are scared and muttering away, and it reminds you that every second you spend saving them is another second you're not helping Ignis."
+    narrator1 "The whole way back to the evacuation zone, your panic climbs."
+
+    narrator1 "Behind you, the citizens are scared and muttering away, and it reminds you that every second you spend saving them is another second you're not helping Ignis."
 
     narrator1 "You force the thoughts out of your mind."
 
-    show bg padore jetty with Dissolve(0.3)
+    play foley2 plaza_crowd
+
+    show bg padore jetty with Dissolve(1.0)
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
-    narrator1 "It feels like an eternity passes before you reach the jetty, although you know it can't have been more than three or four minutes. Thankfully, no troopers surprise you along the way, and the citizens reach the water's edge unscathed."
+    narrator1 "It feels like an eternity passes before you reach the jetty, although you know it can't have been more than three or four minutes."
+
+    narrator1 "Thankfully, no troopers surprise you along the way, and the citizens reach the water's edge unscathed."
 
     show citizens reasonable
     with dissolve
@@ -269,12 +298,12 @@ label escort_to_jetty:
 
     narrator1 "You point at your fellow guard."
 
-    you "Talk to him. He'll deal with the rest. Now — I have to go check on some others."
+    you "Talk to him. He'll deal with the rest. Now — I have to go check on someone else."
 
     narrator1 "About time. How many minutes did you waste? How many more bruises might Ignis have suffered? You grit your teeth and start to run."
 
-    hide citizens
-    with dissolve
+    scene black with dissolve
+    hide citizens with dissolve
 
     jump meeting_ignis_again
 
@@ -282,7 +311,7 @@ label escort_to_jetty:
 
 label divert_to_ignis:
 
-    show bg mediumstreet with Dissolve(0.3)
+    show bg mediumstreet with Dissolve(1.0)
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 

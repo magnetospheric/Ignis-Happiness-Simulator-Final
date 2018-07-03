@@ -17,7 +17,13 @@
 
 label meeting_ignis_again:
 
-    show bg mediumstreet with Dissolve(0.3)
+    stop foley2 fadeout 2.0
+
+    stop music fadeout 2.286
+    stop ambient fadeout 2.286
+    play ambient shrinemaiden1 fadein 2.286
+
+    show bg mediumstreet with Dissolve(1.0)
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
@@ -158,12 +164,11 @@ label found_ignis:
 
     narrator1 "You sigh and step back from the mess. Where to check now?"
 
-    # sound effect: scrabbling and rocky noises
+    narrator1 "You take a few steps forward."
 
     narrator1 "A scrabbling amid the rubble to your right catches your attention."
 
-    show ignis unimpressed openmouth wet noblink
-    with dissolve
+    show ignis unimpressed openmouth wet noblink with Dissolve(1.0)
 
     ignis "[your_name] ... Ah!"
 
@@ -223,7 +228,7 @@ label found_ignis:
 
                 show screen happiness_text(title="Happiness decreased!")
                 with dissolve
-                pause 0.3
+                pause 0.5
                 hide screen happiness_text
                 with dissolve
 
@@ -325,8 +330,6 @@ label chance_at_redemption:
 
 
 label escape_tigiano:
-
-    $ show_happiness = False
 
     you "So what did —"
 
