@@ -16,6 +16,8 @@ label found:
 
     hide screen keys
 
+    play foley keys_rustling noloop
+
     show screen keys_large
 
     you "Ah!"
@@ -27,11 +29,19 @@ label found:
     narrator1 "It doesn't take you long to lock up. Your apartment is nice enough, but it's small, and solitary."
     narrator1 "Not that you like to dwell on that."
 
+    play foley locking_up_your_house noloop
+
+    scene black with Dissolve(1.5)
+
+    pause 0.5
+
     jump to_work
 
 label to_work:
     #shows the first background
-    scene bg mc_home with Dissolve(0.3)
+    scene bg mc_home with Dissolve(1.5)
+
+    play foley altissian_morning_streets fadein 0.2 loop
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}You race{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
@@ -48,6 +58,8 @@ label to_work:
     narrator1 "There's a low hum in the streets. People are up and about, but more hushed than normal. They're feeling the anticipation as keenly as you are."
 
     scene bg yureilplaza with Dissolve(0.3)
+
+    play foley birdsong2 fadein 1.0
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}Today, you've{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
@@ -135,6 +147,6 @@ label after_user_name_set:
     you "Thank you."
 
     hide altissianguard
-    with dissolve
+    with moveoutleft
 
     jump first_conversation

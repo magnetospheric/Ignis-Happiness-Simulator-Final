@@ -8,7 +8,7 @@
 
 # this scene is triggered after the hotel conversation, if you have built up enough happiness points
 
-label waitingforignis:
+label waitingforignis1:
 
     scene bg magisterialsquare
 

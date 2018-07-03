@@ -8,7 +8,7 @@
 
 
 # use this start label to test things
-label start:
+label startn:
 
     #starting variables
 
@@ -69,7 +69,7 @@ label start:
 
 
 # The game starts here.
-label startn:
+label start:
 
     #starting variables
     $ ignis_name = "Stranger"
@@ -128,8 +128,8 @@ label startn:
     #black background, maybe some wisping smoke
     scene black
 
-    play music reverse_guitar noloop
-    queue music tense_morning loop
+    # play music reverse_guitar noloop
+    play music tense_morning loop
 
     pause 0.3
 
@@ -141,7 +141,7 @@ label startn:
 
     centrebottomright_narrator "{size=20}{cps=15}{alpha=0.8}Sometimes, {/alpha}{/cps}{/size}{size=22}{cps=10}{alpha=1.0}all it takes is one day.{/alpha}{/cps}{/size}"
 
-    centered_titles "{cps=15}{size=26}Chapter One\n\n{/size}{p=0.5}{size=36}Awaken{/size}{/cps}"
+    centered_titles "{cps=15}{size=26}Chapter One\n\n{/size}{p=0.5}{size=36}Awaken {/size}{/cps}"
 
     jump covenant_morning
 
@@ -149,22 +149,29 @@ label startn:
 
 label covenant_morning:
 
+    $ renpy.music.set_volume(0.4, delay=1, channel='music')
+    $ renpy.music.set_volume(0.4, delay=1, channel='ambient')
+    $ renpy.music.set_volume(1.0, delay=1, channel='foley')
+    $ renpy.music.set_volume(1.0, delay=1, channel='foley2')
+
     #scene dawns on an overview of altissia
     #slow fade in
-    show screen gold_border
     scene bg altissian_skyline
+    show screen gold_border
     with fastfade
+
+    play foley birdsong1 fadein 4.0
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}Altissia, on the day of the Covenant.{/outlinecolor}{/alpha}{nw}" with Dissolve(0.5)
 
     $ quick_menu = True
 
     stop music fadeout 2.286
-    play ambient hazy_morning fadein 2.286
+    play ambient morning_coffee1 fadein 2.286
 
     narrator1 "Altissia, on the day of the Covenant."
 
-    narrator1 "The sky is a pale pastel glow, but despite this, the atmosphere is tense. You can feel it around you, thick as syrup."
+    narrator1 "The sky is a pale pastel glow, and birds call out from the terracotta rooftops, but despite this, the atmosphere is tense. You can feel it around you, thick as syrup."
 
     narrator1 "Today is the day that the Oracle, Lady Lunafreya, summons a goddess."
     narrator1 "Leviathan. The stuff of legends."
@@ -173,6 +180,8 @@ label covenant_morning:
     narrator1 "An important day, indeed."
 
     scene black
+
+    stop foley fadeout 0.3
 
     centered "So it really doesn't help that today, of all days, you are late to work."
 
@@ -184,14 +193,10 @@ label mc_room:
 
     scene bg mc_room
     show screen keys_inactive
-    #set up button here but don't make it clickable
 
-    # show screen infobubble(title="Locate the keys")
+    play foley out_of_bed noloop
 
     you "Ah, where did I put my keys?" with vpunch
-
-    # main room view
-    # would be cool to have a shaking effect here
 
     you "Y'know, it would be {i}really{/i} useful if I could just ... find them ..."
 

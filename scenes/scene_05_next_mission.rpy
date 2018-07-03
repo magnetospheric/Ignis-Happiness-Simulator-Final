@@ -17,6 +17,9 @@ label power_cut:
     stop music fadeout 2.286
     play ambient attack_commences_2 fadein 2.286
 
+    stop foley2 fadeout 2.286
+    $ renpy.music.set_volume(0.08, delay=1, channel='foley')
+
     $ show_happiness = False
 
     show bg yureilcorridor dark with Dissolve(0.3)
@@ -27,63 +30,71 @@ label power_cut:
 
     narrator1 "When you arrive in the palace entrance hall, the Captain and a handful of guards are already there."
 
-    show captain neutral at left
-    with dissolve
+    show captain neutral at right with dissolve
 
     captain "Ah, [your_name], [ignis_name], good work."
 
-    show ignis neutral at right #or maybe finger to glasses here?
-    with dissolve
+    show ignis touching glasses at left with dissolve
 
     ignis "So, it's as we guessed."
 
-    # show captain neutral sidelook
-    # with dissolve
-    #
-    # show captain neutral sidelook openmouth
-    # with dissolve
+    show ignis neutral at left with dissolve
+    show captain neutral openmouth with dissolve
 
     captain "Right. The scale of the attack is larger than we predicted, though."
 
-    # show captain neutral sidelook
-    # with dissolve
+    show captain neutral sidelong with dissolve
 
     narrator1 "She seethes quietly for a moment."
 
-    narrator1 "Outside, the sound of explosions and thrumming engines cut through to the palace hallway. It's hollow against the stone foundations, and every reverberation brings back the fact that, right now, you are under siege."
+    $ renpy.music.set_volume(0.09, delay=0, channel='foley4')
+
+    play foley4 explosion04 noloop
+    queue foley4 explosion03 noloop
+    queue foley4 explosion02 noloop
+    queue foley4 explosion03 noloop
+
+    narrator1 "Outside, the sound of explosions and thrumming engines cut through to the palace hallway."
+
+    narrator1 "It's hollow against the stone foundations, and every reverberation brings back the fact that, right now, you are under siege."
 
     narrator1 "You can't believe this is really happening."
 
     narrator1 "You've only been working here two months. You're not prepared for this."
 
-    # show captain neutral sidelook openmouth
-
+    show captain neutral openmouth with dissolve
     captain "I got a report just now that dropships have landed in Padore District. The Magitek infantry are moving in."
+    show captain neutral
 
+    show ignis neutral openmouth
     ignis "Sounds like they're seeking to disrupt the ceremony from the west side."
+    show ignis neutral
 
+    show captain neutral openmouth with dissolve
     captain "Mm. So I'd like you to go ensure the citizens there are evacuated safely. That's first priority."
+    show captain neutral
 
     you "Understood, Ma'am."
 
+    show captain neutral openmouth
     captain "Second priority is finding a way to slow enemy movement. Although — Ignis, I understand your companions are already on that point?"
+    show captain neutral
 
+    show ignis neutral openmouth
     ignis "They are. A small complication, though — they're stationed on the east side, and we currently don't have a way to reach the dropships —"
 
-    narrator1 "There's a resounding crash from somewhere up above." with vpunch
+    $ renpy.music.set_volume(0.6, delay=0, channel='foley3')
+    $ renpy.music.set_volume(0.6, delay=0, channel='foley4')
 
-    # show bg yureilcorridor dark with Dissolve(0.3)
+    play foley3 "<from 1.5>audio/soundeffects/explosion02.wav" noloop
+    play foley4 "<from 1.5>audio/soundeffects/explosion01.wav" noloop
+
     show screen black_overlay
     with softflash
 
-    narrator1 "The lights flicker off, casting the room into darkness."
-    # have a sort of flash effect as the room goes dark, if possible.
-    # Could be achieved by a sort of inverted colouring of the current room bg
+    narrator1 "There's a resounding crash from somewhere up above. The lights flicker off, casting the room into darkness." with vpunch
 
     you "A power cut?"
-
-    # captain gets you to search the room for the fuse switch before you head out.
-    # this will teach you the 'flashlight' mechanic
 
     captain "There's a flashlight on the table next to you. See if you can't find the fuse box."
 
@@ -95,8 +106,6 @@ label power_cut:
     # enter flashlight section
     hide screen black_overlay
     hide screen door_idle
-    hide ignis
-    hide captain
 
     #call screen open_door
     call screen flashlight_palace_hallway
@@ -111,11 +120,15 @@ label find_fuse:
     show screen black_overlay
     show screen door_idle
 
-    narrator1 "There's no sign of a fuse box in this central corridor, but that small door at the end looks like it might lead somewhere useful. You seem to remember the palace electricians taking that route, at least."
+    narrator1 "There's no sign of a fuse box in this central corridor, but that small door at the end looks like it might lead somewhere useful."
+
+    narrator1 "You seem to remember the palace electricians taking that route, at least."
 
     hide screen door_idle
+    hide ignis
+    hide captain
 
-    show bg yureilcorridor fuse idle with Dissolve(0.3)
+    show bg yureilcorridor fuse idle with Dissolve(0.5)
 
     narrator1 "So you walk through to find a much narrower stairwell that looks far more promising."
 
@@ -166,9 +179,10 @@ label leaving_palace:
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
+    show captain neutral openmouth
     captain "Ah, excellent job, [your_name]."
-
     captain "Now, there's no time to waste. Take the side exit when you leave, and remember to pick up your dress sword."
+    show captain neutral
 
     narrator1 "Ah. The dress sword. A small rapier used mostly for show. You've had basic training, but you've never used it in proper combat."
 
@@ -192,13 +206,18 @@ label leaving_palace:
 
     ignis "Lead onward, then."
 
+    show captain neutral openmouth
     captain "Take the flashlight with you, [your_name]. You might need it."
+    show captain neutral
 
     you "Thank you."
 
     captain "Good luck out there, both of you."
 
-    hide bg yureilcorridor dark
+    hide ignis
+    hide captain
+    hide yureilcorridor dark
+    with dissolve
 
     jump en_route_to_altar
 

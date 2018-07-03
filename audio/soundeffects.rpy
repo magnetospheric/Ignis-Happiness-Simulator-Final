@@ -33,8 +33,7 @@ init -1 python:
                 "<from 15.0>audio/typewriters/typewriter-titles.wav",
                 "<from 18.0>audio/typewriters/typewriter-titles.wav",
                 "<from 20.0>audio/typewriters/typewriter-titles.wav",
-                "<from 22.0>audio/typewriters/typewriter-titles.wav",
-                "<from 26.0>audio/typewriters/typewriter-titles.wav"
+                "<from 22.0>audio/typewriters/typewriter-titles.wav"
             ]), channel="sound")
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")

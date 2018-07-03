@@ -41,8 +41,8 @@ label splashscreen:
     #
     # play music "sound/Voglio_La_Pace-Snippet.wav" fadein 1.0
 
-    scene black
-    with Pause(5)
+    # scene black
+    # with Pause(5)
     #
     # show producer with dissolve
     # with Pause(2)

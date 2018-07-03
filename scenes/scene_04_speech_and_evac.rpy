@@ -312,8 +312,15 @@ label speech_begins:
 
     narrator1 "You get a few questions — {i}why do we have to evacuate?{/i}, and {i}we want to support the Oracle{/i}, and {i}you can't tell us what to do in our own home{/i} — but for the most part, everyone is solemn enough to not cause any trouble."
 
-    # sound effect engine hum
-    narrator1 "A distant hum interrupts your work. A sort of revving, and it's getting closer."
+    $ renpy.music.set_volume(0.1, delay=0, channel='foley')
+    $ renpy.music.set_volume(0.2, delay=0, channel='foley3')
+    play foley3 dropships_approaching noloop
+    play foley [ "<silence 16.0>", engine_bassline] fadein 3.0
+    queue foley engine_bassline loop
+
+    narrator1 "A distant hum interrupts your work."
+
+    narrator1 "A sort of ... revving ... and it's getting closer."
 
     narrator1 "You look up to see Imperial dreadnoughts approaching."
 
@@ -337,7 +344,7 @@ label speech_begins:
 
     narrator1 "And the Imperial ships grow ever closer."
 
-    #image of ignis with hand to head again
+    show ignis touching glasses with dissolve
 
     narrator1 "Ignis has taken to his receiver once again, and is speaking in hushed tones."
 
@@ -351,6 +358,25 @@ label speech_begins:
 
     stop ambient fadeout 2.286
     play music attack_commences fadein 2.286 loop
+
+    $ renpy.music.set_volume(0.3, delay=0, channel='foley3')
+    play foley3 airship_zoom noloop
+    $ renpy.music.set_volume(0.8, delay=0, channel='foley3')
+    queue foley3 explosion03 noloop
+    $ renpy.music.set_volume(0.2, delay=1, channel='foley')
+    $ renpy.music.set_volume(0.2, delay=1, channel='foley2')
+    $ renpy.music.set_volume(0.3, delay=0, channel='foley3')
+    $ renpy.music.set_volume(0.17, delay=0, channel='foley4')
+    queue foley3 explosion04 noloop
+    queue foley3 airship_zoom noloop
+    queue foley3 explosion02 noloop
+    queue foley3 [ "<silence 2.286>", explosion04 ] noloop
+
+    play foley4 gunfire noloop
+    queue foley4 explosion03 noloop
+    queue foley4 airship_zoom noloop
+    queue foley4 gunfire noloop
+    queue foley4 explosion03 noloop
 
     narrator1 "With a burst of frenetic energy, the airships hovering above you open fire." with vpunch
 
@@ -373,11 +399,17 @@ label speech_begins:
     show ignis sidelong direct
     with dissolve
 
-    narrator1 "The crackling cuts off, and you and Ignis share a worried glance before ushering the last few stragglers onto the boats. You tell the last citizens that everything will be okay, then Ignis claps you briefly on the shoulder and together you race back to the palace."
+    narrator1 "The crackling cuts off, and you and Ignis share a worried glance before ushering the last few stragglers onto the boats."
+
+    narrator1 "That should be the lot."
+
+    narrator1 "You tell the last citizens that everything will be okay, then Ignis claps you briefly on the shoulder and together you race back to the palace."
 
     you "What's going on?"
 
     narrator1 "The two of you are running as fast as humanly possible, and Ignis's reply comes in sharp bursts."
+
+    play foley4 explosion03 noloop
 
     show ignis sidelong direct openmouth
     with dissolve
@@ -386,7 +418,10 @@ label speech_begins:
 
     you "And you knew this was going to happen?"
 
+
     ignis "Yes."
+
+    play foley4 explosion04 noloop
 
     narrator1 "You would have liked to have known this beforehand. But there's little point in making a fuss now. You need to focus."
 

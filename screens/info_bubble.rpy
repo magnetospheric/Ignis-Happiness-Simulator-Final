@@ -60,7 +60,7 @@ screen infobubble(title, content, confirmation):
     zorder 3
     frame:
         style "info_bubble_frame"
-        background Image("ui/quit_box.png", xalign=0.5, yalign=0.5)
+        background Image("ui/quit_box2.png", xalign=0.5, yalign=0.5)
 
         vbox:
             yalign 0.0
@@ -90,7 +90,7 @@ screen infobubble_confirm_cancel(title, content, confirmation, cancel, cancel_de
     zorder 3
     frame:
         style "info_bubble_frame"
-        background Image("ui/quit_box.png", xalign=0.5, yalign=0.5)
+        background Image("ui/quit_box2.png", xalign=0.5, yalign=0.5)
         vbox:
             yalign 0.0
             frame:
@@ -126,7 +126,7 @@ screen input_screen(title):
         xalign 0.5
         yalign 0.5
         xsize 600
-        background Image("ui/quit_box.png", xalign=0.5, yalign=0.5)
+        background Image("ui/quit_box2.png", xalign=0.5, yalign=0.5)
 
         vbox:
 

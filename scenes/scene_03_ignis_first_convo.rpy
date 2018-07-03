@@ -10,15 +10,18 @@
 
 label first_conversation:
 
-    scene bg yureilplaza
-
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}You race{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
     narrator1 "Up the pale marble steps to the plaza entrance now. The Palace is grand and decked with flags, red and gold fabric that's dampened in the gathering rain."
     narrator1 "Usually, you think it looks overbearing, but today, it seems solemn, more like a tomb. It's not an inviting omen."
 
-    #show captain left in conversation
-    scene bg yureilcorridor with Dissolve(0.5)
+    stop foley fadeout 1.0
+    scene bg yureilcorridor with Dissolve(1.0)
+
+    $ renpy.music.set_volume(0.3, delay=1, channel='music')
+
+    stop ambient fadeout 2.286
+    play music morning_coffee2 fadein 2.286
 
     show captain neutral at left
     with dissolve
@@ -28,8 +31,7 @@ label first_conversation:
     narrator1 "When you report in, you notice the Captain of the Guard is accompanied by a stranger."
 
     #show ignis left looking to the side
-    show ignis neutral at right
-    with dissolve
+    show ignis neutral at right with Dissolve(1.0)
 
     narrator1 "He's tall, slim, and all things considered, rather attractive indeed."
     narrator1 "You approach hesitantly, not wanting to interrupt them."
@@ -124,14 +126,19 @@ label first_conversation:
 
     ignis "Indeed."
 
-    ignis "While I am a Lucian envoy, as my nation is responsible for invoking the Covenant, I must do all I can to aid Altissia for its efforts. You must be well aware of the danger this poses to your nation."
+    ignis "While I am a Lucian envoy, as my nation is responsible for invoking the Covenant, I must do all I can to aid Altissia for its efforts."
+
+    ignis "You must be well aware of the danger this poses to your nation."
 
     show ignis neutral
 
     narrator1 "You feel like there's more to it than that, but you don't decide to bring it up at this point."
 
+    show ignis neutral openmouth
+
     ignis "So, are you prepared, [your_name]?"
 
+    show ignis neutral
     #here you should get the first choice to make to get his happiness up or down
     menu:
         "Express a desire to protect the Oracle":
@@ -164,10 +171,19 @@ label first_conversation:
     # the sound of crowds clapping outside draws your attention
     show ignis neutral
 
-    narrator1 "Outside, the sound of the crowd is rising. You can hear clapping. And, from somwhere high up in the tower, the chime of a bell."
+    $ renpy.music.set_volume(0.08, delay=0, channel='foley')
+    $ renpy.music.set_volume(0.03, delay=0, channel='foley2')
+
+    stop music fadeout 2.286
+    play ambient undercurrent fadein 2.286
+
+    play foley [ "<silence 2.286>", bells_chiming ] noloop
+    play foley2 [ "<silence 2.286>", cheering1 ] noloop
 
     show ignis sidelong openmouth
     with dissolve
+
+    narrator1 "Outside, the sound of the crowd is rising. You can hear clapping. And, from somewhere high up in the tower, the chime of a bell."
 
     ignis "Sounds like it's begun."
 
