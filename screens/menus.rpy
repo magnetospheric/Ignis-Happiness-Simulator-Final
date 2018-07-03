@@ -65,7 +65,7 @@ screen navigation():
             style_prefix "navigation_ingame"
 
             xalign 0.48
-            yalign 0.84
+            yalign 0.97
 
             spacing 0
 
@@ -126,13 +126,12 @@ style navigation_button_text:
 
 ## Styles for indented main menu items ##
 style menu_item_text is text:
-    # hover_color "#d1d7e3"
     hover_color "#cdb2cd"
-    # outlines [ (0, "#fff", 1, 1), (2, "#8f98a8", 0, 0) ]
     outlines [ (0, "#fff", 1, 1), (2, "#481a36", 0, 0) ]
     color "#f5ddf5"
     size 18
 
+## Styles for indented main menu items in-game and in subscreen menus ##
 style ingame_menu_item_text is text:
     hover_color "#cdb2cd"
     outlines [ (2, "#fff", 0, 0), (3, "#481a36", 1, 0) ]
@@ -314,16 +313,25 @@ screen game_menu(title, scroll=None):
 
     use navigation
 
-    textbutton _("Return"):
+    textbutton _("{k=-0.4}RETURN{/k}"):
         style "return_button"
 
         action Return()
 
-    label title
+    label title:
+        style "subpage_title"
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
 
+style subpage_title:
+    top_padding 20
+    left_padding 20
+
+style subpage_title_text:
+    size 50
+    font "fonts/Birch.ttf"
+    outlines [ (5, "#0000004D", 0, 0), (3, "#ffffff59", 0, 0), (2, "#180f15", 0, 0) ]
 
 style game_menu_outer_frame is empty
 style game_menu_navigation_frame is empty
@@ -340,21 +348,21 @@ style return_button_text is navigation_button_text
 
 style game_menu_outer_frame:
     bottom_padding 30
-    top_padding 120
-
-    background "gui/overlay/game_menu.png"
+    top_padding 0
+    background "images/ui/black-layer.png"
 
 style game_menu_navigation_frame:
-    xsize 280
+    xsize 0
     yfill True
 
 style game_menu_content_frame:
-    left_margin 40
-    right_margin 20
-    top_margin 10
+    left_margin 0
+    right_margin 0
+    top_margin 0
 
 style game_menu_viewport:
     xsize 1280
+    ysize 720
 
 style game_menu_vscrollbar:
     unscrollable gui.unscrollable
@@ -376,11 +384,18 @@ style return_button:
     yalign 1.0
     yoffset -30
 
+style return_button_text:
+    size 26
+    color "#fff"
+    hover_color "#d0ddf4"
+
+
 
 ## Quick Menu screen ###########################################################
 ##
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
 ## menus.
+
 
 screen quick_menu():
 
@@ -392,18 +407,14 @@ screen quick_menu():
         hbox:
             style_prefix "quick"
 
-            xalign 0.5
-            yalign 0.989
+            xalign 0.06
+            yalign 0.04
 
-            # textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            # textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Load") action ShowMenu('load')
-            # textbutton _("Q.Save") action QuickSave()
-            # textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            textbutton _("{k=+1.0}SAVE{/k}") action ShowMenu('save')
+            textbutton _("{k=+1.0}OPTIONS{/k}") action ShowMenu('preferences')
+
+default event_list = []
+default back_next_button = None
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever

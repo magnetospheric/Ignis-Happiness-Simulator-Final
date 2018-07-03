@@ -127,7 +127,6 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    #background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
     background Image("ui/transparent.png", xalign=0.5, yalign=1.0)
 
 style namebox:
@@ -245,7 +244,6 @@ style choice_button_text is default:
 
 
 
-
 ## About screen ################################################################
 ##
 ## This screen gives credit and copyright information about the game and Ren'Py.
@@ -266,6 +264,10 @@ screen about():
 
         vbox:
 
+            xpos 0.15
+            ypos 0.35
+            xsize 0.8
+
             label "[config.name!t]"
             text _("Version [config.version!t]\n")
 
@@ -279,6 +281,9 @@ screen about():
 ## This is redefined in options.rpy to add text to the about screen.
 define gui.about = ""
 
+style title_frame_about:
+    xpos 15
+    ypos 20
 
 style about_label is gui_label
 style about_label_text is gui_label_text
@@ -286,6 +291,9 @@ style about_text is gui_text
 
 style about_label_text:
     size gui.label_text_size
+
+style about_text:
+    size 18
 
 
 ## Load and Save screens #######################################################
@@ -306,6 +314,8 @@ screen save():
 
 screen load():
 
+    $ is_load_screen = True
+
     tag menu
 
     use file_slots(_("Load"))
@@ -318,6 +328,13 @@ screen file_slots(title):
     use game_menu(title):
 
         fixed:
+
+            if title == "Load":
+                frame:
+                    style "title_frame_load"
+            else:
+                frame:
+                    style "title_frame_save"
 
             ## This ensures the input will get the enter event before any of the
             ## buttons do.
@@ -340,7 +357,7 @@ screen file_slots(title):
                 style_prefix "slot"
 
                 xalign 0.5
-                yalign 0.5
+                yalign 0.45
 
                 spacing gui.slot_spacing
 
@@ -350,6 +367,7 @@ screen file_slots(title):
 
                     button:
                         action FileAction(slot)
+                        # style "custom_slot_button"
 
                         has vbox
 
@@ -372,20 +390,6 @@ screen file_slots(title):
 
                 spacing gui.page_spacing
 
-                textbutton _("<") action FilePagePrevious()
-
-                if config.has_autosave:
-                    textbutton _("{#auto_page}A") action FilePage("auto")
-
-                if config.has_quicksave:
-                    textbutton _("{#quick_page}Q") action FilePage("quick")
-
-                ## range(1, 10) gives the numbers from 1 to 9.
-                for page in range(1, 10):
-                    textbutton "[page]" action FilePage(page)
-
-                textbutton _(">") action FilePageNext()
-
 
 style page_label is gui_label
 style page_label_text is gui_label_text
@@ -397,8 +401,21 @@ style slot_button_text is gui_button_text
 style slot_time_text is slot_button_text
 style slot_name_text is slot_button_text
 
+
+style title_frame_save:
+    xpos 15
+    ypos 20
+
+style title_frame_load:
+    xpos 15
+    ypos 20
+
+style custom_slot_button:
+    background "images/ui/slot_bg.png"
+    hover_background "images/ui/slot_bg_hover.png"
+
 style page_label:
-    xpadding 50
+    xpadding 0
     ypadding 3
 
 style page_label_text:
@@ -437,7 +454,10 @@ screen preferences():
 
     use game_menu(_("Preferences"), scroll="viewport"):
 
+
         vbox:
+            xpos 0.20
+            ypos 0.15
 
             hbox:
                 box_wrap True
@@ -463,9 +483,6 @@ screen preferences():
                     textbutton _("Unseen Text") action Preference("skip", "toggle")
                     textbutton _("After Choices") action Preference("after choices", "toggle")
                     textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
-
-                ## Additional vboxes of type "radio_pref" or "check_pref" can be
-                ## added here, to add additional creator-defined preferences.
 
             null height (4 * gui.pref_spacing)
 
@@ -518,6 +535,9 @@ screen preferences():
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
 
+style title_frame_options:
+    xpos 15
+    ypos 20
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text
@@ -691,7 +711,9 @@ screen help():
         style_prefix "help"
 
         vbox:
-            spacing 15
+            spacing 8
+            xpos 0.20
+            ypos 0.35
 
             hbox:
 
@@ -751,6 +773,9 @@ screen keyboard_help():
         label "S"
         text _("Takes a screenshot.")
 
+    hbox:
+        label "V"
+        text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
     hbox:
         label "V"
         text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
