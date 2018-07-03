@@ -54,7 +54,7 @@ label lunas_speech:
 
     narrator1 "You turn back to the crowd. They're still restless, still chatty."
 
-    show noctis silhouette at right with Dissolve(0.5)
+    show noctis silhouette at right with Dissolve(1.0)
 
     narrator1 "Before long, you catch sight of a black-haired individual making his way through the crowd. He's moving irregularly, and as a guard, this is a cause for concern."
 
@@ -258,7 +258,7 @@ label discuss_sightseeing:
 label speech_begins:
 
     stop ambient fadeout 2.286
-    play music shrinemaiden fadein 2.286 loop
+    play music shrinemaiden1 fadein 2.286 loop
 
     show ignis neutral
     with dissolve
@@ -267,18 +267,20 @@ label speech_begins:
     $ renpy.music.set_volume(0.06, delay=1, channel='foley2')
     play foley cheering1 fadein 2.286 noloop
 
+    pause 1.5
+
     narrator1 "Then, a cheer rises. Up at the steps of the palace, Lady Lunafreya has appeared."
 
     narrator1 "Even from the back of the plaza, you can see how she walks proudly and confidently. The same stiff-backed, determined attitude your own Captain displays all-too-often."
 
     narrator1 "Ignis activates his receiver."
 
-    # new image - ignis touching glasses
+    show ignis touching glasses with dissolve
+
     ignis "{i}Don't forget the plan.{/i}"
 
     narrator1 "Somewhere further in the crowd, a black head of hair shifts as the call is answered. It sounds like the Prince says something sarcastic then, because Ignis smiles wryly."
 
-    # new image - ignis touching glasses with smile
     show ignis smile
 
     ignis "Of course."
@@ -310,7 +312,9 @@ label speech_begins:
 
     narrator1 "You and Ignis both guide them towards the boats."
 
-    narrator1 "You get a few questions — {i}why do we have to evacuate?{/i}, and {i}we want to support the Oracle{/i}, and {i}you can't tell us what to do in our own home{/i} — but for the most part, everyone is solemn enough to not cause any trouble."
+    narrator1 "You get a few questions — {i}why do we have to evacuate?{/i}, and {i}we want to support the Oracle{/i}, and {i}you can't tell us what to do in our own home!{i}"
+
+    narrator1 "But for the most part, everyone is solemn enough to not cause any trouble."
 
     $ renpy.music.set_volume(0.1, delay=0, channel='foley')
     $ renpy.music.set_volume(0.2, delay=0, channel='foley3')
@@ -328,9 +332,15 @@ label speech_begins:
 
     narrator1 "It's always been there, that low-rumbling threat in the back of your mind, and it's a shock now to see so many of the massive machines, fencing the city in like this."
 
+
+    show ignis neutral openmouth
     ignis "Don't draw too much attention to them."
+    show ignis neutral
 
     narrator1 "You nod. You don't want to panic the crowd. You continue herding them as before, hoping the Empire won't be foolish enough to start anything before the citizens reach safety."
+
+    stop music fadeout 2.286
+    play ambient shrinemaiden2 fadein 2.286 loop
 
     narrator1 "In the distance, a lone voice rises on the wind. A heavenly singing."
 
@@ -338,7 +348,9 @@ label speech_begins:
 
     narrator1 "You pause in your work, enraptured by the sound. Then, joining it, a tremendous splash of water and an unearthly, hallowed voice you cannot make sense of."
 
-    narrator1 "A chill seeds itself through your bones. {i}Leviathan.{/i}"
+    narrator1 "A chill seeds itself through your bones."
+
+    narrator1 "{i}Leviathan.{/i}"
 
     narrator1 "This is it; this is the moment of legend."
 
@@ -356,8 +368,7 @@ label speech_begins:
 
     show bg yureilplaza crowd dark with Dissolve(0.3)
 
-    stop ambient fadeout 2.286
-    play music attack_commences fadein 2.286 loop
+    stop ambient
 
     $ renpy.music.set_volume(0.3, delay=0, channel='foley3')
     play foley3 airship_zoom noloop
@@ -372,7 +383,7 @@ label speech_begins:
     queue foley3 explosion02 noloop
     queue foley3 [ "<silence 2.286>", explosion04 ] noloop
 
-    play foley4 gunfire noloop
+    play foley4 [ "<silence 6.286>", gunfire ] noloop
     queue foley4 explosion03 noloop
     queue foley4 airship_zoom noloop
     queue foley4 gunfire noloop
@@ -384,13 +395,11 @@ label speech_begins:
 
     narrator1 "The few people left in the plaza, and those still being transported away on the boats, begin to scream." with vpunch
 
-    show ignis sidelong openmouth at left
-    with dissolve
-
+    play music lights_out_1 fadein 2.286 loop
+    show ignis sidelong openmouth at left with dissolve
     ignis "What the bloody hell does the Empire think they're doing?"
 
-    show ignis sidelong
-    with dissolve
+    show ignis sidelong with dissolve
 
     narrator1 "Now both your receivers crackle into life."
 
@@ -401,7 +410,7 @@ label speech_begins:
 
     narrator1 "The crackling cuts off, and you and Ignis share a worried glance before ushering the last few stragglers onto the boats."
 
-    narrator1 "That should be the lot."
+    ignis "That should be the lot."
 
     narrator1 "You tell the last citizens that everything will be okay, then Ignis claps you briefly on the shoulder and together you race back to the palace."
 
@@ -414,10 +423,9 @@ label speech_begins:
     show ignis sidelong direct openmouth
     with dissolve
 
-    ignis "The empire ... seeks to disrupt ... the ceremony."
+    ignis "The Empire ... seeks to disrupt ... the ceremony."
 
     you "And you knew this was going to happen?"
-
 
     ignis "Yes."
 

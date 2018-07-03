@@ -10,15 +10,18 @@
 
 label trooper_attack:
 
-    show bg widestreet with Dissolve(0.3)
-
+    show bg widestreet
     show trooper distance at SpriteLoc2(0.425, 0.3)
-    with dissolve
-    # THIS THING NEEDS A FKEOIGRWLKSGHF SHADOW
+    with Dissolve(0.5)
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
-    narrator1 "It's when you've just started crossing a particularly wide street that you encounter your first Magitek Trooper. The thing's waiting, zombie-like and menacing, at the end of the street and there's nowhere else to run. You're in the open."
+    stop music fadeout 2.286
+    play ambient clone_resonance fadein 2.286
+
+    narrator1 "It's when you've just started crossing a particularly wide street that you encounter your first Magitek Trooper."
+
+    narrator1 "The thing's waiting, zombie-like and menacing, at the end of the street and there's nowhere else to run. You're in the open."
 
     narrator1 "You ready your weapon, heart pounding."
 
@@ -44,7 +47,9 @@ label trooper_attack:
     show trooper lunging at SpriteLoc2(0.325, 0.0)
     with hpunch
 
-    narrator1 "The trooper lunges forward with a disturbing screech that you can't fully place as either mechanical or organic. It's all whirring limbs and strict, unexpressive movements, and everything about it makes you shiver."
+    narrator1 "The trooper lunges forward with a disturbing screech that you can't fully place as either mechanical or organic."
+
+    narrator1 "It's all whirring limbs and strict, unexpressive movements, and everything about it makes you shiver."
 
     narrator1 "Ignis sidesteps its first attack, parries the next, and manages to land a hit."
 
@@ -89,6 +94,7 @@ label trooper_attack:
     hide trooper
     with fastdissolve
 
+    stop ambient fadeout 2.286
     # sound effect - buzzing
     narrator1 "When the unnerving sight is over, a ping interrupts you both. Ignis draws out his mobile phone and answers it hurriedly."
 
@@ -108,7 +114,9 @@ label trooper_attack:
 
     ignis "I'm afraid my imperative to keep the Crown Prince safe is going to override this mission."
 
-    narrator1 "You understand, although you're a bit dejected. It was a bit odd for a diplomat to be pulled into an evacuation mission in the first place, and you suspect the First Secretary may have called for it as a purely symbolic measure."
+    narrator1 "You understand, although you're a bit dejected."
+
+    narrator1 "It was a bit odd for a diplomat to be pulled into an evacuation mission in the first place, and you suspect the First Secretary may have called for it as a purely symbolic measure."
 
     narrator1 "Not that Ignis wasn't incredibly capable..."
 

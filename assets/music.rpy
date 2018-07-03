@@ -56,11 +56,15 @@ define audio.morning_coffee1 = "audio/bgmusic/Morning-Coffee-gamever-pt1.wav"
 define audio.morning_coffee2 = "audio/bgmusic/Morning-Coffee-gamever-pt2.wav"
 
 define audio.undercurrent = "audio/bgmusic/An-Undercurrent-gamever.wav"
-define audio.shrinemaiden = "audio/bgmusic/Shrinemaidens-Calling-gamever.wav"
+define audio.shrinemaiden1 = "audio/bgmusic/Shrinemaidens-Calling-pt1.wav"
+define audio.shrinemaiden2 = "audio/bgmusic/Shrinemaidens-Calling-pt2.wav"
 
-define audio.attack_commences = "audio/attack-commences.wav"
-define audio.attack_commences_2 = "audio/attack-commences-2.wav"
-define audio.attack_double_time = "audio/attack-double-time.wav"
+define audio.lights_out_1 = "audio/bgmusic/Lights-Out-pt1.wav"
+define audio.lights_out_2 = "audio/bgmusic/Lights-Out-pt2.wav"
+define audio.lights_out_3 = "audio/bgmusic/Lights-Out-pt3.wav"
+
+define audio.interloper = "audio/bgmusic/Interloper.wav"
+define audio.clone_resonance = "audio/bgmusic/Clone-Resonance.wav"
 
 define audio.stubborn_citizens = "audio/is_this_all_the_help_were_gonna_get.wav"
 

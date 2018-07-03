@@ -15,7 +15,7 @@
 label power_cut:
 
     stop music fadeout 2.286
-    play ambient attack_commences_2 fadein 2.286
+    play ambient lights_out_2 fadein 2.286
 
     stop foley2 fadeout 2.286
     $ renpy.music.set_volume(0.08, delay=1, channel='foley')
@@ -89,6 +89,10 @@ label power_cut:
     play foley3 "<from 1.5>audio/soundeffects/explosion02.wav" noloop
     play foley4 "<from 1.5>audio/soundeffects/explosion01.wav" noloop
 
+    stop ambient fadeout 2.286
+    $ renpy.music.set_volume(0.4, delay=0, channel='music')
+    play music lights_out_3 fadein 2.286 loop
+
     show screen black_overlay
     with softflash
 
@@ -148,10 +152,14 @@ label find_fuse:
     show screen black_overlay
     show bg yureilcorridor fuse idle
 
+
+
 label found_fuse:
 
     show screen black_overlay
     hide flashlight_fuse
+
+    stop music fadeout 2.286
 
     you "Aha! Now that looks like a fuse box!"
 
@@ -159,6 +167,7 @@ label found_fuse:
 
     hide screen black_overlay
     with softflash
+    play ambient undercurrent loop
 
     narrator1 "That's one small problem out of the way."
 
@@ -225,6 +234,10 @@ label leaving_palace:
 
 label en_route_to_altar:
 
+    $ renpy.music.set_volume(0.04, delay=1, channel='foley')
+    stop ambient fadeout 2.286
+    play music interloper fadein 2.286
+
     scene black with dissolve
     centered "{size=26}Chapter Two\n\n{/size}{size=36}Lightning Strikes{/size}"
 
@@ -233,11 +246,17 @@ label en_route_to_altar:
     show ignis sidelong at center
     with dissolve
 
-    narrator1 "You pick up your dress sword on the way out, marvelling at how light it feels beneath your grip. There's not much time to fasten it properly, so you just slide it into your belt and hope for the best. Your trainer would probably be appalled."
+    narrator1 "You pick up your dress sword on the way out, marvelling at how light it feels beneath your grip."
 
-    narrator1 "You and Ignis make your way towards Padore District while the ships drone on above you, while the roar of Leviathan's wrath fills the distance, while the dissonant sounds of fire crackling and water surging fills your ears."
+    narrator1 "There's not much time to fasten it properly, so you just slide it into your belt and hope for the best. Your trainer would probably be appalled."
 
-    narrator1 "You both don't talk much; you're busy leading the way, leaping over balconies and down side alleys while Ignis is entirely focussed on keeping up. While he's agile enough, he lacks the knowledge of the area that you have, and he's not prepared for a lot of the shortcuts you're taking."
+    narrator1 "You and Ignis make your way towards Padore District while the ships drone on above you."
+
+    narrator1 "The roar of Leviathan's wrath fills the distance, and the dissonant sounds of fire crackling and water surging fills your ears."
+
+    narrator1 "You both don't talk much; you're busy leading the way, leaping over balconies and down side alleys while Ignis is entirely focussed on keeping up."
+
+    narrator1 "While he's agile enough, he lacks the knowledge of the area that you have, and he's not prepared for a lot of the shortcuts you're taking."
 
     hide ignis
 

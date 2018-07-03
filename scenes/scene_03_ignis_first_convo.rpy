@@ -177,8 +177,8 @@ label first_conversation:
     stop music fadeout 2.286
     play ambient undercurrent fadein 2.286
 
-    play foley [ "<silence 2.286>", bells_chiming ] noloop
-    play foley2 [ "<silence 2.286>", cheering1 ] noloop
+    play foley bells_chiming noloop
+    play foley2 cheering1 noloop
 
     show ignis sidelong openmouth
     with dissolve
