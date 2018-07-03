@@ -44,7 +44,7 @@ image bluelightning = LiveComposite(
 
 image bluelightning-base:
     "images/effects/blue-lightning01.png"
-    linear 0.6 alpha 0.4
+    linear 0.6 alpha 0.7
     "images/effects/blue-lightning01.png"
     linear 0.6 alpha 0.0
     "images/effects/blue-lightning01.png"
@@ -60,7 +60,7 @@ image bluelightning-top:
     "images/effects/blue-lightning02.png"
     linear 0.6 alpha 0.0
     "images/effects/blue-lightning02.png"
-    linear 0.6 alpha 0.4
+    linear 0.6 alpha 0.7
     "images/effects/blue-lightning02.png"
     linear 0.6 alpha 0.0
     repeat
@@ -70,14 +70,12 @@ image bluelightning-mid:
     "images/effects/blue-lightning03.png"
     linear 0.6 alpha 0.0
     "images/effects/blue-lightning03.png"
-    linear 0.6 alpha 0.05
+    linear 0.6 alpha 0.2
     "images/effects/blue-lightning03.png"
     linear 0.6 alpha 0.0
     "images/effects/blue-lightning03.png"
-    linear 0.6 alpha 0.05
+    linear 0.6 alpha 0.2
     repeat
-
-
 
 
 
