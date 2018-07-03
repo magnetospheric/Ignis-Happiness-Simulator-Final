@@ -63,19 +63,16 @@ define audio.lights_out_1 = "audio/bgmusic/Lights-Out-pt1.wav"
 define audio.lights_out_2 = "audio/bgmusic/Lights-Out-pt2.wav"
 define audio.lights_out_3 = "audio/bgmusic/Lights-Out-pt3.wav"
 
+# Chapter Two - LIGHTNING STRIKES #
 define audio.interloper = "audio/bgmusic/Interloper.wav"
 define audio.clone_resonance = "audio/bgmusic/Clone-Resonance.wav"
 
-define audio.stubborn_citizens = "audio/is_this_all_the_help_were_gonna_get.wav"
+define audio.stubborn_citizens = "audio/bgmusic/is_this_all_the_help_were_gonna_get.wav"
 
 define audio.a_spot_of_lunch = "audio/a-spot-of-lunch.wav"
 define audio.a_spot_of_lunch_2 = "audio/a-spot-of-lunch2.wav"
 
 
-# define audio.breath_in = "sound/breath_in.wav"
-# define audio.thunder = "sound/thunder.wav"
-# define audio.thunder_distant = "sound/thunder_distant.wav"
-# define audio.magitek = "sound/magitek.wav"
 init python:
     renpy.music.register_channel("ambient", "music", True, tight=True)
     renpy.music.register_channel("foley", "music", True, tight=True)
@@ -105,3 +102,7 @@ define audio.explosion03 = "audio/soundeffects/explosion03.wav"
 define audio.explosion04 = "audio/soundeffects/explosion04.wav"
 define audio.gunfire = "audio/soundeffects/gunfire.wav"
 define audio.airship_zoom = "audio/soundeffects/airship-zoom.wav"
+
+define audio.trooper_screech = "audio/soundeffects/screaming-trooper.wav"
+define audio.trooper_screech2 = "audio/soundeffects/screaming-trooper2.wav"
+define audio.trooper_screech3 = "audio/soundeffects/screaming-trooper3.wav"
