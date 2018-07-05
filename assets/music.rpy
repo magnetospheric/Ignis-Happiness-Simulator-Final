@@ -43,11 +43,8 @@
 # Menu and Credit Music
 define config.main_menu_music = "audio/bgmusic/menu-screen-music.wav"
 define audio.main_credit_music = "audio/Palinopsia.wav"
-
 define audio.reverse_guitar = "audio/reverse-guitar-clip.wav"
-
-define audio.tense_morning = "audio/tense-morning.wav"
-define audio.tense_morning_2 = "audio/tense-morning-2.wav"
+define audio.bated_breath = "audio/bgmusic/Bated-Breath-gamever.wav"
 
 
 
@@ -67,11 +64,20 @@ define audio.lights_out_3 = "audio/bgmusic/Lights-Out-pt3.wav"
 define audio.interloper = "audio/bgmusic/Interloper.wav"
 define audio.clone_resonance = "audio/bgmusic/Clone-Resonance.wav"
 
-define audio.stubborn_citizens = "audio/bgmusic/is_this_all_the_help_were_gonna_get.wav"
+define audio.stubborn_citizens = "audio/bgmusic/Is-This-Really-All-The-Help-We're-Gonna-Get-gamever.wav"
+define audio.a_spot_of_lunch = "audio/bgmusic/A-Spot-Of-Lunch-gamever.wav"
 
-define audio.a_spot_of_lunch = "audio/a-spot-of-lunch.wav"
-define audio.a_spot_of_lunch_2 = "audio/a-spot-of-lunch2.wav"
+# Chapter Three - MACHINE MESSIAH #
+define audio.eggshell_walker_1 = "audio/bgmusic/Eggshell-Walker-pt1.wav"
+define audio.eggshell_walker_2 = "audio/bgmusic/Eggshell-Walker-pt2.wav"
+define audio.footsteps_in_the_dark = "audio/bgmusic/Footsteps-In-The-Dark-gamever.wav"
+define audio.system_shocker = "audio/bgmusic/System-Shocker-gamever.wav"
 
+# Chapter Four - YOUR MOVE #
+define audio.home_blues = "audio/bgmusic/Home-Blues-gamever.wav"
+define audio.andante = "audio/bgmusic/Andante-gamever.wav"
+define audio.listro_fandango = "audio/bgmusic/Listro-Fandango-gamever.wav"
+define audio.curious_encounter = "audio/bgmusic/A-Curious-Encounter-gamever.wav"
 
 init python:
     renpy.music.register_channel("ambient", "music", True, tight=True)
@@ -106,3 +112,8 @@ define audio.airship_zoom = "audio/soundeffects/airship-zoom.wav"
 define audio.trooper_screech = "audio/soundeffects/screaming-trooper.wav"
 define audio.trooper_screech2 = "audio/soundeffects/screaming-trooper2.wav"
 define audio.trooper_screech3 = "audio/soundeffects/screaming-trooper3.wav"
+
+define audio.mech_landing = "audio/soundeffects/mech-landing.wav"
+define audio.mech_bass = "audio/soundeffects/mech-bass.wav"
+define audio.mech_buzz = "audio/soundeffects/mech-buzz.wav"
+define audio.mech_clang = "audio/soundeffects/mech-clang.wav"
