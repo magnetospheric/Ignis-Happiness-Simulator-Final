@@ -4,16 +4,20 @@
 #contains labels:
     # altar_aftermath
 
-# covers the days following the ceremony,
+# covers the days following the ceremony, and asking ignis out
 
 
 
 
 label going_home:
 
-    scene black
-    with dissolve
 
+    hide screen black_overlay_light
+    hide screen black_overlay
+
+    scene black with Dissolve(1.0)
+
+    stop music fadeout 6.0
     centered "The cavalry arrives, and you get sent home."
 
     pause 0.3
@@ -25,14 +29,22 @@ label going_home:
         scene black with dissolve
         centered "{cps=15}{size=26}Chapter Four\n\n{/size}{p=0.5}{size=36}Your Move{/size}{/cps}"
 
-    scene bg mc_room
-    with dissolve
+    $ renpy.music.set_volume(0.1, delay=0, channel='ambient')
+    play ambient undercurrent fadein 1.0
+
+    scene bg mc_room with Dissolve(1.5)
 
     narrator1 "Everything feels hollow back in your lonely little room."
 
     narrator1 "You did a good job, right? You {i}helped.{/i}"
 
-    narrator1 "So why does everything feel so awful?"
+    scene black
+    centered "So why does everything feel so awful?"
+    scene bg mc_room
+
+    stop ambient fadeout 0.5
+    play music home_blues fadein 0.5
+    $ renpy.music.set_volume(0.4, delay=5, channel='ambient')
 
     narrator1 "You potter around idly for a while, before falling into listless dreams filled with ships and explosions and lights."
 
@@ -86,7 +98,7 @@ label report_in_post_ceremony:
 
 label cabin_fever:
 
-    scene black
+    scene black with Dissolve(1.5)
 
     centered "Some days later ..."
 
@@ -318,7 +330,9 @@ label give_up:
 
     you "What's the use? Nothing's helping."
 
-    you "I ... no, I need to know if Ignis is okay."
+    you "I ... no, I know what I need to do."
+
+    you "I need to know if Ignis is okay."
 
     narrator1 "You may have only met the diplomat for a brief time, but he left quite the impression."
 
@@ -338,10 +352,12 @@ label give_up:
 
     you "Right, time to get going."
 
+    stop music fadeout 2.286
+
     pause 0.2
 
     scene black
-    with Dissolve(0.5)
+    with Dissolve(1.0)
 
     pause 0.2
 
@@ -350,8 +366,10 @@ label give_up:
 
 label leville:
 
+    play ambient morning_coffee1 fadein 2.286
+
     scene bg leville exterior
-    with Dissolve(0.5)
+    with Dissolve(1.0)
 
     narrator1 "The Leville lies sandwiched between restaurants and cafés on the waterfront."
 
@@ -402,7 +420,7 @@ label leville:
             noctis "Heya."
             show noctis neutral
             you "Is, uh, is this where Ignis Scientia is staying?"
-            narrator1 "It's clear that he knows that you know he's the Prince."
+            narrator1 "It's clear that {i}he{/i} knows that {i}you{/i} know he's the Prince."
             narrator1 "And he seems to appreciate your subtlety."
             show noctis smile with dissolve
             noctis "Sure is."
@@ -425,7 +443,7 @@ label leville:
 
     hide noctis with moveoutright
 
-    pause 1.0
+    pause 2.0
 
     show noctis neutral at center with moveinright
     show noctis neutral openmouth
@@ -436,13 +454,13 @@ label leville:
 
     you "Thanks."
 
-    hide noctis with moveoutleft
 
     scene black
-    with Dissolve(0.5)
+    hide noctis
+    with Dissolve(1.0)
 
     scene bg leville room
-    with Dissolve(0.5)
+    with Dissolve(1.0)
 
     narrator1 "Inside, the room's colours are all muted, and a pale light shines in from the window."
 
@@ -462,29 +480,37 @@ label leville:
 
     narrator1 "It looks so painful, and it makes you wince."
 
+    show ignis neutral openmouth blind
     ignis "Is that ... "
+    show ignis neutral blind
+
+    pause 0.3
 
     you "It's me, [your_name]."
 
     show ignis smile blind with dissolve
-
     ignis "You came to see me?"
 
     you "Of course I did!"
 
+    show ignis neutral openmouth blind
     ignis "Oh, where are my manners? Come and sit down - I'll get some biscuits."
-
     ignis "I'd offer tea, but I'm not entirely comfortable handling hot water just yet."
+    show ignis smile blind
 
     you "Oh - that's really okay, you don't need to worry about that."
 
+    show ignis neutral openmouth blind
     ignis "The biscuits are rather delicious, though."
+    show ignis smile blind
 
     narrator1 "You take one out of politeness."
 
     you "Mm - you're right!"
 
+    show ignis neutral openmouth blind
     ignis "I have yet to thank your First Secretary, she's been most accommodating of us since the ceremony ended."
+    show ignis neutral blind
 
     narrator1 "The mere mention of the ceremony brings a brief stillness over you both."
 
@@ -492,29 +518,41 @@ label leville:
 
     you "You've ... got everything you need, right?"
 
+    show ignis neutral openmouth blind
     ignis "I believe so."
+    show ignis neutral blind
 
     you "Well, just let me know if not. I don't mind running errands. If I can get you anything - anything at all ..."
 
+    show ignis neutral openmouth blind
     ignis "I wouldn't want you to worry. And besides, haven't you got a lot to do, what with the recovery effort?"
+    show ignis neutral blind
 
     you "The Captain told me to stay at home until next week."
 
     you "I think right now I'd only get in their way. But I was going stir-crazy cooped up at home."
 
+    show ignis neutral openmouth blind
     ignis "Mm. I know the feeling."
+    show ignis smile blind
 
     narrator1 "You smile, and he hears the quickness of your breath, and smiles too."
 
     if citizens_first == False and said_you_saved_citizens == True:
 
-        ignis "I heard from the Palace yesterday. A number of citizens in Padore district didn't make it to safety."
+        narrator1 "That smile changes, however, in a single second."
 
+        show ignis neutral openmouth blind with dissolve
+        ignis "I heard from the Palace yesterday. A number of citizens in Padore district didn't make it to safety."
+        show ignis unimpressed openmouth blind with dissolve
         ignis "Apparently they were waiting for a guard escort who never came."
+        show ignis unimpressed blind
 
         you "..."
 
+        show ignis unimpressed openmouth blind
         ignis "You told me you had rescued them."
+        show ignis unimpressed blind
 
         $ show_happiness = True
 
@@ -532,11 +570,15 @@ label leville:
 
         you "I ... I didn't rescue them."
 
+        show ignis unimpressed openmouth blind
         ignis "So back then? You were just telling me what I wanted to hear?"
+        show ignis unimpressed blind
 
         you "I'm sorry..."
 
+        show ignis unimpressed openmouth blind
         ignis "It won't change the fact they're dead."
+        show ignis unimpressed blind
 
         narrator1 "He turns away from you, wincing as his brow tightens over burnt skin."
 
@@ -550,7 +592,21 @@ label leville:
 
     elif citizens_first == False and said_you_saved_citizens == False:
 
+        show ignis neutral openmouth blind
         ignis "I heard from the Palace yesterday. A number of citizens in Padore district didn't make it to safety."
+        show ignis neutral blind
+
+        $ show_happiness = True
+
+        pause 0.5
+
+        $ happiness -= 2
+
+        show screen happiness_text(title="Happiness decreased a lot")
+        with dissolve
+        pause 0.3
+        hide screen happiness_text
+        with dissolve
 
         you "They ... they didn't?"
 
@@ -560,15 +616,15 @@ label leville:
 
         you "It's my fault, I ..."
 
-
+        narrator1 "But you don't know what to say."
 
         if happiness > 10:
 
-            ignis "I can't tell you it's all okay. "
-
+            show ignis neutral openmouth blind
+            ignis "I can't tell you it's all okay."
             ignis "But at the same time, I can't pretend it wasn't a terrible decision to have to make. You were put on the spot, and faced with a choice."
-
             ignis "And the Astrals know we've all had enough of that recently."
+            show ignis neutral blind
 
             jump ask_on_date
 
@@ -576,10 +632,42 @@ label leville:
 
             jump ask_about_redo
 
-
     else:
 
-        ignis "I heard from the Palace yesterday. "
+        show ignis neutral openmouth blind
+        ignis "I heard from the Palace yesterday. All citizens in Padore district made it to safety."
+        show ignis smile blind
+
+        ignis "..."
+
+        $ show_happiness = True
+
+        pause 0.5
+
+        $ happiness += 1
+
+        show screen happiness_text(title="Happiness increased")
+        with dissolve
+        pause 0.3
+        hide screen happiness_text
+        with dissolve
+
+        show ignis neutral openmouth blind
+        ignis "Thank you. Your efforts went well-rewarded."
+        show ignis smile blind
+
+        narrator1 "You bite back a retort, because how can he say such a thing when he's standing in front of you, injured like this?"
+
+        you "But you..."
+
+        show ignis neutral openmouth blind
+        ignis "Those citizens will sleep well with their families tonight because of you."
+        ignis "And that's no small thing."
+        show ignis smile blind
+
+        you "I, ah ..."
+
+        you "Thanks."
 
         if happiness > 10:
 
@@ -599,11 +687,53 @@ label ask_on_date:
 
         jump ask_about_redo
 
+    you "Hey, Ignis, I was wondering something."
+
+    show ignis neutral openmouth blind
+    ignis "Yes?"
+    show ignis smile blind
+
+    you "How would you like to get out of here for a bit?"
+
+    show ignis neutral openmouth blind
+    ignis "Are you offering to take me out?"
+    show ignis smile blind
+
+    you "I, uh ... yes. "
+
+    show ignis neutral openmouth blind
     ignis "I would like that very much."
+    show ignis smile blind with dissolve
 
     you "You would?"
 
-    narrator1 ""
+    narrator1 "Ignis nods."
+
+    show ignis neutral openmouth blind
+    ignis "But I can't be seen outdoors like this! I must, ah ... sort my hair, for a start."
+    show ignis smile blind with dissolve
+
+    narrator1 "You smile. He's a little flustered, and it's really quite adorable."
+
+    you "Well, shall we say ... meet at Listro Park, at eight?"
+
+    show ignis neutral openmouth blind
+    ignis "That sounds marvellous."
+    show ignis smile blind with dissolve
+
+    narrator1 "You make your farewells, and leave the hotel room."
+
+    $ show_happiness = False
+
+    hide ignis
+    show bg leville exterior
+    with Dissolve(1.0)
+
+    narrator1 "You're giddy as you walk on through the streets. Mostly at the prospect of getting to spend more time with Ignis, but it's not just that."
+
+    narrator1 "The way he smiled ... it's clear you mean a lot to him, too."
+
+    jump waitingforignis
 
 
 
@@ -621,11 +751,19 @@ label ask_about_redo:
 
     menu:
         "Yes":
-            you "Yes"
+            you "Yes."
+            you "I ... I believe in second chances."
+            you "I want to make things right."
             $ want_to_reset = True
         "No":
-            you "No"
+            you "No."
+            you "We shouldn't change fate like that."
+            you "I'd be a coward if I didn't now live with my decisions..."
             $ want_to_reset = False
+
+    ignis "I see."
+
+    pause 1.0
 
     ignis "I'd like to be alone now."
 
@@ -651,16 +789,21 @@ label time_for_a_redo:
 
     narrator1 "Everything seems so dissonant, and inside, your heart feels about as broken as the city does."
 
+    stop ambient fadeout 4.0
+
     scene bg leville alleyway
     with Dissolve(0.5)
 
     narrator1 "You wind your way down alleyways somewhat carelessly, wondering if you could have made that go any better."
 
+    play music curious_encounter fadein 8.286
     narrator1 "A gust of wind picks up, rifling through your hair."
 
     narrator1 "It brings a chill to the street, and a familiar prickling sensation works its way down your neck."
 
     you "Huh?"
+
+    narrator1 "Something is wrong."
 
     narrator1 "A small shift, that's all it takes, then ..."
 
@@ -697,7 +840,7 @@ label time_for_a_redo:
 
     ardyn "I'm sure Ignis would tell you. That is, if he ever opens up to you now."
 
-    ardyn "I imagine you're {i}dying{/i} to know how he got his scars."
+    ardyn "I imagine you're {i}dying{/i} to know how he really got his scars."
 
     ardyn "Aw. Missed your chance?"
 
