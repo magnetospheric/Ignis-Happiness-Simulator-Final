@@ -408,7 +408,7 @@ screen quick_menu():
             style_prefix "quick"
 
             xalign 0.06
-            yalign 0.04
+            yalign 0.045
 
             textbutton _("{k=+1.0}SAVE{/k}") action ShowMenu('save')
             textbutton _("{k=+1.0}OPTIONS{/k}") action ShowMenu('preferences')
