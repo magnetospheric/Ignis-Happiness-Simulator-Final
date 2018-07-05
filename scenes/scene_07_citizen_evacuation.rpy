@@ -75,7 +75,7 @@ label radio_interruption:
     narrator1 "You can't quite make it out at first, but it sounds like ... is that Ignis?"
 
     stop music fadeout 2.286
-    $ renpy.music.set_volume(0.18, delay=0, channel='ambient')
+    $ renpy.music.set_volume(0.27, delay=0, channel='ambient')
     play ambient "<from 5.5>audio/bgmusic/Interloper.wav" loop fadein 2.286
 
     narrator1 "Why isn't he talking to you?"
@@ -203,7 +203,7 @@ label reaching_citizens:
 
     show bg evacuee hideout dark with Dissolve(1.0)
 
-    $ renpy.music.set_volume(0.4, delay=0, channel='music')
+    $ renpy.music.set_volume(0.3, delay=0, channel='music')
     play music stubborn_citizens
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
@@ -312,6 +312,7 @@ label escort_to_jetty:
 label divert_to_ignis:
 
     show bg mediumstreet with Dissolve(1.0)
+    $ renpy.music.set_volume(0.04, delay=1, channel='foley')
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 

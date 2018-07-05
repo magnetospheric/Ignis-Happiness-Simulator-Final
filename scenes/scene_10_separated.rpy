@@ -13,6 +13,11 @@
 
 label separation:
 
+    stop music fadeout 2.286
+    $ renpy.music.set_volume(0.3, delay=0, channel='ambient')
+    $ renpy.music.set_volume(0.3, delay=0, channel='ambient')
+    play ambient undercurrent
+
     scene bg jettynearcellar with Dissolve(0.3)
 
     show ignis neutral wet at center with dissolve
@@ -21,21 +26,33 @@ label separation:
 
     ignis "Ah, there you are, [your_name]. Now, hurry, we have to..."
 
+    $ renpy.music.set_volume(0.4, delay=0, channel='foley3')
+    play foley2 airship_zoom noloop
+
+    pause 0.5
+
     show ignis sidelong wet with vpunch
 
     ignis "What the devil—"
 
-    #  blast here
+    stop ambient fadeout 2.286
+    play music lights_out_1
+    $ renpy.music.set_volume(0.3, delay=0, channel='foley3')
+    play foley3 explosion03 noloop
+    play foley mech_landing noloop
+    play foley4 mech_bass noloop
 
-    # show explosion with softflash
+    show ignis sidelong wet with hardflash
+    show ignis sidelong wet with hardflash
 
     narrator1 "The flash of light is so intense you can see it even through your scrunched-up eyes."
 
+    play foley2 engine_bassline loop fadein 2.286
+    play foley3 explosion04 noloop
     narrator1 "Something roars in your ears, throwing you off-balance, and you have bare moments to try and reach for Ignis, but..."
-
     narrator1 "You're thrust backward."
 
-    you "Aah!"
+    you "Aah!" with vpunch
 
     show ignis sidelong direct openmouth wet
 
@@ -47,17 +64,18 @@ label separation:
 
 label awakening:
 
-    scene black
+    $ show_happiness = False
+    scene black with Dissolve(1.5)
+    stop music fadeout 2.286
+    stop foley2 fadeout 4.286
 
-    narrator1 "..."
+    narrator1 "{cps=15}...{/cps}"
 
-    narrator1 "......"
+    narrator1 "{cps=15}......{/cps}"
 
     narrator1 "Silence."
 
-    narrator1 "......"
-
-    narrator1 "How can it all be so silent?"
+    narrator1 "{cps=15}......{/cps}"
 
     narrator1 "What's going on?"
 
@@ -67,7 +85,8 @@ label awakening:
 
     you "{i}Move!{/i}"
 
-    show bg rubblestreet dark with Dissolve(1.5) #need a rubblestreet in dark
+    show bg rubblestreet dark with Dissolve(1.5)
+    play music bated_breath fadein 1.5
 
     narrator1 "When you come to, you're alone."
 

@@ -23,7 +23,7 @@ label trooper_attack:
 
     you "Is ... is that ..."
 
-    show ignis neutral openmouth
+    show ignis neutral openmouth at left
     ignis "A Magitek Trooper. Indeed it is."
     show ignis neutral
 
@@ -58,7 +58,7 @@ label trooper_attack:
 
     narrator1 "The trooper lunges forward with a disturbing screech that you can't fully place as either mechanical or organic."
 
-    narrator1 "It's all whirring limbs and strict, unexpressive movements, and everything about it makes you shiver."
+    narrator1 "It's all whirring limbs and strict, unexpressive movements, and everything about it sets you on edge."
 
     narrator1 "Ignis sidesteps its first attack, parries the next, and manages to land a hit."
 
@@ -224,6 +224,7 @@ label ignis_leaving:
     narrator1 "Then he's racing off towards the East Quarter."
 
     hide ignis with Dissolve(0.8)
+    $ show_happiness = False
 
     narrator1 "Damn. You had meant to ask him about that weird light."
 

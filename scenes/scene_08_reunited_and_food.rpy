@@ -184,7 +184,6 @@ label found_ignis:
 
     show ignis neutral wet
 
-    # says s
     if citizens_first == True or waited == True:
         narrator1 "It's a shock to see Ignis looking so dishevelled. You bite your lip as you steady him, thinking this is all your fault for being late."
     else:
@@ -294,7 +293,9 @@ label saved_citizens:
 
     ignis "I'm ... quite flattered you care so much. You have a kind soul, [your_name]."
 
-    narrator1 "You had not intended to fish for praise, but his words leave you glowing all the same. You offer a smile — not quite shy but not quite brazen either — and you bask in the feeling a few seconds longer before focussing on the next task."
+    narrator1 "You had not intended to fish for praise, but his words leave you glowing all the same."
+
+    narrator1 "You bask in the feeling a few seconds longer before focussing on the next task."
 
     jump escape_tigiano
 
@@ -333,16 +334,30 @@ label escape_tigiano:
 
     you "So what did —"
 
-    show ignis sidelong wet with vpunch
 
-    #sound effect - metal screeching and clanging and thudding (3 noises merged)
+    play foley mech_clang noloop
+    play foley2 [ "<silence 0.05>", mech_landing] noloop
+    play foley3 [ "<silence 0.05>", mech_bass] noloop
+    play foley4 mech_buzz noloop
+    $ renpy.music.set_volume(0.22, delay=0, channel='music')
+    stop ambient fadeout 2.286
+    play music "<from 5.5>audio/bgmusic/Interloper.wav" loop fadein 2.286
+
+    show ignis sidelong wet with vpunch
 
     narrator1 "You're interrupted by the screeching sound of metal hitting concrete. Something has landed nearby."
 
     # you soundeffect voice intake of breath (consider making diff intakes of breath for male and female and nb)
     you "A mech!"
 
-    narrator1 "But that's not all. The mech is joined by another, and another still. They're as tall as buildings, and are completely blocking off the way back to Padore."
+    narrator1 "But that's not all."
+
+    play foley2 [ "<silence 0.05>", mech_landing] noloop
+    $ renpy.music.set_volume(0.2, delay=0, channel='foley3')
+    play foley3 [ "<silence 0.05>", mech_bass] noloop
+    play foley4 mech_buzz noloop
+
+    narrator1 "The mech is joined by another, and another still. They're as tall as buildings, and are completely blocking off the way back to Padore."
 
     show ignis sidelong openmouth wet
 
@@ -412,13 +427,14 @@ label escape_tigiano:
             hide ignis
             with dissolve
 
-            $ show_happiness = False
-
             jump other_side_of_canal
 
 
 
 label other_side_of_canal:
+
+    stop music fadeout 2.286
+    play ambient undercurrent loop fadein 2.286
 
     show bg jettynearcellar with Dissolve(0.3)
 
@@ -428,7 +444,9 @@ label other_side_of_canal:
 
     narrator1 "When you're over the other side, you spend a short while scouting for a route."
 
-    narrator1 "The streets are decimated, the Empire's firepower completely disproportionate to its needs. This is no war zone, it's a slaughterhouse, and it's far beyond your wildest imaginings."
+    narrator1 "The streets are decimated, the Empire's firepower completely disproportionate to its needs."
+
+    narrator1 "This is no war zone, it's a slaughterhouse, and it's far beyond your wildest imaginings."
 
     narrator1 "At any rate, there doesn't seem to be a way back to the West Quarter. Not until those mechs move on."
 
@@ -436,7 +454,7 @@ label other_side_of_canal:
 
     show ignis touching glasses wet with dissolve
 
-    narrator1 "Instead of replying immediately, Ignis surveys the surroundings, a little too suspiciously for your liking. When he spots a stairwell leading down to a cellar, he motions toward it."
+    narrator1 "Instead of replying immediately, Ignis surveys the surroundings, a little too hesitantly for your liking. When he spots a stairwell leading down to a cellar, he motions toward it."
 
     ignis "Let's stop for a breather, shall we? It's not a good idea to talk too freely up here."
 

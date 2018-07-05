@@ -52,7 +52,7 @@ label power_cut:
     queue foley4 explosion02 noloop
     queue foley4 explosion03 noloop
 
-    narrator1 "Outside, the sound of explosions and thrumming engines cut through to the palace hallway."
+    narrator1 "Outside, the sounds of explosions and thrumming engines cut through to the palace hallway."
 
     narrator1 "It's hollow against the stone foundations, and every reverberation brings back the fact that, right now, you are under siege."
 
@@ -199,9 +199,9 @@ label leaving_palace:
     show captain at left
     with move
 
+    $ show_happiness = True
     show ignis neutral at right
     with dissolve
-    $ show_happiness = True
 
     ignis "So, are you ready to go?"
 

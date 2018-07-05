@@ -92,6 +92,8 @@ label ask_about_prince:
 
     you "I didn't expect to see the Lucian Prince here. I thought the... I thought the wedding was called off?"
 
+    $ show_happiness = True
+
     $ happiness -= 1
 
     show screen happiness_text(title="Happiness decreased")
@@ -100,7 +102,9 @@ label ask_about_prince:
     hide screen happiness_text
     with dissolve
 
+    show ignis unimpressed openmouth with dissolve
     ignis "It has been, thanks to our friends from Niflheim."
+    show ignis unimpressed
 
     narrator1 "His tone is as stiff as his posture has suddenly become, and you get the sense you have put him on a back foot here. The way he talks, there's no love lost for the Empire. But more than that — he seems uncomfortable discussing this in such a public space."
 
@@ -113,7 +117,9 @@ label ask_about_prince:
 
             you "Sorry. I shouldn't really be asking at a time like this."
 
+            show ignis neutral openmouth
             ignis "It's quite all right. Curiosity is natural, although I would prefer you kept your focus on the task at hand."
+            show ignis neutral
 
             jump niffs_arrive_on_the_scene
 
@@ -125,6 +131,8 @@ label ask_again_about_prince:
 
     you "So, uh, why {i}is{/i} he here?"
 
+    $ show_happiness = True
+
     $ happiness -= 1
 
     show screen happiness_text(title="Happiness decreased")
@@ -133,7 +141,9 @@ label ask_again_about_prince:
     hide screen happiness_text
     with dissolve
 
+    show ignis unimpressed openmouth with dissolve
     ignis "Please, [your_name], some decorum. Lest our aforementioned 'friends' take a shining to our conversation."
+    show ignis unimpressed
 
     jump niffs_arrive_on_the_scene
 
@@ -152,6 +162,8 @@ label keep_quiet_about_prince:
     narrator1 "Ignis seems to appreciate your discretion."
 
     pause 1.0
+
+    $ show_happiness = True
 
     $ happiness += 1
 
@@ -175,7 +187,9 @@ label change_subject_from_prince:
 
     you "You know, the palace is actually a lot newer than the rest of Altissia."
 
+    show ignis neutral openmouth
     ignis "Oh?"
+    show ignis neutral
 
     narrator1 "He seems to appreciate the distraction."
 
@@ -183,6 +197,8 @@ label change_subject_from_prince:
     with dissolve
 
     pause 1.0
+
+    $ show_happiness = True
 
     $ happiness += 1
 
@@ -194,19 +210,24 @@ label change_subject_from_prince:
 
     you "Yeah. I mean, the Altar of the Tidemother is still older than most things here, but there used to be a different shrine around it. It got destroyed a couple of hundred years ago, during a flood."
 
+    show ignis neutral openmouth
     ignis "Did it now? Mm, I don't suppose it was built from the same material as the altar, then?"
+    show ignis neutral
 
     narrator1 "You shake your head."
 
     you "Just regular limestone. Not a great idea."
 
+    show ignis neutral openmouth
     ignis "Indeed."
+    show ignis neutral
 
     you "But yeah — a lot of people don't know that, about the palace. People have terrible memories when it comes to floods, though. We forget our histories too quickly."
 
+    show ignis neutral openmouth
     ignis "True enough."
-
     ignis "Well, I certainly didn't expect to get a personal tour guide on this assignment. But — you ought to know — you do a fine job."
+    show ignis smile
 
     narrator1 "His smile is broad and genuine, and you realise he's not simply humouring you for the sake of distracting any would-be eavesdroppers."
 
@@ -245,11 +266,17 @@ label discuss_sightseeing:
 
     you "Is this your first time in Altissia?"
 
+    show ignis neutral openmouth
     ignis "No ... I came here once as a child. It was a diplomatic visit, however, so there was little time for sightseeing."
+    show ignis neutral
 
     you "Maybe after this, you'll get time to explore."
 
+    show ignis neutral openmouth
     ignis "One can only hope."
+    show ignis neutral
+
+    $ ignis_wants_to_sightsee = True
 
     jump speech_begins
 

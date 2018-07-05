@@ -124,48 +124,65 @@ label first_conversation:
 
     narrator1 "You struggle to keep the incredulity out of your voice."
 
+    show ignis neutral openmouth with dissolve
     ignis "Indeed."
-
     ignis "While I am a Lucian envoy, as my nation is responsible for invoking the Covenant, I must do all I can to aid Altissia for its efforts."
-
     ignis "You must be well aware of the danger this poses to your nation."
-
-    show ignis neutral
+    show ignis neutral with dissolve
 
     narrator1 "You feel like there's more to it than that, but you don't decide to bring it up at this point."
 
     show ignis neutral openmouth
-
     ignis "So, are you prepared, [your_name]?"
-
     show ignis neutral
-    #here you should get the first choice to make to get his happiness up or down
+
     menu:
         "Express a desire to protect the Oracle":
+            $ show_happiness = True
+
             you "I shall do my best to protect the Oracle."
+
+            pause 1.0
+
+            $ happiness += 2
+
+            show screen happiness_text(title="Happiness increased!")
+            with dissolve
+            pause 0.3
+            hide screen happiness_text
+            with dissolve
+
+            ignis "Glad to hear it."
             show ignis smile
         "Tell him you'll protect the citizens as best you can":
+
+            $ show_happiness = True
+
             you "I shall do my best to ensure the citizens make it to safety."
-            show ignis smile
+
+            show ignis smile with dissolve
+            pause 1.0
+
+            $ happiness += 2
+
+            show screen happiness_text(title="Happiness increased!")
+            with dissolve
+            pause 0.3
+            hide screen happiness_text
+            with dissolve
+
+            show ignis neutral openmouth
+            ignis "Glad to hear it."
+            show ignis smile with dissolve
+
         "Express doubt about your own capabilities":
             you "I'll see what I can do."
+            show ignis neutral openmouth
+            ignis "Understood."
 
-    $ show_happiness = True
 
-    pause 1.0
-
-    $ happiness += 2
-
-    show screen happiness_text(title="Happiness increased!")
-    with dissolve
-    pause 0.3
-    hide screen happiness_text
-    with dissolve
-
-    ignis "Glad to hear it."
 
     show ignis neutral openmouth
-
     ignis "I'll be tuning in to the security frequency should we get separated."
 
     # the sound of crowds clapping outside draws your attention
