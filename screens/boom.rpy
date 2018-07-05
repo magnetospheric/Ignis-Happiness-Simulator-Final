@@ -19,12 +19,16 @@ label boom:
 
 
     # play screeching sound effect
+    $ renpy.music.set_volume(0.3, delay=0, channel='foley')
+    $ renpy.music.set_volume(0.3, delay=0, channel='foley2')
+    play foley trooper_screech noloop
     show trooper dropship at center with fastesthardflash
 
     you "!!" with vpunch
 
     narrator1 "You've been discovered!"
 
+    play foley2 trooper_screech2 noloop
     narrator1 "The trooper lunges toward you with a horrifying screech."
 
     narrator1 "You're terrified it will alert the others. So you..."
