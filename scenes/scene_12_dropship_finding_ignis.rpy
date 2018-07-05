@@ -19,15 +19,16 @@
 
 label entering_dropship:
 
-    show bg dropship exterior with Dissolve(0.3)
-
+    stop music fadeout 2.286
+    show bg dropship exterior
+    hide ravus
+    with Dissolve(1.5)
     pause(0.3)
+    play ambient footsteps_in_the_dark
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}..........{/outlinecolor}{/alpha}{nw}" with Dissolve(0.3)
 
     narrator1 "The dropship is not as heavily-guarded as you expect, with only two Magitek Troopers listlessly padding about the front."
-
-    you "The dropship is not as heavily-guarded as you expect, with only two Magitek Troopers listlessly padding about the front."
 
     narrator1 "It's bigger than the other dropships you've seen around, but not quite as large as the Imperial Dreadnoughts that still hang in the sky."
 
@@ -98,6 +99,7 @@ screen flashlight_dropship_hangar:
 label loading_bay_success:
 
     show trooper dropship shortcircuit at center with dissolve
+    play foley2 trooper_screech2 noloop
 
     narrator1 "The trooper collapses to the ground, a dying gasp echoing in the tinny corridor."
 
@@ -255,6 +257,18 @@ label finding_ignis_cell:
 
         narrator1 "You pass the water through the bars and Ignis accepts it with oddly fumbling hands."
 
+        $ show_happiness = True
+
+        pause 0.5
+
+        $ happiness += 1
+
+        show screen happiness_text(title="Happiness increased!")
+        with dissolve
+        pause 0.3
+        hide screen happiness_text
+        with dissolve
+
         narrator1 "While he drinks, you run your hands over the door lock, feeling for a seam or something to exploit."
 
     else:
@@ -287,7 +301,7 @@ label finding_ignis_cell:
 
     you "I saw it before when you killed that trooper."
 
-    ignis "Ah, it's - royal magic. On loan, in effect, from the Line of Lucis."
+    ignis "Ah, it's Royal magic. On loan, in effect, from the Line of Lucis."
 
     ignis "But ... I'm no longer strong enough to - agh!"
 
@@ -299,7 +313,7 @@ label finding_ignis_cell:
 
     ignis "All right. Take care, [your_name]. There's soldiers on rotation in the corridors beyond."
 
-    if discovered == False:
+    if discovered == True:
         you "Some of them already got the jump on me on the way here."
 
         ignis "I see."
@@ -308,6 +322,15 @@ label finding_ignis_cell:
 
         ignis "Good to hear."
 
-    you "Okay - I'll be careful."
+        you "Okay - I'll be back soon."
+    else:
+        you "Okay - I'll be careful."
+
+
+    stop ambient fadeout 2.286
+
+    $ show_happiness = False
+
+    play music clone_resonance
 
     jump dropship_corridor02
