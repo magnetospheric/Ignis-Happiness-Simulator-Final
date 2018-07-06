@@ -17,17 +17,21 @@ label waitingforignis:
     # the music here should be like Peaceful Sleep in NieR
 
     stop ambient fadeout 2.286
-    play music andante fadein 2.286
+    # play music andante fadein 2.286
 
-    scene black with Dissolve(1.0)
+    $ quick_menu = False
+
+    scene black with Dissolve(1.5)
 
     centered "Eight o'clock swings round."
 
     centered "Are you ready?"
 
-    scene bg listropark with Dissolve(1.5)
+    pause 0.3
 
-    # gondola ride comes last, where kiss option happens
+    scene bg listropark with Dissolve(2.0)
+
+    $ quick_menu = True
 
     # faint rain sound effect
 
@@ -37,7 +41,7 @@ label waitingforignis:
 
     show noctis silhouette at left
     show ignis silhouette blind at center
-    with Dissolve(0.5 )
+    with Dissolve(0.5)
 
     narrator1 "After a while, you spot him, that tall, svelte figure at the head of the stairs leading up to this place."
 
@@ -49,13 +53,13 @@ label waitingforignis:
 
     narrator1 "The Prince pats his shoulder in solidarity, then vanishes back into the crowd."
 
-    hide noctis with dissolve
+    hide noctis with Dissolve(0.5)
 
     narrator1 "You take a deep breath, and walk over."
 
     pause 0.5
 
-    show ignis neutral blind with dissolve
+    show ignis neutral blind with Dissolve(0.5)
 
     pause 0.5
 
@@ -105,13 +109,27 @@ label waitingforignis:
 
             you "How about we take a stroll around the Park?"
 
+            show ignis smile blind with dissolve
+
+            $ show_happiness = True
+
+            pause 0.5
+
+            $ happiness += 1
+
+            show screen happiness_text(title="Happiness increased")
+            with dissolve
+            pause 0.3
+            hide screen happiness_text
+            with dissolve
+
             ignis "That sounds lovely."
 
             narrator1 "You take his hand gently."
 
             jump explore_the_park
 
-        "Mention that the Totomostro games have started up":
+        "Mention the Totomostro games":
 
             jump totomostro
 
@@ -136,8 +154,8 @@ label street_musicians:
 
     show bg buskers with Dissolve(1.5)
 
-    stop music fadeout 2.286
-    play ambient listro_fandango fadein 2.286
+    # stop music fadeout 2.286
+    # play ambient listro_fandango fadein 2.286
 
     ignis "Is that a fandango rhythm I hear?"
 
@@ -236,7 +254,7 @@ label street_musicians:
 
     narrator1 "The music eventually dies down, and Ignis breaks his grip."
 
-    stop ambient fadeout 2.286
+    # stop ambient fadeout 2.286
 
     show ignis neutral openmouth blind
     ignis "Thank you, [your_name]."
@@ -254,7 +272,11 @@ label street_musicians:
 
     narrator1 "You take his hand once again, and lead him back to Listro Park."
 
-    play music andante fadein 2.286
+    scene bg listropark
+    show ignis smile blind at center
+    with Dissolve(1.0)
+
+    # play music andante fadein 2.286
 
     jump explore_the_park
 
@@ -269,6 +291,18 @@ label suggest_sightseeing:
 
     show ignis unimpressed blind with dissolve
 
+    $ show_happiness = True
+
+    pause 0.5
+
+    $ happiness -= 1
+
+    show screen happiness_text(title="Happiness decreased")
+    with dissolve
+    pause 0.3
+    hide screen happiness_text
+    with dissolve
+
     narrator1 "Ignis sighs."
 
     show ignis unimpressed openmouth blind
@@ -279,6 +313,16 @@ label suggest_sightseeing:
     narrator1 "A poor choice of words, on your part."
 
     you "Sorry."
+
+    show ignis neutral openmouth blind
+    ignis "Not to worry. Should we ... perhaps take a stroll around the park for a bit?"
+    show ignis neutral blind
+
+    narrator1 "You nod."
+
+    narrator1 "He takes your hand, and you walk around the statue."
+
+    jump explore_the_park
 
 
 
@@ -291,22 +335,34 @@ label eat_something_now:
     ignis "I'm not overly hungry yet, however."
     show ignis neutral blind
 
+    you "Hmm, in that case..."
     you "What about ... gelato?"
 
     show ignis smile blind
+
+    $ show_happiness = True
+
+    pause 0.5
+
+    $ happiness += 1
+
+    show screen happiness_text(title="Happiness increased")
+    with dissolve
+    pause 0.3
+    hide screen happiness_text
+    with dissolve
 
     ignis "That sounds lovely."
 
     show bg foodcart with Dissolve(1.5)
 
-    narrator1 "You walk over to the gelato cart. The guy behind the counter smiles and asks you what your favourite flavour is."
+    narrator1 "You walk over to the gelato cart. The guy behind the counter smiles and asks you both what your favourite flavour is."
 
     show ignis neutral openmouth blind
     ignis "Oh, um ..."
     ignis "Do you have any orange flavour?"
-    show ignis neutral blind
-
     ignis "Mandarin? Or tangerine would do."
+    show ignis neutral blind
 
     narrator1 "The vendor nods and checks his stock, before filling a cone with two generous scoops."
 
@@ -319,6 +375,7 @@ label eat_something_now:
             narrator1 "The green ice-cream is flecked with dark chocolate. Delicious."
         "Tangerine":
             you "Tangerine, please!"
+            show ignis smile blind
             narrator1 "You join Ignis with the citrus-flavoured ice cream. It's tangy and summery and simply perfect for the evening at hand."
         "Vanilla":
             you "Vanilla, please!"
@@ -331,6 +388,8 @@ label eat_something_now:
     narrator1 "You and Ignis eat your ice cream while standing at the park balcony."
 
     narrator1 "It's a lookout point for the city, and while you enjoy the sight, Ignis enjoys the breeze."
+
+    narrator1 "Eventually you're both finished with your ice cream, and while you lick your fingers, Ignis produces a handkerchief from his breast pocket and tidies off."
 
     show ignis neutral openmouth blind
     ignis "Well, that was delicious."
@@ -347,6 +406,123 @@ label eat_something_now:
 
     narrator1 "You take his hand, and head back around the Park."
 
+    scene bg listropark
+    show ignis smile blind at center
+    with Dissolve(1.0)
+
+    jump explore_the_park
+
+
+
+label totomostro:
+
+    you "You know, the Totomostro games have started back up again."
+
+    show ignis neutral openmouth blind
+    ignis "They have? My, that's rather soon."
+    ignis "I suppose the people need a distraction, though."
+    show ignis neutral blind
+
+    you "Do you want to go?"
+
+    show ignis unimpressed blind with dissolve
+
+    $ show_happiness = True
+
+    pause 0.5
+
+    $ happiness -= 1
+
+    show screen happiness_text(title="Happiness decreased ever so slightly")
+    with dissolve
+    pause 0.3
+    hide screen happiness_text
+    with dissolve
+
+    show ignis unimpressed openmouth blind with dissolve
+    ignis "Ah ... I'm afraid it's not really my thing."
+    ignis "I don't get a lot of enjoyment out of it."
+    show ignis unimpressed blind with dissolve
+
+    menu:
+        "Apologise, and suggest something else":
+
+            you "Oh ... sorry."
+
+            show ignis neutral openmouth blind
+            ignis "Not at all. I can see the attraction - Noct and Prompto had a whale of a time there, in the days before the ceremony."
+            ignis "Prompto wouldn't stop playing that blasted horn, though."
+            show ignis neutral blind
+
+            narrator1 "He touches the side of his head at the memory."
+
+            narrator1 "You laugh."
+
+            you "Heh, it {i}does{/i} get quite loud!"
+
+            you "So, how about something else, then?"
+
+            show ignis smile blind with dissolve
+
+            $ show_happiness = True
+
+            pause 0.5
+
+            $ happiness += 1
+
+            show screen happiness_text(title="Happiness increased")
+            with dissolve
+            pause 0.3
+            hide screen happiness_text
+            with dissolve
+
+            show ignis neutral openmouth blind
+            ignis "What have you in mind?"
+            show ignis neutral blind
+
+            you "I don't know ... hmm, let's take a stroll around the park."
+
+            show ignis smile blind with dissolve
+
+            narrator1 "You take his hand, and you walk around the statue."
+
+        "Try and convince him":
+
+            you "C'mon, it'll be fun!"
+
+            show ignis unimpressed blind with dissolve
+
+            $ show_happiness = True
+
+            pause 0.5
+
+            $ happiness -= 1
+
+            show screen happiness_text(title="Happiness decreased ever so slightly")
+            with dissolve
+            pause 0.3
+            hide screen happiness_text
+            with dissolve
+
+            narrator1 "Ignis doesn't look convinced."
+
+            show ignis unimpressed openmouth blind
+            ignis "I'd really rather not."
+            ignis "It's rather too loud for me. Especially since ... well, I rely on my hearing a lot now. The arena's a little ... overwhelming."
+            show ignis unimpressed blind
+
+            narrator1 "Oh. You should have thought that through a bit better."
+
+            ignis "..."
+
+            show ignis neutral openmouth blind
+            ignis "Perhaps we should take a stroll around the park for a bit?"
+            show ignis neutral blind
+
+            you "Okay, sounds good."
+
+            narrator1 "He takes your hand, and you walk around the statue."
+
     jump explore_the_park
 
 
@@ -355,9 +531,17 @@ label explore_the_park:
 
     narrator1 "You {i}are{/i} assisting him, of course, but it feels less like guiding and more like walking together."
 
-    narrator1 "Together you stroll casually around Listro Park."
+    narrator1 "The birds chitter as the light slowly dies away, and you stroll casually around Listro Park."
 
-    if happiness > 19:
+    narrator1 "To the left, the panorama of the city greets you. To the right, street sellers with their small wagons loaded with charms and bracelets."
+
+    narrator1 "Behind you, children playing, getting soft reprimands for climbing on the statue."
+
+    narrator1 "It's nice to imagine you don't have a care in the world."
+
+    if happiness >= 19:
+
+        $ ignis_buys_flower = True
 
         show bg flower_stall with Dissolve(1.0)
 
@@ -433,7 +617,7 @@ label explore_the_park:
     else:
         narrator1 "You pass a flower stall, the scent of the blooms wafting past you."
 
-        narrator1 "It's quite heavenly."
+        narrator1 "It's heavenly, and you slow your pace to enjoy it a little more."
 
     jump dinner_together
 
@@ -443,11 +627,13 @@ label dinner_together:
 
     narrator1 "The evening has drawn in so dark around you that the horizon is no longer tinged with that rosy blush."
 
-    narrator1 "The air's gotten a few degrees colder. It's not unpleasant at all, in fact, it's quite refreshing."
+    narrator1 "The air's gotten a few degrees cooler. It's not unpleasant at all, in fact, it's quite refreshing."
 
     narrator1 "The rain still patters down lightly."
 
+    show ignis neutral openmouth blind
     ignis "I'm starting to feel rather peckish now, I must say."
+    show ignis smile blind
 
     narrator1 "You pause. You're thinking about where you can go to eat."
 
@@ -455,9 +641,7 @@ label dinner_together:
 
     narrator1 "Maagho's, for one, but then, a man like Ignis has probably already been there."
 
-    narrator1 "That old dog that runs the place, Weskham, he's so involved in the political scene."
-
-    narrator1 "Ignis has probably met him already."
+    narrator1 "That old dog that runs the place, Weskham, he's so involved in the political scene - Ignis has probably met him already."
 
     narrator1 "No, you need to find somewhere else."
 
@@ -469,9 +653,7 @@ label dinner_together:
 
         narrator1 "Orange cake. That was it!"
 
-        narrator1 "A memory "
-
-        narrator1 "You know exactly where to take him."
+        narrator1 "A memory comes to the fore, and you realise you know exactly where to take him."
 
     else:
 
@@ -483,17 +665,170 @@ label dinner_together:
 
     narrator1 "You take Ignis's hand, and walk him to the bridge."
 
-    you "There's a place just round the corner that serves amazing food! I thought you might like it."
+    you "There's a place just round the corner that serves really good food! I thought you might like to try."
 
     ignis "That sounds magnificent!"
 
     ignis "I should like that very much."
-    narrator1 "And so you lead him to the left of the plaza, and down a grand set of stairs to the financial quarter."
+
+    narrator1 "And so you lead him to the left of the plaza, and down a grand set of stairs to the Magisterial quarter."
 
     narrator1 "Not normally a place you'd bring tourists."
 
+    narrator1 "You head under an archway and over another, smaller bridge, walking leisurely with Ignis alongside you."
 
-    narrator1 "You head down to the magisterial quarter, walking"
+    show bg magisterialsquare with Dissolve(1.0)
+
+    ignis "Ah, isn't this near the First Lady's offices?"
+
+    narrator1 "His internal map of the city is spot-on."
+
+    you "Yeah - but it's not a place the political hobnobs frequent."
+
+    you "It's really out-of-the-way, but the food quality is amazing."
+
+    show ignis smile blind with dissolve
+
+    show bg restaurant with Dissolve(1.0)
+
+    narrator1 "You lead him across a stone slab walkway, and into a courtyard lit up bright with garden lights and street lamps."
+
+    # you "You know, they do a mean seafood paella here."
+    #
+    # you "Tried and tested by yours truly."
+    #
+    # ignis "I should like to try."
+
+    narrator1 "Right up to the booking table you walk, and luckily, there's not much of a queue."
+
+    you "Table for two, please."
+
+    waiter "Would you like to dine al fresco?"
+
+    narrator1 "He motions at the tables outdoors, protected from the light rain by parasols. Under each parasol hangs a soft cluster of globe lights."
+
+    narrator1 "It looks so romantic."
+
+    ignis "I do enjoy dining al fresco, I must say."
+
+    you "Al fresco, then!"
+
+    waiter "Right this way."
+
+    narrator1 "The waiter takes you to a secluded table off to the side. It still has a fantastic view of the Magisterial plaza, but it's out of the way enough to give you both some privacy."
+
+    narrator1 "You sit down. The chair is comfortable, and you relax into it."
+
+    if ignis_buys_flower == True:
+        narrator1 "After a moment's thought, you place the flower Ignis got you in the vase at the centre of the table."
+
+    if ignis_favourite_food_known == True:
+
+        you "Hey, they have that dish you liked..."
+
+        narrator1 "You tap the menu with the flat of your hand."
+
+        you "Seafood paella. Wish a garnish of rosemary and basil, too."
+
+        show ignis smile blind with dissolve
+
+        pause 0.5
+
+        show ignis neutral openmouth blind
+        ignis "Honestly? [your_name], you never cease to amaze me."
+        show ignis smile blind
+
+    else:
+        ignis "Would you mind, ah, reading me the menu?"
+
+        you "Of course!"
+
+        narrator1 "You go through the options available. Ignis's eyes light up at the mention of the mushroom risotto, then they grow ever wider when you reach the paella section."
+
+        ignis "Is there a seafood option?"
+
+        you "Yeah - this one's got crab, prawns and scallops."
+
+        ignis "Oh, now I can't pass that up."
+
+        ignis "My choice is made!"
+
+    narrator1 "When the waiter comes round, Ignis orders a bottle of Altissian white wine, then points to you, indicating the waiter serve you first."
+
+    $ you_gender_poshname = "the lady"
+
+    waiter "Very well, Sir. What will [you_gender_poshname] have?"
+
+    menu:
+        "Pick the burger":
+            $ restaurant_choice = "burger"
+            you "Um, the burger sounds great. Extra bacon topping, please."
+            show ignis smile blind with dissolve
+            narrator1 "Ignis can't hide his wry smile."
+
+        "Pick the mushroom risotto":
+            $ restaurant_choice = "risotto"
+            you "I'll take the mushroom risotto, please."
+            ignis "A fine choice."
+            waiter "It really is - our cream sauce is to die for!"
+            waiter "So, Sir, what about you?"
+        "Pick the same as Ignis":
+            $ restaurant_choice = "paella"
+
+    if restaurant_choice == "paella":
+        ignis "I'll take the seafood paella too."
+    else:
+        ignis "I'll take the seafood paella - it sounds marvellous."
+        waiter "We can add oysters on the side, too."
+        ignis "Outstanding! Yes, please."
+
+    if ignis_favourite_food_known == True:
+
+        you "{i}There's orange chiffon cake on the dessert menu too, you know.{/i}"
+
+        narrator1 "You don't think he could look any happier, at this point."
+
+        ignis "[your_name], this is ridiculous!"
+
+        narrator1 "Then, to the waiter,"
+
+        show ignis neutral openmouth blind
+        ignis "I'll take the orange cake for dessert, as well."
+        show ignis smile blind
+
+    narrator1 "The waiter nods, and clips his ordering pad back to his belt, dips his head ever so slightly before heading off to the kitchens."
+
+    if restaurant_choice == "burger":
+        you "What's so funny?"
+
+        show ignis neutral openmouth blind
+        ignis "That's also Noctis's favourite."
+        show ignis smile blind
+
+        you "Heh, no way!"
+        narrator1 "You hadn't expected the Prince to enjoy something so ordinary."
+
+        show ignis neutral openmouth blind
+        ignis "Yes, although he prefers the Crow's Nest variety."
+        ignis "I keep telling him to cut back on the junk food, but does he listen?"
+        show ignis smile blind
+
+        narrator1 "You grin."
+
+        you "Well, at least mine comes with salad!"
+
+        show ignis neutral openmouth blind
+        ignis "True enough. But a burger every now and then is quite delicious, I must say."
+        show ignis smile blind
+
+    narrator1 "You sip at your wine while you wait for the food to arrive. You're feeling a little anxious, but far from as much as you had expected."
+
+    narrator1 "{i}This really is a date,{/i} your mind is intent on reminding you."
+
+    narrator1 "{i}Just don't mess it up.{/i}"
+
+    narrator1 "You take a longer sip of your wine."
+
 
 
     ignis "I know they mean well, and I know they think they're doing what's best for me..."
@@ -508,6 +843,7 @@ label dinner_together:
 
     you "A choice?"
 
+    show ignis neutral openmouth blind
     ignis "Yes - he offered to take me to Niflheim."
 
     ignis "If it hadn't been for my ... for my eyes ... I wouldn't have to feel this same way every time people do something I don't ask them to."
@@ -549,6 +885,53 @@ label gondola_ride:
 
     ignis "Quite invigorating!"
 
-    narrator1 "You take Ignis to the gondola stop."
+    show bg gondola with Dissolve(1.0)
 
-    scene bg magisterialsquare
+    narrator1 "You take Ignis to the gondola stop. The water's lapping at the short wooden pier, and the boats creak softly."
+
+    ignis "Is this a gondola station?"
+
+    you "Yes."
+
+    narrator1 "In tandem with your reply, the gondolier decides to sing \"Gooooondolaaaa! Care for a ride?\""
+
+    narrator1 "It's so comically-timed that Ignis snorts."
+
+    you "So, um, would you?"
+
+    you "I thought we could take the full tour round the lagoon."
+
+    show ignis neutral openmouth blind
+    ignis "I would love to."
+    show ignis neutral blind
+
+    narrator1 "You tell the gondolier to take you both on the complete tour, and he nods, and ushers you both aboard."
+
+    narrator1 "You have a mild panic over where to sit, but Ignis solves the issue by taking up one side of the couples' seat at the back of the gondola."
+
+    show ignis smile blind at left with move
+
+    narrator1 "Out on the far side of the lagoon, the gondolier slows the boat down."
+
+    narrator1 "It's so muted out here, far from the noise of city activity, and a calmness falls over you."
+
+    ignis ""
+
+
+
+label ending:
+
+    scene bg black
+
+    if happiness == 20:
+        centered "Congratulations! You reached maximum happiness! \n "
+    if happiness >= 18:
+        centered "Congratulations! "
+    elif happiness >= 15:
+        centered ""
+    elif happiness >= 10:
+        centered ""
+    elif happiness >= 5:
+        centered ""
+    elif happiness < 5:
+        centered ""

@@ -15,6 +15,8 @@ label going_home:
     hide screen black_overlay_light
     hide screen black_overlay
 
+    $ quick_menu = False
+
     scene black with Dissolve(1.0)
 
     stop music fadeout 6.0
@@ -33,6 +35,8 @@ label going_home:
     play ambient undercurrent fadein 1.0
 
     scene bg mc_room with Dissolve(1.5)
+
+    $ quick_menu = True
 
     narrator1 "Everything feels hollow back in your lonely little room."
 
@@ -733,6 +737,8 @@ label ask_on_date:
 
     narrator1 "The way he smiled ... it's clear you mean a lot to him, too."
 
+    narrator1 "You smile to yourself. You can't wait for the evening to fall."
+
     jump waitingforignis
 
 
@@ -843,7 +849,6 @@ label time_for_a_redo:
     ardyn "I imagine you're {i}dying{/i} to know how he really got his scars."
 
     ardyn "Aw. Missed your chance?"
-
 
     show ardyn trashbags at left with softflash
 

@@ -36,7 +36,7 @@ init python:
         if show_happiness:
             # set up a transparent frame to put things in
             ui.frame(
-                xalign = 0.90,
+                xalign = 0.925,
                 ypos = 0.04,
                 style = "title_frame",
             )
@@ -129,9 +129,9 @@ init -5 python:
     style.my_bar.left_bar = Frame("ui/bar_full.png", 0, 0)
     style.my_bar.right_bar = Frame("ui/bar_empty.png", 0, 0)
 
-    style.my_bar.thumb = "ui/thumb.png"
-    style.my_bar.thumb_shadow = None
-    style.my_bar.thumb_offset = 14
+    # style.my_bar.thumb = "ui/thumb.png"
+    # style.my_bar.thumb_shadow = None
+    # style.my_bar.thumb_offset = 14
 
     style.my_bar.font = "fonts/AvantGarde-Book.ttf"
 

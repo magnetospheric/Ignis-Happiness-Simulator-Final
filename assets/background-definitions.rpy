@@ -68,7 +68,7 @@ image bg listropark = 'images/backgrounds/listropark.png'
 image bg foodcart = 'images/backgrounds/food-cart.png'
 image bg buskers = 'images/backgrounds/buskers.png'
 image bg gondola = 'images/backgrounds/gondola.png'
-image bg magisterialsquare = 'images/backgrounds/magisterial_square.png'
+image bg magisterialsquare = 'images/backgrounds/magisterial-plaza.png'
 image bg restaurant = 'images/backgrounds/restaurant.png'
 
 image black = "images/black.png"

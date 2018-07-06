@@ -27,9 +27,11 @@ label startn:
 
     $ show_happiness = False
 
-    $ happiness = 1
+    $ happiness = 18
     $ ravus_happiness = 0
     $ ardyn_happiness = 0
+
+    $ ignis_wants_to_sightsee = False
 
     $ citizens_first = False
     $ said_you_saved_citizens = False
@@ -37,6 +39,7 @@ label startn:
 
     $ examined_harpoon = False
 
+    $ ignis_favourite_food_known = False
     $ ignis_revealed_suspicions = False
     $ motivation = "help"
     $ ignis_opened_up = False
@@ -48,6 +51,7 @@ label startn:
     $ number_of_encounters = 0
     $ shone_torch = False
     $ used_sword = False
+    $ seen_ardyn_aboard_dropship_already = False
     $ deactivated_generator = False
     $ origin_label = "loading_bay"
 
@@ -63,6 +67,14 @@ label startn:
     $ reset_game_once = None
 
     show screen gold_border
+
+    $ show_happiness = True
+
+    show bg restaurant
+
+    show ignis smile at right
+
+    ignis "Well now ... I wonder if they have seafood paella on the menu..."
 
     jump time_for_a_redo
 
@@ -87,11 +99,14 @@ label start:
     $ your_pronoun_object = "her"
     $ you_gender_nicename = "woman"
     $ you_gender_nickname = "lass"
+    $ you_gender_poshname = "the lady"
 
     $ show_happiness = False
     $ happiness = 1
     $ ravus_happiness = 0
     $ ardyn_happiness = 0
+
+    $ ignis_wants_to_sightsee = False
 
     $ citizens_first = False
     $ said_you_saved_citizens = False
@@ -99,8 +114,10 @@ label start:
 
     $ examined_harpoon = False
 
+    $ ignis_favourite_food_known = False
     $ ignis_revealed_suspicions = False
     $ motivation = "help"
+    $ ignis_opened_up = False
     $ extra_item = "water"
 
     $ ardyn_affiliation = "none"
@@ -109,6 +126,7 @@ label start:
     $ number_of_encounters = 0
     $ shone_torch = False
     $ used_sword = False
+    $ seen_ardyn_aboard_dropship_already = False
     $ deactivated_generator = False
     $ origin_label = "loading_bay"
 
@@ -123,16 +141,18 @@ label start:
     $ want_to_reset = False
     $ reset_game_once = None
 
+    $ ignis_buys_flower = False
+    $ restaurant_choice = None
+
     # starts from here #
 
-    #black background, maybe some wisping smoke
     scene black
 
-    # play music reverse_guitar noloop
-    play music tense_morning loop
+    $ renpy.music.set_volume(0.4, delay=1, channel='music')
 
     pause 1.0
-
+    play music bated_breath loop
+    pause 1.0
     top_narrator "{size=20}{cps=15}{alpha=0.8}What does  {/alpha}{/cps}{/size}{alpha=1.0}{size=22}{cps=10}loyalty{/cps}{/size}{/alpha}{size=20}{cps=15}{alpha=0.8}  mean to you?{/alpha}{/cps}{/size}"
 
     topcentre_narrator "{size=20}{cps=15}{alpha=0.8}Who do you most want to protect?{/alpha}{/cps}{/size}"
@@ -149,25 +169,22 @@ label start:
 
 label covenant_morning:
 
-    $ renpy.music.set_volume(0.4, delay=1, channel='music')
     $ renpy.music.set_volume(0.4, delay=1, channel='ambient')
     $ renpy.music.set_volume(1.0, delay=1, channel='foley')
     $ renpy.music.set_volume(1.0, delay=1, channel='foley2')
 
-    #scene dawns on an overview of altissia
-    #slow fade in
-    scene bg altissian_skyline
-    show screen gold_border
-    with fastfade
+    stop music fadeout 2.286
 
+    show screen gold_border
+    scene bg altissian_skyline
+    with Dissolve(1.5)
+
+    play ambient morning_coffee1 fadein 2.286
     play foley birdsong1 fadein 4.0
 
     narrator1_nosound "{alpha=0.0}{outlinecolor=#ffffff00}Altissia, on the day of the Covenant.{/outlinecolor}{/alpha}{nw}" with Dissolve(0.5)
 
     $ quick_menu = True
-
-    stop music fadeout 2.286
-    play ambient morning_coffee1 fadein 2.286
 
     narrator1 "Altissia, on the day of the Covenant."
 
@@ -180,6 +197,7 @@ label covenant_morning:
     narrator1 "An important day, indeed."
 
     scene black
+    $ quick_menu = False
 
     stop foley fadeout 0.3
 
@@ -195,6 +213,7 @@ label mc_room:
     show screen keys_inactive
 
     play foley out_of_bed noloop
+    $ quick_menu = True
 
     you "Ah, where did I put my keys?" with vpunch
 

@@ -62,6 +62,7 @@ define citizen2 = Character("Reasonable Citizen", ctc="ctc_blink", ctc_position=
 define citizen3 = Character("Sceptical Citizen", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg02.png")
 
 define friend = Character("Friend", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg02.png")
+define waiter = Character("Waiter", ctc="ctc_blink", ctc_position="fixed", window_background="images/ui/dialog_bg02.png")
 
 
 #### Character Images ####

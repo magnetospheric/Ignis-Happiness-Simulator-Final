@@ -841,6 +841,8 @@ label escaping_dropship:
     play music undercurrent fadein 2.286
 
     show bg dropship exterior with Dissolve(1.5)
+    hide screen black_overlay_light
+    hide screen black_overlay
 
     narrator1 "The outdoors seems so achingly bright, despite the fact the clouds still hang dark and heavy over the besieged city."
 

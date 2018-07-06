@@ -107,6 +107,7 @@ label setgender:
             $ your_pronoun_object = "him"
             $ you_gender_nicename = "man"
             $ you_gender_nickname = "lad"
+            $ you_gender_poshname = "the gentleman"
         "Female":
             $ your_gender= "female"
             $ your_pronoun_subject= "She's"
@@ -114,6 +115,7 @@ label setgender:
             $ your_pronoun_object = "her"
             $ you_gender_nicename = "woman"
             $ you_gender_nickname = "lass"
+            $ you_gender_poshname = "the lady"
         "Non-Binary":
             $ your_gender= "non-binary"
             $ your_pronoun_subject= "They're"
@@ -121,6 +123,7 @@ label setgender:
             $ your_pronoun_object = "them"
             $ you_gender_nicename = "person"
             $ you_gender_nickname = "individual"
+            $ you_gender_poshname = "your companion"
 
     $ your_gender = your_gender.capitalize()
     narrator1 "[your_gender], is that right?"
