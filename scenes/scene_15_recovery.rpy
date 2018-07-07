@@ -1212,13 +1212,39 @@ label ardyn_interrupts:
     else:
         you "Wait, what do you mean?"
 
+    if ardyn_affiliation == "play":
+
+        ardyn "Where's that spark of yours gone?"
+
+        ardyn "What happened to '{i}I am the party{/i}'?"
+
+        ardyn "Don't disappoint me..."
+
+        narrator1 "He grips your upper arm, making you squirm."
+
+        ardyn "Perhaps you'd prefer to come and play in Niflheim?"
+
+        menu:
+            "No!":
+                you "No!"
+                narrator1 "You tug away."
+                narrator1 "He seems dissatisfied."
+                ardyn "Ah, no matter."
+            "Try me":
+                you "Oh yeah? Try me."
+                narrator1 "At this, Ardyn smiles lasciviously and whispers again in your ear."
+                ardyn "All in due course. But first..."
+                $ befriended_ardyn = True
+
     ardyn "I'm going to reset everything for you."
 
     if reset_game_once == True:
-        you "No!"
+        if befriended_ardyn == False:
+            you "No!"
+            ardyn "Come now, everyone deserves a second chance. Or, in your case, a third. Or a fourth."
+        else:
+            ardyn "Everyone deserves a second chance. Or, in your case, a third. Or a fourth."
 
-        ardyn "Come now, everyone deserves a second chance. Or, in your case, a third. Or a fourth."
-        
         ardyn "My, how long will you keep doing this for?"
 
     elif want_to_reset == False:

@@ -145,6 +145,7 @@ label start:
     $ hugged_noctis = False
 
     $ befriended_ravus = False
+    $ befriended_ardyn = False
 
     $ want_to_reset = False
     $ reset_game_once = None
@@ -203,7 +204,12 @@ label covenant_morning:
 
     narrator1 "The sky is a pale pastel glow, and birds call out from the terracotta rooftops, but despite this, the atmosphere is tense. You can feel it around you, thick as syrup."
 
-    narrator1 "Today is the day that the Oracle, Lady Lunafreya, summons a goddess."
+    if reset_game_once == True:
+        narrator1 "There's something incredibly familiar about it all. A weird case of déjà-vu."
+        narrator1 "And that would make sense, because today is the day that the Oracle, Lady Lunafreya, summons a goddess."
+    else:
+        narrator1 "Today is the day that the Oracle, Lady Lunafreya, summons a goddess."
+        
     narrator1 "Leviathan. The stuff of legends."
     narrator1 "You remember the stories. The prayers. You never thought you would see this in the flesh."
 
