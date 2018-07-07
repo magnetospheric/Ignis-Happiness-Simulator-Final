@@ -142,6 +142,9 @@ label start:
     $ chose_sleep = False
 
     $ noctis_friendly = False
+    $ hugged_noctis = False
+
+    $ befriended_ravus = False
 
     $ want_to_reset = False
     $ reset_game_once = None
@@ -175,6 +178,9 @@ label start:
 
 
 label covenant_morning:
+
+    $ ravus_name = "White-haired man"
+    $ ardyn_name = "Sinister man"
 
     $ renpy.music.set_volume(0.4, delay=1, channel='ambient')
     $ renpy.music.set_volume(1.0, delay=1, channel='foley')

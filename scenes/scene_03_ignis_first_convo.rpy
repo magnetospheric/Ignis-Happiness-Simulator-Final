@@ -33,7 +33,11 @@ label first_conversation:
     #show ignis left looking to the side
     show ignis neutral at right with Dissolve(1.0)
 
-    narrator1 "He's tall, slim, and all things considered, rather attractive indeed."
+    if reset_game_once == True:
+        narrator1 "He's tall, slim, and ... somehow incredibly familiar."
+    else:
+        narrator1 "He's tall, slim, and all things considered, rather attractive indeed."
+
     narrator1 "You approach hesitantly, not wanting to interrupt them."
 
     you "Captain — ah, morning, Ma'am!"
@@ -59,17 +63,13 @@ label first_conversation:
     narrator1 "Here, the newcomer cuts in. His accent is sharp and learned, and you get the impression he's a foreign envoy of some sort."
 
     show ignis neutral openmouth
-
     ignis "Leviathan is a fickle goddess, powerful beyond measure. And with the Empire hanging by the sidelines, it is likely that we may see some destruction of the city."
-
     show ignis neutral
 
     narrator1 "You've heard of the floods of yore. You nod."
 
     show captain neutral openmouth
-
     captain "You will be stationed at the back of the plaza during her speech, but once the speech is over, we'll need you pointing the way to Finangia District."
-
     show captain neutral
 
     narrator1 "The furthest district from the Palace. It would be easy to get the citizens out of harm's way from there."
@@ -82,11 +82,9 @@ label first_conversation:
 
     narrator1 "The Captain excuses herself then, making her way down the corridor to debrief the next cadre of guards."
 
-    hide captain
-    with dissolve
+    hide captain with dissolve
 
-    show ignis neutral at center
-    with move
+    show ignis neutral at center with move
 
     narrator1 "You're left with the stranger, who watches you with interest. No part of his gaze is uncalculated. You wonder if he's a diplomat, or perhaps a spy."
     narrator1 "It's hardly something you're going to say aloud to him, though. You settle for simple."
@@ -104,6 +102,9 @@ label first_conversation:
 
     show ignis neutral openmouth
 
+    if reset_game_once == True:
+        ignis "It's strange ... I feel as though we've met before."
+        
     ignis "What was your name, again?"
 
     narrator1 "You introduce yourself, and Ignis nods as you speak your name."

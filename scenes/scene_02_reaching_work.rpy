@@ -72,7 +72,12 @@ label to_work:
 
     narrator1 "You show him your ID card."
 
-    jump setname
+    if reset_game_once == True:
+        jump after_user_name_set
+    else:
+        jump setname
+
+
 
 label setname:
 
@@ -87,6 +92,8 @@ label setname:
 
     jump confirmname
 
+
+
 label confirmname:
 
     menu:
@@ -95,6 +102,8 @@ label confirmname:
         "No":
             $ your_name = ""
             jump setname
+
+
 
 label setgender:
 
@@ -130,6 +139,8 @@ label setgender:
 
     jump confirmgender
 
+
+
 label confirmgender:
 
     menu:
@@ -138,6 +149,8 @@ label confirmgender:
         "No":
             $ your_name = ""
             jump setgender
+
+
 
 label after_user_name_set:
 

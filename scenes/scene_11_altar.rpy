@@ -73,6 +73,10 @@ label ardyn_appears:
 
     narrator1 "The whole place is rife with energy; the altar stands half-destroyed, and an unholy miasma fills the air."
 
+    if reset_game_once == True:
+        narrator1 "There's something so undeniably familiar about this, but it's like a shroud in your mind ... you can't quite place it."
+        narrator1 "All you know is, you're scared. You know something bad is about to happen."
+
     narrator1 "Leviathan has sunk below the waves now; whether dead or merely returned to her deep slumber, you do not know."
 
     narrator1 "But more stunning is the unearthly activity at the foot of the altar. It's like witnessing the centre of a storm."
@@ -89,9 +93,14 @@ label ardyn_appears:
 
     narrator1 "The fight rages on."
 
-    narrator1 "Another crash, another lightning strike as their forces collide. Is Ignis really so powerful? And who the hell is this other guy?"
+    play foley3 explosion02 noloop
 
-    # crash sf here
+    if reset_game_once == True:
+        narrator1 "Another crash, another lightning strike as their forces collide. Is Ignis really so powerful? And this other guy..."
+        narrator1 "His name is on the tip of your tongue, but it won't reveal itself..."
+    else:
+        narrator1 "Another crash, another lightning strike as their forces collide. Is Ignis really so powerful? And who the hell is this other guy?"
+
     show bg altar whiteout with hardflash
     show bg altar with Dissolve(1.0)
 
@@ -138,7 +147,16 @@ label ardyn_appears:
 
             you "!!"
 
-            narrator1 "You stare, wide-eyed. He's too close, all of a sudden, as though he has simply warped here from all those metres away."
+            if reset_game_once == True:
+                narrator1 "You stare, wide-eyed. And it hits you, you {i}know{/i}."
+                you "{i}Ardyn...{/i}"
+                $ ardyn_name = "Ardyn"
+                ardyn "Oh, remember me, do you?"
+                ardyn "Well, aren't you a precious one."
+                you "Set things back!"
+                narrator1 "He smirks. And all of a sudden, he's too close, as though he has warped here from all those metres away."
+            else:
+                narrator1 "You stare, wide-eyed. He's too close, all of a sudden, as though he has simply warped here from all those metres away."
 
             narrator1 "He's so close you can see the amber glint of his irises."
 
@@ -234,7 +252,9 @@ label ardyn_appears:
 
             narrator1 "Not to mention the vibe you get off him is blood-curdling."
 
-            narrator1 "So you resign yourself to watching as the stranger"
+            narrator1 "So you resign yourself to watching as the stranger orders some Magitek Troopers in to carry Ignis away."
+
+            narrator1 "You stay hidden until they're out of sight, then you make for the altar."
 
     jump ravus_conversation
 

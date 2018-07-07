@@ -417,7 +417,7 @@ label leville:
             noctis "Yeah, it is."
             show noctis neutral with dissolve
 
-        "Pretend you don't recognise him":
+        "Don't make a big deal about recognising him":
             $ noctis_friendly = True
             you "Hi."
             show noctis neutral openmouth with dissolve
@@ -778,6 +778,168 @@ label ask_about_redo:
     scene black
     with Dissolve(0.5)
 
+    if examined_harpoon == True and noctis_friendly == True:
+
+        scene bg leville corridor
+        show noctis neutral at center
+        with dissolve
+
+        show noctis neutral openmouth with dissolve
+        noctis "Everything okay?"
+        show noctis neutral with dissolve
+
+        you "Ah ..."
+
+        you "Not really."
+
+        show noctis neutral openmouth
+        noctis "He's had a real rough time of it. He just needs a bit longer."
+        show noctis neutral
+
+        you "No, I think I messed up."
+
+        show noctis neutral openmouth
+        noctis "Look, we all kind of feel like that right now."
+        noctis "Don't be too hard on yourself, okay?"
+        show noctis neutral
+
+        you "..."
+
+        you "I'll try..."
+
+        show noctis neutral openmouth
+        noctis "Hey, wanna get some fresh air?"
+        show noctis neutral
+
+        you "Really?"
+
+        show noctis neutral openmouth
+        noctis "Yeah, why not?"
+        show noctis smile with dissolve
+
+        you "Okay!"
+
+        scene bg leville exterior
+        with Dissolve(0.5)
+
+        narrator1 "When you're outside the Leville, Noctis strolls down the promenade with you."
+
+        narrator1 "It seems only a few years separate Noctis and Ignis, but the young Prince's posture is so radically different."
+
+        narrator1 "He still seems like a child; one who's been told to grow up too fast but can't quite seem to catch up."
+
+        narrator1 "This makes you feel kind of melancholy, but hey, at least he's outdoors enjoying the sunshine for a bit."
+
+        show noctis smile with dissolve
+
+        if deactivated_generator == True:
+            narrator1 "Seems you're walking too slow - Noctis turns and pulls you along, laughing."
+
+            noctis "C'mon, I wanna show you something!"
+
+            narrator1 "It's when you reach the pier that he stops, and points into the distance."
+
+            noctis "Over there, across the lagoon..."
+
+            narrator1 "You follow the direction he's pointing in, and see an open space decorated with flowers."
+
+            noctis "They say the Empire's ships had difficulty retreating. So, that meadow didn't get bombed."
+
+            noctis "It was where the wedding reception was going to take place."
+
+            narrator1 "You don't ask him to elaborate. It's clear he means him and Lady Lunafreya."
+
+            show noctis neutral openmouth
+            noctis "I heard you were responsible for sabotaging the dropships."
+            show noctis neutral
+
+            you "I ... yeah."
+
+            show noctis smile with dissolve
+
+            noctis "Thanks."
+
+            you "You can get a boat out to there, if you want."
+
+            show noctis neutral openmouth
+            noctis "I can?"
+            show noctis neutral
+
+            you "Sure! The gondoliers down by the port'd be happy to take you."
+
+            show noctis smile with dissolve
+
+            noctis "Cool. That'd mean a lot to me."
+
+            show noctis neutral openmouth
+            noctis "But, uh... that's not all."
+            noctis "Iggy told me you did a lot more than just shutting down a generator."
+            show noctis neutral
+
+        else:
+            show noctis neutral openmouth
+            noctis "I wanna thank you, [your_name]."
+            noctis "Ignis told us all what you did for us."
+            show noctis neutral
+
+        you "Oh, I..."
+
+        show noctis neutral openmouth
+        noctis "Wait, hear me out, 'kay?"
+        noctis "I wouldn't have even reached the altar if it wasn't for your crazy idea with the harpoon."
+        noctis "It gave me enough time to receive the blessing -"
+        show noctis neutral
+
+        narrator1 "He breaks off. It seems the memory that follows is too painful to think about."
+
+        you "I'm ... glad I could help. I just wish I could have done more."
+
+        show noctis neutral openmouth
+        noctis "And you saved Ignis!"
+        show noctis neutral
+
+        narrator1 "Noctis's bottom lip quivers, then he all but throws himself on you, surrounding you in an intense hug."
+
+        $ hugged_noctis = True
+
+        narrator1 "He's almost shivering with emotion - gods, he must have been so scared Ignis would die - and it brings back once again how underprepared for this war the poor kid is."
+
+        narrator1 "You hug him back tightly, patting his hair, soothing him."
+
+        you "It's not a problem. I'd save him a thousand times if I could."
+
+        narrator1 "Noctis eventually breaks from the hug."
+
+        show noctis neutral openmouth
+        noctis "Same."
+        show noctis neutral
+
+        you "Good luck on the road ahead."
+
+        narrator1 "He nods."
+
+        you "I'll hold down the fort here, fix things up a bit."
+
+        you "So if you guys ever come back here, you can have a proper holiday."
+
+        show noctis smile with dissolve
+
+        noctis "I'll keep that in mind."
+
+        narrator1 "He shrugs the stiffness out of his shoulders and looks around."
+
+        noctis "I should get back to the others. Don't wanna leave Iggy alone too long."
+
+        narrator1 "You smile."
+
+        you "I'm glad he's got you."
+
+        narrator1 "Noctis leaves you with a parting touch on your shoulder."
+
+        hide noctis with dissolve
+
+        narrator1 "You've earned the gratitude of a prince, which counts for something."
+
     pause 0.5
 
     jump time_for_a_redo
@@ -789,18 +951,196 @@ label time_for_a_redo:
     scene bg leville exterior
     with Dissolve(0.5)
 
-    narrator1 "Outside, the world feels smaller, starker against the pale sky."
+    if hugged_noctis == True:
+        narrator1 "But, now that you're on your own again, the world feels smaller, starker against the pale sky."
+        narrator1 "People are still talking in cafés, acting like nothing has happened."
+        narrator1 "Everything seems so dissonant, and you wonder how it can be made right again."
+    else:
+        narrator1 "Outside, the world feels smaller, starker against the pale sky."
 
-    narrator1 "People are still talking in cafés, acting like nothing has happened."
+        narrator1 "People are still talking in cafés, acting like nothing has happened."
 
-    narrator1 "Everything seems so dissonant, and inside, your heart feels about as broken as the city does."
+        narrator1 "Everything seems so dissonant, and inside, your heart feels about as broken as the city does."
+
+    # max ravus happiness is 7, if you get 6 or above you get this scene
+    if ravus_happiness >= 6 and hugged_noctis == False:
+
+        $ befriended_ravus = True
+
+        show bg listropark with Dissolve(1.5)
+
+        narrator1 "You don't know what to do with yourself after that, and so you walk around the city, listlessly checking the shops and attractions without much rhyme or reason."
+
+        narrator1 "You're just musing on this when you see a familiar figure down a back-alley by Listro Park."
+
+        show ravus neutral at right with Dissolve(0.5)
+
+        you "{i}Ravus?{/i} What are you doing here?"
+        narrator1 "Your voice is barely above a hiss, and your urgency cuts through to him, because he frowns."
+
+        show ravus neutral openmouth
+        ravus "Hush!"
+        show ravus neutral
+
+        narrator1 "He obviously doesn't want to attract attention, so you rush into the shadows and confront him quietly."
+
+        you "{i}What are you doing here?{/i}"
+        you "{i}What if th{/i}"
+
+        narrator1 "You pout."
+
+        you "I kind of feel like I should report you to the other guards, what with my job and all..."
+
+        narrator1 "It shouldn't be possible for someone like Ravus to look any paler, but somehow he manages it."
+
+        show ravus neutral openmouth
+        ravus "I'm not here to cause any trouble."
+        show ravus neutral
+
+        you "Why {i}are{/i} you here, then?"
+
+        you "I'm not trying to be rude, I really want to know."
+
+        show ravus neutral openmouth
+        ravus "Well, for you, I suppose my presence is a matter of national security, so I shall tell you."
+        show ravus neutral
+
+        narrator1 "You smile."
+        narrator1 "You get the feeling he {i}let{/i} you see him."
+
+        show ravus neutral openmouth
+        ravus "I had to return to ... make sure they observed the proper burial rituals for Luna."
+        ravus "We're Tenebraean. I have small confidence that Altissia will conduct things correctly."
+        show ravus neutral
+
+        narrator1 "You pause for thought. Ravus looks so sincere, as much as he did at the altar, and you don't doubt the validity of his reason."
+
+        you "I see."
+
+        narrator1 "You're busy studying him now, because you've realised he looks kind of ... tired."
+
+        you "Hey, um ... You look a little parched. I could - I could bring you something to drink, if you like?"
+
+        you "Since it's probably better you avoid being seen."
+
+        show ravus smile with dissolve
+
+        ravus "That is unneccesarily kind of you..."
+
+        narrator1 "You're pretty sure he's trying to be grateful, so you smile, and dart off into the plaza."
+
+        narrator1 "Moments later you return with a couple of iced drinks."
+
+        show ravus neutral openmouth
+        ravus "..."
+        ravus "I can't believe you got me one with a little umbrella in it..."
+        show ravus neutral
+
+        you "It's a tourist zone, what do you expect?"
+
+        narrator1 "You laugh as he picks at the straw. This is such an odd meeting. But then, the last few days have been so far out of the ordinary that you simply run with it."
+
+        narrator1 "Ravus sits down to drink, his long, ornate coat scraping on dust and debris on a forgotten doorstep."
+
+        narrator1 "You join him."
+
+        you "So, did they get the rituals right?"
+
+        narrator1 "Ravus sighs."
+
+        show ravus neutral openmouth
+        ravus "I never got that far."
+        show ravus neutral
+
+        you "You know, if you tell me what needs doing, I can try and make sure she's treated right."
+
+        show ravus smile with dissolve
+
+        ravus "I couldn't possibly expect you to -"
+
+        you "Oh, come on. I'm not gonna break my word."
+
+        narrator1 "He peers at you intently. After a moment he relaxes, and seems satisfied."
+
+        show ravus neutral openmouth
+        ravus "Very well."
+        ravus "They should be using consecrated oil for the embalming, before the burial takes place. Piztalan oil, if you can obtain it. And - "
+        ravus "The casket ought to be filled with sylleblossoms, although I expect they've doubtless done that already."
+        ravus "Then there's the Oracle's Rites. I beg of you, don't let them forget those."
+        ravus "Your city library probably has a copy of the Book of the Messengers ... you can find the petitions in there."
+        show ravus neutral
+
+        narrator1 "You nod."
+
+        narrator1 "It's a lot to keep in mind, but you will do your best to get it right."
+
+        you "Understood."
+
+        narrator1 "Ravus takes a long swig of his soda - again, looking so dissonant in the act, dressed the way he is, crouched on a back-alley step like that."
+
+        show ravus smile
+        ravus "Good."
+
+        narrator1 "Then he stands."
+
+        narrator1 "You rise as well, and he places a hand on your shoulder, icy blue eyes staring deeply into yours."
+
+        show ravus neutral openmouth
+        ravus "I am grateful, loath as I am to admit I can't do this alone."
+        show ravus neutral
+
+        narrator1 "He pauses, and sighs."
+
+        show ravus neutral openmouth
+        ravus "I must return. I ..."
+        show ravus neutral
+
+        narrator1 "He seems scared. It's like an invisible guillotine is hanging over his head."
+
+        you "You don't have to go back to Niflheim, you know."
+
+        narrator1 "This makes him snort."
+
+        show ravus neutral openmouth
+        ravus "And what - confess to the Lucians? To your fellow countrymen in Altissia?"
+        ravus "Even if I were not a military official - {i}ex-{/i}military offical - I would be tried as a war criminal nonetheless."
+        show ravus neutral
+
+        you "But maybe -"
+
+        narrator1 "Ravus shakes his head."
+
+        show ravus neutral openmouth
+        ravus "It's where I belong. And besides ... everything is nearly come to an end."
+        ravus "Treat this world well."
+        show ravus smile with dissolve
+
+        narrator1 "His grip on your shoulder tightens momentarily, then he smiles, and leaves you."
+
+        hide ravus with Dissolve(1.0)
+        narrator1 "You watch him head off into the shadows."
+
+        narrator1 "There's been many people messed up from this war, and Ravus is no exception."
+
+        narrator1 "You sigh. It's time to go home. You have some phone calls to make now."
 
     stop ambient fadeout 4.0
+
+    jump ardyn_interrupts
+
+
+
+label ardyn_interrupts:
 
     scene bg leville alleyway
     with Dissolve(0.5)
 
-    narrator1 "You wind your way down alleyways somewhat carelessly, wondering if you could have made that go any better."
+    if hugged_noctis == True:
+        narrator1 "You wind your way down alleyways somewhat carelessly, wondering if you could have made things go any better between you and Ignis."
+    elif befriended_ravus = =True:
+        narrator1 "You wind your way down alleyways somewhat carelessly, wondering if you could have done anything differently."
+    else:
+        narrator1 "You wind your way down alleyways somewhat carelessly, wondering if you could have made that go any better."
 
     play music curious_encounter fadein 8.286
     narrator1 "A gust of wind picks up, rifling through your hair."
@@ -825,7 +1165,9 @@ label time_for_a_redo:
 
     ardyn "Fancy meeting you here, little mouse."
 
-    if reached_chapter_three == False:
+    if reset_game_once == True:
+        you "No... No, come on! Don't do this!"
+    elif reached_chapter_three == False:
         you "Who are you?"
     else:
         if ardyn_affiliation == "anger" or ardyn_affiliation == "play":
@@ -844,11 +1186,20 @@ label time_for_a_redo:
 
         narrator1 "He merely laughs."
 
-    ardyn "I'm sure Ignis would tell you. That is, if he ever opens up to you now."
+    if reset_game_once == True:
+        ardyn "Don't do what now? There's no reason to fear."
+        ardyn "That is, unless you failed somewhere along the way..."
+    else:
+        ardyn "I'm sure Ignis would tell you. That is, if he ever opens up to you now."
 
-    ardyn "I imagine you're {i}dying{/i} to know how he really got his scars."
+        ardyn "I imagine you're {i}dying{/i} to know how he really got his scars."
 
     ardyn "Aw. Missed your chance?"
+
+    if hugged_noctis == True:
+        ardyn "You certainly didn't waste any time with the Prince, hmm?"
+    elif befriended_ravus == True:
+        ardyn "You certainly didn't waste any time with that traitorous son of Tenebrae, hmm?"
 
     show ardyn trashbags at left with softflash
 
@@ -856,18 +1207,27 @@ label time_for_a_redo:
 
     ardyn "How about I make it all right again?"
 
-    you "Wait, what do you mean?"
+    if reset_game_once == True:
+        you "Come on, don't do this!"
+    else:
+        you "Wait, what do you mean?"
 
     ardyn "I'm going to reset everything for you."
 
-    if want_to_reset == False:
+    if reset_game_once == True:
+        you "No!"
+
+        ardyn "Come now, everyone deserves a second chance. Or, in your case, a third. Or a fourth."
+        
+        ardyn "My, how long will you keep doing this for?"
+
+    elif want_to_reset == False:
 
         you "Wait - but -"
 
         you "What's done is done - you shouldn't mess about with things this way!"
 
     else:
-
         ardyn "After all, everyone deserves a second chance."
 
         you "Really? What ... how?"
