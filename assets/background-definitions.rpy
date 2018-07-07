@@ -65,11 +65,14 @@ image bg leville room = 'images/backgrounds/leville-room.png'
 image bg leville alleyway = 'images/backgrounds/leville-alleyway.png'
 image bg leville alleyway whiteout = 'images/backgrounds/leville-alleyway-whiteout.png'
 image bg listropark = 'images/backgrounds/listropark.png'
+image bg listroparkdark = 'images/backgrounds/listropark-dark.png'
 image bg foodcart = 'images/backgrounds/food-cart.png'
 image bg buskers = 'images/backgrounds/buskers.png'
-image bg gondola = 'images/backgrounds/gondola.png'
+image bg flowers = 'images/backgrounds/flowers.png'
 image bg magisterialsquare = 'images/backgrounds/magisterial-plaza.png'
 image bg restaurant = 'images/backgrounds/restaurant.png'
+image bg gondola = 'images/backgrounds/gondola.png'
+image bg leville exterior dark = 'images/backgrounds/leville-exterior-dark.png'
 
 image black = "images/black.png"
 image blackoverlay = Image("ui/black-layer.png", xalign=0.5, yalign=0.5)
@@ -111,3 +114,93 @@ image altar_glow:
     "images/backgrounds/altar-whiteout.png"
     alpha 0.8
     repeat
+
+image bg credit_backgrounds:
+    "images/credits/01.png"
+    linear 6.858
+    "images/credits/02.png"
+    linear 6.858
+    "images/credits/03.png"
+    linear 6.858
+    "images/credits/04.png"
+    linear 6.858
+    "images/credits/05.png"
+    linear 6.858
+    "images/credits/06.png"
+    linear 6.858
+    "images/credits/07.png"
+    linear 6.858
+    "images/credits/08.png"
+    linear 6.858
+    "images/credits/09.png"
+    linear 6.858
+    "images/credits/10.png"
+    linear 6.858
+    "images/credits/11.png"
+    linear 6.858
+    "images/credits/12.png"
+    linear 6.858
+    "images/credits/13.png"
+    linear 6.858
+    "images/credits/14.png"
+    linear 6.858
+    "images/credits/15.png"
+    linear 6.858
+    "images/credits/16.png"
+    linear 6.858
+    "images/credits/17.png"
+    linear 6.858
+    "images/credits/18.png"
+    linear 6.858
+    "images/credits/19.png"
+    linear 6.858
+    "images/credits/20.png"
+    linear 6.858
+    "images/credits/21.png"
+    linear 6.858
+    "images/credits/22.png"
+    linear 6.858
+    "images/credits/23.png"
+    linear 6.858
+    "images/credits/24.png"
+    linear 6.858
+    "images/credits/25.png"
+    linear 6.858
+    "images/credits/26.png"
+    linear 6.858
+    "images/credits/27.png"
+    linear 6.858
+    "images/credits/28.png"
+    linear 6.858
+    "images/credits/29.png"
+    linear 6.858
+    "images/credits/30.png"
+    linear 6.858
+    "images/credits/31.png"
+    linear 6.858
+    "images/credits/32.png"
+    linear 6.858
+    "images/credits/33.png"
+    linear 6.858
+    "images/credits/34.png"
+    linear 6.858
+    "images/credits/35.png"
+    linear 6.858
+    "images/credits/36.png"
+    linear 6.858
+    "images/credits/37.png"
+    linear 6.858
+    "images/credits/38.png"
+    linear 6.858
+    "images/credits/39.png"
+    linear 6.858
+    "images/credits/40.png"
+    linear 6.858
+    "images/credits/42.png"
+    linear 6.858
+    "images/credits/43.png"
+    linear 6.858
+    "images/credits/44.png"
+    linear 6.858
+    "images/credits/45.png"
+    linear 6.858
