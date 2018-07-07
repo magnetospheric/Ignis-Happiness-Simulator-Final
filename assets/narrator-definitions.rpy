@@ -17,7 +17,7 @@ define centered = Character(
                             window_yminimum=0,
                             window_xfill=False,
                             window_xalign=0.5,
-                            window_yalign=0.32
+                            window_yalign=0.36
                         )
 define centered_titles = Character(
                             None,
