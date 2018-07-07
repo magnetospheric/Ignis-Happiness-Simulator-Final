@@ -66,6 +66,11 @@ label startn:
     $ want_to_reset = False
     $ reset_game_once = None
 
+    $ ignis_buys_flower = False
+    $ restaurant_choice = None
+    $ kissed_or_hugged_on_gondola = None
+    $ kissed_on_gondola = None
+
     show screen gold_border
 
     $ show_happiness = True
@@ -143,6 +148,8 @@ label start:
 
     $ ignis_buys_flower = False
     $ restaurant_choice = None
+    $ kissed_or_hugged_on_gondola = None
+    $ kissed_on_gondola = None
 
     # starts from here #
 
