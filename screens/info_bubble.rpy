@@ -14,6 +14,14 @@ style info_bubble_frame:
     xsize 666
     ysize 311
 
+style info_bubble_credits_frame:
+    xpadding 0
+    top_padding 20
+    xalign 0.5
+    yalign 0.52
+    xsize 666
+    ysize 200
+
 style centered_button:
     ypos 30
 
@@ -132,3 +140,31 @@ screen input_screen(title):
 
             text title id _("title"):
                 style "info_bubble_title"
+
+#  info bubble three
+screen infobubble_credits(title, content, confirmation):
+    zorder 3
+    frame:
+        style "info_bubble_credits_frame"
+        background Image("ui/transparent.png", xalign=0.5, yalign=0.5)
+
+        vbox:
+            yalign 0.0
+            frame:
+                xsize 666
+                background None
+                text title id _("title"):
+                    style "info_bubble_title"
+            frame:
+                xsize 666
+                background None
+                text content id "content /n/n/n":
+                    style "info_bubble_content"
+                    ymaximum 50
+        hbox:
+            yalign 0.42
+            xalign 0.5
+            textbutton confirmation id _("confirmation"):
+                style "centered_button"
+                text_style "info_bubble_button_text"
+                action NullAction
