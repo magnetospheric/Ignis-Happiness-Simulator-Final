@@ -75,8 +75,9 @@ define audio.system_shocker = "audio/bgmusic/System-Shocker-gamever.wav"
 
 # Chapter Four - YOUR MOVE #
 define audio.home_blues = "audio/bgmusic/Home-Blues-gamever.wav"
-define audio.andante = "audio/bgmusic/Andante-gamever.wav"
-define audio.listro_fandango = "audio/bgmusic/Listro-Fandango-gamever.wav"
+define audio.andante = "audio/bgmusic/Andante.wav"
+define audio.taberna_vieja = "audio/bgmusic/Taberna-Vieja.wav"
+define audio.listro_fandanguillo = "audio/bgmusic/Fandanguillo.wav"
 define audio.curious_encounter = "audio/bgmusic/A-Curious-Encounter-gamever.wav"
 
 init python:
@@ -117,3 +118,6 @@ define audio.mech_landing = "audio/soundeffects/mech-landing.wav"
 define audio.mech_bass = "audio/soundeffects/mech-bass.wav"
 define audio.mech_buzz = "audio/soundeffects/mech-buzz.wav"
 define audio.mech_clang = "audio/soundeffects/mech-clang.wav"
+
+define audio.listro_crowd = "audio/soundeffects/listro-crowd.wav"
+define audio.rain = "audio/soundeffects/rain.wav"
