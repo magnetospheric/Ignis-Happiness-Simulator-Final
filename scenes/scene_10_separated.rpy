@@ -187,6 +187,20 @@ label return_to_evac:
 
     you "I'm fine. Just had a little run-in with the Empire, I suppose. Now, what needs doing?"
 
-    narrator1 "Your colleague shows you the boats that have yet to be moored properly, in case more people show up, and you get to work."
+    narrator1 "Your colleague shakes his head."
 
-    return
+    altissianguard "I think we're all sorted here. You can probably just go back now."
+
+    narrator1 "Now that your duties are finished, what will you do?"
+
+    narrator1 "The sounds of fighting still rage in the distance, and you're worried something has gone down at the altar."
+
+    menu:
+        "Return home":
+            narrator1 "You've spent long enough playing the hero."
+            narrator1 "It's time to head home."
+            narrator1 "Ignis was a fascinating person to meet, but really..."
+            narrator1 "What business have you interfering like this?"
+            jump going_home
+        "Go and check on Ignis":
+            jump head_to_altar
