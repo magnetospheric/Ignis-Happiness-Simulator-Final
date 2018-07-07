@@ -966,9 +966,9 @@ label dinner_together:
 
     narrator1 "When he next speaks, his voice is barely above a whisper."
 
-    show ignis unimpressed openmouth blind
+    show ignis pain openmouth blind
     ignis "I saw Noctis die."
-    show ignis unimpressed blind
+    show ignis pain blind
 
     you "You ... oh my gosh."
 
@@ -993,9 +993,9 @@ label dinner_together:
 
     narrator1 "He thumps his hand down on the table."
 
-    show ignis unimpressed openmouth blind
+    show ignis pain openmouth blind
     ignis "Agh! I feel so helpless!"
-    show ignis unimpressed blind
+    show ignis pain blind
 
     narrator1 "Ignis is distraught. What will you say?"
 
