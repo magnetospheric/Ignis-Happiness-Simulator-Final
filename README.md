@@ -1,4 +1,4 @@
-# Ignis-Happiness-Simulator-2k18-Final
+# Ignis-Happiness-Simulator-Final
 A wee dating sim where you get to hug Ignis from FFXV
 
 ** Going off the back of last year’s Prompto Happiness Simulator, this time the focus is on Ignis! **
